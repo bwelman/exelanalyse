@@ -27,5 +27,6 @@ rmd_files:
     - "beschrijvend.Rmd"
     - "grafieken.Rmd"
     - "eda.Rmd"
+    - "linregressie.Rmd"
 
 before_chapter_script: "_common.R"
