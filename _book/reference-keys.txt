@@ -45,6 +45,10 @@ fig:ecdata-coefficienten
 fig:ecdata-residu
 fig:pinguins
 fig:fooi
+fig:elftalfoto
+fig:fctwente-01
+fig:fctwente-02
+fig:fctwente-08
 data
 excel-tabel
 indeling
@@ -90,3 +94,4 @@ voorspellen
 opg-linreg
 case-pinguins
 case-fooien
+case-fctwente
