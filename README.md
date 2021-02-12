@@ -1,4 +1,6 @@
-# exelanalyse
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e1b06ae3-3667-4db9-a31b-5ebe1c529545/deploy-status)](https://app.netlify.com/sites/excelanalyse/deploys)
+
+# README
 
 Dit is een online studieboek voor het uitvoeren van data analyse met Microsoft Excel, bedoeld voor studenten in het hoger onderwijs.
 
