@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 7 Case - Fooien | Excel Data Analyse</title>
+<title>Hoofdstuk 9 Case - Gemiddelde betaaltermijn | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +43,9 @@
 <li><a class="" href="regressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
 <li class="book-part">Cases</li>
 <li><a class="" href="case-pinguins.html"><span class="header-section-number">6</span> Case - Pinguins</a></li>
-<li><a class="active" href="case-fooien.html"><span class="header-section-number">7</span> Case - Fooien</a></li>
+<li><a class="" href="case-fooien.html"><span class="header-section-number">7</span> Case - Fooien</a></li>
 <li><a class="" href="case-fctwente.html"><span class="header-section-number">8</span> Case - Marktwaarde Voetbalclub</a></li>
-<li><a class="" href="case-betaaltermijn.html"><span class="header-section-number">9</span> Case - Gemiddelde betaaltermijn</a></li>
+<li><a class="active" href="case-betaaltermijn.html"><span class="header-section-number">9</span> Case - Gemiddelde betaaltermijn</a></li>
 <li><a class="" href="case-beisterkamp.html"><span class="header-section-number">10</span> Case - Beisterkamp</a></li>
 <li><a class="" href="case-ziekteverzuim.html"><span class="header-section-number">11</span> Case - Ziekteverzuim</a></li>
 </ul>
@@ -55,62 +55,35 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="case-fooien" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="case-betaaltermijn" class="section level1" number="9">
 <h1>
-<span class="header-section-number">Hoofdstuk 7</span> Case - Fooien<a class="anchor" aria-label="anchor" href="#case-fooien"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 9</span> Case - Gemiddelde betaaltermijn<a class="anchor" aria-label="anchor" href="#case-betaaltermijn"><i class="fas fa-link"></i></a>
 </h1>
 <div class="figure" style="text-align: center">
-<span id="fig:fooi"></span>
-<img src="images/fooi.png" alt="Een fooi van een tevreden klant." width="40%"><p class="caption">
-Figuur 7.1: Een fooi van een tevreden klant.
+<span id="fig:betaaltermijn"></span>
+<img src="images/betaaltermijn.png" alt="Workflow betaaltermijn debiteuren." width="70%"><p class="caption">
+Figuur 9.1: Workflow betaaltermijn debiteuren.
 </p>
 </div>
-<p>Een ober noteerde informatie over elke fooi die hij gedurende een periode van een paar maanden in een restaurant kreeg. Hij verzamelde de volgende variabelen:</p>
-<ol style="list-style-type: decimal">
-<li>
-<em>rekening</em>: totale kosten maaltijd (euro)</li>
-<li>
-<em>fooi</em>: grootte fooi (euros)</li>
-<li>
-<em>sexe</em>: geslacht persoon die rekening betaalde (m, v)</li>
-<li>
-<em>dag</em>: dag van de week (do, vr, za, zo)</li>
-<li>
-<em>tijdstip</em>: tijdstip van de dag (middag, avond)</li>
-<li>
-<em>groep</em>: aantal personen gezelschap</li>
-</ol>
+<p>IRIS BV heeft cashflow problemen sinds de uitbraak van de Corona crisis. In deze bijzondere tijden is het voor het bedrijf nog belangrijker dan anders om de liquiditeitspositie onder controle te houden. Belangrijk is dat de debiteuren sneller aan IRIS BV gaan betalen. Vanaf 1 juli 2020 is er daarom speciale actie van kracht. Klanten krijgen korting op de volgende orde als ze sneller betalen. Een medewerker is vrijgemaakt om bij de klanten langs te gaan en ze over deze actie te informeren. Die medewerker gaat actief achter debiteuren aan als een factuur meer dan 30 dagen openstaat.</p>
 <div class="data">
-<p>De data staan in het bestand <a href="data/fooien.xlsx">fooien.xlsx</a>. Bewaar de analyse in een Excelbestand met de naam “fooien-analyse.xlsx”.</p>
+<p>In het databestand <a href="data/Gemiddelde%20betaaltermijn.xlsx">Gemiddelde betaaltermijn.xlsx</a> vind je de benodigde gegevens.</p>
 </div>
-<p><strong>Onderzoeksvraag</strong></p>
-<p>De hoofdvraag van het onderzoek is: <em>Wat zijn de factoren die de grootte van de fooi beïnvloeden?</em></p>
-<p><strong>Opdracht</strong></p>
-<p>Voer een exploratieve data analyse uit om de onderzoeksvraag te beantwoorden.</p>
-<p><strong>Suggesties voor het onderzoek</strong>:</p>
-<ul>
-<li>Bepaal de meetschaal van de 6 variabelen.</li>
-<li>Maak frequentietabellen.</li>
-<li>Maak een samenvattingsinfo via gegevensanalyse</li>
-<li>Maak een histogram voor de belangrijkste variabele <code>fooi</code>. De conclusies die je uit een histogram trekt hangen vaak af van de keuze voor de klassebreedte. Experimenteer daarom met verschillende bingroottes van een halve, een hele en twee euro. Kijk welke het meeste inzicht geeft.</li>
-<li>Ga na of een fooi vaak afgerond wordt op de dichtstbijzijnde 50ct of hele euro.</li>
-<li>Ga na of een fooi samen met de rekening tot een geheel bedrag wordt afgerond.</li>
-<li>Ga na of er een relatie is tussen de fooi en de hoogte van de rekening.</li>
-<li>Zijn er opvallende fooien gegeven?</li>
-<li>Wat is het gemiddelde percentage voor een fooi?</li>
-<li>Wat is het prijsniveau van het restaurant?</li>
-<li>Is er verschil tussen mannen en vrouwen bij het bepalen van de fooi?</li>
-<li>Is er verschil tussen middag en avond bij het bepalen van de fooi?</li>
-<li>Is er verschil tussen de dagen?</li>
-</ul>
-<!-- Inspiratiebron: boek "Interactive and Dynamic Graphics for Data Analysis", Cook & Swayne, pag. 4 -->
+<p><strong>Vragen</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>Wat was de gemiddelde betaaltermijn per klant in de eerste helft van 2020?</li>
+<li>Wat was de gemiddelde betaaltermijn in totaal in de eerste helft van 2020?</li>
+<li>Wat was de gemiddelde betaaltermijn per klant in de tweede helft van 2020?</li>
+<li>Wat was de gemiddelde betaaltermijn in totaal in de tweede helft van 2020?</li>
+<li>Welke data zou je nog meer nodig hebben om uit te rekenen of de actie financieel wat heeft opgeleverd voor IRIS BV?</li>
+</ol>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="case-pinguins.html"><span class="header-section-number">6</span> Case - Pinguins</a></div>
-<div class="next"><a href="case-fctwente.html"><span class="header-section-number">8</span> Case - Marktwaarde Voetbalclub</a></div>
+<div class="prev"><a href="case-fctwente.html"><span class="header-section-number">8</span> Case - Marktwaarde Voetbalclub</a></div>
+<div class="next"><a href="case-beisterkamp.html"><span class="header-section-number">10</span> Case - Beisterkamp</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#case-fooien"><span class="header-section-number">7</span> Case - Fooien</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#case-betaaltermijn"><span class="header-section-number">9</span> Case - Gemiddelde betaaltermijn</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

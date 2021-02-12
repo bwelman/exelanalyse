@@ -1,0 +1,19 @@
+# Case - Gemiddelde betaaltermijn {#case-betaaltermijn}
+
+```{r betaaltermijn, fig.cap="Workflow betaaltermijn debiteuren."}
+knitr::include_graphics("images/betaaltermijn.png")
+```
+
+IRIS BV heeft cashflow problemen sinds de uitbraak van de Corona crisis. In deze bijzondere tijden is het voor het bedrijf nog belangrijker dan anders om de liquiditeitspositie onder controle te houden. Belangrijk is dat de debiteuren sneller aan IRIS BV gaan betalen. Vanaf 1 juli 2020 is er daarom speciale actie van kracht. Klanten krijgen korting op de volgende orde als ze sneller betalen. Een medewerker is vrijgemaakt om bij de klanten langs te gaan en ze over deze actie te informeren. Die medewerker gaat actief achter debiteuren aan als een factuur meer dan 30 dagen openstaat.
+
+:::{.data}
+In het databestand [Gemiddelde betaaltermijn.xlsx](data/Gemiddelde betaaltermijn.xlsx) vind je de benodigde gegevens.
+:::
+
+**Vragen**:
+
+1.	Wat was de gemiddelde betaaltermijn per klant in de eerste helft van 2020?
+2.	Wat was de gemiddelde betaaltermijn in totaal in de eerste helft van 2020?
+3.	Wat was de gemiddelde betaaltermijn per klant in de tweede helft van 2020?
+4.	Wat was de gemiddelde betaaltermijn in totaal in de tweede helft van 2020?
+5.	Welke data zou je nog meer nodig hebben om uit te rekenen of de actie financieel wat heeft opgeleverd voor IRIS BV?

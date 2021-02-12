@@ -49,6 +49,9 @@ fig:elftalfoto
 fig:fctwente-01
 fig:fctwente-02
 fig:fctwente-08
+fig:betaaltermijn
+fig:vrachtwagen
+fig:ziekteverzuim
 data
 excel-tabel
 indeling
@@ -95,3 +98,6 @@ opg-linreg
 case-pinguins
 case-fooien
 case-fctwente
+case-betaaltermijn
+case-beisterkamp
+case-ziekteverzuim

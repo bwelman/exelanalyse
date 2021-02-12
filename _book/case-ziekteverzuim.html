@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 7 Case - Fooien | Excel Data Analyse</title>
+<title>Hoofdstuk 11 Case - Ziekteverzuim | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -43,11 +43,11 @@
 <li><a class="" href="regressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
 <li class="book-part">Cases</li>
 <li><a class="" href="case-pinguins.html"><span class="header-section-number">6</span> Case - Pinguins</a></li>
-<li><a class="active" href="case-fooien.html"><span class="header-section-number">7</span> Case - Fooien</a></li>
+<li><a class="" href="case-fooien.html"><span class="header-section-number">7</span> Case - Fooien</a></li>
 <li><a class="" href="case-fctwente.html"><span class="header-section-number">8</span> Case - Marktwaarde Voetbalclub</a></li>
 <li><a class="" href="case-betaaltermijn.html"><span class="header-section-number">9</span> Case - Gemiddelde betaaltermijn</a></li>
 <li><a class="" href="case-beisterkamp.html"><span class="header-section-number">10</span> Case - Beisterkamp</a></li>
-<li><a class="" href="case-ziekteverzuim.html"><span class="header-section-number">11</span> Case - Ziekteverzuim</a></li>
+<li><a class="active" href="case-ziekteverzuim.html"><span class="header-section-number">11</span> Case - Ziekteverzuim</a></li>
 </ul>
 
         <div class="book-extra">
@@ -55,62 +55,60 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="case-fooien" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="case-ziekteverzuim" class="section level1" number="11">
 <h1>
-<span class="header-section-number">Hoofdstuk 7</span> Case - Fooien<a class="anchor" aria-label="anchor" href="#case-fooien"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 11</span> Case - Ziekteverzuim<a class="anchor" aria-label="anchor" href="#case-ziekteverzuim"><i class="fas fa-link"></i></a>
 </h1>
 <div class="figure" style="text-align: center">
-<span id="fig:fooi"></span>
-<img src="images/fooi.png" alt="Een fooi van een tevreden klant." width="40%"><p class="caption">
-Figuur 7.1: Een fooi van een tevreden klant.
+<span id="fig:ziekteverzuim"></span>
+<img src="images/ziekteverzuim.png" alt="Zo pakt Universiteit Wageningen het ziekteverzuim aan." width="70%"><p class="caption">
+Figuur 11.1: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
 </p>
 </div>
-<p>Een ober noteerde informatie over elke fooi die hij gedurende een periode van een paar maanden in een restaurant kreeg. Hij verzamelde de volgende variabelen:</p>
-<ol style="list-style-type: decimal">
-<li>
-<em>rekening</em>: totale kosten maaltijd (euro)</li>
-<li>
-<em>fooi</em>: grootte fooi (euros)</li>
-<li>
-<em>sexe</em>: geslacht persoon die rekening betaalde (m, v)</li>
-<li>
-<em>dag</em>: dag van de week (do, vr, za, zo)</li>
-<li>
-<em>tijdstip</em>: tijdstip van de dag (middag, avond)</li>
-<li>
-<em>groep</em>: aantal personen gezelschap</li>
-</ol>
+<p>Een bedrijf heeft een onderzoek naar het ziekteverzuim en tevredenheid uitgevoerd onder al haar 75 werknemers. Voor het tevredenheidsonderzoek zijn een twaalftal stellingen voorgelegd aan de medewerkers. Per stelling kon de medewerker een score op een 5-punts schaal geven. Die scores zijn opgeteld en weergegeven in de kolom Tevreden. De cijfers met betrekking tot het ziekteverzuim komen van de afdeling administratie.</p>
 <div class="data">
-<p>De data staan in het bestand <a href="data/fooien.xlsx">fooien.xlsx</a>. Bewaar de analyse in een Excelbestand met de naam “fooien-analyse.xlsx”.</p>
+<p>De data staan in het bestand <a href="data/ziekteverzuim.xlsx">ziekteverzuim.xlsx</a>. Bewaar de analyse in een Excelbestand met de naam “ziekteverzuim-analyse.xlsx”.
+In het werkblad “Data” staan de verzamelde gegevens en in het werkblad “Codeboek” vind je een toelichting op de variabelen
+Het bestand geeft informatie over geslacht, leeftijd, afdeling waar de werknemer actief is, burgerlijke staat, het aantal dienstjaren bij de onderneming, een functieschaal en een salarisindicatie.
+De laatste 4 kolommen geven informatie over ziekmelding en ziektedagen in 2012 en 2013.</p>
 </div>
 <p><strong>Onderzoeksvraag</strong></p>
-<p>De hoofdvraag van het onderzoek is: <em>Wat zijn de factoren die de grootte van de fooi beïnvloeden?</em></p>
+<p>De hoofdvraag van het onderzoek is: <em>Breng het ziekteverzuim in beeld en onderzoek of er een relatie is met de tevredenheid van de werknemer</em></p>
 <p><strong>Opdracht</strong></p>
 <p>Voer een exploratieve data analyse uit om de onderzoeksvraag te beantwoorden.</p>
 <p><strong>Suggesties voor het onderzoek</strong>:</p>
 <ul>
-<li>Bepaal de meetschaal van de 6 variabelen.</li>
-<li>Maak frequentietabellen.</li>
-<li>Maak een samenvattingsinfo via gegevensanalyse</li>
-<li>Maak een histogram voor de belangrijkste variabele <code>fooi</code>. De conclusies die je uit een histogram trekt hangen vaak af van de keuze voor de klassebreedte. Experimenteer daarom met verschillende bingroottes van een halve, een hele en twee euro. Kijk welke het meeste inzicht geeft.</li>
-<li>Ga na of een fooi vaak afgerond wordt op de dichtstbijzijnde 50ct of hele euro.</li>
-<li>Ga na of een fooi samen met de rekening tot een geheel bedrag wordt afgerond.</li>
-<li>Ga na of er een relatie is tussen de fooi en de hoogte van de rekening.</li>
-<li>Zijn er opvallende fooien gegeven?</li>
-<li>Wat is het gemiddelde percentage voor een fooi?</li>
-<li>Wat is het prijsniveau van het restaurant?</li>
-<li>Is er verschil tussen mannen en vrouwen bij het bepalen van de fooi?</li>
-<li>Is er verschil tussen middag en avond bij het bepalen van de fooi?</li>
-<li>Is er verschil tussen de dagen?</li>
+<li>Maak een beschrijving van de gegevens via samenvattingen en grafieken. Denk hierbij ook na over wat je aan moet met de vraagtekens in de tabel.</li>
+<li>Onderzoek de leeftijdsopbouw.</li>
+<li>Onderzoek of er samenhang is tussen de verschillende werknemerskenmerken en het ziekteverzuim. Bijvoorbeeld
+<ul>
+<li>tussen mannen en vrouwen</li>
+<li>tussen de afdelingen</li>
+<li>verband met het salaris</li>
+<li>verband met de tevredenheid</li>
 </ul>
-<!-- Inspiratiebron: boek "Interactive and Dynamic Graphics for Data Analysis", Cook & Swayne, pag. 4 -->
+</li>
+<li>Onderzoek of er samenhang is tussen andere variabelen.</li>
+<li>Vergelijk de salarissen van mannen en vrouwen bij deze onderneming, wat is je conclusie?</li>
+<li>Is het ziekteverzuim in 2013 significant hoger of lager dan in 2012, hoe stel je dat vast?</li>
+</ul>
 </div>
+
+
+
+
+
+
+
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="case-pinguins.html"><span class="header-section-number">6</span> Case - Pinguins</a></div>
-<div class="next"><a href="case-fctwente.html"><span class="header-section-number">8</span> Case - Marktwaarde Voetbalclub</a></div>
+<div class="prev"><a href="case-beisterkamp.html"><span class="header-section-number">10</span> Case - Beisterkamp</a></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#case-fooien"><span class="header-section-number">7</span> Case - Fooien</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#case-ziekteverzuim"><span class="header-section-number">11</span> Case - Ziekteverzuim</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

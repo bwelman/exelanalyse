@@ -31,5 +31,8 @@ rmd_files:
     - "case-pinguins.Rmd"
     - "case-fooien.Rmd"
     - "case-fctwente.Rmd"
+    - "case-betaaltermijn.Rmd"
+    - "case-beisterkamp.Rmd"
+    - "case-ziekteverzuim.Rmd"
 
 before_chapter_script: "_common.R"
