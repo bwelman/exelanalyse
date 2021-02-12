@@ -1,4 +1,4 @@
-book_filename: "excel-statistiek"
+book_filename: "excelanalyse"
 delete_merged_file: true
 language:
   label:
@@ -34,5 +34,8 @@ rmd_files:
     - "case-betaaltermijn.Rmd"
     - "case-beisterkamp.Rmd"
     - "case-ziekteverzuim.Rmd"
+    - "appendix-toolpak.Rmd"
+    - "appendix-aselect.Rmd"
+    - "referenties.Rmd"
 
 before_chapter_script: "_common.R"

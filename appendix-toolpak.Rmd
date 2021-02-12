@@ -1,0 +1,35 @@
+# (APPENDIX) Appendix {-}
+
+# Bijlage Gegevensanalyse {#bijlage-toolpak}
+
+Gegevensanalyse (Engels: Analysis Toolpak) is een hulpprogramma voor het uitvoeren van analyses. Het wordt standaard met Excel meegeleverd, maar is niet altijd geactiveerd. Om dit te controleren kies je tabblad Gegevens en kijk je in de groep Analyse of daar het onderdeel Gegevensanalyse staat. Zoniet, dan kun je het onderdeel als volgt activeren.
+
+1.  tabblad Bestand \> Opties \> categorie Invoegtoepassingen.
+2.  Selecteer in het vak Beheren de optie Excel-invoegtoepassingen en klik op Start.
+3.  Selecteer in het vak Invoegtoepassingen het selectievakje Analysis ToolPak en klik vervolgens op OK.
+
+-   Als Analysis ToolPak niet voorkomt in het vak Beschikbare invoegtoepassingen, klik je op Bladeren om naar de invoegtoepassing te zoeken.
+-   Als je het bericht krijgt dat Analysis ToolPak niet is geïnstalleerd op jouw computer, klik je op Ja om de invoegtoepassing te installeren.
+
+Om het hulpprogramma te gebruiken kies je tabblad Gegevens \> Gegevensanalyse (groep Analyse). Je kunt daarna kiezen uit de volgende functies (in alfabetische volgorde):
+
+-   Aselecte getallen
+-   Beschrijvende statistiek
+-   Correlatie
+-   Covariantie
+-   Exponentiële demping
+-   Fourier-analyseHistogram
+-   F-toets voor twee steekproeven
+-   Multifactoriële variantie-analyse met herhaling
+-   Multifactoriële variantie-analyse zonder herhaling
+-   Rang en percentiel
+-   Regressie
+-   Steekproef
+-   T-toets: twee gepaarde steekproeven met gelijke varianties
+-   T-toets: twee gepaarde steekproeven voor gemiddelden
+-   T-toets: twee steekproeven met ongelijke varianties
+-   Unifactoriële variantie-analyse
+-   Z-toets: twee steekproeven voor gemiddelden
+-   Zwevend gemiddelde
+
+Een aantal van deze functies zullen in de desbetreffende hoofdstukken verder toegelicht worden.

@@ -1,0 +1,12 @@
+`r if (knitr::is_html_output()) '
+# Referenties {.unnumbered}
+'`
+
+**Excel**
+
++ [Leer Excel 365](https://leerexcel.netlify.app/), een online studieboek voor het werken met Excel.
+
+**Statistiek**
+
++ [Online cursus statistiek Universiteit van Utrecht](https://www.uu.nl/onderwijs/open-en-gepersonaliseerd-statistiekonderwijs/lesmateriaal)
+

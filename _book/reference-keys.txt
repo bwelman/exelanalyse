@@ -52,6 +52,15 @@ fig:fctwente-08
 fig:betaaltermijn
 fig:vrachtwagen
 fig:ziekteverzuim
+fig:aselect
+fig:aselecttussen
+fig:aselecttussen-euro
+fig:aselecttussen-5voud
+fig:aselecttussen-datums
+fig:aselectmatrix
+fig:aselect-toolpak-discreet
+fig:aselect-toolpak-uniform
+fig:aselect-toolpak-resultaat
 data
 excel-tabel
 indeling
@@ -101,3 +110,7 @@ case-fctwente
 case-betaaltermijn
 case-beisterkamp
 case-ziekteverzuim
+bijlage-toolpak
+bijlage-aselect
+aselect-functies
+gegevensanalyse
