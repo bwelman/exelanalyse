@@ -43,6 +43,8 @@ fig:ecdata-regressie
 fig:ecdata-samenvatting
 fig:ecdata-coefficienten
 fig:ecdata-residu
+fig:pinguins
+fig:fooi
 data
 excel-tabel
 indeling
@@ -86,3 +88,5 @@ sim2
 linreg-meervoudig
 voorspellen
 opg-linreg
+case-pinguins
+case-fooien

@@ -28,5 +28,7 @@ rmd_files:
     - "grafieken.Rmd"
     - "eda.Rmd"
     - "linregressie.Rmd"
+    - "case-pinguins.Rmd"
+    - "case-fooien.Rmd"
 
 before_chapter_script: "_common.R"
