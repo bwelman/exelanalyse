@@ -1,0 +1,41 @@
+---
+title: "Excel Data Analyse"
+author: "Ben Welman"
+date: '`r format(Sys.time(), "%d %B %Y")`'
+site: bookdown::bookdown_site
+documentclass: book
+description: "Data analyse met Excel."
+monofont: "Source Code Pro"
+---
+
+:::{.welcome}
+
+# Welkom {.unnumbered}
+
+Dit is de online versie van het studieboek "Excel Data Analyse". Je leert hoe je met Excel datasets kunt verkennen, onderzoeken en samenvatten.
+
+Dit is geen cursus Excel. Er wordt vanuit gegaan dat je goed met Excel kunt werken. Het importeren van gegevens in Excel en het maken van draaitabellen en grafieken zijn vaardigheden die je moet beheersen.
+
+Dit is ook geen cursus statistiek. Weliswaar worden statistische begrippen bij de onderdelen toegelicht, maar voor een verdere verdieping zul je bestaande studieboeken moeten raadplegen.
+
+Bij het onderdeel Referenties tref je verwijzingen aan voor verdere studie.
+
+::: {.underconstruction}
+Dit studieboek is nog volop in ontwikkeling en er vinden voortdurend aanvullingen en wijzigingen plaats.
+:::
+
+## Licentie {.unnumbered}
+
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl"><img alt="Creative Commons-Licentie" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Dit werk valt onder een <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl">Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen 4.0 Internationaal-licentie</a>.
+
+## Over de auteur {.unnumbered}
+
+<img src="images/authors/benw2.png" alt="Ben Welman" width="150" height="150" align="right" style="margin: 0 1em 0 1em"/>
+
+Ik heb Chemische Technologie gestudeerd aan de THT, de huidige [Universiteit Twente](https://www.utwente.nl/).
+Na eerst een aantal jaren scheikunde en wiskunde te hebben gegeven op middelbare scholen ben ik als docent informatica en statistiek werken bij de opleiding Commercieel Technische Bedrijfskunde van  de Hogeschool Enschede, nu [Saxion Hogescholen](https://www.saxion.nl/). van daaruit ben ik intern overgestapt naar MeetingPoint dat zich voornamelijk bezighield met het ontwikkelen en ondersteunen van e-learning. In 1993 heb ik [Softwijs](https://softwijs.nl/) opgericht waarmee ik eind 2018 gestopt.
+
+Na mijn pensionering heb ik tijd voor mijn hobby's: biljarten, bridgen, bierbrouwen, broodbakken en reizen (vooral met de camper en de fiets mee). Daarnaast hou ik nog wat tijd over om me te verdiepen in data analyse en dan vooral met [R](https://en.wikipedia.org/wiki/R_(programming_language)).
+
+Ben Welman <br>[Leer Excel](https://leerexcel.netlify.app/), [Leer Access](https://leeraccess.netlify.app/)<br>[Brouw je bier](https://brouwjebier.nu/)<br>
+:::

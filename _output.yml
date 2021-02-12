@@ -1,0 +1,7 @@
+bookdown::bs4_book:
+  css: [css/textbook.css]
+  theme:
+    primary: "#569BBD"
+    fg: "#2b2121"
+    bg: "#FFFAF0"
+    font-family-base: "Source Sans Pro"
