@@ -23,5 +23,6 @@ language:
 rmd_files:
     - "index.Rmd"
     - "voorwoord.Rmd"
+    - "data.Rmd"
 
 before_chapter_script: "_common.R"

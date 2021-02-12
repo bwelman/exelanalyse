@@ -8,6 +8,7 @@ suppressMessages(library(tidyverse))
 suppressMessages(library(kableExtra))
 suppressMessages(library(patchwork))
 suppressMessages(library(scales))
+suppressMessages(library(DiagrammeR))
 
 
 # knitr chunk options ----------------------------------------------------------

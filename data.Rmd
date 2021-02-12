@@ -1,0 +1,92 @@
+# Data {#data}
+
+:::{.chapterintro}
+Data analisten proberen antwoorden op vragen te vinden met behulp door statistische methodes toe te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd.
+Statistiek is de studie van hoe gegevens het beste kunnen worden verzameld, geanalyseerd en daaruit conclusies kunnen worden getrokken.
+In dit eerste hoofdstuk ligt de nadruk op eigenschappen van data, variabelen en de manier waarop data in Excel werkbladen wordt aangeboden.
+:::
+
+## Excel tabel
+
+Een *dataset* geheten, bestaat uit een verzameling waarnemingen of meetgegevens van variabelen. Zo'n dataset zie je in een Excel werkblad vaak in een tabelvorm. De kolommen in de tabel zijn de variabelen en elke rij bevat een waarneming van de (kolom)variabele.
+
+```{r demotabel}
+demotabel <- data.frame(
+  voornaam = c("Chris", "Mari", "Otto", "Peter", "Vicky"), 
+  geslacht = c("m", "v", "m", "m", "v"),
+  haarkleur = c("bruin", "blond", "blond", "zwart", "rood"), 
+  lengte = c("groot", "groot", "normaal", "normaal", "klein"),
+  gewicht = c(185, 176, 181, 178, 164), 
+  iq = c(95, 104, 98, 108, 112))
+
+demotabel %>% 
+  kbl(caption = "Voorbeeldtabel met kenmerken van een aantal personen") %>% 
+  kable_styling()
+```
+
+:::{.guidedpractice}
+Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:demotabel)?
+Controleer je antwoord in de voetnoot [^data-01]
+:::
+
+[^data-01]: Elke kolom is een variabele, dus 6 variabelen: voornaam, geslacht, haarkleur, lengte, gewicht en iq. En elke rij is een waarneming, dus 5 waarnemingen.
+
+## Indeling
+
+Variabelen worden meestal in vier meetniveaus (schalen) ingedeeld:
+
+```{r meetniveaus, echo=FALSE, fig.cap="Meetniveaus van variabelen", echo=FALSE}
+grViz("
+  digraph stat1 {
+    graph[rankdir = LR]
+    node[shape = oval, fontname = Arial]
+    V [label = 'Variabele']
+    node[shape = box, width = 1.2, fontsize = 12]
+    CA [label = 'Categorie']
+    NU [label = 'Numeriek']
+    node[shape = box, width = 0.8, fontsize = 10]
+    NO [label = 'Nominaal']
+    OR [label = 'Ordinaal']
+    IN [label = 'Interval']
+    RA [label = 'Ratio']
+
+    {rank=same CA NU}
+    V -> {CA,NU}
+    CA -> {NO,OR}
+    NU -> {IN,RA}
+  }
+")
+```
+
++ **Categorie variabelen** zijn variabelen waarvan de waarden kenmerken of categorieën zijn. Met deze variabelen kun je geen berekeningen uitvoeren, zoals het berekenen van een gemiddelde. Ze worden onderverdeeld in nominaal en ordinaal.
+  - **Nominaal**: variabelen met namen als waarde. Nominaal wil zeggen dat de waarden van een variabelen slechts namen zijn (naam is in het Latijn *nomen*), zonder rangorde of logische volgorde. Voorbeelden: nationaliteit, oogkleur, studierichting, beroep, godsdienst, geslacht
+  - **Ordinaal**: de waarden zijn kwalitatie, maar hebben een logische volgorde, je kunt ze sorteren. Je kunt er geen rekenkundige bewerkingen mee uitvoeren. Voorbeelden: beoordeling (1=zeer slecht, 2=slecht, 3=matig, 4=goed, 5=zeer goed), medaille (goud, zilver, brons), T-shirt maten (S, M, L, XL).
+
++ **Numerieke variabelen** zijn variabelen waarvan de waarden getallen zijn. Ze worden onderverdeeld in interval en ratio.
+  - **Interval**: de gegevens hebben geen natuurlijk nulpunt, de keuze van een nulpunt is arbitrair. Je kunt de waarde op volgorde zetten. Het verschil tussen de waarden heeft wel betekenis. Voorbeelden: kloktijd, Celcius temperatuur. Het verschil tussen 10°C en 15°C even groot als tussen 20°C en 25°C, maar je kunt niet zeggen dat 20°C twee keer zo warm is als 10°C. Sommige rekenkundige bewerkingen kun je wel uitvoeren zoals optellen, aftrekken en gemiddelde bepalen.
+  - **Ratio**: de gegevens hebben een natuurlijk nulpunt, je kunt uitspraken doen over verhoudingen. Voorbeelden: inkomen, vermogen, gewicht. Voor statistische doeleinden is er geen verschil tussen ratio- en intervalgegevens.
+
+Afhankelijk van het type getal kun je *Numerieke variabelen* ook nog als volgt indelen:
+
++ **Discrete variabelen**: numerieke variabelen waarvan de waarden altijd gehele getallen zijn. Dit is meestal het geval bij het uitvoeren van tellingen. Bijvoorbeeld het aantal kinderen van een gezin.
++ **Continue variabelen**: numerieke variabelen die elke waarde kunnen aannemen. Dit is meestal het geval bij het uitvoeren van metingen. Bijvoorbeeld de lengte.
+
+**Afhankelijke(verklaarde) en onafhankelijke (verklarende) variabelen**
+
+In een onderzoek wordt vaak geprobeerd om met de ene variabele een verklaring te vinden of een voorspelling te doen voor de andere variabele.
+
+$Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele$
+
+:::{.guidedpractice}
+Geef voor elke variabele in tabel \@ref(tab:demotabel) aan tot welke indeling (meetschaal) deze variabele behoort.[^data-02]
+:::
+
+[^data-02]: *Nominaal*: voornaam, geslacht en haarkleur. *Ordinaal*: lengte. *Ratio*: gewicht, iq.
+
+## Opgaven {#opg-data}
+
+::: {.sectionexercise}
+1. Bij een onderzoek wordt aan personen gevraagd om bij te houden hoeveel tekstberichten ze per dag versturen en hoeveel tijd ze hieraan besteden. Welke variabelen heb je hier en zijn deze discreet of continu?
+
+1. En dit moet de tweede opgave worden.
+:::
