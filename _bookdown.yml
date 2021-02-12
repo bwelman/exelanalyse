@@ -25,5 +25,6 @@ rmd_files:
     - "voorwoord.Rmd"
     - "data.Rmd"
     - "beschrijvend.Rmd"
+    - "grafieken.Rmd"
 
 before_chapter_script: "_common.R"

@@ -1,0 +1,109 @@
+# Grafieken {#grafieken}
+
+:::{.chapterintro}
+Grafieken zijn een onmisbaar hulpmiddel bij de analyse van gegevens. In dit hoofdstuk worden de meest gebruikte grafieksoorten besproken.
+:::
+
+## Histogram {#graf-histogram}
+
+Een histogram is een grafische weergave van een frequentieverdeling in de vorm van een kolomdiagram. Een histogram kan antwoord geven op de volgende vragen:
+
+1. Van wat voor soort verdeling zijn de gegevens afkomstig?
+1. Waar bevinden de gegevens zich?
+1. Hoe verspreid zijn de gegevens?
+1. Zijn de gegevens symmetrisch of scheef1Zijn er uitschieters in de gegevens?
+
+Alhoewel je handmatig zo'n histogram kunt maken wordt in deze tutorial het automatische gereedschap van Exel gebruikt. Hiervoor zijn twee opties beschikbaar, via Gegevensanalyse (Analysis Toolpak) en via grafiektype histogram.
+
+### Via Gegevensanalyse (Analysis Toolpak) {.unnumbered}
+
+Ook hier moet je net als bij de functie INTERVAL (\@ref(intervalfunctie)) een bereik voor de grenzen van de intervallen maken.
+
+Kies *tab Gegevens > Gegevensanalyse > Histogram*. Specificeer het invoerbereik en het verzamelbereik, alsmede een cel voor het begin van de uitvoer. Wanneer je een histogram wilt kun je in dit scherm ook aangeven dat er een grafiek gemaakt moet worden
+
+```{r freq-gegevensanalyse-instelling, fig.cap="Specificaties voor frequentietabel en histogram."}
+knitr::include_graphics("images/freq-gegevensanalyse-instelling.png", dpi = NA)
+```
+
+De grafiek is een gegroepeerde kolomdiagram die je desgewenst nog kunt aanpassen. Voor een echt histogram moeten de kolommen aansluitend zijn zonder lege ruimte ertussen. En de labels op de X-as geven hier alleen de bovengrens en niet het interval.
+
+```{r freq-gegevensanalyse-resultaat, fig.cap="De frequentietabel met histogram."}
+knitr::include_graphics("images/freq-gegevensanalyse-resultaat.png", dpi = NA)
+```
+
+Een nadeel is wel dat wanneer de brondata wijzigt er geen herberekening plaatsvindt. De frequentieverdeling en histogram zijn statisch.
+
+### Via grafiektype histogram {.unnumbered}
+
+De nieuwere Excelversies hebben de mogelijkheid tot het invoegen van een *grafiektype Histogram*. Hiervoor heb je in principe alleen maar de brondata nodig. Bij de verdeling in intervallen (bins) bepaalt Excel zelf automatisch deze bins. Maar je kunt via het eigenschappenvenster ook de binbreedte of het aantal bins opgeven. De bijbehorende intervalgrenzen worden dan door Excel berekend. Wanneer je ook nog de grenswaarden zelf wilt bepalen, dan moet je daarvoor een aparte kolom in het werkblad opnemen.
+
+De werkwijze is als volgt. Selecteer een getal in het gegevensgebied. Kies dan *tab Invoegen > Aanbevolen grafieken > Alle grafieken > Histogram*.
+
+```{r freq-grafiektype-histogram, fig.cap="Een histogram via het invoegen van een grafiek."}
+knitr::include_graphics("images/freq-grafiektype-histogram.png", dpi = NA)
+```
+
+In Excel wordt een histogram gewoonlijk als een kolomdiagram weergegeven met labels onder het midden van de kolom. En de kolommen worden standaard aaneensluitend getekend.
+
+:::{ .tip}
+Wanneer je het aantal bins of de Bin-breedte wilt veranderen, selecteer dan de horizontale as, dan Rechter muisklik > As opmaken. Maak het eigenschappenvenster breed genoeg, anders zijn niet alle invulvelden zichtbaar.
+:::
+
+## Boxplot {#graf-boxplot}
+
+Een boxplot grafiek laat zien hoe de gegevens over de kwartielen verdeeld zijn. De boxplot laat eenzelfde soort informatie zien als een histogram, maar dan met minder details. Bij een boxplot worden de gegevens verdeeld in 4 kwartielen, elk met 25% van de waarnemingen. Om deze te tekenen heb je de waarden van de *5-getallensamenvatting* nodig. Er zijn wat variaties die ook het gemiddelde aangeven en de uitbijters afzonderlijk weergeven.
+
+```{r boxplot, fig.cap="Schematische weergave van een boxplot"}
+knitr::include_graphics("images/boxplot.png", dpi = NA)
+```
+
+De afstand tussen de 25% en 75% percentielen heet de *interkwartielafstand*.
+
+In een boxplot bevat de lengte van de kwartielen ook informatie. In het voorbeeld is het 2e kwartiel smaller dan het 3e kwartiel, de gegevens in het 2e kwartiel hebben dus een kleiner gegevensbereik dan die in het 3e kwartiel.
+
+Vaak kom je ook iets anders getekende boxplots tegen waarbij de lijntjes aan de uiteinden niet het echte minimum en maximum zijn. De waarnemingen die verder dan 1,5 keer de interkwartielafstand links van Q1 of rechts van Q3 liggen worden daarbij als *uitschieters* beschouwd worden en als afzonderlijke punten in de boxplox worden weergegeven. Een aantal statistische softwarepakketten (SPSS) doet dit zo, evenals Excel. Soms wordt ook het gemiddelde in de boxplot getekend. En een boxplot kan zowel horizontaal als vertikaal getekend worden.
+
+Je kunt dit grafiektype voor 1 variabele gebruiken, maar de kracht ervan komt pas echt naar voren wanneer je meerdere groepen met elkaar wilt vergelijken.
+
+### Voorbeeld marktonderzoek
+
+Bij een marktonderzoek zijn 30 personen gevraagd om drie merken tablets te evalueren. De antwoorden zijn via een vragenformulier verzameld. Deze 30 personen zijn verdeeld in drie groepen van elk 10 personen. De eerste groep heeft merk A beoordeeld, de tweede groep merk B en de derde groep merk C. Het totaal aantal punten voor elke beoordeling en een bijbehorende boxplot zijn in figuur \@ref(fig:boxplot-tablets) te zien.
+
+```{r boxplot-tablets, fig.cap="Dataset met Boxplots voor de drie groepen."}
+knitr::include_graphics("images/boxplot-tablets.png", dpi = NA)
+```
+
+*interpretatie*
+
+Via de boxplots kun je zien dat de scores voor merk C wat hoger lijken uit te vallen dan voor de andere twee. En die voor merk B lijken iets lager uit te vallen. De verdeling bij merk A is het meest symmetrisch, tenminste in het gebied tussen Q1 en Q3. De verdelingen bij de merken B en C zijn minder symmetrisch. Een andere beoordelingsmaatstaf voor symmetrie is hoe dicht het gemiddelde (met *X* aangegeven) en de de mediaan (de horizontale streep in de box) bij elkaar liggen. Merk B heeft een uitschieter naar boven (de rode punt in de figuur).
+
+*Uitwerking in Excel*
+
+In Excel heet dit grafiektype **Box- en Whisker**. De snorharen (whiskers) strekken zich uit vanaf de bovenkant van de doos (box) tot de grootste waarneming die kleiner is dan of gelijk is aan 1,5 keer het interkwartielafstand en omlaag vanaf de onderkant van de doos naar de kleinste waarneming die groter is dan 1,5 keer de interkwartielafstand. Waarnemingen buiten dit gebied worden beschouwd als uitschieters (uitbijters geheten in Excel) en worden weergegeven door punten.
+
+Voor het maken van dit grafiektype zie [Een Box- en Whisker-grafiek maken](https://support.microsoft.com/nl-nl/office/een-box-en-whisker-grafiek-maken-62f4219f-db4b-4754-aca8-4743f6190f0d?ui=nl-nl&rs=nl-nl&ad=nl)
+
+## Opgaven {#opg-grafieken}
+
+::: {.sectionexercise}
+1. Maak in een Excel werkblad de boxplot uit figuur \@ref(fig:boxplot-tablets).
+
+1. Een steekproef van 20 leden van een golfclub naar hun lengte (in cm) heeft het volgende resultaat opgeleverd: 152,173,175,163,173,170,173,175,196,175,175,183,175,165,165,173,163,180,188,188
+
+    a. Maak een samenvattingsinfo van de belangrijkste statistische kenmerken via Gegevensanalyse.
+    b. Maak een boxplot en een histogram en beoordeel aan de hand hiervan of de data een normale verdeling volgen.
+    c. Maak een QQ plot en beoordeel opnieuw de normaliteitstest.
+
+1. In het bestand [studietijd.xlsx](data/studietijd.xlsx) staan het aantal studie-uren die een steekproef van vrouwelijke en mannelijke studenten besteed hebben aan een bepaald vak.
+
+    a. Bepaal de mediaan voor beide groepen.
+    b. Maak een boxplot waarin de studie-uren van beide groepen met elkaar vergeleken worden.
+    c. Becommentarieer de verschillen tussen de twee groepen.
+
+1. Van twee groepen van elk 50 personen is de lengte (in cm) gemeten. De resultaten zijn in onderstaande boxplot weergegeven. Bestudeer deze boxplot en geef aan wat je opvalt, welke verschillen er te zien zijn. Zijn er conclusies te trekken?
+
+```{r groepslengtes, fig.cap="Lengtes (cm) van twee groepen van elk 50 personen."}
+knitr::include_graphics("images/groepslengtes.png", dpi = NA)
+```
+
+:::

@@ -7,6 +7,12 @@ fig:kurtosis
 fig:freq-interval
 fig:freq-draaitabel-velden
 fig:freq-draaitabel-resultaat
+fig:freq-gegevensanalyse-instelling
+fig:freq-gegevensanalyse-resultaat
+fig:freq-grafiektype-histogram
+fig:boxplot
+fig:boxplot-tablets
+fig:groepslengtes
 data
 excel-tabel
 indeling
@@ -23,3 +29,8 @@ frequentieverdelingen
 intervalfunctie
 frequenties-via-draaitabel
 opg-beschrijvend
+grafieken
+graf-histogram
+graf-boxplot
+voorbeeld-marktonderzoek
+opg-grafieken
