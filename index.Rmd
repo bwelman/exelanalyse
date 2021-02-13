@@ -31,9 +31,9 @@ Dit studieboek is nog volop in ontwikkeling en er vinden voortdurend aanvullinge
 ## Over de auteur {.unnumbered}
 
 <img src="images/authors/benw2.png" class="cover" width="150" height="150"/>Ik heb Chemische Technologie gestudeerd aan de THT, de huidige [Universiteit Twente](https://www.utwente.nl/).
-Na eerst een aantal jaren scheikunde en wiskunde te hebben gegeven op middelbare scholen ben ik als docent informatica en statistiek werken bij de opleiding Commercieel Technische Bedrijfskunde van  de Hogeschool Enschede, nu [Saxion Hogescholen](https://www.saxion.nl/). van daaruit ben ik intern overgestapt naar MeetingPoint dat zich voornamelijk bezighield met het ontwikkelen en ondersteunen van e-learning. In 1993 heb ik [Softwijs](https://softwijs.nl/) opgericht waarmee ik eind 2018 gestopt.
+Na eerst een aantal jaren scheikunde en wiskunde te hebben gegeven op middelbare scholen ben ik als docent informatica en statistiek gaan werken bij de opleiding Commercieel Technische Bedrijfskunde van  de Hogeschool Enschede, nu [Saxion Hogescholen](https://www.saxion.nl/). Van daaruit intern overgestapt naar MeetingPoint dat zich voornamelijk bezighield met het ontwikkelen en ondersteunen van e-learning. In 1993 heb ik [Softwijs](https://softwijs.nl/) opgericht waarmee ik eind 2018 gestopt.
 
-Na mijn pensionering heb ik tijd voor mijn hobby's: biljarten, bridgen, bierbrouwen, broodbakken en reizen (vooral met de camper en de fiets mee). Daarnaast hou ik nog wat tijd over om me te verdiepen in data analyse en dan vooral met [R](https://en.wikipedia.org/wiki/R_(programming_language)).
+Na mijn pensionering heb ik tijd voor mijn hobby's: biljarten, bridgen, bierbrouwen, broodbakken en reizen (vooral met de camper en de fiets mee). Daarnaast hou ik naast het maken van studieboeken nog wat tijd over om me te verdiepen in data analyse en dan vooral met [R](https://en.wikipedia.org/wiki/R_(programming_language)) en wat minder met [Python](https://www.python.org/).
 
 Ben Welman <br>[Leer Excel](https://leerexcel.netlify.app/), [Leer Access](https://leeraccess.netlify.app/)<br>[Brouw je bier](https://brouwjebier.nu/)<br>
 :::
