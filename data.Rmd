@@ -38,7 +38,7 @@ Variabelen worden meestal in vier meetniveaus (schalen) ingedeeld:
 ```{r meetniveaus, echo=FALSE, fig.cap="Meetniveaus van variabelen", echo=FALSE}
 grViz("
   digraph stat1 {
-    graph[rankdir = LR]
+    graph[rankdir = LR, bgcolor=transparent]
     node[shape = oval, fontname = Arial]
     V [label = 'Variabele']
     node[shape = box, width = 1.2, fontsize = 12]
