@@ -1,14 +1,14 @@
 # Data {#data}
 
 :::{.chapterintro}
-Data analisten proberen antwoorden op vragen te vinden met behulp door statistische methodes toe te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd.
-Statistiek is de studie van hoe gegevens het beste kunnen worden verzameld, geanalyseerd en daaruit conclusies kunnen worden getrokken.
-In dit eerste hoofdstuk ligt de nadruk op eigenschappen van data, variabelen en de manier waarop data in Excel werkbladen wordt aangeboden.
+Data analisten proberen antwoorden op vragen te vinden door statistische methodes toe te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd.
+Statistiek is de studie van hoe gegevens het beste kunnen worden verzameld, geanalyseerd en hoe daaruit conclusies kunnen worden getrokken.
+In dit hoofdstuk ligt de nadruk op eigenschappen van data, variabelen en de manier waarop data in Excel werkbladen wordt aangeboden.
 :::
 
 ## Excel tabel
 
-Een *dataset* geheten, bestaat uit een verzameling waarnemingen of meetgegevens van variabelen. Zo'n dataset zie je in een Excel werkblad vaak in een tabelvorm. De kolommen in de tabel zijn de variabelen en elke rij bevat een waarneming van de (kolom)variabele.
+Een **dataset** bestaat uit een verzameling waarnemingen of meetgegevens van variabelen. Zo'n dataset zie je in een Excel werkblad vaak in een tabelvorm. De kolommen in de tabel zijn de variabelen en elke rij bevat een waarneming van de (kolom)variabele.
 
 ```{r demotabel}
 demotabel <- data.frame(
@@ -69,11 +69,11 @@ grViz("
 Afhankelijk van het type getal kun je *Numerieke variabelen* ook nog als volgt indelen:
 
 + **Discrete variabelen**: numerieke variabelen waarvan de waarden altijd gehele getallen zijn. Dit is meestal het geval bij het uitvoeren van tellingen. Bijvoorbeeld het aantal kinderen van een gezin.
-+ **Continue variabelen**: numerieke variabelen die elke waarde kunnen aannemen. Dit is meestal het geval bij het uitvoeren van metingen. Bijvoorbeeld de lengte.
++ **Continue variabelen**: numerieke variabelen die elke waarde kunnen aannemen. Dit is meestal het geval bij het uitvoeren van metingen. Bijvoorbeeld de lengte van een persoon.
 
 **Afhankelijke(verklaarde) en onafhankelijke (verklarende) variabelen**
 
-In een onderzoek wordt vaak geprobeerd om met de ene variabele een verklaring te vinden of een voorspelling te doen voor de andere variabele.
+In een onderzoek wordt vaak geprobeerd om met de ene variabele een verklaring te vinden of een voorspelling te doen voor een andere variabele.
 
 $Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele$
 
@@ -88,5 +88,4 @@ Geef voor elke variabele in tabel \@ref(tab:demotabel) aan tot welke indeling (m
 ::: {.sectionexercise}
 1. Bij een onderzoek wordt aan personen gevraagd om bij te houden hoeveel tekstberichten ze per dag versturen en hoeveel tijd ze hieraan besteden. Welke variabelen heb je hier en zijn deze discreet of continu?
 
-1. En dit moet de tweede opgave worden.
 :::
