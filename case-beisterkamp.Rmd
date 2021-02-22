@@ -1,7 +1,7 @@
 # Case - Beisterkamp {#case-beisterkamp}
 
 ```{r vrachtwagen, echo=FALSE, fig.show='hold', out.width="30%", fig.cap="Een van de vrachtwagens van Beisterkamp"}
-knitr::include_graphics("images/beisterkamp.png")
+knitr::include_graphics("images/case-beisterkamp/beisterkamp.png")
 ```
 
 Beisterkamp Transport BV is een middelgrote transportonderneming gevestigd in Oldenzaal. Het bedrijf heeft een kleine vloot van 10 vrachtwagens en heeft evenveel chauffeurs in dienst. De concurrentie in de transportwereld is groot en de marges per kilometer zijn klein. Belangrijke kostenposten voor het bedrijf zijn het dieselverbruik en de uren van de chauffeurs. De directie wil weten of er op deze twee posten geld bespaard kan worden. Jij bent net begonnen als junior-controller bij Beisterkamp en de directie heeft jou gevraagd om met adviezen te komen.

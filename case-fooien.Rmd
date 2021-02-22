@@ -1,7 +1,7 @@
 # Case - Fooien {#case-fooien}
 
 ```{r fooi, out.width="40%", fig.cap="Een fooi van een tevreden klant."}
-knitr::include_graphics("images/fooi.png")
+knitr::include_graphics("images/case-fooien/fooi.png")
 ```
 
 Een ober noteerde informatie over elke fooi die hij gedurende een periode van een paar maanden in een restaurant kreeg. Hij verzamelde de volgende variabelen:

@@ -72,13 +72,13 @@ Bij lineaire regressie probeer je de beste waarden voor $\beta_0$ en $\beta_1$ t
 Als voorbeeld wordt een gesimuleerde dataset met 15 waarnemingen voor $x$ en $y$ gebruikt om een aantal achtergronden uit te leggen.
 
 ```{r sim1-data, fig.cap="Dataset met 15 waarnemingen x en y."}
-knitr::include_graphics("images/sim1-data.png")
+knitr::include_graphics("images/linregressie/sim1-data.png")
 ```
 
 In figuur \@ref(fig:sim1-basis) kun je zien hoe ze aan elkaar gerelateerd zijn.
 
 ```{r sim1-basis, fig.cap="Spreidingsdiagram voor de 15 waarnemingen."}
-knitr::include_graphics("images/sim1-basis.png")
+knitr::include_graphics("images/linregressie/sim1-basis.png")
 ```
 
 De gegevens laten een sterk lineair patroon zien en lenen zich ervoor om het patroon in een lineair model vast te leggen. Wanneer je de waarden voor $\beta_0$ en $\beta_1$ hebt, kun je via de vergelijking van de regressielijn voor elke waarde van $x$ een bijbehorende waarde van $y$ berekenen. Deze voorspelde y-waarden worden ook wel de geschatte waarden genoemd.
@@ -88,7 +88,7 @@ De kunst is nu om zodanige waarden voor $\beta_0$ en $\beta_1$ te vinden, zodat 
 In figuur \@ref(fig:sim1-regressie) is een regressielijn (rood) getekend met daarnaast vertikale afstanden (blauwe lijnstukjes) tussen de echte y-waarde (de zwarte punt) en de voorspelde y-waarde (het punt op de rode lijn.
 
 ```{r sim1-regressie, fig.cap="Spreidingsdiagram nu met regressielijn en afstandslijntjes."}
-knitr::include_graphics("images/sim1-regressie.png")
+knitr::include_graphics("images/linregressie/sim1-regressie.png")
 ```
 
 Voor elk punt is afstand = $y - y_{voorspeld}$. Dit verschil wordt ook wel **residu** genoemd. En de beste lijn is de lijn waarvoor de som van de kwadratische afstanden zo klein mogelijk is. Deze methode heet ook wel de **kleinste kwadraten methode**. Hoe je dit precies berekend is in dit kader niet van belang. Excel gebruikt deze methode ook.
@@ -111,7 +111,7 @@ Verdere analyses, zoals het berekenen van de residuen, zul je zelf moeten samens
 Bij het maken van een spreidingsdiagram kun je bij de opmaak aangeven dat de vergelijking van de lijn in de grafiek moet worden weergegeven. Je krijgt dan de gevonden waarden voor $\beta_0$ en $\beta_1$ te zien. Voor visualisatie is dit wel nuttig, maar verder kun je hier niets mee doen.
 
 ```{r sim1-spreiding, fig.cap="Spreidingsdiagram in Excel en vergelijking lijn."}
-knitr::include_graphics("images/sim1-spreiding.png")
+knitr::include_graphics("images/linregressie/sim1-spreiding.png")
 ```
 
 ### Methode - Gegevensanalyse
@@ -119,7 +119,7 @@ knitr::include_graphics("images/sim1-spreiding.png")
 Met deze methode kun je een uitvoerige analyse maken. Kies *Gegevens > Gegevensanalyse > Regressie*. Je krijgt dan het volgende dialoogscherm:
 
 ```{r toolpak-regressie, fig.cap="Dialoogscherm regressie."}
-knitr::include_graphics("images/toolpak-regressie.png")
+knitr::include_graphics("images/linregressie/toolpak-regressie.png")
 ```
 
 + *Invoerbereik y* - Specificeer het gebied voor de y-waarden, inclusief eventuele koptekst.
@@ -139,7 +139,7 @@ De uitvoer bestaat uit een aantal onderdelen. De belangrijkste daarvan zullen hi
 **Samenvatting regressie**
 
 ```{r sim1-samenvatting, echo=FALSE, fig.cap="Samenvatting regressie."}
-knitr::include_graphics("images/sim1-samenvatting.png")
+knitr::include_graphics("images/linregressie/sim1-samenvatting.png")
 ```
 
 + *R-kwadraat* - Een belangrijke waarde welke aangeeft hoeveel van de variantie in de afhankelijke variabele verklaard wordt door de variantie in de onafhankelijke variabele(n). Dus in feite hoe goed de regressielijn bij de werkelijke data past. De waarde ligt tussen 0 1n 1. Bij een waarde van 0,7 (70%) heb je al een redelijk goede waarde.
@@ -148,7 +148,7 @@ knitr::include_graphics("images/sim1-samenvatting.png")
 **Variantie-analyse (ANOVA)**
 
 ```{r sim1-anova, fig.cap="Variantie-analyse regressie."}
-knitr::include_graphics("images/sim1-anova.png")
+knitr::include_graphics("images/linregressie/sim1-anova.png")
 ```
 
 Bij eenvoudige lineaire regressie is dit niet zo van belang. De waarde van *Significantie F* moet wel groter dan 0,05 zijn, zoniet onderzoek dan of een andere onafhankelijke variabele geschikter is.
@@ -156,7 +156,7 @@ Bij eenvoudige lineaire regressie is dit niet zo van belang. De waarde van *Sign
 **Regressie-coëfficiënten**
 
 ```{r sim1-coefficienten, fig.cap="Coéfficiënten regressielijn."}
-knitr::include_graphics("images/sim1-coefficienten.png")
+knitr::include_graphics("images/linregressie/sim1-coefficienten.png")
 ```
 
 Dit is wel het belangrijkste deel in de uitvoer. Je ziet de reeds eerder genoemde waarden van de coëfficiënten van de regressievergelijking: $y = 4,7096 + 2,0549 * x$.
@@ -168,8 +168,8 @@ De residuen zijn het verschil tussen de werkelijke waarde en de voorspelde waard
 Gelukkig hoef je dit niet allemaal handmatig uit te rekenen. *Storingen* is de term die Excel gebruikt voor *Residuen*. Wanneer je in het dialoogscherm Gegevensanalyse hebt aangegeven dat "Storingen" en "Grafiek voor storingen" moeten worden weergegeven  dan wordt het volgende in de uitvoer getoond. 
 
 ```{r sim1-residu, out.width="40%", fig.cap="Residu Analyse."}
-knitr::include_graphics("images/sim1-residuen.png")
-knitr::include_graphics("images/sim1-residuplot.png")
+knitr::include_graphics("images/linregressie/sim1-residuen.png")
+knitr::include_graphics("images/linregressie/sim1-residuplot.png")
 ```
 
 In de grafiek in figuur \@ref(fig:sim1-residu) zijn de residuen (storingen) uitgezet tegen de bijbehorende x-waarde. In het ideale geval zouden alle residuen gelijk aan 0 moeten zijn en de de punten in het residuendiagram op de x-as moeten liggen. De residuen vormen dus de variatie in de data die niet door het regressiemodel verklaard worden. Bij een positief residu wordt de waarde *onderschat* door het model en bij een negatief residu wordt de waarde *overschat*.
@@ -184,13 +184,13 @@ Bij een goed model moeten de residuen willekeurig langs de x-as verdeeld zijn en
 Bij een bepaald natuurkundig experiment wil men onderzoeken of de druk lineair afhankelijk is van de temperatuur. Daartoe zijn 10 waarnemingen verzameld die te vinden zijn in het bestand [sim2.csv](data/sim2.csv).
 
 ```{r sim2-data, fig.cap="Experiment met 10 waarnemingen temperatuur en druk."}
-knitr::include_graphics("images/sim2-data.png")
+knitr::include_graphics("images/linregressie/sim2-data.png")
 ```
 
 In figuur \@ref(fig:sim2-spreiding) is de druk tegen de temperatuur uitgezet.
 
 ```{r sim2-spreiding, fig.cap="Spreidingsdiagram in Excel met vergelijking lijn."}
-knitr::include_graphics("images/sim2-spreiding.png")
+knitr::include_graphics("images/linregressie/sim2-spreiding.png")
 ```
 
 Er is een duidelijk positief verband te zien dat redelijk bij een rechte lijn in de buurt komt. Echter in het midden is wel een vorm van een kromming waar te nemen.
@@ -198,20 +198,20 @@ Er is een duidelijk positief verband te zien dat redelijk bij een rechte lijn in
 Vervolgens wordt een regressie-analyse via Gegevensanalyse uitgevoerd.
 
 ```{r sim2-samenvatting, fig.cap="Samenvatting regressie."}
-knitr::include_graphics("images/sim2-samenvatting.png")
+knitr::include_graphics("images/linregressie/sim2-samenvatting.png")
 ```
 
 Zowel de correlatiecoëfficiënt liggen dicht bij 1 en zijn dus goed.
 
 ```{r sim2-coefficienten, fig.cap="Coéfficiënten regressielijn."}
-knitr::include_graphics("images/sim2-coefficienten.png")
+knitr::include_graphics("images/linregressie/sim2-coefficienten.png")
 ```
 
 Voor beide coëfficiënten is de p-waarde kleiner dan 0,05 en zijn dus de coëfficiënten significant.
 
 ```{r sim2-residu, out.width="40%", fig.cap="Residu Analyse."}
-knitr::include_graphics("images/sim2-residuen.png")
-knitr::include_graphics("images/sim2-residuplot.png")
+knitr::include_graphics("images/linregressie/sim2-residuen.png")
+knitr::include_graphics("images/linregressie/sim2-residuplot.png")
 ```
 
 Het gemiddelde en de som van de residuen zijn naderhand met een formule berekend en zijn nagenoeg nul, wat ook goed is.
@@ -223,7 +223,7 @@ $druk = \beta_0 + \beta_1 * temperatuur + \beta2 * temperatuur^2 + \epsilon$
 Het valt buiten het karakter van dit hoofdstuk om deze analyse uit te voeren. Wel kun je in het spreidingsdiagram voor een andere trendlijn dan lineair kiezen. Zo levert de keuze voor een polynoom van de graad 2 het volgende op.
 
 ```{r sim2-polynoom2, fig.cap="Spreidingsdiagram met een polynoom van de graad 2 als trendlijn."}
-knitr::include_graphics("images/sim2-polynoom2.png")
+knitr::include_graphics("images/linregressie/sim2-polynoom2.png")
 ```
 
 De R-kwadraat is nu bijna 1.
@@ -240,7 +240,7 @@ $y = \beta_0 + \beta_1 * x_1 + \beta_2 * x_2 + \beta_3 * x_3 + \cdots  + \epsilo
 Om het overzichtelijk en niet te ingewikkeld te maken, een voorbeeld met een gefingeerde verzameling economische gegevens. Deze data kun je in Excel importeren via het bestand [economiedata.xlsx](data/economiedata.xlsx).
 
 ```{r ecdata, fig.cap="Dataset economische gegevens."}
-knitr::include_graphics("images/ecdata.png")
+knitr::include_graphics("images/linregressie/ecdata.png")
 ```
 
 Onderzocht gaat worden of `Aandelenindex` lineair afhankelijk is van zowel `Rentepercentage` als `Werkloosheidspercentage`. De variabelen zijn dus:
@@ -251,8 +251,8 @@ Onderzocht gaat worden of `Aandelenindex` lineair afhankelijk is van zowel `Rent
 Allereerst wordt gekeken of er een relatie is tussen de afhankelijke variabele en elk van de onafhankelijke variabelen afzonderlijk.
 
 ```{r ecdata-relaties, out.width="50%", fig.cap="Relaties tussen Aandelenindex en respectievelijk Rentepercentage en Werkloosheidspercentage."}
-knitr::include_graphics("images/ecdata-rel1.png")
-knitr::include_graphics("images/ecdata-rel2.png")
+knitr::include_graphics("images/linregressie/ecdata-rel1.png")
+knitr::include_graphics("images/linregressie/ecdata-rel2.png")
 ```
 
 1. *Aandelenindex - Rentepercentage* - Er is een lineair verband te zien. Als het `Rentepercentage` omhoog gaat, gaat ook de `Aandelenindex` omhoog. Er is een positief verband. En een voldoend hoge R-kwadraat van 0,8757.
@@ -267,19 +267,19 @@ Bij het dialoogscherm Regressie in Gegevensanalyse moet je er wel op letten dat 
 
 
 ```{r ecdata-regressie, fig.cap="Dialoogscherm regressie voor economiedata."}
-knitr::include_graphics("images/ecdata-regressie.png")
+knitr::include_graphics("images/linregressie/ecdata-regressie.png")
 ```
 
 Vervolgens wordt een regressie-analyse via Gegevensanalyse uitgevoerd.
 
 ```{r ecdata-samenvatting, fig.cap="Samenvatting regressie meervoudige lineaire regressie."}
-knitr::include_graphics("images/ecdata-samenvatting.png")
+knitr::include_graphics("images/linregressie/ecdata-samenvatting.png")
 ```
 
 Zowel de correlatiecoëfficient als R-kwadraat zijn in dit meervoudige model hoger dan voor de afzonderlijke relaties. Dicht bij 1, dus goed.
 
 ```{r ecdata-coefficienten, fig.cap="Coéfficiënten regressievergelijking."}
-knitr::include_graphics("images/ecdata-coefficienten.png")
+knitr::include_graphics("images/linregressie/ecdata-coefficienten.png")
 ```
 
 De regressievergelijking wordt $Aandelenindex = 1798,40 + 345,54 * Rentepercentage - 250,15 * Werkloosheidspercentage  + \epsilon$
@@ -290,8 +290,8 @@ Het gemiddelde en de som van de residuen is nagenoeg nul, wat dus weer goed is. 
 
 
 ```{r ecdata-residu, out.width="50%", fig.cap="Diagrammen van de residuen."}
-knitr::include_graphics("images/ecdata-residu1.png")
-knitr::include_graphics("images/ecdata-residu2.png")
+knitr::include_graphics("images/linregressie/ecdata-residu1.png")
+knitr::include_graphics("images/linregressie/ecdata-residu2.png")
 ```
 
 Bij beide diagrammen zijn de residuen willekeurig verdeeld en is er geen patroon waar te nemen.

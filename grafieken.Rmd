@@ -22,13 +22,13 @@ Ook hier moet je net als bij de functie INTERVAL (\@ref(intervalfunctie)) een be
 Kies *tab Gegevens > Gegevensanalyse > Histogram*. Specificeer het invoerbereik en het verzamelbereik, alsmede een cel voor het begin van de uitvoer. Wanneer je een histogram wilt kun je in dit scherm ook aangeven dat er een grafiek gemaakt moet worden
 
 ```{r freq-gegevensanalyse-instelling, fig.cap="Specificaties voor frequentietabel en histogram."}
-knitr::include_graphics("images/freq-gegevensanalyse-instelling.png", dpi = NA)
+knitr::include_graphics("images/grafieken/freq-gegevensanalyse-instelling.png", dpi = NA)
 ```
 
 De grafiek is een gegroepeerde kolomdiagram die je desgewenst nog kunt aanpassen. Voor een echt histogram moeten de kolommen aansluitend zijn zonder lege ruimte ertussen. En de labels op de X-as geven hier alleen de bovengrens en niet het interval.
 
 ```{r freq-gegevensanalyse-resultaat, fig.cap="De frequentietabel met histogram."}
-knitr::include_graphics("images/freq-gegevensanalyse-resultaat.png", dpi = NA)
+knitr::include_graphics("images/grafieken/freq-gegevensanalyse-resultaat.png", dpi = NA)
 ```
 
 Een nadeel is wel dat wanneer de brondata wijzigt er geen herberekening plaatsvindt. De frequentieverdeling en histogram zijn statisch.
@@ -40,7 +40,7 @@ De nieuwere Excelversies hebben de mogelijkheid tot het invoegen van een *grafie
 De werkwijze is als volgt. Selecteer een getal in het gegevensgebied. Kies dan *tab Invoegen > Aanbevolen grafieken > Alle grafieken > Histogram*.
 
 ```{r freq-grafiektype-histogram, fig.cap="Een histogram via het invoegen van een grafiek."}
-knitr::include_graphics("images/freq-grafiektype-histogram.png", dpi = NA)
+knitr::include_graphics("images/grafieken/freq-grafiektype-histogram.png", dpi = NA)
 ```
 
 In Excel wordt een histogram gewoonlijk als een kolomdiagram weergegeven met labels onder het midden van de kolom. En de kolommen worden standaard aaneensluitend getekend.
@@ -54,7 +54,7 @@ Wanneer je het aantal bins of de Bin-breedte wilt veranderen, selecteer dan de h
 Een boxplot grafiek laat zien hoe de gegevens over de kwartielen verdeeld zijn. De boxplot laat eenzelfde soort informatie zien als een histogram, maar dan met minder details. Bij een boxplot worden de gegevens verdeeld in 4 kwartielen, elk met 25% van de waarnemingen. Om deze te tekenen heb je de waarden van de *5-getallensamenvatting* nodig. Er zijn wat variaties die ook het gemiddelde aangeven en de uitbijters afzonderlijk weergeven.
 
 ```{r boxplot, fig.cap="Schematische weergave van een boxplot"}
-knitr::include_graphics("images/boxplot.png", dpi = NA)
+knitr::include_graphics("images/grafieken/boxplot.png", dpi = NA)
 ```
 
 De afstand tussen de 25% en 75% percentielen heet de *interkwartielafstand*.
@@ -70,7 +70,7 @@ Je kunt dit grafiektype voor 1 variabele gebruiken, maar de kracht ervan komt pa
 Bij een marktonderzoek zijn 30 personen gevraagd om drie merken tablets te evalueren. De antwoorden zijn via een vragenformulier verzameld. Deze 30 personen zijn verdeeld in drie groepen van elk 10 personen. De eerste groep heeft merk A beoordeeld, de tweede groep merk B en de derde groep merk C. Het totaal aantal punten voor elke beoordeling en een bijbehorende boxplot zijn in figuur \@ref(fig:boxplot-tablets) te zien.
 
 ```{r boxplot-tablets, fig.cap="Dataset met Boxplots voor de drie groepen."}
-knitr::include_graphics("images/boxplot-tablets.png", dpi = NA)
+knitr::include_graphics("images/grafieken/boxplot-tablets.png", dpi = NA)
 ```
 
 *interpretatie*
@@ -103,7 +103,7 @@ Voor het maken van dit grafiektype zie [Een Box- en Whisker-grafiek maken](https
 1. Van twee groepen van elk 50 personen is de lengte (in cm) gemeten. De resultaten zijn in onderstaande boxplot weergegeven. Bestudeer deze boxplot en geef aan wat je opvalt, welke verschillen er te zien zijn. Zijn er conclusies te trekken?
 
 ```{r groepslengtes, fig.cap="Lengtes (cm) van twee groepen van elk 50 personen."}
-knitr::include_graphics("images/groepslengtes.png", dpi = NA)
+knitr::include_graphics("images/grafieken/groepslengtes.png", dpi = NA)
 ```
 
 :::
