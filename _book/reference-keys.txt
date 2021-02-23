@@ -138,6 +138,7 @@ sim2
 linreg-meervoudig
 voorspellen
 opg-linreg
+cases
 case-pinguins
 case-fooien
 case-fctwente

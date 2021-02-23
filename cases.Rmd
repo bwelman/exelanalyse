@@ -1,0 +1,5 @@
+# Cases
+
+```{r child=c("case-pinguins.Rmd", "case-fooien.Rmd", "case-fctwente.Rmd", "case-betaaltermijn.Rmd", "case-beisterkamp.Rmd", "case-ziekteverzuim.Rmd")}
+
+```

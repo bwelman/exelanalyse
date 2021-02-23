@@ -1,4 +1,4 @@
-# Case - Fooien {#case-fooien}
+## Case - Fooien {#case-fooien}
 
 ```{r fooi, out.width="40%", fig.cap="Een fooi van een tevreden klant."}
 knitr::include_graphics("images/case-fooien/fooi.png")
