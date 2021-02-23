@@ -4,9 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 11 Case - Ziekteverzuim | Excel Data Analyse</title>
+<title>Hoofdstuk 12 Case - Ziekteverzuim | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
@@ -36,21 +36,23 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Welkom</a></li>
 <li><a class="" href="voorwoord.html">Voorwoord</a></li>
-<li><a class="" href="data.html"><span class="header-section-number">1</span> Data</a></li>
-<li><a class="" href="beschrijvend.html"><span class="header-section-number">2</span> Beschrijvende statistiek</a></li>
-<li><a class="" href="grafieken.html"><span class="header-section-number">3</span> Grafieken</a></li>
-<li><a class="" href="exploratieve-data-analyse-eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="" href="regressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
+<li><a class="" href="importeren-van-data.html"><span class="header-section-number">1</span> Importeren van data</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
+<li><a class="" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
+<li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
+<li><a class="" href="exploratieve-data-analyse-eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="" href="regressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
 <li class="book-part">Cases</li>
-<li><a class="" href="case-pinguins.html"><span class="header-section-number">6</span> Case - Pinguins</a></li>
-<li><a class="" href="case-fooien.html"><span class="header-section-number">7</span> Case - Fooien</a></li>
-<li><a class="" href="case-fctwente.html"><span class="header-section-number">8</span> Case - Marktwaarde Voetbalclub</a></li>
-<li><a class="" href="case-betaaltermijn.html"><span class="header-section-number">9</span> Case - Gemiddelde betaaltermijn</a></li>
-<li><a class="" href="case-beisterkamp.html"><span class="header-section-number">10</span> Case - Beisterkamp</a></li>
-<li><a class="active" href="case-ziekteverzuim.html"><span class="header-section-number">11</span> Case - Ziekteverzuim</a></li>
+<li><a class="" href="case-pinguins.html"><span class="header-section-number">7</span> Case - Pinguins</a></li>
+<li><a class="" href="case-fooien.html"><span class="header-section-number">8</span> Case - Fooien</a></li>
+<li><a class="" href="case-fctwente.html"><span class="header-section-number">9</span> Case - Marktwaarde Voetbalclub</a></li>
+<li><a class="" href="case-betaaltermijn.html"><span class="header-section-number">10</span> Case - Gemiddelde betaaltermijn</a></li>
+<li><a class="" href="case-beisterkamp.html"><span class="header-section-number">11</span> Case - Beisterkamp</a></li>
+<li><a class="active" href="case-ziekteverzuim.html"><span class="header-section-number">12</span> Case - Ziekteverzuim</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="bijlage-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></li>
-<li><a class="" href="bijlage-aselect.html"><span class="header-section-number">B</span> Bijlage Aselecte getallen</a></li>
+<li><a class="" href="bijlage-query-options.html"><span class="header-section-number">B</span> Bijlage Query opties</a></li>
+<li><a class="" href="bijlage-aselect.html"><span class="header-section-number">C</span> Bijlage Aselecte getallen</a></li>
 <li><a class="" href="referenties.html">Referenties</a></li>
 </ul>
 
@@ -59,14 +61,14 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="case-ziekteverzuim" class="section level1" number="11">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="case-ziekteverzuim" class="section level1" number="12">
 <h1>
-<span class="header-section-number">Hoofdstuk 11</span> Case - Ziekteverzuim<a class="anchor" aria-label="anchor" href="#case-ziekteverzuim"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 12</span> Case - Ziekteverzuim<a class="anchor" aria-label="anchor" href="#case-ziekteverzuim"><i class="fas fa-link"></i></a>
 </h1>
 <div class="figure" style="text-align: center">
 <span id="fig:ziekteverzuim"></span>
-<img src="images/ziekteverzuim.png" alt="Zo pakt Universiteit Wageningen het ziekteverzuim aan." width="70%"><p class="caption">
-Figuur 11.1: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
+<img src="images/case-ziekteverzuim/ziekteverzuim.png" alt="Zo pakt Universiteit Wageningen het ziekteverzuim aan." width="70%"><p class="caption">
+Figuur 12.1: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
 </p>
 </div>
 <p>Een bedrijf heeft een onderzoek naar het ziekteverzuim en tevredenheid uitgevoerd onder al haar 75 werknemers. Voor het tevredenheidsonderzoek zijn een twaalftal stellingen voorgelegd aan de medewerkers. Per stelling kon de medewerker een score op een 5-punts schaal geven. Die scores zijn opgeteld en weergegeven in de kolom Tevreden. De cijfers met betrekking tot het ziekteverzuim komen van de afdeling administratie.</p>
@@ -101,11 +103,11 @@ De laatste 4 kolommen geven informatie over ziekmelding en ziektedagen in 2012 e
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="case-beisterkamp.html"><span class="header-section-number">10</span> Case - Beisterkamp</a></div>
+<div class="prev"><a href="case-beisterkamp.html"><span class="header-section-number">11</span> Case - Beisterkamp</a></div>
 <div class="next"><a href="bijlage-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#case-ziekteverzuim"><span class="header-section-number">11</span> Case - Ziekteverzuim</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#case-ziekteverzuim"><span class="header-section-number">12</span> Case - Ziekteverzuim</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -121,7 +123,7 @@ De laatste 4 kolommen geven informatie over ziekmelding en ziektedagen in 2012 e
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 17 februari 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 23 februari 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

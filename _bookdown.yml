@@ -23,6 +23,7 @@ language:
 rmd_files:
     - "index.Rmd"
     - "voorwoord.Rmd"
+    - "importdata.Rmd"
     - "data.Rmd"
     - "beschrijvend.Rmd"
     - "grafieken.Rmd"
@@ -35,6 +36,7 @@ rmd_files:
     - "case-beisterkamp.Rmd"
     - "case-ziekteverzuim.Rmd"
     - "app-toolpak.Rmd"
+    - "app-powerquery.Rmd"
     - "app-aselect.Rmd"
     - "referenties.Rmd"
 

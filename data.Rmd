@@ -1,37 +1,250 @@
-# Data {#data}
+# Data
 
 :::{.chapterintro}
-Data analisten proberen antwoorden op vragen te vinden door statistische methodes toe te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd.
-Statistiek is de studie van hoe gegevens het beste kunnen worden verzameld, geanalyseerd en hoe daaruit conclusies kunnen worden getrokken.
-In dit hoofdstuk ligt de nadruk op eigenschappen van data, variabelen en de manier waarop data in Excel werkbladen wordt aangeboden.
+Bij de analyse van data probeer je antwoorden te vingen op vragen door statistische methodes tot te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd. Wanneer je deze data uit externe bronnen importeert, heb je geen controle over de indeling en het type gegevens en de manier waarop de data is georganiseerd. Voordat je met de analyse kunt beginnen moet je daarom vaak veel tijd steken aan het opschonen en herstructureren van de gegevens.
+In dit hoofdstuk ligt de nadruk op de eigenschappen van data, variabelen en waarnemingen, de manier waarop deze vaak worden aangeboden en hoe je deze in een gewenste vorm kunt brengen.
 :::
 
-## Excel tabel
+Veel gegevensbestanden zijn vervuild, gegevens ontbreken of de gegevens zijn niet goed gestructureerd. Excel heeft enkele functies om je daarbij te helpen. Maar helaas kan Excel jouw handelingen niet vastleggen. Daarom is het belangrijk om te documenteren wat je hebt gedaan met de oorspronkelijke gegevens om deze geschikt te maken voor analyse. Acties die je met de Power Query-Editor uitvoert worden in een script vastgelegd waardoor de uitgevoerde acties reproduceerbaar zijn. Probeer daarom altijd zoveel mogelijk de Power-Query-Editor te gebruiken voor het opschonen en herstructureren van de data.
 
-Een **dataset** bestaat uit een verzameling waarnemingen of meetgegevens van variabelen. Zo'n dataset zie je in een Excel werkblad vaak in een tabelvorm. De kolommen in de tabel zijn de variabelen en elke rij bevat een waarneming van de (kolom)variabele.
+Wanneer de gegevens goed gestructureerd zijn kun je ze gemakkelijker modelleren, visualiseren en transformeren waardoor de analyse eenvoudiger wordt.
 
-```{r demotabel}
-demotabel <- data.frame(
-  voornaam = c("Chris", "Mari", "Otto", "Peter", "Vicky"), 
-  geslacht = c("m", "v", "m", "m", "v"),
-  haarkleur = c("bruin", "blond", "blond", "zwart", "rood"), 
-  lengte = c("groot", "groot", "normaal", "normaal", "klein"),
-  gewicht = c(185, 176, 181, 178, 164), 
-  iq = c(95, 104, 98, 108, 112))
+## Wat zijn gestructureerde gegevens
 
-demotabel %>% 
-  kbl(caption = "Voorbeeldtabel met kenmerken van een aantal personen") %>% 
-  kable_styling()
+Gestructureerde gegevens moeten voldoen aan de volgende drie voorwaarden:
+
+1. Elke gemeten variabele staat in een kolom.
+1. Elke waarneming van de variabele staat in een rij.
+1. Elk type waarneming vormt een tabel.
+
+```{r tidy-data, fig.cap="Grafische weergave van gestructureerde gegevens"}
+knitr::include_graphics("images/data/tidy-data.png")
 ```
 
+Meestal staan de waarnemingen wel in een eigen tabel en hoef je alleen maar de eerste twee voorwaarden te controleren. Bij het ontwerp van databases kom je deze voorwaarden ook tegen en wordt het proces * normaliseren* genoemd. Wanneer aan deze drie voorwaarden voldaan wordt heb je in feite de 3e normaalvorm.
+
+**Voorbeeld**
+
+In tabel \@ref(tab:exp1) staan de gegevens van een meting bij een klein denkbeeldig experiment in een formaat dat je veel tegenkomt.
+
+```{r exp1, echo=FALSE}
+exp1 <- tribble(
+	~Naam, ~Behandeling.A, ~Behandeling.B,
+	"Melissa", 6, 7,
+	"Roger", NA, 18,
+	"Vicky", 4, 1
+)
+
+knitr::kable(exp1, caption = 'Personen als rij.')
+```
+
+Wanneer je de rijen en kolommen verwisselt heb je dezelfde gegevens, maar de tabel ziet er dan iets anders uit, zie tabel \@ref(tab:exp2).
+
+```{r exp2, echo=FALSE}
+exp2 <- tribble(
+	~Behandeling, ~Melissa, ~Roger, ~Vicky,
+	"Behandeling.A", 6, NA, 4,
+	"Behandeling.B", 7, 18, 1
+)
+
+knitr::kable(exp2, caption = 'Behandelingen als rij.')
+```
+
+Gestructureerd ziet de gegevensverzameling er uit zoals in tabel \@ref(tab:exp3).
+
+```{r exp3, echo=FALSE}
+exp3 <- exp1 %>%
+  pivot_longer(Behandeling.A:Behandeling.B, names_to = "Behandeling", values_to = "Meting")
+knitr::kable(exp3, caption = 'Gegevens in gestructureerde vorm.')
+```
+
+Dit maakt de waarden, variabelen en waarnemingen duidelijker.
+
 :::{.guidedpractice}
-Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:demotabel)?
-Controleer je antwoord in de voetnoot [^data-01]
+1. Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:exp3)? Controleer je antwoord via de voetnoot[^tidydata-01].
+2. Voldoet de gegevensverzameling nu aan de voorwaarden?.[^tidydata-02]
 :::
 
-[^data-01]: Elke kolom is een variabele, dus 6 variabelen: voornaam, geslacht, haarkleur, lengte, gewicht en iq. En elke rij is een waarneming, dus 5 waarnemingen.
+[^tidydata-01]: Elke kolom is een variabele, dus 3 variabelen: Naam, Behandeling, Meting. En elke rij is een waarneming, dus 6 waarnemingen.
 
-## Indeling
+[^tidydata-02]: Ja, elke variabele heeft een eigen kolom en de waarnemingen staan in de rijen.
+
+Echte gegevensverzamelingen zijn vaak op bijna elke denkbare manier in strijd met de drie voorwaarden voor gestructureerde gegevens. De meest voorkomende problemen bij niet goed gestructureerde gegevensverzamelingen zijn:
+
++ Kolomkoppen bevatten waarden van een variabele i.p.v. een variabelenaam.
++ Combinatie van variabelen in een kolom.
++ Variabelen in zowel rijen als kolommen.
+
+In de taken hierna zullen in kleine voorbeelden deze problemen gedemonstreerd worden en opgelost worden met behulp van Power Query.
+
+### Kolomkoppen met waarden
+
+Een veel voorkomende vorm van een gegevensverzameling is een tabelvorm waarbij de kolomkoppen waarden zijn en geen variabelenamen. De volgende tabel is hier een voorbeeld van. Hierin staat het aantal mannelijke en vrouwelijke studenten dat een bepaalde score (A t/m E) behaald heeft.
+
+```{r scores1-data, echo=FALSE}
+scores1 <- read_excel("data/scores1.xlsx")
+scores1 %>% kbl(caption = "Tabel waarin de kolomkoppen man en vrouw in feite waarden van variabele geslacht zijn.") %>% kable_styling()
+```
+
+Deze gegevensverzameling heeft in feite drie variabelen:
+
++ `score` - met de waarden A t/m E.
++ `geslacht` - met de waarden man en vrouw
++ `aantal` - met het aantal keren dat de score behaald is, de frequentie
+
+Het probleem is dus dat de waarden van de variabele `geslacht` in twee kolomkoppen staat.
+
+De eerste variabele `score` is al een kolom, dat moet dus zo blijven. Voor de variabelen `geslacht` en `aantal` moeten nieuwe kolommen gemaakt worden. Voor elke combinatie van `score` en `geslacht` moet een rij gemaakt worden.
+
+**Oefening**
+
+1. Download eerst het hulpbestand [scores1.xlsx](data/scores1.xlsx) en open het daarna.
+
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+
+1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
+
+1. Selecteer in de Power Query editor de eerste kolom `score`.
+
+1. Kies *tab Transformeren > Draaitabel opheffen voor kolommen (groep Alle kolommen) > Draaitabel voor andere kolommen opheffen*. Er worden twee nieuwe kolommen gemaakt. Een kolom `Kenmerk` (met de waarden voor variabele `geslacht`) en een kolom `Waarde` met de aantallen. En voor elke combinatie van `score` en `geslacht` is een rij gemaakt.
+
+1. Selecteer kolom `Kenmerk`, *Rechter muisklik > Naam wijzigen* en wijzig de naam in `geslacht`.
+
+1. Wijzig op dezelfde manier de naam van kolom `Waarde` in `aantal`.
+
+1. Kies *tab Startpagina > Sluiten en laden > Sluiten en laden*.
+
+Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één variabele en elke rij is één waarneming.
+
+```{r scores1-result, out.width="40%", fig.cap="Scores1 nu gestructureerd."}
+knitr::include_graphics("images/data/scores1_result.png")
+```
+
+### Kolomkoppen zijn gecombineerde variabelen
+
+Soms zijn kolommen een combinatie van meerdere onderliggende variabelen. Dit is het geval bij de gegevensverzameling in de volgende tabel. Deze is gelijkwaardig aan die in de vorige taak. Alleen zijn er nu twee verschillende klassen (klas1 en klas2) en staat het aantal voor elk geslacht in elke klas in een eigen kolom. Ook in deze gegevensverzameling zijn de kolomkoppen waarden van variabelen. Maar er zijn twee variabelen, `geslacht` en `klas`, in een kolom gecombineerd.
+
+```{r scores2-data, echo=FALSE}
+scores2 <- read_excel("data/scores2.xlsx")
+scores2 %>% kbl(caption = "Tabel met vier kolomkoppen die een combinatie van de variabelen geslacht en klas zijn.") %>% kable_styling()
+```
+
+**oefening**
+
+1. Download eerst het hulpbestand [scores2.xlsx](data/scores2.xlsx) en open het daarna.
+
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+
+1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
+
+1. Selecteer in de Power Query editor de eerste kolom `score`.
+
+1. Kies *tab Transformeren > Draaitabel opheffen voor kolommen (groep Alle kolommen) > Draaitabel voor andere kolommen opheffen*. Er worden twee nieuwe kolommen gemaakt. Een kolom `Kenmerk` (met de waarden voor `geslacht_klas`) en een kolom `Waarde` met de aantallen. En voor elke combinatie van `score` en `geslacht_klas` is een rij gemaakt.
+
+1. Selecteer kolom `Kenmerk` en kies *tab Transformeren > Kolom splitsen (groep Kolom Tekst) > Op scheidingsteken*.
+In het dialoogvenster is reeds het juiste scheidingsteken waarop gesplitst moet worden, `_`, geselecteerd.
+
+1. Klik *OK*.
+De kolom `Kenmerk` is gesplitst in kolom `Kenmerk.1` (met de waarden voor variabele `geslacht`) en `Kenmerk.2` (met de waarden voor variabele `klas`).
+
+1. Wijzig de namen van de kolommen `Kenmerk.1`, `Kenmerk.1` en `Waarde` in respectievelijk `geslacht`, `klas` en `aantal`.
+
+1. Kies *tab Startpagina > Sluiten en laden > Sluiten en laden*.
+
+Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één variabele en elke rij is één waarneming.
+
+```{r scores2-result, out.width="40%", fig.cap="Scores2 nu gestructureerd."}
+knitr::include_graphics("images/data/scores2_result.png")
+```
+
+### Variabelen in rijen en kolommen
+
+Een meer gecompliceerde vorm van rommelige gegevens krijg je wanneer er variabelen in zowel rijen als kolommen staan. In het voorbeeld hierna staan de beoordelingen voor een tussentoets en een eindtoets voor vijf studenten, waarbij elk van hen in precies twee van de vijf mogelijke klassen is geplaatst.
+
+```{r scores3-data, echo=FALSE}
+scores3 <- read_excel("data/scores3.xlsx")
+scores3 %>% kbl(caption = "Een tabel met variabelen in zowel rijen als kolommen.") %>% kable_styling()
+```
+
+De eerste kolom met de variabele `naam` is in orde en moet zo blijven. De koppen van de laatste vijf kolommen zijn allemaal waarden van de variabele `klas`. De waarden in de tweede kolom, tussentoets en eindtoets, moeten eigen variabelen worden met als waarde de beoordeling van de student op dit onderdeel.
+
+**Oefening**
+
+1. Download eerst het hulpbestand [scores3.xlsx](data/scores3.xlsx) en open het daarna.
+
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+
+1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
+
+1. Selecteer in de Power Query editor de laatste vijf kolommen `klas1` t/m `klas5`.
+
+1. Kies *tab Transformeren > Draaitabel opheffen voor kolommen (groep Alle kolommen) > Draaitabel opheffen voor kolommen*. Er worden twee nieuwe kolommen gemaakt. Een kolom `Kenmerk` (met de waarden voor variabele `klas`) en een kolom `Waarde` met de beoordeling. En voor elke combinatie van `naam`, `toets` en `klas` is een rij gemaakt.
+
+1. Wijzig de naam van kolom `Kenmerk` in `klas`.
+
+1. Selecteer kolom `toets` en kies *tab Transformeren > Draaikolom*. Het dialoogvenster Draaikolom verschijnt
+
+1. Kies als Waardenkolom `Waarde`. En geef onder geavanceerde opties aan dat er niet samengevoegd moet worden.
+```{r scores3-pivotcolumn, out.width="40%", fig.cap="Instellingen voor de draaikolom."}
+knitr::include_graphics("images/data/scores3_pivotcolumn.png")
+```
+
+1. Klik *OK*.
+
+1. Kies *tab Startpagina > Sluiten en laden > Sluiten en laden*.
+
+Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één variabele en elke rij is één waarneming.
+
+```{r scores3-result, out.width="40%", fig.cap="Scores3 nu gestructureerd."}
+knitr::include_graphics("images/data/scores3_result.png")
+```
+
+### Analyse populatie Benelux
+
+In tabel \@ref(tab:benelux-data) staat de populatie mannen en vrouwen in de landen van de Benelux voor de jaren 2000, 2005, 2010 en 2015.
+
+```{r benelux-data, echo=FALSE}
+Benelux_Populatie <- read_excel("data/benelux-populatie.xlsx")
+Benelux_Populatie %>% kbl(caption = "Populatie Benelux voor de jaren 2000, 2005, 2010 en 2015.") %>% kable_styling()
+```
+
+Deze gegevens wil je analyseren en bijvoorbeeld de ontwikkeling van de populatie per geslacht per jaar bestuderen en dat eventueel nog per land. Een draaitabel en draaigrafiek lenen zich daar het beste voor.
+
+Echter de gegevens staan niet in een goed gestructureerde Exceltabel. In feite heeft deze tabel vier variabelen: `Land`, `Geslacht`, `Jaar` en `Populatie`. De eerste twee variabelen staan in een eigen kolom, dat moet zo blijven. De laatste vier kolomkoppen zijn de waarden van de variabele `Jaar` en de inhoud van deze kolommen is de waarde van de variabele `Populatie`. De tabel moet dus eerst gestructureerd worden voordat met de analyse begonnen kan worden.
+
+**Oefening**
+
+1. Download eerst het hulpbestand [benelux-populatie.xlsx](data/benelux-populatie.xlsx) en open het daarna.
+
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+
+1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
+
+1. Selecteer in de Power Query editor de eerste twee kolommen, met `Land` en `Geslacht`.
+
+1. Kies *tab Transformeren > Draaitabel opheffen voor kolommen (groep Alle kolommen) > Draaitabel voor andere kolommen opheffen*. Er worden twee nieuwe kolommen gemaakt. Een kolom `Kenmerk` (met de waarden voor variabele `Jaar`) en een kolom `Waarde` met de populatiegetallen. En voor elke combinatie van `Land`, `Geslacht` en `Jaar` is een rij gemaakt.
+
+::: {.tip}
+Je had er ook voor kunnen kiezen om de laatste vier kolommen met de jaartallen te selecteren en dan te kiezen voor het opheffen van de draaitabel voor deze kolommen. Dit heeft als nadeel dat de query niet meer goed werkt wanneer er later in de brongegevens een nieuwe kolom met de populatie voor het jaar 2020 wordt toegevoegd.
+:::
+
+6. Wijzig de namen van de kolommen Kenmerk en `Waarde`` in respectievelijk Jaar en `Populatie`.
+
+1. Kies *tab Startpagina >Sluiten en laden (groep Sluiten)*.
+
+De gegevens worden nu in een nieuwe tabel in een nieuw werkblad gezet. De gegevens staan nu in een gestructureerde Excel tabel en zijn nu geschikt voor het maken van draaitabellen en draaigrafieken.
+
+```{r benelux-tidy, out.width="40%", fig.cap="Tabel met gestructureerde populatiedata van de Benelux."}
+knitr::include_graphics("images/data/benelux_tidy.png")
+```
+
+8. Maak de volgende draaitabel en draaigrafiek.
+
+```{r benelux-pivot-chart, fig.cap="Draaitabel en draaigrafiek van de populatie per geslacht per jaar."}
+knitr::include_graphics("images/data/benelux_pivot_chart.png")
+```
+
+## Meetniveaus variabelen {#meetniveaus}
 
 Variabelen worden meestal in vier meetniveaus (schalen) ingedeeld:
 
@@ -77,15 +290,53 @@ In een onderzoek wordt vaak geprobeerd om met de ene variabele een verklaring te
 
 $Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele$
 
-:::{.guidedpractice}
-Geef voor elke variabele in tabel \@ref(tab:demotabel) aan tot welke indeling (meetschaal) deze variabele behoort.[^data-02]
-:::
 
-[^data-02]: *Nominaal*: voornaam, geslacht en haarkleur. *Ordinaal*: lengte. *Ratio*: gewicht, iq.
-
-## Opgaven {#opg-data}
+## Opgaven {#opg-tidydata}
 
 ::: {.sectionexercise}
-1. Bij een onderzoek wordt aan personen gevraagd om bij te houden hoeveel tekstberichten ze per dag versturen en hoeveel tijd ze hieraan besteden. Welke variabelen heb je hier en zijn deze discreet of continu?
+1. In een Excel werkblad kom je de volgende tabel met gegevens tegen.
+
+```{r demotabel}
+demotabel <- data.frame(
+  voornaam = c("Chris", "Mari", "Otto", "Peter", "Vicky"), 
+  geslacht = c("m", "v", "m", "m", "v"),
+  haarkleur = c("bruin", "blond", "blond", "zwart", "rood"), 
+  lengte = c("groot", "groot", "normaal", "normaal", "klein"),
+  gewicht = c(185, 176, 181, 178, 164), 
+  iq = c(95, 104, 98, 108, 112))
+
+demotabel %>% 
+  kbl(caption = "Voorbeeldtabel met kenmerken van een aantal personen") %>% 
+  kable_styling()
+```
+
+   a. Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:demotabel)?
+   b. Geef voor elke variabele aan tot welk meetniveau deze variabele behoort.
+
+2. Bij een onderzoek wordt aan personen gevraagd om bij te houden hoeveel tekstberichten ze per dag versturen en hoeveel tijd ze hieraan besteden. Welke variabelen heb je hier en zijn deze discreet of continu?
+
+3. Download het hulpbestand [koffieprijzen.xlsx](data/koffieprijzen.xlsx). Deze bevat een aantal koffieprijzen van Starbucks, zie tabel \@ref(tab:koffieprijzen-data). Maak hiervan een gestructureerde dataset.
+    
+```{r koffieprijzen-data, echo=FALSE}
+tidy001.data <- read_excel("data/koffieprijzen.xlsx")
+tidy001.data %>% kbl(caption = "Starbucks koffieprijzen voor drie verschillende groottes.") %>% kable_styling(full_width = FALSE)
+```
+
+4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
+    
+    a. Maak hiervan een gestructureerde dataset.
+    b. In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?
+
+```{r levensonderhoud-data, echo=FALSE}
+levensonderhoud.data <- read_excel("data/levensonderhoud.xlsx")
+levensonderhoud.data %>% head(8) %>% kbl(caption = "Gemiddelde prijzen voor vier produkten.") %>% kable_styling(full_width = FALSE)
+```
+
+5. Op een bepaalde basischool krijgt elke leerling krijgt in elk kwartaal (Herfst, Winter en Lente) van elk jaar een toets voor rekenen en taal. De volgende tabel bevat een beperkte gegevensverzameling hiervan.
+    
+```{r tidy003-data, echo=FALSE}
+rekenentaal.data <- read_excel("data/rekenentaal.xlsx")
+rekenentaal.data %>% kbl(caption = "Schoolresultaten voor rekenen en taal.") %>% kable_styling(full_width = FALSE)
+```
 
 :::

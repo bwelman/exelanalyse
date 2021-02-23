@@ -9,7 +9,7 @@ suppressMessages(library(kableExtra))
 suppressMessages(library(patchwork))
 suppressMessages(library(scales))
 suppressMessages(library(DiagrammeR))
-
+suppressMessages(library(readxl))
 
 # knitr chunk options ----------------------------------------------------------
 
