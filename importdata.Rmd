@@ -1,0 +1,125 @@
+# Importeren van data
+
+:::{.chapterintro}
+In de praktijk komen veel gegevens uit externe bronnen: txt/csv, web, excel bestanden, databases, ... Om deze gegevens in Excel te analyseren, moeten ze eerst geïmporteerd worden en soms worden getransformeerd en geherstructureerd. Dat gebeurt met Power Query.
+:::
+
+Excel heeft de Power Query technologie geïntegreerd onder de groep *Gegevens ophalen en transformeren* in het lint *Gegevens.* Met deze technologie kun je verbindingen maken met meerdere gegevensbronnen, die gegevens structureren (bijvoorbeeld een kolom verwijderen, een gegevenstype wijzigen) of de gegevens omzetten naar wat anders. En alle stappen worden verzameld in een query script waarmee je een stap kunt wijzigen, opnieuw uitvoeren of ongedaan kunt maken. Met dit script kun je het importeren van gegevens herhaalbaar opnieuw uitvoeren.
+
+## Gegevens ophalen en transformeren
+
+Om Gegevens ophalen en transformeren in Excel te gebruiken, maak je eigenlijk een query in de werkmap. Met een query kun je een verbinding maken met een breed scala aan beschikbare gegevensbronnen, een voorbeeld van de gegevens bekijken en de gegevens transformeren.
+
+De eerste stap is het maken van een verbinding met een gegevensbron. Wanneer de verbinding is gemaakt, krijg je een voorbeeld van de gegevens te zien. Daarna kun je stappen toevoegen om de gegevens te structureren en te transformeren. Hiervoor wordt een Query Editor gestart om een aantal instructies te maken die de acties uitvoeren. De laatste stap is het laden van de gegevens als een tabel in een werkblad.
+
+::: {.tip}
++ Je hebt ook de mogelijkheid om de gegevens te laden in het ingebouwde gegevensmodel.
++ Je kunt de query later ook wijzigen en/of de gegevens vernieuwen.
+:::
+
+Voor het maken van een query gebruik je de *tab Gegevens* in het lint, waarna je een van de mogelijke acties in de *Gegevens ophalen en transformeren* groep kiest.
+
+```{r ribbon_queries, fig.cap="Lint gegevens."}
+knitr::include_graphics("images/importdata/ribbon_queries.png", dpi = NA)
+```
+
+Er zijn knoppen voor het ophalen van gegevens uit tekst/csv, web en een Excel tabel/bereik. Deze gegevensbronnen en nog veel meer zijn beschikbaar via de knop *Gegevens ophalen*.
+
+De groep *Query's en verbindingen* heeft een knop voor het vernieuwen van query's en een knop om bestaande query's en verbindingen te bekijken en te beheren.
+
+## Importeren van een tekst/csv bestand
+
+Veel gegevens in externe bronnen zijn beschikbaar als tekst (bestandstype `.txt`) of via komma (of karakter) gescheiden waarden (bestandstype `.csv`).
+
+1. Download eerst het hulpbestand [SalesJan2009.csv](data/SalesJan2009.csv) en open daarna een nieuwe lege werkmap.
+
+2. Kies *tab Gegevens > Uit tekst/CSV (groep Gegevens ophalen en transformeren)*.
+
+3. Blader naar het hulpbestand en klik *Importeren*.
+Een voorbeeld van de gegevens wordt getoond.
+
+```{r salesjan2009-preview, fig.cap="Voorbeeld van SalesJan2009 gegevens."}
+knitr::include_graphics("images/importdata/salesjan2009_preview.png", dpi = NA)
+```
+
+4. Klik op *Gegevens transformeren*.
+De Query Editor wordt gestart in een nieuw venster. Aan de rechterkant onder *Queryinstellingen* en onder *Toegepaste Stappen* zie je de stappen die reeds zijn toegepast.
+
+5. Selecteer de kolommen `Account_Created`, `Last_Login`, `Latitude`, `Longitude`, door op de kolomkop te klikken met ingedrukte CTRL toets. Kies dan *Kolommen verwijderen (groep Kolommen beheren) > Kolommen verwijderen*. De kolommen worden verwijderd en de stap is toegevoegd aan *Toegepaste Stappen*.
+
+::: {.tip}
+Als alternatief kun je de rechtermuisknop gebruiken en dan de gewenste actie uit het snelmenu kiezen.
+:::
+
+<img src="images/importdata/ribbon_datatype_wholenumber.png" alt="Gegevenstype" align="left" style="margin: 0 1em 0 1em"/>In elke kolomkop zit aan de linkerkant een icon dat het toegepaste gegevenstype weergeeft. Wanneer je een kolom selecteert zie je het gegevenstype ook op het lint. En dit is tevens de plek waar je het gegevenstype kunt wijzigen.
+
+
+`Price` heeft gegevenstype *Geheel getal*, alle andere kolommen hebben gegevenstype *Tekst*.
+
+6. Selecteer de eerste kolom `Transaction_date` en kies dan *Gegevenstype (groep Transformeren) > Datum/Tijd*. Wanneer er een dialoogscherm komt of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.
+In kolom `Name` beginnen de meeste namen met een hoofdletter, maar niet allemaal.
+
+7. Selecteer kolom `Name`, rechtermuisklik en kies *Transformeren > Elk Woord Met Een Hoofdletter*.
+
+8. Kies *Sluiten en laden(groep Sluiten) > Sluiten en laden*.
+De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt nu met de gegevens werken en de Excel map voor later gebruik opslaan.
+
+::: {.tip}
+Het is altijd mogelijk om de query achteraf te wijzigen. Selecteer hiervoor een cel in de tabel en kies *tab Query > Bewerken (groep Bewerken)*. De Query Editor wordt weer opgestart. Van hieruit kun je tevens de gegevens vernieuwen, alle stappen worden dan herhaald.
+:::
+
+## Importeren van een webtabel
+
+Webpagina's hebben vaak tabellen. De Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je een aantal gegevens van de UEFA Europees voetbal kampioenschap importeren die in een wikipedia pagina beschikbaar zijn.
+
+1. Open a nieuwe lege werkmap.
+
+2. Kies *tab Gegevens > Van het web (groep Gegevens ophalen en transformeren)*. Er wordt een dialoogvenster weergegeven waarin de URL van de webpagina moet worden ingevoerd.
+
+```{r weburl-textbox, fig.cap="Dialoogvenster voor invoer URL."}
+knitr::include_graphics("images/importdata/web_url_textbox.png", dpi = NA)
+```
+
+3. Voer voor de URL in `http://en.wikipedia.org/wiki/UEFA_European_Championship` en klik *OK*.
+
+Er wordt een verbinding met de webpagina gemaakt.
+Wanneer de verbinding gerealiseerd is wordt een *Navigator* venster getoond waarin een lijst met alle tabellen in de webpagina te zien is. Door op een tabel te klikken verschijnt aan de rechterkant van het venster een voorbeeld van de gegevens.
+
+```{r uefa-navigatorpane, fig.cap="Venster Navigator voor UEFA pagina op Wikipedia."}
+knitr::include_graphics("images/importdata/uefa_navigatorpane.png", dpi = NA)
+```
+
+4. Selecteer tabel `Results[edit]` en klik dan op de knop *Gegevens transformeren*.
+De Query Editor wordt gestart in een nieuw venster. Aan de rechterkant onder *Queryinstellingen* en onder *Toegepaste Stappen* zie je de stappen die reeds zijn toegepast.
+
+Vervolgens kun je de gegevens naar behoefte structureren, wijzigen en opschonen. Achtereenvolgens ga je
+
++ alle kolommen verwijderen behalve `Year` en `Final Winner`s.
++ het woord "Details" verwijderen in kolom `Year`.
++ alleen echte jaartallen in kolom `Year` overhouden.
+
+5. Selecteer de kolommen `Year` en `Final Winners` door op de kolomkoppen te klikken met ingedrukte CTRL toets. Kies dan *Kolommen verwijderen (groep Kolommen beheren) > Andere kolommen verwijderen*.
+
+6. Selecteer kolom `Year` en kies *Waarden vervangen (groep Transformeren)*. Het dialoogvenster *Waarden vervangen* wordt weergegeven.
+
+
+```{r replace-values-dialogbox, fig.cap="Dialoogvenster Waarden vervangen."}
+knitr::include_graphics("images/importdata/replace_values_dialogbox.png", dpi = NA)
+```
+
+7. Type `Details` in het tekstvak *Te zoeken waarde* en laat het tekstvak *Vervangen door* leeg en klik *OK*.
+
+8. Selecteer kolom `Year` en klik op de filter keuzepijl in de kolomkop. Deselecteer `Year` en klik *OK*.
+
+9. Kies *Sluiten en laden(groep Sluiten) > Sluiten en laden*.
+De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt nu met de gegevens werken en de Excel map voor later gebruik opslaan.
+
+## Opgaven {#opg-importdata}
+
+::: {.sectionexercise}
+1. **data001 - Eenvoudig csv bestand importeren**
+
+    Download het hulpbestand [verkopen.csv](data/verkopen.csv) en open het eerst met een kale tekstverwerker (Kladblok, Notepad) om te onderzoeken hoe het bestand er uit ziet. Het is belangrijk om te weten is of er veldnamen in staan en welk scheidingssymbool (komma, puntkomma, ...) gebruikt is. Meestal herkent Excel dit zelf, maar het is toch wel nuttig om dit zelf eerst na te gaan.
+
+    Importeer de gegevens via *Gegevens ophalen en transformeren*. Gebruik hierbij ook de query editor om te controleren of de velden naar het juiste gegevenstype zijn omgezet. Zo niet, wijzig dan het gevenstype.
+:::
