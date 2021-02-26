@@ -196,7 +196,7 @@ Figuur 5.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij e
 <p>Vraag: Is de verdeling van de haarkleuren bij mannen anders dan bij vrouwen?</p>
 <div class="figure" style="text-align: center">
 <span id="fig:eda-c2"></span>
-<img src="images/eda/eda-c2-kruistabel.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="33.3%"><img src="images/eda/eda-c2-staaf.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="33.3%"><p class="caption">
+<img src="images/eda/eda-c2-kruistabel.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="40%"><img src="images/eda/eda-c2-staaf.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="40%"><p class="caption">
 Figuur 5.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
 </p>
 </div>
@@ -249,11 +249,11 @@ Figuur 5.7: Lijndiagram (links) en spreidingsdiagram (rechts).
 <span class="header-section-number">5.5</span> Voorbeeld: Old Faithful geiser<a class="anchor" aria-label="anchor" href="#voorbeeld-old-faithful-geiser"><i class="fas fa-link"></i></a>
 </h2>
 <!-- Inspiratiebron: https://www.tudelft.nl/ewi/studeren/online-onderwijs/wiskunde-uitgelegd/statistiek#c144704 -->
-<p>De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset <a href="data/faithful.csv">faithful.csv</a> bevat 272 waarnemingen van twee variabelen: <code>eruptie</code> (tijdsduur van de uitbarsting in sec.) en <code>wachttijd</code> (wachttijd tussen twee erupties in min.).</p>
+<p>De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset <a href="data/faithful.csv">faithful.csv</a> bevat 272 waarnemingen van twee variabelen: <code>eruptietijd</code> (tijdsduur van de uitbarsting in sec.) en <code>wachttijd</code> (wachttijd tussen twee erupties in min.).</p>
 <div class="guidedpractice">
 <ol style="list-style-type: decimal">
 <li>Laad de data via Power Query in Excel.</li>
-<li>Voer een beschrijvend onderzoek uit naar de variabele <code>eruptie</code>. Bepaal in ieder geval minimum- en maximumwaarde, mediaan en gemiddelde. Teken ook een boxplot. Welke conclusies kun je hieruit trekken over de verdeling van de waarden?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Je kunt hier goed zien dat de data willekeurig is. De mediaan (240) ligt veel dichter bij de maximumwaarde (306) dan bij de minimumwaarde en ligt ook rechts van het gemiddelde (209). De verdeling is asymmetrisch, scheef, skew rechts.&lt;/p&gt;"><sup>3</sup></a>
+<li>Voer een beschrijvend onderzoek uit naar de variabele <code>eruptietijd</code>. Bepaal in ieder geval minimum- en maximumwaarde, mediaan en gemiddelde. Teken ook een boxplot. Welke conclusies kun je hieruit trekken over de verdeling van de waarden?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Je kunt hier goed zien dat de data willekeurig is. De mediaan (240) ligt veel dichter bij de maximumwaarde (306) dan bij de minimumwaarde en ligt ook rechts van het gemiddelde (209). De verdeling is asymmetrisch, scheef, skew rechts.&lt;/p&gt;"><sup>3</sup></a>
 </li>
 </ol>
 </div>
@@ -266,16 +266,8 @@ Figuur 5.7: Lijndiagram (links) en spreidingsdiagram (rechts).
 </li>
 </ol>
 </div>
-<p>Met kansdichtheidsdiagrammen die bij de theoretische verdelingen horen kun je veel meer details in de verdeling zien. Helaas behoort de verdeling hier niet tot een van de bekende verdelingsfuncties. Een zeer goed alternatief is een zogenaamd <em>Kernel dichtheidschattingsdiagram</em> maar dit grafiektype wordt niet door Excel aangeboden. Het voert te ver om hierop in te gaan. De meeste statistische add-ins ondersteunen dit wel.</p>
-<p>In de volgende afbeelding zie je hoe deze eruit zou kunnen zien.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:faithful-kde"></span>
-<img src="images/eda/faithful-KDE.png" alt="Kernel dichtheidschatting m.b.v. de add-in van Real Statistics." width="70%"><p class="caption">
-Figuur 5.8: Kernel dichtheidschatting m.b.v. de add-in van Real Statistics.
-</p>
-</div>
-<p>Hierin zie je de twee pieken erg goed: rond 120 en rond 270. En ook dat de dataset in feite uit twee groepen bestaat.</p>
-<p>Een goed alternatief is een disgram met een cumulatieve empirische verdeling die bij de histogramopties van gegevensanalyse zit.</p>
+<p>Met kansdichtheidsdiagrammen die bij de theoretische verdelingen horen kun je veel meer details in de verdeling zien. Helaas behoort de verdeling van de eruptietijden niet tot een van de bekende verdelingsfuncties. Een zeer goed alternatief is een zogenaamd <em>Kernel dichtheidschattingsdiagram</em> maar dit grafiektype wordt niet door Excel aangeboden. Het voert te ver om hierop in te gaan. De meeste statistische add-ins ondersteunen dit grafiektype wel.</p>
+<p>Een goed alternatief is een diagram met een cumulatieve empirische verdeling die bij de histogramopties van gegevensanalyse zit.</p>
 <div class="guidedpractice">
 <ol start="5" style="list-style-type: decimal">
 <li>Maak nu opnieuw een histogram, maar nu via de methode Gegevens -&gt; Gegevensanalyse -&gt; Histogram. Selecteer in het dialoogvenster zowel <em>Cumulatief percentage</em> als <em>Grafiek maken</em>.</li>
@@ -284,7 +276,7 @@ Figuur 5.8: Kernel dichtheidschatting m.b.v. de add-in van Real Statistics.
 <div class="figure" style="text-align: center">
 <span id="fig:faithful-ecdf"></span>
 <img src="images/eda/faithful-ECDF.png" alt="Histogram met cumulatief percentages." width="70%"><p class="caption">
-Figuur 5.9: Histogram met cumulatief percentages.
+Figuur 5.8: Histogram met cumulatief percentages.
 </p>
 </div>
 <p>Hier zie je steile hellingen aan weerszijden van 120 en van 270, de twee piekwaarden.</p>
@@ -328,7 +320,7 @@ Figuur 5.9: Histogram met cumulatief percentages.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 23 februari 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 26 februari 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

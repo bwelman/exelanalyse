@@ -71,14 +71,20 @@ Bij lineaire regressie probeer je de beste waarden voor $\beta_0$ en $\beta_1$ t
 
 Als voorbeeld wordt een gesimuleerde dataset met 15 waarnemingen voor $x$ en $y$ gebruikt om een aantal achtergronden uit te leggen.
 
-```{r sim1-data, fig.cap="Dataset met 15 waarnemingen x en y."}
-knitr::include_graphics("images/linregressie/sim1-data.png")
+```{r sim1-data, echo=FALSE}
+sim1.data <- read_csv2("data/sim1.csv")
+sim1.data %>% 
+	t() %>% 
+	kbl(digits = 1, format.args = list(decimal.mark = ","), caption = "Dataset met 15 waarnemingen x en y.") %>% 
+	kable_styling(full_width = FALSE, font_size = 14)
 ```
 
 In figuur \@ref(fig:sim1-basis) kun je zien hoe ze aan elkaar gerelateerd zijn.
 
-```{r sim1-basis, fig.cap="Spreidingsdiagram voor de 15 waarnemingen."}
-knitr::include_graphics("images/linregressie/sim1-basis.png")
+```{r sim1-basis, fig.cap="Spreidingsdiagram voor de 15 waarnemingen.", echo=FALSE}
+ggplot(data = sim1.data, aes(x, y)) +
+	geom_point(colour = "black") +
+	theme_bw()
 ```
 
 De gegevens laten een sterk lineair patroon zien en lenen zich ervoor om het patroon in een lineair model vast te leggen. Wanneer je de waarden voor $\beta_0$ en $\beta_1$ hebt, kun je via de vergelijking van de regressielijn voor elke waarde van $x$ een bijbehorende waarde van $y$ berekenen. Deze voorspelde y-waarden worden ook wel de geschatte waarden genoemd.
@@ -87,8 +93,14 @@ De kunst is nu om zodanige waarden voor $\beta_0$ en $\beta_1$ te vinden, zodat 
 
 In figuur \@ref(fig:sim1-regressie) is een regressielijn (rood) getekend met daarnaast vertikale afstanden (blauwe lijnstukjes) tussen de echte y-waarde (de zwarte punt) en de voorspelde y-waarde (het punt op de rode lijn.
 
-```{r sim1-regressie, fig.cap="Spreidingsdiagram nu met regressielijn en afstandslijntjes."}
-knitr::include_graphics("images/linregressie/sim1-regressie.png")
+```{r sim1-regressie, fig.cap="Spreidingsdiagram nu met regressielijn en afstandslijntjes.", echo=FALSE}
+sim1.data %>% 
+	mutate(prog = 4.71 + 2.05*x) %>% 
+	ggplot(aes(x, y)) + 
+	geom_abline(intercept = 4.71, slope = 2.05, colour = "red") +
+ 	geom_point(colour = "black") + 
+ 	geom_linerange(aes(ymin = y, ymax = prog), colour = "blue") + 
+ 	theme_bw()
 ```
 
 Voor elk punt is afstand = $y - y_{voorspeld}$. Dit verschil wordt ook wel **residu** genoemd. En de beste lijn is de lijn waarvoor de som van de kwadratische afstanden zo klein mogelijk is. Deze methode heet ook wel de **kleinste kwadraten methode**. Hoe je dit precies berekend is in dit kader niet van belang. Excel gebruikt deze methode ook.
@@ -183,8 +195,12 @@ Bij een goed model moeten de residuen willekeurig langs de x-as verdeeld zijn en
 
 Bij een bepaald natuurkundig experiment wil men onderzoeken of de druk lineair afhankelijk is van de temperatuur. Daartoe zijn 10 waarnemingen verzameld die te vinden zijn in het bestand [sim2.csv](data/sim2.csv).
 
-```{r sim2-data, fig.cap="Experiment met 10 waarnemingen temperatuur en druk."}
-knitr::include_graphics("images/linregressie/sim2-data.png")
+
+```{r sim2-data, echo=FALSE}
+sim2.data <- read_csv2("data/sim2.csv")
+sim2.data %>% 
+	kbl(digits = 1, format.args = list(decimal.mark = ","), caption = "") %>% 
+	kable_styling(full_width = FALSE, font_size = 12)
 ```
 
 In figuur \@ref(fig:sim2-spreiding) is de druk tegen de temperatuur uitgezet.
@@ -317,7 +333,7 @@ Bij een werkloosheidspercentage van 6,0 en een negatieve rente (niet ondenkbaar)
 ## Opgaven {#opg-linreg}
 
 ::: {.sectionexercise}
-1. In \@ref(linreg-enkelvoudig) is een regressie-analyse besproken met de data in figuur \@ref(fig:sim1-data). Voer deze analyse in Excel uit. Experimenteer met de uitvoeropties die Gegevensanalyse biedt. De dataset kun je ook downloaden als [sim1.csv](data/sim1.csv).
+1. In \@ref(linreg-enkelvoudig) is een regressie-analyse besproken met de data in tabel \@ref(tab:sim1-data). Voer deze analyse in Excel uit. Experimenteer met de uitvoeropties die Gegevensanalyse biedt. De dataset kun je ook downloaden als [sim1.csv](data/sim1.csv).
 
 1. Voer in Excel de analyse uit het voorbeeld \@ref(sim2) uit. De dataset kun je ook downloaden als [sim2.csv](data/sim2.csv).
 

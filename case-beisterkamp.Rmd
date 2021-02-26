@@ -1,4 +1,4 @@
-## Case - Beisterkamp {#case-beisterkamp}
+## Beisterkamp {#case-beisterkamp}
 
 ```{r vrachtwagen, echo=FALSE, fig.show='hold', out.width="30%", fig.cap="Een van de vrachtwagens van Beisterkamp"}
 knitr::include_graphics("images/case-beisterkamp/beisterkamp.png")

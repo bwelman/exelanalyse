@@ -319,7 +319,7 @@ demotabel %>%
     
 ```{r koffieprijzen-data, echo=FALSE}
 tidy001.data <- read_excel("data/koffieprijzen.xlsx")
-tidy001.data %>% kbl(caption = "Starbucks koffieprijzen voor drie verschillende groottes.") %>% kable_styling(full_width = FALSE)
+tidy001.data %>% kbl(format.args = list(decimal.mark = ","), caption = "Starbucks koffieprijzen voor drie verschillende groottes.") %>% kable_styling(full_width = FALSE)
 ```
 
 4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
@@ -329,7 +329,7 @@ tidy001.data %>% kbl(caption = "Starbucks koffieprijzen voor drie verschillende 
 
 ```{r levensonderhoud-data, echo=FALSE}
 levensonderhoud.data <- read_excel("data/levensonderhoud.xlsx")
-levensonderhoud.data %>% head(8) %>% kbl(caption = "Gemiddelde prijzen voor vier produkten.") %>% kable_styling(full_width = FALSE)
+levensonderhoud.data %>% head(8) %>% kbl(format.args = list(decimal.mark = ","), caption = "Gemiddelde prijzen voor vier produkten.") %>% kable_styling(full_width = FALSE)
 ```
 
 5. Op een bepaalde basischool krijgt elke leerling krijgt in elk kwartaal (Herfst, Winter en Lente) van elk jaar een toets voor rekenen en taal. De volgende tabel bevat een beperkte gegevensverzameling hiervan.

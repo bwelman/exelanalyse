@@ -73,7 +73,7 @@ Bij een marktonderzoek zijn 30 personen gevraagd om drie merken tablets te evalu
 knitr::include_graphics("images/grafieken/boxplot-tablets.png", dpi = NA)
 ```
 
-*interpretatie*
+*Interpretatie*
 
 Via de boxplots kun je zien dat de scores voor merk C wat hoger lijken uit te vallen dan voor de andere twee. En die voor merk B lijken iets lager uit te vallen. De verdeling bij merk A is het meest symmetrisch, tenminste in het gebied tussen Q1 en Q3. De verdelingen bij de merken B en C zijn minder symmetrisch. Een andere beoordelingsmaatstaf voor symmetrie is hoe dicht het gemiddelde (met *X* aangegeven) en de de mediaan (de horizontale streep in de box) bij elkaar liggen. Merk B heeft een uitschieter naar boven (de rode punt in de figuur).
 

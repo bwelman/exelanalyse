@@ -1,4 +1,4 @@
-## Case - Marktwaarde Voetbalclub {#case-fctwente}
+## Marktwaarde Voetbalclub {#case-fctwente}
 
 ```{r elftalfoto, fig.cap="Elftalfoto FC Twente, augustus 2020, © Emiel Muijderman"}
 knitr::include_graphics("images/case-fctwente/fctwente-elftal.png")

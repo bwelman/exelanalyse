@@ -1,4 +1,4 @@
-## Case - Ziekteverzuim {#case-ziekteverzuim}
+## Ziekteverzuim {#case-ziekteverzuim}
 
 ```{r ziekteverzuim, fig.cap="Zo pakt Universiteit Wageningen het ziekteverzuim aan."}
 knitr::include_graphics("images/case-ziekteverzuim/ziekteverzuim.png")

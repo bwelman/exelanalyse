@@ -41,9 +41,8 @@ fig:eda-n1
 fig:eda-c2
 fig:eda-cn
 fig:eda-cn2
-fig:faithful-kde
 fig:faithful-ecdf
-fig:sim1-data
+tab:sim1-data
 fig:sim1-basis
 fig:sim1-regressie
 fig:sim1-spreiding
@@ -52,7 +51,7 @@ fig:sim1-samenvatting
 fig:sim1-anova
 fig:sim1-coefficienten
 fig:sim1-residu
-fig:sim2-data
+tab:sim2-data
 fig:sim2-spreiding
 fig:sim2-samenvatting
 fig:sim2-coefficienten

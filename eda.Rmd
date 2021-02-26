@@ -149,7 +149,7 @@ Je wilt dan de verdeling van een categorische variabele (haarkleur) weten over d
 
 Vraag: Is de verdeling van de haarkleuren bij mannen anders dan bij vrouwen?
 
-```{r eda-c2, out.width="33.3%", fig.cap="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht."}
+```{r eda-c2, out.width="40%", fig.cap="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht."}
 knitr::include_graphics("images/eda/eda-c2-kruistabel.png")
 knitr::include_graphics("images/eda/eda-c2-staaf.png")
 ```
@@ -194,11 +194,11 @@ knitr::include_graphics("images/eda/eda-n2-spreiding.png")
 
 <!-- Inspiratiebron: https://www.tudelft.nl/ewi/studeren/online-onderwijs/wiskunde-uitgelegd/statistiek#c144704 -->
 
-De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset [faithful.csv](data/faithful.csv) bevat 272 waarnemingen van twee variabelen: `eruptie` (tijdsduur van de uitbarsting in sec.) en `wachttijd` (wachttijd tussen twee erupties in min.).
+De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset [faithful.csv](data/faithful.csv) bevat 272 waarnemingen van twee variabelen: `eruptietijd` (tijdsduur van de uitbarsting in sec.) en `wachttijd` (wachttijd tussen twee erupties in min.).
 
 :::{.guidedpractice}
 1. Laad de data via Power Query in Excel.
-2. Voer een beschrijvend onderzoek uit naar de variabele `eruptie`. Bepaal in ieder geval minimum- en maximumwaarde, mediaan en gemiddelde. Teken ook een boxplot. Welke conclusies kun je hieruit trekken over de verdeling van de waarden?[^faithful-02]
+2. Voer een beschrijvend onderzoek uit naar de variabele `eruptietijd`. Bepaal in ieder geval minimum- en maximumwaarde, mediaan en gemiddelde. Teken ook een boxplot. Welke conclusies kun je hieruit trekken over de verdeling van de waarden?[^faithful-02]
 
 :::
 
@@ -210,17 +210,9 @@ Geologische experts geloven dat er twee soorten uitbarstingen voorkomen: met een
 
 :::
 
-Met kansdichtheidsdiagrammen die bij de theoretische verdelingen horen kun je veel meer details in de verdeling zien. Helaas behoort de verdeling hier niet tot een van de bekende verdelingsfuncties. Een zeer goed alternatief is een zogenaamd *Kernel dichtheidschattingsdiagram* maar dit grafiektype wordt niet door Excel aangeboden. Het voert te ver om hierop in te gaan. De meeste statistische add-ins ondersteunen dit wel.
+Met kansdichtheidsdiagrammen die bij de theoretische verdelingen horen kun je veel meer details in de verdeling zien. Helaas behoort de verdeling van de eruptietijden niet tot een van de bekende verdelingsfuncties. Een zeer goed alternatief is een zogenaamd *Kernel dichtheidschattingsdiagram* maar dit grafiektype wordt niet door Excel aangeboden. Het voert te ver om hierop in te gaan. De meeste statistische add-ins ondersteunen dit grafiektype wel.
 
-In de volgende afbeelding zie je hoe deze eruit zou kunnen zien.
-
-```{r faithful-kde, fig.cap="Kernel dichtheidschatting m.b.v. de add-in van Real Statistics."}
-knitr::include_graphics("images/eda/faithful-KDE.png")
-```
-
-Hierin zie je de twee pieken erg goed: rond 120 en rond 270. En ook dat de dataset in feite uit twee groepen bestaat.
-
-Een goed alternatief is een disgram met een cumulatieve empirische verdeling die bij de histogramopties van gegevensanalyse zit.
+Een goed alternatief is een diagram met een cumulatieve empirische verdeling die bij de histogramopties van gegevensanalyse zit.
 
 :::{.guidedpractice}
 5. Maak nu opnieuw een histogram, maar nu via de methode Gegevens -> Gegevensanalyse -> Histogram. Selecteer in het dialoogvenster zowel *Cumulatief percentage* als *Grafiek maken*.
