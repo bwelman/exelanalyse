@@ -84,7 +84,7 @@ Figuur 2.1: Grafische weergave van gestructureerde gegevens
 <p>Meestal staan de waarnemingen wel in een eigen tabel en hoef je alleen maar de eerste twee voorwaarden te controleren. Bij het ontwerp van databases kom je deze voorwaarden ook tegen en wordt het proces * normaliseren* genoemd. Wanneer aan deze drie voorwaarden voldaan wordt heb je in feite de 3e normaalvorm.</p>
 <p><strong>Voorbeeld</strong></p>
 <p>In tabel <a href="data.html#tab:exp1">2.1</a> staan de gegevens van een meting bij een klein denkbeeldig experiment in een formaat dat je veel tegenkomt.</p>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:exp1">Tabel 2.1: </span>Personen als rij.
 </caption>
@@ -135,7 +135,7 @@ Vicky
 </tbody>
 </table></div>
 <p>Wanneer je de rijen en kolommen verwisselt heb je dezelfde gegevens, maar de tabel ziet er dan iets anders uit, zie tabel <a href="data.html#tab:exp2">2.2</a>.</p>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:exp2">Tabel 2.2: </span>Behandelingen als rij.
 </caption>
@@ -184,7 +184,7 @@ Behandeling.B
 </tbody>
 </table></div>
 <p>Gestructureerd ziet de gegevensverzameling er uit zoals in tabel <a href="data.html#tab:exp3">2.3</a>.</p>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:exp3">Tabel 2.3: </span>Gegevens in gestructureerde vorm.
 </caption>
@@ -287,7 +287,7 @@ Behandeling.B
 <span class="header-section-number">2.1.1</span> Kolomkoppen met waarden<a class="anchor" aria-label="anchor" href="#kolomkoppen-met-waarden"><i class="fas fa-link"></i></a>
 </h3>
 <p>Een veel voorkomende vorm van een gegevensverzameling is een tabelvorm waarbij de kolomkoppen waarden zijn en geen variabelenamen. De volgende tabel is hier een voorbeeld van. Hierin staat het aantal mannelijke en vrouwelijke studenten dat een bepaalde score (A t/m E) behaald heeft.</p>
-<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:scores1-data">Tabel 2.4: </span>Tabel waarin de kolomkoppen man en vrouw in feite waarden van variabele geslacht zijn.
 </caption>
@@ -383,21 +383,143 @@ E
 <li><p>Kies <em>tab Startpagina &gt; Sluiten en laden &gt; Sluiten en laden</em>.</p></li>
 </ol>
 <p>Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één variabele en elke rij is één waarneming.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:scores1-result"></span>
-<img src="images/data/scores1_result.png" alt="Scores1 nu gestructureerd." width="40%"><p class="caption">
-Figuur 2.2: Scores1 nu gestructureerd.
-</p>
-</div>
+<div class="inline-table"><table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:scores1-result">Tabel 2.5: </span>Scores1 nu gestructureerd
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+score
+</th>
+<th style="text-align:left;">
+geslacht
+</th>
+<th style="text-align:right;">
+aantal
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div id="kolomkoppen-zijn-gecombineerde-variabelen" class="section level3" number="2.1.2">
 <h3>
 <span class="header-section-number">2.1.2</span> Kolomkoppen zijn gecombineerde variabelen<a class="anchor" aria-label="anchor" href="#kolomkoppen-zijn-gecombineerde-variabelen"><i class="fas fa-link"></i></a>
 </h3>
 <p>Soms zijn kolommen een combinatie van meerdere onderliggende variabelen. Dit is het geval bij de gegevensverzameling in de volgende tabel. Deze is gelijkwaardig aan die in de vorige taak. Alleen zijn er nu twee verschillende klassen (klas1 en klas2) en staat het aantal voor elk geslacht in elke klas in een eigen kolom. Ook in deze gegevensverzameling zijn de kolomkoppen waarden van variabelen. Maar er zijn twee variabelen, <code>geslacht</code> en <code>klas</code>, in een kolom gecombineerd.</p>
-<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:scores2-data">Tabel 2.5: </span>Tabel met vier kolomkoppen die een combinatie van de variabelen geslacht en klas zijn.
+<span id="tab:scores2-data">Tabel 2.6: </span>Tabel met vier kolomkoppen die een combinatie van de variabelen geslacht en klas zijn.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -519,21 +641,316 @@ De kolom <code>Kenmerk</code> is gesplitst in kolom <code>Kenmerk.1</code> (met 
 <li><p>Kies <em>tab Startpagina &gt; Sluiten en laden &gt; Sluiten en laden</em>.</p></li>
 </ol>
 <p>Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één variabele en elke rij is één waarneming.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:scores2-result"></span>
-<img src="images/data/scores2_result.png" alt="Scores2 nu gestructureerd." width="40%"><p class="caption">
-Figuur 2.3: Scores2 nu gestructureerd.
-</p>
-</div>
+<div class="inline-table"><table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:scores2-result">Tabel 2.7: </span>Scores2 nu gestructureerd
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+score
+</th>
+<th style="text-align:left;">
+geslacht
+</th>
+<th style="text-align:left;">
+klas
+</th>
+<th style="text-align:right;">
+aantal
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+man
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+vrouw
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div id="variabelen-in-rijen-en-kolommen" class="section level3" number="2.1.3">
 <h3>
 <span class="header-section-number">2.1.3</span> Variabelen in rijen en kolommen<a class="anchor" aria-label="anchor" href="#variabelen-in-rijen-en-kolommen"><i class="fas fa-link"></i></a>
 </h3>
 <p>Een meer gecompliceerde vorm van rommelige gegevens krijg je wanneer er variabelen in zowel rijen als kolommen staan. In het voorbeeld hierna staan de beoordelingen voor een tussentoets en een eindtoets voor vijf studenten, waarbij elk van hen in precies twee van de vijf mogelijke klassen is geplaatst.</p>
-<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:scores3-data">Tabel 2.6: </span>Een tabel met variabelen in zowel rijen als kolommen.
+<span id="tab:scores3-data">Tabel 2.8: </span>Een tabel met variabelen in zowel rijen als kolommen.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -776,7 +1193,7 @@ C
 <div class="figure" style="text-align: center">
 <span id="fig:scores3-pivotcolumn"></span>
 <img src="images/data/scores3_pivotcolumn.png" alt="Instellingen voor de draaikolom." width="40%"><p class="caption">
-Figuur 2.4: Instellingen voor de draaikolom.
+Figuur 2.2: Instellingen voor de draaikolom.
 </p>
 </div>
 </li>
@@ -784,21 +1201,176 @@ Figuur 2.4: Instellingen voor de draaikolom.
 <li><p>Kies <em>tab Startpagina &gt; Sluiten en laden &gt; Sluiten en laden</em>.</p></li>
 </ol>
 <p>Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één variabele en elke rij is één waarneming.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:scores3-result"></span>
-<img src="images/data/scores3_result.png" alt="Scores3 nu gestructureerd." width="40%"><p class="caption">
-Figuur 2.5: Scores3 nu gestructureerd.
-</p>
-</div>
+<div class="inline-table"><table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:scores3-result">Tabel 2.9: </span>Scores3 nu gestructureerd
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+naam
+</th>
+<th style="text-align:left;">
+klas
+</th>
+<th style="text-align:left;">
+tussentoets
+</th>
+<th style="text-align:left;">
+eindtoets
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bernard
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bernard
+</td>
+<td style="text-align:left;">
+klas5
+</td>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Melissa
+</td>
+<td style="text-align:left;">
+klas1
+</td>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Melissa
+</td>
+<td style="text-align:left;">
+klas3
+</td>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Roger
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Roger
+</td>
+<td style="text-align:left;">
+klas5
+</td>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vicky
+</td>
+<td style="text-align:left;">
+klas3
+</td>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vicky
+</td>
+<td style="text-align:left;">
+klas4
+</td>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+William
+</td>
+<td style="text-align:left;">
+klas2
+</td>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+E
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+William
+</td>
+<td style="text-align:left;">
+klas4
+</td>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+C
+</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div id="analyse-populatie-benelux" class="section level3" number="2.1.4">
 <h3>
 <span class="header-section-number">2.1.4</span> Analyse populatie Benelux<a class="anchor" aria-label="anchor" href="#analyse-populatie-benelux"><i class="fas fa-link"></i></a>
 </h3>
-<p>In tabel <a href="data.html#tab:benelux-data">2.7</a> staat de populatie mannen en vrouwen in de landen van de Benelux voor de jaren 2000, 2005, 2010 en 2015.</p>
-<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<p>In tabel <a href="data.html#tab:benelux-data">2.10</a> staat de populatie mannen en vrouwen in de landen van de Benelux voor de jaren 2000, 2005, 2010 en 2015.</p>
+<div class="inline-table"><table class="table table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:benelux-data">Tabel 2.7: </span>Populatie Benelux voor de jaren 2000, 2005, 2010 en 2015.
+<span id="tab:benelux-data">Tabel 2.10: </span>Populatie Benelux voor de jaren 2000, 2005, 2010 en 2015.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -964,7 +1536,7 @@ Man
 <div class="figure" style="text-align: center">
 <span id="fig:benelux-tidy"></span>
 <img src="images/data/benelux_tidy.png" alt="Tabel met gestructureerde populatiedata van de Benelux." width="40%"><p class="caption">
-Figuur 2.6: Tabel met gestructureerde populatiedata van de Benelux.
+Figuur 2.3: Tabel met gestructureerde populatiedata van de Benelux.
 </p>
 </div>
 <ol start="8" style="list-style-type: decimal">
@@ -973,7 +1545,7 @@ Figuur 2.6: Tabel met gestructureerde populatiedata van de Benelux.
 <div class="figure" style="text-align: center">
 <span id="fig:benelux-pivot-chart"></span>
 <img src="images/data/benelux_pivot_chart.png" alt="Draaitabel en draaigrafiek van de populatie per geslacht per jaar." width="70%"><p class="caption">
-Figuur 2.7: Draaitabel en draaigrafiek van de populatie per geslacht per jaar.
+Figuur 2.4: Draaitabel en draaigrafiek van de populatie per geslacht per jaar.
 </p>
 </div>
 </div>
@@ -987,7 +1559,7 @@ Figuur 2.7: Draaitabel en draaigrafiek van de populatie per geslacht per jaar.
 <span id="fig:meetniveaus"></span>
 <div id="htmlwidget-86dc17bbd8304768193a" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-86dc17bbd8304768193a">{"x":{"diagram":"\n  digraph stat1 {\n    graph[rankdir = LR, bgcolor=transparent]\n    node[shape = oval, fontname = Arial]\n    V [label = \"Variabele\"]\n    node[shape = box, width = 1.2, fontsize = 12]\n    CA [label = \"Categorie\"]\n    NU [label = \"Numeriek\"]\n    node[shape = box, width = 0.8, fontsize = 10]\n    NO [label = \"Nominaal\"]\n    OR [label = \"Ordinaal\"]\n    IN [label = \"Interval\"]\n    RA [label = \"Ratio\"]\n\n    {rank=same CA NU}\n    V -> {CA,NU}\n    CA -> {NO,OR}\n    NU -> {IN,RA}\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
-Figuur 2.8: Meetniveaus van variabelen
+Figuur 2.5: Meetniveaus van variabelen
 </p>
 </div>
 <ul>
@@ -1029,9 +1601,9 @@ Figuur 2.8: Meetniveaus van variabelen
 <ol style="list-style-type: decimal">
 <li>In een Excel werkblad kom je de volgende tabel met gegevens tegen.</li>
 </ol>
-<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:demotabel">Tabel 2.8: </span>Voorbeeldtabel met kenmerken van een aantal personen
+<span id="tab:demotabel">Tabel 2.11: </span>Voorbeeldtabel met kenmerken van een aantal personen
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1157,16 +1729,16 @@ klein
 </tbody>
 </table></div>
 <ol style="list-style-type: lower-alpha">
-<li>Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel <a href="data.html#tab:demotabel">2.8</a>?</li>
+<li>Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel <a href="data.html#tab:demotabel">2.11</a>?</li>
 <li>Geef voor elke variabele aan tot welk meetniveau deze variabele behoort.</li>
 </ol>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Bij een onderzoek wordt aan personen gevraagd om bij te houden hoeveel tekstberichten ze per dag versturen en hoeveel tijd ze hieraan besteden. Welke variabelen heb je hier en zijn deze discreet of continu?</p></li>
-<li><p>Download het hulpbestand <a href="data/koffieprijzen.xlsx">koffieprijzen.xlsx</a>. Deze bevat een aantal koffieprijzen van Starbucks, zie tabel <a href="data.html#tab:koffieprijzen-data">2.9</a>. Maak hiervan een gestructureerde dataset.</p></li>
+<li><p>Download het hulpbestand <a href="data/koffieprijzen.xlsx">koffieprijzen.xlsx</a>. Deze bevat een aantal koffieprijzen van Starbucks, zie tabel <a href="data.html#tab:koffieprijzen-data">2.12</a>. Maak hiervan een gestructureerde dataset.</p></li>
 </ol>
-<div class="inline-table"><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:koffieprijzen-data">Tabel 2.9: </span>Starbucks koffieprijzen voor drie verschillende groottes.
+<span id="tab:koffieprijzen-data">Tabel 2.12: </span>Starbucks koffieprijzen voor drie verschillende groottes.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1312,16 +1884,16 @@ Filter Coffee
 </table></div>
 <ol start="4" style="list-style-type: decimal">
 <li>
-<p>Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van <a href="https://www.numbeo.com/cost-of-living/">Numbeo</a> voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand <a href="data/levensonderhoud.xlsx">levensonderhoud.xlsx.xlsx</a>. Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel <a href="data.html#tab:levensonderhoud-data">2.10</a>.</p>
+<p>Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van <a href="https://www.numbeo.com/cost-of-living/">Numbeo</a> voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand <a href="data/levensonderhoud.xlsx">levensonderhoud.xlsx.xlsx</a>. Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel <a href="data.html#tab:levensonderhoud-data">2.13</a>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Maak hiervan een gestructureerde dataset.</li>
 <li>In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?</li>
 </ol>
 </li>
 </ol>
-<div class="inline-table"><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:levensonderhoud-data">Tabel 2.10: </span>Gemiddelde prijzen voor vier produkten.
+<span id="tab:levensonderhoud-data">Tabel 2.13: </span>Gemiddelde prijzen voor vier produkten.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1481,9 +2053,9 @@ Belfast, United Kingdom
 <ol start="5" style="list-style-type: decimal">
 <li>Op een bepaalde basischool krijgt elke leerling krijgt in elk kwartaal (Herfst, Winter en Lente) van elk jaar een toets voor rekenen en taal. De volgende tabel bevat een beperkte gegevensverzameling hiervan.</li>
 </ol>
-<div class="inline-table"><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tidy003-data">Tabel 2.11: </span>Schoolresultaten voor rekenen en taal.
+<span id="tab:tidy003-data">Tabel 2.14: </span>Schoolresultaten voor rekenen en taal.
 </caption>
 <thead><tr>
 <th style="text-align:right;">
@@ -1786,7 +2358,7 @@ Taal
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 26 februari 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 28 februari 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

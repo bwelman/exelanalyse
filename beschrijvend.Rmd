@@ -26,7 +26,9 @@ Het Gallup rapport [More Americans Say Real Estate Is Best Long-Term Investmen](
 gallup <- data.frame(Investering = c("Vastgoed", "Aandelen/Beleggingsfondsen", "Goud", "Spaargeld", "Obligaties", "Anders"),
 					  Vrouwen = formattable::percent(c(0.33, 0.21, 0.14, 0.18, 0.08, 0.06), format = "d"),
 					  Mannen = formattable::percent(c(0.32, 0.25, 0.22, 0.12, 0.05, 0.04), format = "d"))
-gallup %>% kbl(caption = "Mijn tabel") %>% kable_styling(full_width = FALSE)
+gallup %>% 
+	kbl(caption = "Beste lange termijn investering Amerikanen") %>% 
+	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
 ```
 
 ```{r gallup1-staaf, fig.cap="Staafdiagram", echo=FALSE}

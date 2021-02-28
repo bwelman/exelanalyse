@@ -200,7 +200,7 @@ Bij een bepaald natuurkundig experiment wil men onderzoeken of de druk lineair a
 sim2.data <- read_csv2("data/sim2.csv")
 sim2.data %>% 
 	kbl(digits = 1, format.args = list(decimal.mark = ","), caption = "") %>% 
-	kable_styling(full_width = FALSE, font_size = 12)
+	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 12)
 ```
 
 In figuur \@ref(fig:sim2-spreiding) is de druk tegen de temperatuur uitgezet.

@@ -7,12 +7,12 @@ tab:exp1
 tab:exp2
 tab:exp3
 tab:scores1-data
-fig:scores1-result
+tab:scores1-result
 tab:scores2-data
-fig:scores2-result
+tab:scores2-result
 tab:scores3-data
 fig:scores3-pivotcolumn
-fig:scores3-result
+tab:scores3-result
 tab:benelux-data
 fig:benelux-tidy
 fig:benelux-pivot-chart
