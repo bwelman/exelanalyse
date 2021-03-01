@@ -1,4 +1,4 @@
-# Voorwoord {-}
+# Voorwoord {.unnumbered}
 
 Er zijn twee hoofdtakken binnen de statistiek:
 
@@ -19,6 +19,26 @@ Belangrijk is ook het meten van *onzekerheid*. Onzekerheid is de fout bij het sc
 
 Excel is niet ontworpen om als een statistische toepassing te dienen en heeft daardoor wel enige beperkingen vergeleken met echte statistische programma's als SPSS, SAS, Stata en R. Ook een programmeertaal als Python heeft meer mogelijkheden. Desondanks heeft Excel meerdere statistische mogelijkheden die niet bij iedereen bekend zijn. En waar Excel tekortkomingen heeft kun je die uitbreiden met zogenaamde add-ins. Een zo'n add-in is [Real Statistics](http://www.real-statistics.com/) welke gratis te gebruiken is. Bij de onderdelen in deze tutorial wordt alleen van de standaard in Excel aanwezige mogelijkheden gebruik gemaakt.
 
-**Software**
+## Organisatie studieboek {.unnumbered}
+
+Dit studieboek heeft een logische opbouw, beginnend met het verkrijgen van de data, het bestuderen daarvan, het onderzoeken van verbanden tot het trekken van conclusies. Daarna kan de verkregen kennis toegepast worden in cases.
+
++ Hoofdstuk \@ref(importdata) richt zich op het verkrijgen van data en het eventuele opschonen hiervan. Dat gebeurt met de in Excel ingebouwde Power Query Editor. Dit hoofdstuk kun je overslaan wanneer je met dit proces voldoende bekend.
+
++ Hoofdstuk \@ref(data) behandelt soorten data en het structureren hiervan zodat de data geschikt is voor verdere analyse.
+
++ Hoofdstuk \@ref(beschrijvend) behandelt de beschrijvende statistiek, het ordenen en samenvatten van de data.
+
++ Hoofdstuk \@ref(grafieken) behandelt de belangrijkste grafiektypes.
+
++ Hoofdstuk \@ref(eda) gaat in op het proces van de Exploratieve Data Analyse (EDA).
+
++ Hoofdstuk \@ref(linregressie) behandelt de samenhang tussen variabelen en enkelvoudige lineaire regressie.
+
++ Hoofdstuk over tijdreeksen is nog in ontwikkeling.
+
++ Hoofdstuk \@ref(cases) bevat een aantal cases.
+
+## Software {.unnumbered}
 
 In dit studieboek wordt gewerkt met **Excel 365 NL**. Voor het grootste deel van de inhoud kun je ook met Excel 2010, 2013, 2016 en 2019 werken.

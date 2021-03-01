@@ -1,4 +1,4 @@
-# Exploratieve Data Analyse (EDA)
+# Exploratieve Data Analyse (EDA) {#eda}
 
 :::{.chapterintro}
 Exploratieve Data Analyse (EDA) is vaak de eerste stap naar het visualiseren en transformeren van de gegevens. Je leert de gegevens kennen, vaak resulterend in een eerste aanzet tot modelvorming.

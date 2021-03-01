@@ -1,4 +1,4 @@
-# Data
+# Data {#data}
 
 :::{.chapterintro}
 Bij de analyse van data probeer je antwoorden te vingen op vragen door statistische methodes tot te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd. Wanneer je deze data uit externe bronnen importeert, heb je geen controle over de indeling en het type gegevens en de manier waarop de data is georganiseerd. Voordat je met de analyse kunt beginnen moet je daarom vaak veel tijd steken aan het opschonen en herstructureren van de gegevens.

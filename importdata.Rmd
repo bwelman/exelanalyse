@@ -1,4 +1,4 @@
-# Importeren van data
+# Importeren van data {#importdata}
 
 :::{.chapterintro}
 In de praktijk komen veel gegevens uit externe bronnen: txt/csv, web, excel bestanden, databases, ... Om deze gegevens in Excel te analyseren, moeten ze eerst geïmporteerd worden en soms worden getransformeerd en geherstructureerd. Dat gebeurt met Power Query.
