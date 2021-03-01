@@ -21,7 +21,7 @@ Dit is ook geen cursus statistiek. Weliswaar worden statistische begrippen bij d
 Bij het onderdeel Referenties tref je verwijzingen aan voor verdere studie.
 
 ::: {.underconstruction}
-Dit studieboek is nog volop in ontwikkeling en er vinden voortdurend aanvullingen en wijzigingen plaats.
+Dit studieboek is nog in ontwikkeling en er vinden voortdurend aanvullingen en wijzigingen plaats.
 :::
 
 ## Licentie {.unnumbered}

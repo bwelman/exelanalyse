@@ -1,15 +1,14 @@
 # Data {#data}
 
 :::{.chapterintro}
-Bij de analyse van data probeer je antwoorden te vingen op vragen door statistische methodes tot te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd. Wanneer je deze data uit externe bronnen importeert, heb je geen controle over de indeling en het type gegevens en de manier waarop de data is georganiseerd. Voordat je met de analyse kunt beginnen moet je daarom vaak veel tijd steken aan het opschonen en herstructureren van de gegevens.
-In dit hoofdstuk ligt de nadruk op de eigenschappen van data, variabelen en waarnemingen, de manier waarop deze vaak worden aangeboden en hoe je deze in een gewenste vorm kunt brengen.
+Wanneer je data uit externe bronnen importeert, heb je geen controle over de indeling en het type gegevens en de manier waarop de data is georganiseerd. Voordat je met de analyse kunt beginnen moet je daarom vaak veel tijd steken om de data te herstructureren. Het eerste deel van dit hoofdstuk gaat hierover.
+
+In het tweede deel van dit hoofdstuk ligt de nadruk op de verschillende soorten data, de bijbehorende variabelen en de bewerkingen die je mag toepassen.
 :::
 
-Veel gegevensbestanden zijn vervuild, gegevens ontbreken of de gegevens zijn niet goed gestructureerd. Excel heeft enkele functies om je daarbij te helpen. Maar helaas kan Excel jouw handelingen niet vastleggen. Daarom is het belangrijk om te documenteren wat je hebt gedaan met de oorspronkelijke gegevens om deze geschikt te maken voor analyse. Acties die je met de Power Query-Editor uitvoert worden in een script vastgelegd waardoor de uitgevoerde acties reproduceerbaar zijn. Probeer daarom altijd zoveel mogelijk de Power-Query-Editor te gebruiken voor het opschonen en herstructureren van de data.
-
-Wanneer de gegevens goed gestructureerd zijn kun je ze gemakkelijker modelleren, visualiseren en transformeren waardoor de analyse eenvoudiger wordt.
-
 ## Wat zijn gestructureerde gegevens
+
+Vaak zijn de gegevens zijn niet goed gestructureerd, waardoor je niet met draaitabellen kunt werken of de gewenste grafieken niet kunt maken. Wanneer de gegevens goed gestructureerd zijn kun je ze gemakkelijker modelleren, visualiseren en transformeren waardoor de analyse eenvoudiger wordt.
 
 Gestructureerde gegevens moeten voldoen aan de volgende drie voorwaarden:
 
@@ -68,8 +67,8 @@ exp3 %>%
 Dit maakt de waarden, variabelen en waarnemingen duidelijker.
 
 :::{.guidedpractice}
-1. Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:exp3)? Controleer je antwoord via de voetnoot[^tidydata-01].
-2. Voldoet de gegevensverzameling nu aan de voorwaarden?.[^tidydata-02]
+1. Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:exp3)? Controleer je antwoord via de voetnoot.[^tidydata-01]
+2. Voldoet de gegevensverzameling nu aan de voorwaarden?[^tidydata-02]
 :::
 
 [^tidydata-01]: Elke kolom is een variabele, dus 3 variabelen: Naam, Behandeling, Meting. En elke rij is een waarneming, dus 6 waarnemingen.
@@ -270,9 +269,24 @@ knitr::include_graphics("images/data/benelux_tidy.png")
 knitr::include_graphics("images/data/benelux_pivot_chart.png")
 ```
 
-## Meetniveaus variabelen {#meetniveaus}
+## Variabelen {#variabelen}
 
-Variabelen worden meestal in vier meetniveaus (schalen) ingedeeld:
+Bij het importeren en/of het herstrureren van de gegevens heb je de variabelen al gedefinieerd en zijn ze van een naam voorzien. Je moet verder ook nog weten wat voor een soort waarden de variabele kan hebben om later te kunnen bepalen welke statistische methodes geschikt zijn voor de variabele. In grote lijnen zijn alle variabelen ofwel *numerieke* variabelen waarvan de gegevens uit een getelde of gemeten hoeveelheid bestaat, of *categoriale* variabelen waarvan de gegevens categorieën vertegenwoordigen. 
+Zo is een variabele *weekomzet* een numerieke variabele omdat de waarden hiervan hoeveelheden zijn. En een variabele *geslacht* met de categorieën Man en Vrouw is een categoriale variabele.
+
+Soms moet je een numerieke variabele verder specificeren als *discreet* of *continu*. Discrete numerieke variabelen hebben waarden die voortkomen uit tellingen, ze vertegenwoordigen een aantal van iets, zoals het aantal leerlingen in een klas. Continue numerieke variabelen hebben waarden die voortkomen uit metingen, zoals de lengte van een persoon, welke in principe elke waarde binnen een interval kan aannemen (afhankelijk van de nauwkeurigheid van het meetinstrument).
+
+**Meetschaal**
+
+Variabelen worden in vier meetniveaus (schalen) ingedeeld:
+
++ **Categorie variabelen** Met deze variabelen kun je geen berekeningen uitvoeren, zoals het berekenen van een gemiddelde. Ze worden onderverdeeld in nominaal en ordinaal.
+  - **Nominaal**: variabelen met namen als waarde. Nominaal wil zeggen dat de waarden van een variabelen slechts namen zijn (naam is in het Latijn *nomen*), zonder rangorde of logische volgorde. Voorbeelden: nationaliteit, oogkleur, studierichting, beroep, godsdienst, geslacht
+  - **Ordinaal**: de waarden zijn kwalitatie, maar hebben een logische volgorde, je kunt ze sorteren. Je kunt er geen rekenkundige bewerkingen mee uitvoeren. Voorbeelden: beoordeling (1=zeer slecht, 2=slecht, 3=matig, 4=goed, 5=zeer goed), medaille (goud, zilver, brons), T-shirt maten (S, M, L, XL).
+
++ **Numerieke variabelen** Ze worden onderverdeeld in interval en ratio.
+  - **Interval**: de gegevens hebben geen natuurlijk nulpunt, de keuze van een nulpunt is arbitrair. Je kunt de waarden op volgorde zetten. Het verschil tussen de waarden heeft wel betekenis. Het verschil tussen 10°C en 15°C even groot als tussen 20°C en 25°C, maar je kunt niet zeggen dat 20°C twee keer zo warm is als 10°C. Sommige rekenkundige bewerkingen kun je wel uitvoeren zoals optellen, aftrekken en gemiddelde bepalen.
+  - **Ratio**: de gegevens hebben een natuurlijk nulpunt, je kunt uitspraken doen over verhoudingen. Voorbeelden: inkomen, vermogen, gewicht. Voor statistische doeleinden hoef je meestal geen verschil te maken tussen ratio- en intervalgegevens.
 
 ```{r meetniveaus, echo=FALSE, fig.cap="Meetniveaus van variabelen", echo=FALSE}
 grViz("
@@ -297,27 +311,7 @@ grViz("
 ")
 ```
 
-+ **Categorie variabelen** zijn variabelen waarvan de waarden kenmerken of categorieën zijn. Met deze variabelen kun je geen berekeningen uitvoeren, zoals het berekenen van een gemiddelde. Ze worden onderverdeeld in nominaal en ordinaal.
-  - **Nominaal**: variabelen met namen als waarde. Nominaal wil zeggen dat de waarden van een variabelen slechts namen zijn (naam is in het Latijn *nomen*), zonder rangorde of logische volgorde. Voorbeelden: nationaliteit, oogkleur, studierichting, beroep, godsdienst, geslacht
-  - **Ordinaal**: de waarden zijn kwalitatie, maar hebben een logische volgorde, je kunt ze sorteren. Je kunt er geen rekenkundige bewerkingen mee uitvoeren. Voorbeelden: beoordeling (1=zeer slecht, 2=slecht, 3=matig, 4=goed, 5=zeer goed), medaille (goud, zilver, brons), T-shirt maten (S, M, L, XL).
-
-+ **Numerieke variabelen** zijn variabelen waarvan de waarden getallen zijn. Ze worden onderverdeeld in interval en ratio.
-  - **Interval**: de gegevens hebben geen natuurlijk nulpunt, de keuze van een nulpunt is arbitrair. Je kunt de waarde op volgorde zetten. Het verschil tussen de waarden heeft wel betekenis. Voorbeelden: kloktijd, Celcius temperatuur. Het verschil tussen 10°C en 15°C even groot als tussen 20°C en 25°C, maar je kunt niet zeggen dat 20°C twee keer zo warm is als 10°C. Sommige rekenkundige bewerkingen kun je wel uitvoeren zoals optellen, aftrekken en gemiddelde bepalen.
-  - **Ratio**: de gegevens hebben een natuurlijk nulpunt, je kunt uitspraken doen over verhoudingen. Voorbeelden: inkomen, vermogen, gewicht. Voor statistische doeleinden is er geen verschil tussen ratio- en intervalgegevens.
-
-Afhankelijk van het type getal kun je *Numerieke variabelen* ook nog als volgt indelen:
-
-+ **Discrete variabelen**: numerieke variabelen waarvan de waarden altijd gehele getallen zijn. Dit is meestal het geval bij het uitvoeren van tellingen. Bijvoorbeeld het aantal kinderen van een gezin.
-+ **Continue variabelen**: numerieke variabelen die elke waarde kunnen aannemen. Dit is meestal het geval bij het uitvoeren van metingen. Bijvoorbeeld de lengte van een persoon.
-
-**Afhankelijke(verklaarde) en onafhankelijke (verklarende) variabelen**
-
-In een onderzoek wordt vaak geprobeerd om met de ene variabele een verklaring te vinden of een voorspelling te doen voor een andere variabele.
-
-$Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele$
-
-
-## Opgaven {#opg-tidydata}
+## Opgaven {#opg-data}
 
 ::: {.sectionexercise}
 1. In een Excel werkblad kom je de volgende tabel met gegevens tegen.

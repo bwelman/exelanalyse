@@ -1,10 +1,17 @@
 # Importeren van data {#importdata}
 
 :::{.chapterintro}
-In de praktijk komen veel gegevens uit externe bronnen: txt/csv, web, excel bestanden, databases, ... Om deze gegevens in Excel te analyseren, moeten ze eerst geïmporteerd worden en soms worden getransformeerd en geherstructureerd. Dat gebeurt met Power Query.
+Bij de analyse van data probeer je antwoorden te vingen op vragen door statistische methodes tot te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd. In de praktijk komen veel gegevens uit externe bronnen: txt/csv, web, excel bestanden, databases, ... Om deze gegevens in Excel te analyseren, moeten ze eerst geïmporteerd worden en soms worden getransformeerd en opgeschoond. Dat gebeurt met Power Query.
 :::
 
-Excel heeft de Power Query technologie geïntegreerd onder de groep *Gegevens ophalen en transformeren* in het lint *Gegevens.* Met deze technologie kun je verbindingen maken met meerdere gegevensbronnen, die gegevens structureren (bijvoorbeeld een kolom verwijderen, een gegevenstype wijzigen) of de gegevens omzetten naar wat anders. En alle stappen worden verzameld in een query script waarmee je een stap kunt wijzigen, opnieuw uitvoeren of ongedaan kunt maken. Met dit script kun je het importeren van gegevens herhaalbaar opnieuw uitvoeren.
+In Excel is Power Query beschikbaar onder de groep *Gegevens ophalen en transformeren* in het lint *Gegevens*. Hiermee kun je verbindingen maken met meerdere gegevensbronnen en daarna die gegevens structureren (bijvoorbeeld een kolom verwijderen, een gegevenstype wijzigen) of de gegevens omzetten (transformeren) naar wat anders. Uiteindelijk komen de gegevens dan in een Excel werkblad beschikbaar. Alle stappen die je met de Power Query Editor uitvoert worden in een script vastgelegd.
+
+Deze aanbevolen werkwijze heeft de volgende voordelen:
+
++ De oorspronkelijke gegevens blijven onveranderd.
++ Omdat de uitgevoerde acties in een script zijn vastgelegd heb je tevens een vorm van documentatie van wat je met de gegevens gedaan hebt.
++ In het script kun je eenvoudig een stap wijzigen, ongedaan maken of een nieuwe stap toevoegen.
++ Wanneer er wijzigingen of aanvullingen in de brondata komen hoef je de query alleen maar opnieuw uit te voeren waarna de gewijzigde gegevens in het werkblad verschijnen.
 
 ## Gegevens ophalen en transformeren
 

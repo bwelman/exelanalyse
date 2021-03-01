@@ -6,6 +6,8 @@ Voor het nemen van beslissingen is het van belang om te weten of er samenhang tu
 
 De variabele waarvan je de waarde wilt schatten en die afhangt van de waarde van een andere variabele wordt heeft benamingen als *afhankelijke variabele*, *verklaarde variabele* of *respons variabele*. En de variabelen waarvan deze afhangt worden de *onafhankelijke variabelen*, of *verklarende variabelen* genoemd. De techniek naar mogelijke verbanden wordt ook wel *regressie-analyse* genoemd.
 
+$Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele$
+
 ## Samenhang {#samenhang}
 
 De waarden van een variabele kunnen samenhangen met de waarden van een andere variabele. Zo zal meestal de benzineprijs stijgen wanneer de prijs van een vat ruwe olie stijgt. De variabelen benzineprijs en olieprijs vertonen dan  een positieve samenhang. Het omgekeerde kan ook, wanneer bijvoorbeeld de werkloosheid stijgt dan dalen de consumentenuitgaven. De variabelen werkloosheidspercentage en consumentenuitgaven vertonen een negatieve samenhang. 
