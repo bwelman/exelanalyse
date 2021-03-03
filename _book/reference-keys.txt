@@ -85,7 +85,7 @@ fig:aselectmatrix
 fig:aselect-toolpak-discreet
 fig:aselect-toolpak-uniform
 fig:aselect-toolpak-resultaat
-importeren-van-data
+importdata
 gegevens-ophalen-en-transformeren
 importeren-van-een-tekstcsv-bestand
 importeren-van-een-webtabel
@@ -96,8 +96,8 @@ kolomkoppen-met-waarden
 kolomkoppen-zijn-gecombineerde-variabelen
 variabelen-in-rijen-en-kolommen
 analyse-populatie-benelux
-meetniveaus
-opg-tidydata
+variabelen
+opg-data
 beschrijvend
 kwalitatieve-gegevens
 voorbeeld-met-2-variabelen
@@ -115,7 +115,7 @@ graf-histogram
 graf-boxplot
 voorbeeld-marktonderzoek
 opg-grafieken
-exploratieve-data-analyse-eda
+eda
 introductie
 anscombe-dataset
 werkwijze
@@ -126,7 +126,7 @@ combinatie-van-twee-categoriale-variabelen
 combinatie-van-numerieke-en-categoriale-variabele
 combinatie-van-twee-numerieke-variabelen
 voorbeeld-old-faithful-geiser
-regressie
+linregressie
 samenhang
 lineair-verband
 linreg-enkelvoudig
@@ -137,6 +137,7 @@ sim2
 linreg-meervoudig
 voorspellen
 opg-linreg
+tijdreeksen
 cases
 case-pinguins
 case-fooien
@@ -144,8 +145,8 @@ case-fctwente
 case-betaaltermijn
 case-beisterkamp
 case-ziekteverzuim
-bijlage-toolpak
-bijlage-query-options
-bijlage-aselect
+app-toolpak
+app-query-options
+app-aselect
 aselect-functies
 gegevensanalyse

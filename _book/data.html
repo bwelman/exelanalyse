@@ -36,17 +36,18 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Welkom</a></li>
 <li><a class="" href="voorwoord.html">Voorwoord</a></li>
-<li><a class="" href="importeren-van-data.html"><span class="header-section-number">1</span> Importeren van data</a></li>
+<li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="active" href="data.html"><span class="header-section-number">2</span> Data</a></li>
 <li><a class="" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
 <li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
-<li><a class="" href="exploratieve-data-analyse-eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="" href="regressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="" href="cases.html"><span class="header-section-number">7</span> Cases</a></li>
-<li class="book-part">Appendix</li>
-<li><a class="" href="bijlage-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></li>
-<li><a class="" href="bijlage-query-options.html"><span class="header-section-number">B</span> Bijlage Query opties</a></li>
-<li><a class="" href="bijlage-aselect.html"><span class="header-section-number">C</span> Bijlage Aselecte getallen</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
+<li><a class="" href="tijdreeksen.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
+<li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
+<li class="book-part">Bijlagen</li>
+<li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></li>
+<li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Bijlage Query opties</a></li>
+<li><a class="" href="app-aselect.html"><span class="header-section-number">C</span> Bijlage Aselecte getallen</a></li>
 <li><a class="" href="referenties.html">Referenties</a></li>
 </ul>
 
@@ -60,15 +61,14 @@
 <span class="header-section-number">Hoofdstuk 2</span> Data<a class="anchor" aria-label="anchor" href="#data"><i class="fas fa-link"></i></a>
 </h1>
 <div class="chapterintro">
-<p>Bij de analyse van data probeer je antwoorden te vingen op vragen door statistische methodes tot te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden <strong>data</strong> genoemd. Wanneer je deze data uit externe bronnen importeert, heb je geen controle over de indeling en het type gegevens en de manier waarop de data is georganiseerd. Voordat je met de analyse kunt beginnen moet je daarom vaak veel tijd steken aan het opschonen en herstructureren van de gegevens.
-In dit hoofdstuk ligt de nadruk op de eigenschappen van data, variabelen en waarnemingen, de manier waarop deze vaak worden aangeboden en hoe je deze in een gewenste vorm kunt brengen.</p>
+<p>Wanneer je data uit externe bronnen importeert, heb je geen controle over de indeling en het type gegevens en de manier waarop de data is georganiseerd. Voordat je met de analyse kunt beginnen moet je daarom vaak veel tijd steken om de data te herstructureren. Het eerste deel van dit hoofdstuk gaat hierover.</p>
+<p>In het tweede deel van dit hoofdstuk ligt de nadruk op de verschillende soorten data, de bijbehorende variabelen en de bewerkingen die je mag toepassen.</p>
 </div>
-<p>Veel gegevensbestanden zijn vervuild, gegevens ontbreken of de gegevens zijn niet goed gestructureerd. Excel heeft enkele functies om je daarbij te helpen. Maar helaas kan Excel jouw handelingen niet vastleggen. Daarom is het belangrijk om te documenteren wat je hebt gedaan met de oorspronkelijke gegevens om deze geschikt te maken voor analyse. Acties die je met de Power Query-Editor uitvoert worden in een script vastgelegd waardoor de uitgevoerde acties reproduceerbaar zijn. Probeer daarom altijd zoveel mogelijk de Power-Query-Editor te gebruiken voor het opschonen en herstructureren van de data.</p>
-<p>Wanneer de gegevens goed gestructureerd zijn kun je ze gemakkelijker modelleren, visualiseren en transformeren waardoor de analyse eenvoudiger wordt.</p>
 <div id="wat-zijn-gestructureerde-gegevens" class="section level2" number="2.1">
 <h2>
 <span class="header-section-number">2.1</span> Wat zijn gestructureerde gegevens<a class="anchor" aria-label="anchor" href="#wat-zijn-gestructureerde-gegevens"><i class="fas fa-link"></i></a>
 </h2>
+<p>Vaak zijn de gegevens zijn niet goed gestructureerd, waardoor je niet met draaitabellen kunt werken of de gewenste grafieken niet kunt maken. Wanneer de gegevens goed gestructureerd zijn kun je ze gemakkelijker modelleren, visualiseren en transformeren waardoor de analyse eenvoudiger wordt.</p>
 <p>Gestructureerde gegevens moeten voldoen aan de volgende drie voorwaarden:</p>
 <ol style="list-style-type: decimal">
 <li>Elke gemeten variabele staat in een kolom.</li>
@@ -270,8 +270,9 @@ Behandeling.B
 <p>Dit maakt de waarden, variabelen en waarnemingen duidelijker.</p>
 <div class="guidedpractice">
 <ol style="list-style-type: decimal">
-<li>Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel <a href="data.html#tab:exp3">2.3</a>? Controleer je antwoord via de voetnoot<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Elke kolom is een variabele, dus 3 variabelen: Naam, Behandeling, Meting. En elke rij is een waarneming, dus 6 waarnemingen.&lt;/p&gt;"><sup>1</sup></a>.</li>
-<li>Voldoet de gegevensverzameling nu aan de voorwaarden?.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Ja, elke variabele heeft een eigen kolom en de waarnemingen staan in de rijen.&lt;/p&gt;"><sup>2</sup></a>
+<li>Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel <a href="data.html#tab:exp3">2.3</a>? Controleer je antwoord via de voetnoot.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Elke kolom is een variabele, dus 3 variabelen: Naam, Behandeling, Meting. En elke rij is een waarneming, dus 6 waarnemingen.&lt;/p&gt;"><sup>1</sup></a>
+</li>
+<li>Voldoet de gegevensverzameling nu aan de voorwaarden?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Ja, elke variabele heeft een eigen kolom en de waarnemingen staan in de rijen.&lt;/p&gt;"><sup>2</sup></a>
 </li>
 </ol>
 </div>
@@ -1550,21 +1551,18 @@ Figuur 2.4: Draaitabel en draaigrafiek van de populatie per geslacht per jaar.
 </div>
 </div>
 </div>
-<div id="meetniveaus" class="section level2" number="2.2">
+<div id="variabelen" class="section level2" number="2.2">
 <h2>
-<span class="header-section-number">2.2</span> Meetniveaus variabelen<a class="anchor" aria-label="anchor" href="#meetniveaus"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2</span> Variabelen<a class="anchor" aria-label="anchor" href="#variabelen"><i class="fas fa-link"></i></a>
 </h2>
-<p>Variabelen worden meestal in vier meetniveaus (schalen) ingedeeld:</p>
-<div class="figure" style="text-align: center">
-<span id="fig:meetniveaus"></span>
-<div id="htmlwidget-86dc17bbd8304768193a" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-86dc17bbd8304768193a">{"x":{"diagram":"\n  digraph stat1 {\n    graph[rankdir = LR, bgcolor=transparent]\n    node[shape = oval, fontname = Arial]\n    V [label = \"Variabele\"]\n    node[shape = box, width = 1.2, fontsize = 12]\n    CA [label = \"Categorie\"]\n    NU [label = \"Numeriek\"]\n    node[shape = box, width = 0.8, fontsize = 10]\n    NO [label = \"Nominaal\"]\n    OR [label = \"Ordinaal\"]\n    IN [label = \"Interval\"]\n    RA [label = \"Ratio\"]\n\n    {rank=same CA NU}\n    V -> {CA,NU}\n    CA -> {NO,OR}\n    NU -> {IN,RA}\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
-Figuur 2.5: Meetniveaus van variabelen
-</p>
-</div>
+<p>Bij het importeren en/of het herstrureren van de gegevens heb je de variabelen al gedefinieerd en zijn ze van een naam voorzien. Je moet verder ook nog weten wat voor een soort waarden de variabele kan hebben om later te kunnen bepalen welke statistische methodes geschikt zijn voor de variabele. In grote lijnen zijn alle variabelen ofwel <em>numerieke</em> variabelen waarvan de gegevens uit een getelde of gemeten hoeveelheid bestaat, of <em>categoriale</em> variabelen waarvan de gegevens categorieën vertegenwoordigen.
+Zo is een variabele <em>weekomzet</em> een numerieke variabele omdat de waarden hiervan hoeveelheden zijn. En een variabele <em>geslacht</em> met de categorieën Man en Vrouw is een categoriale variabele.</p>
+<p>Soms moet je een numerieke variabele verder specificeren als <em>discreet</em> of <em>continu</em>. Discrete numerieke variabelen hebben waarden die voortkomen uit tellingen, ze vertegenwoordigen een aantal van iets, zoals het aantal leerlingen in een klas. Continue numerieke variabelen hebben waarden die voortkomen uit metingen, zoals de lengte van een persoon, welke in principe elke waarde binnen een interval kan aannemen (afhankelijk van de nauwkeurigheid van het meetinstrument).</p>
+<p><strong>Meetschaal</strong></p>
+<p>Variabelen worden in vier meetniveaus (schalen) ingedeeld:</p>
 <ul>
 <li>
-<strong>Categorie variabelen</strong> zijn variabelen waarvan de waarden kenmerken of categorieën zijn. Met deze variabelen kun je geen berekeningen uitvoeren, zoals het berekenen van een gemiddelde. Ze worden onderverdeeld in nominaal en ordinaal.
+<strong>Categorie variabelen</strong> Met deze variabelen kun je geen berekeningen uitvoeren, zoals het berekenen van een gemiddelde. Ze worden onderverdeeld in nominaal en ordinaal.
 <ul>
 <li>
 <strong>Nominaal</strong>: variabelen met namen als waarde. Nominaal wil zeggen dat de waarden van een variabelen slechts namen zijn (naam is in het Latijn <em>nomen</em>), zonder rangorde of logische volgorde. Voorbeelden: nationaliteit, oogkleur, studierichting, beroep, godsdienst, geslacht</li>
@@ -1573,29 +1571,26 @@ Figuur 2.5: Meetniveaus van variabelen
 </ul>
 </li>
 <li>
-<strong>Numerieke variabelen</strong> zijn variabelen waarvan de waarden getallen zijn. Ze worden onderverdeeld in interval en ratio.
+<strong>Numerieke variabelen</strong> Ze worden onderverdeeld in interval en ratio.
 <ul>
 <li>
-<strong>Interval</strong>: de gegevens hebben geen natuurlijk nulpunt, de keuze van een nulpunt is arbitrair. Je kunt de waarde op volgorde zetten. Het verschil tussen de waarden heeft wel betekenis. Voorbeelden: kloktijd, Celcius temperatuur. Het verschil tussen 10°C en 15°C even groot als tussen 20°C en 25°C, maar je kunt niet zeggen dat 20°C twee keer zo warm is als 10°C. Sommige rekenkundige bewerkingen kun je wel uitvoeren zoals optellen, aftrekken en gemiddelde bepalen.</li>
+<strong>Interval</strong>: de gegevens hebben geen natuurlijk nulpunt, de keuze van een nulpunt is arbitrair. Je kunt de waarden op volgorde zetten. Het verschil tussen de waarden heeft wel betekenis. Het verschil tussen 10°C en 15°C even groot als tussen 20°C en 25°C, maar je kunt niet zeggen dat 20°C twee keer zo warm is als 10°C. Sommige rekenkundige bewerkingen kun je wel uitvoeren zoals optellen, aftrekken en gemiddelde bepalen.</li>
 <li>
-<strong>Ratio</strong>: de gegevens hebben een natuurlijk nulpunt, je kunt uitspraken doen over verhoudingen. Voorbeelden: inkomen, vermogen, gewicht. Voor statistische doeleinden is er geen verschil tussen ratio- en intervalgegevens.</li>
+<strong>Ratio</strong>: de gegevens hebben een natuurlijk nulpunt, je kunt uitspraken doen over verhoudingen. Voorbeelden: inkomen, vermogen, gewicht. Voor statistische doeleinden hoef je meestal geen verschil te maken tussen ratio- en intervalgegevens.</li>
 </ul>
 </li>
 </ul>
-<p>Afhankelijk van het type getal kun je <em>Numerieke variabelen</em> ook nog als volgt indelen:</p>
-<ul>
-<li>
-<strong>Discrete variabelen</strong>: numerieke variabelen waarvan de waarden altijd gehele getallen zijn. Dit is meestal het geval bij het uitvoeren van tellingen. Bijvoorbeeld het aantal kinderen van een gezin.</li>
-<li>
-<strong>Continue variabelen</strong>: numerieke variabelen die elke waarde kunnen aannemen. Dit is meestal het geval bij het uitvoeren van metingen. Bijvoorbeeld de lengte van een persoon.</li>
-</ul>
-<p><strong>Afhankelijke(verklaarde) en onafhankelijke (verklarende) variabelen</strong></p>
-<p>In een onderzoek wordt vaak geprobeerd om met de ene variabele een verklaring te vinden of een voorspelling te doen voor een andere variabele.</p>
-<p><span class="math inline">\(Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele\)</span></p>
+<div class="figure" style="text-align: center">
+<span id="fig:meetniveaus"></span>
+<div id="htmlwidget-86dc17bbd8304768193a" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-86dc17bbd8304768193a">{"x":{"diagram":"\n  digraph stat1 {\n    graph[rankdir = LR, bgcolor=transparent]\n    node[shape = oval, fontname = Arial]\n    V [label = \"Variabele\"]\n    node[shape = box, width = 1.2, fontsize = 12]\n    CA [label = \"Categorie\"]\n    NU [label = \"Numeriek\"]\n    node[shape = box, width = 0.8, fontsize = 10]\n    NO [label = \"Nominaal\"]\n    OR [label = \"Ordinaal\"]\n    IN [label = \"Interval\"]\n    RA [label = \"Ratio\"]\n\n    {rank=same CA NU}\n    V -> {CA,NU}\n    CA -> {NO,OR}\n    NU -> {IN,RA}\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
+Figuur 2.5: Meetniveaus van variabelen
+</p>
 </div>
-<div id="opg-tidydata" class="section level2" number="2.3">
+</div>
+<div id="opg-data" class="section level2" number="2.3">
 <h2>
-<span class="header-section-number">2.3</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-tidydata"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-data"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
@@ -1884,7 +1879,7 @@ Filter Coffee
 </table></div>
 <ol start="4" style="list-style-type: decimal">
 <li>
-<p>Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van <a href="https://www.numbeo.com/cost-of-living/">Numbeo</a> voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand <a href="data/levensonderhoud.xlsx">levensonderhoud.xlsx.xlsx</a>. Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel <a href="data.html#tab:levensonderhoud-data">2.13</a>.</p>
+<p>Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van <a href="https://www.numbeo.com/cost-of-living/">Numbeo</a> voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand <a href="data/levensonderhoud.xlsx">levensonderhoud.xlsx</a>. Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel <a href="data.html#tab:levensonderhoud-data">2.13</a>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Maak hiervan een gestructureerde dataset.</li>
 <li>In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?</li>
@@ -2326,7 +2321,7 @@ Taal
 </div>
 
   <div class="chapter-nav">
-<div class="prev"><a href="importeren-van-data.html"><span class="header-section-number">1</span> Importeren van data</a></div>
+<div class="prev"><a href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></div>
 <div class="next"><a href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
@@ -2340,8 +2335,8 @@ Taal
 <li><a class="nav-link" href="#analyse-populatie-benelux"><span class="header-section-number">2.1.4</span> Analyse populatie Benelux</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#meetniveaus"><span class="header-section-number">2.2</span> Meetniveaus variabelen</a></li>
-<li><a class="nav-link" href="#opg-tidydata"><span class="header-section-number">2.3</span> Opgaven</a></li>
+<li><a class="nav-link" href="#variabelen"><span class="header-section-number">2.2</span> Variabelen</a></li>
+<li><a class="nav-link" href="#opg-data"><span class="header-section-number">2.3</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">
@@ -2358,7 +2353,7 @@ Taal
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 28 februari 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 03 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

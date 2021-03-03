@@ -29,6 +29,7 @@ rmd_files:
     - "grafieken.Rmd"
     - "eda.Rmd"
     - "linregressie.Rmd"
+    - "tijdreeksen.Rmd"
     - "cases.Rmd"
     - "app-toolpak.Rmd"
     - "app-powerquery.Rmd"

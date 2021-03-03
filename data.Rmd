@@ -344,7 +344,7 @@ tidy001.data %>%
 	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
 ```
 
-4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
+4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
     
     a. Maak hiervan een gestructureerde dataset.
     b. In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 7 Cases | Excel Data Analyse</title>
+<title>Hoofdstuk 8 Cases | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -36,17 +36,18 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Welkom</a></li>
 <li><a class="" href="voorwoord.html">Voorwoord</a></li>
-<li><a class="" href="importeren-van-data.html"><span class="header-section-number">1</span> Importeren van data</a></li>
+<li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
 <li><a class="" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
 <li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
-<li><a class="" href="exploratieve-data-analyse-eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="" href="regressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="active" href="cases.html"><span class="header-section-number">7</span> Cases</a></li>
-<li class="book-part">Appendix</li>
-<li><a class="" href="bijlage-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></li>
-<li><a class="" href="bijlage-query-options.html"><span class="header-section-number">B</span> Bijlage Query opties</a></li>
-<li><a class="" href="bijlage-aselect.html"><span class="header-section-number">C</span> Bijlage Aselecte getallen</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
+<li><a class="" href="tijdreeksen.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
+<li><a class="active" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
+<li class="book-part">Bijlagen</li>
+<li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></li>
+<li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Bijlage Query opties</a></li>
+<li><a class="" href="app-aselect.html"><span class="header-section-number">C</span> Bijlage Aselecte getallen</a></li>
 <li><a class="" href="referenties.html">Referenties</a></li>
 </ul>
 
@@ -55,19 +56,19 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cases" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cases" class="section level1" number="8">
 <h1>
-<span class="header-section-number">Hoofdstuk 7</span> Cases<a class="anchor" aria-label="anchor" href="#cases"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 8</span> Cases<a class="anchor" aria-label="anchor" href="#cases"><i class="fas fa-link"></i></a>
 </h1>
-<div id="case-pinguins" class="section level2" number="7.1">
+<div id="case-pinguins" class="section level2" number="8.1">
 <h2>
-<span class="header-section-number">7.1</span> Pinguins<a class="anchor" aria-label="anchor" href="#case-pinguins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> Pinguins<a class="anchor" aria-label="anchor" href="#case-pinguins"><i class="fas fa-link"></i></a>
 </h2>
 <p>Op het <a href="https://pal.lternet.edu/">Palmer Station, Antarctica</a> is door dr. Kristen Gorman gedurende de jaren 2007-2009 een onderzoek bij pinguïns uitgevoerd. Van de drie pinguinsoorten die zijn waargenomen op drie eilanden in de Palmerarchipel zijn gegevens verzameld gedurende de onderzoeksperiode.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:pinguins"></span>
 <img src="images/case-pinguins/gorman-penguins.jpg" alt="Links: de drie soorten pinguïns, Rechts: afmetingen snavel." width="50%"><img src="images/case-pinguins/pinguinsnavel.png" alt="Links: de drie soorten pinguïns, Rechts: afmetingen snavel." width="50%"><p class="caption">
-Figuur 7.1: Links: de drie soorten pinguïns, Rechts: afmetingen snavel.
+Figuur 8.1: Links: de drie soorten pinguïns, Rechts: afmetingen snavel.
 </p>
 </div>
 <div class="data">
@@ -103,14 +104,14 @@ Figuur 7.1: Links: de drie soorten pinguïns, Rechts: afmetingen snavel.
 <li>Maak een samenvattend eindverslag van het onderzoek waarin de belangrijkste conclusies naar voren komen. Hierin aanwezige grafieken en tabellen moeten wel netjes opgemaakt en voor de lezers te begrijpen zijn.</li>
 </ol>
 </div>
-<div id="case-fooien" class="section level2" number="7.2">
+<div id="case-fooien" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">7.2</span> Fooien<a class="anchor" aria-label="anchor" href="#case-fooien"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> Fooien<a class="anchor" aria-label="anchor" href="#case-fooien"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:fooi"></span>
 <img src="images/case-fooien/fooi.png" alt="Een fooi van een tevreden klant." width="40%"><p class="caption">
-Figuur 7.2: Een fooi van een tevreden klant.
+Figuur 8.2: Een fooi van een tevreden klant.
 </p>
 </div>
 <p>Een ober noteerde informatie over elke fooi die hij gedurende een periode van een paar maanden in een restaurant kreeg. Hij verzamelde de volgende variabelen:</p>
@@ -153,14 +154,14 @@ Figuur 7.2: Een fooi van een tevreden klant.
 </ul>
 <!-- Inspiratiebron: boek "Interactive and Dynamic Graphics for Data Analysis", Cook & Swayne, pag. 4 -->
 </div>
-<div id="case-fctwente" class="section level2" number="7.3">
+<div id="case-fctwente" class="section level2" number="8.3">
 <h2>
-<span class="header-section-number">7.3</span> Marktwaarde Voetbalclub<a class="anchor" aria-label="anchor" href="#case-fctwente"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3</span> Marktwaarde Voetbalclub<a class="anchor" aria-label="anchor" href="#case-fctwente"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:elftalfoto"></span>
 <img src="images/case-fctwente/fctwente-elftal.png" alt="Elftalfoto FC Twente, augustus 2020, © Emiel Muijderman" width="70%"><p class="caption">
-Figuur 7.3: Elftalfoto FC Twente, augustus 2020, © Emiel Muijderman
+Figuur 8.3: Elftalfoto FC Twente, augustus 2020, © Emiel Muijderman
 </p>
 </div>
 <p>In deze case doe je onderzoek naar de marktwaarde van de selectie van een voetbalclub.De benodigde data moet eerst samengesteld worden via een webquery. Omdat deze redelijk complex is, wordt in het eerste deel van deze case stapsgewijs beschreven hoe dat in zijn werk gaat. Voor de analyse daarna zul je zelf moeten bedenken hoe deze uitgevoerd moet worden.</p>
@@ -185,7 +186,7 @@ Figuur 7.3: Elftalfoto FC Twente, augustus 2020, © Emiel Muijderman
 <div class="figure" style="text-align: center">
 <span id="fig:fctwente-01"></span>
 <img src="images/case-fctwente/fctwente-01.png" alt="Selectie van de juiste tabel in Navigator." width="70%"><p class="caption">
-Figuur 7.4: Selectie van de juiste tabel in Navigator.
+Figuur 8.4: Selectie van de juiste tabel in Navigator.
 </p>
 </div>
 <div class="caution">
@@ -195,7 +196,7 @@ Figuur 7.4: Selectie van de juiste tabel in Navigator.
 <div class="figure" style="text-align: center">
 <span id="fig:fctwente-02"></span>
 <img src="images/case-fctwente/fctwente-02.png" alt="Startscherm Power Query Editor." width="100%"><p class="caption">
-Figuur 7.5: Startscherm Power Query Editor.
+Figuur 8.5: Startscherm Power Query Editor.
 </p>
 </div>
 <p>Verwijder de eerste twee kolommen. Hernoem de kolom met de namen van de spelers in “Speler”. Wijzig de naam van de query in “qryfctwente”.</p>
@@ -230,7 +231,7 @@ Figuur 7.5: Startscherm Power Query Editor.
 <div class="figure" style="text-align: center">
 <span id="fig:fctwente-08"></span>
 <img src="images/case-fctwente/fctwente-08.png" alt="De tabel in het Excel werkblad." width="70%"><p class="caption">
-Figuur 7.6: De tabel in het Excel werkblad.
+Figuur 8.6: De tabel in het Excel werkblad.
 </p>
 </div>
 <p>Wanneer de marktwaarde van een speler wijzigt, er spelers vertrekken of bijkomen, hoef je alleen maar de query te vernieuwen via <em>tab Gegevens &gt; Alles vernieuwen (groep Query’s en verbindingen)</em>.</p>
@@ -252,14 +253,14 @@ Figuur 7.6: De tabel in het Excel werkblad.
 <p>In verband met gewijzigde omstandigheden moet je in elke rapportage altijd de datum vermelden waarop de data verzameld is.</p>
 </div>
 </div>
-<div id="case-betaaltermijn" class="section level2" number="7.4">
+<div id="case-betaaltermijn" class="section level2" number="8.4">
 <h2>
-<span class="header-section-number">7.4</span> Gemiddelde betaaltermijn<a class="anchor" aria-label="anchor" href="#case-betaaltermijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4</span> Gemiddelde betaaltermijn<a class="anchor" aria-label="anchor" href="#case-betaaltermijn"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:betaaltermijn"></span>
 <img src="images/case-betaaltermijn/betaaltermijn.png" alt="Workflow betaaltermijn debiteuren." width="70%"><p class="caption">
-Figuur 7.7: Workflow betaaltermijn debiteuren.
+Figuur 8.7: Workflow betaaltermijn debiteuren.
 </p>
 </div>
 <p>IRIS BV heeft cashflow problemen sinds de uitbraak van de Corona crisis. In deze bijzondere tijden is het voor het bedrijf nog belangrijker dan anders om de liquiditeitspositie onder controle te houden. Belangrijk is dat de debiteuren sneller aan IRIS BV gaan betalen. Vanaf 1 juli 2020 is er daarom speciale actie van kracht. Klanten krijgen korting op de volgende orde als ze sneller betalen. Een medewerker is vrijgemaakt om bij de klanten langs te gaan en ze over deze actie te informeren. Die medewerker gaat actief achter debiteuren aan als een factuur meer dan 30 dagen openstaat.</p>
@@ -275,14 +276,14 @@ Figuur 7.7: Workflow betaaltermijn debiteuren.
 <li>Welke data zou je nog meer nodig hebben om uit te rekenen of de actie financieel wat heeft opgeleverd voor IRIS BV?</li>
 </ol>
 </div>
-<div id="case-beisterkamp" class="section level2" number="7.5">
+<div id="case-beisterkamp" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">7.5</span> Beisterkamp<a class="anchor" aria-label="anchor" href="#case-beisterkamp"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Beisterkamp<a class="anchor" aria-label="anchor" href="#case-beisterkamp"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:vrachtwagen"></span>
 <img src="images/case-beisterkamp/beisterkamp.png" alt="Een van de vrachtwagens van Beisterkamp" width="30%"><p class="caption">
-Figuur 7.8: Een van de vrachtwagens van Beisterkamp
+Figuur 8.8: Een van de vrachtwagens van Beisterkamp
 </p>
 </div>
 <p>Beisterkamp Transport BV is een middelgrote transportonderneming gevestigd in Oldenzaal. Het bedrijf heeft een kleine vloot van 10 vrachtwagens en heeft evenveel chauffeurs in dienst. De concurrentie in de transportwereld is groot en de marges per kilometer zijn klein. Belangrijke kostenposten voor het bedrijf zijn het dieselverbruik en de uren van de chauffeurs. De directie wil weten of er op deze twee posten geld bespaard kan worden. Jij bent net begonnen als junior-controller bij Beisterkamp en de directie heeft jou gevraagd om met adviezen te komen.</p>
@@ -535,14 +536,14 @@ HJ-KH-79
 <li>Moeten deze fouten niet eerst worden opgelost voor je deelvraag 1, 2 en 3 kunt beantwoorden? Bedenk zelf een manier om van de fouten af te komen en beantwoordt deelvraag 1, 2 en 3 opnieuw.</li>
 </ol>
 </div>
-<div id="case-ziekteverzuim" class="section level2" number="7.6">
+<div id="case-ziekteverzuim" class="section level2" number="8.6">
 <h2>
-<span class="header-section-number">7.6</span> Ziekteverzuim<a class="anchor" aria-label="anchor" href="#case-ziekteverzuim"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.6</span> Ziekteverzuim<a class="anchor" aria-label="anchor" href="#case-ziekteverzuim"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:ziekteverzuim"></span>
 <img src="images/case-ziekteverzuim/ziekteverzuim.png" alt="Zo pakt Universiteit Wageningen het ziekteverzuim aan." width="70%"><p class="caption">
-Figuur 7.9: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
+Figuur 8.9: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
 </p>
 </div>
 <p>Een bedrijf heeft een onderzoek naar het ziekteverzuim en tevredenheid uitgevoerd onder al haar 75 werknemers. Voor het tevredenheidsonderzoek zijn een twaalftal stellingen voorgelegd aan de medewerkers. Per stelling kon de medewerker een score op een 5-punts schaal geven. Die scores zijn opgeteld en weergegeven in de kolom Tevreden. De cijfers met betrekking tot het ziekteverzuim komen van de afdeling administratie.</p>
@@ -578,18 +579,18 @@ De laatste 4 kolommen geven informatie over ziekmelding en ziektedagen in 2012 e
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="regressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></div>
-<div class="next"><a href="bijlage-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></div>
+<div class="prev"><a href="tijdreeksen.html"><span class="header-section-number">7</span> Tijdreeksen</a></div>
+<div class="next"><a href="app-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cases"><span class="header-section-number">7</span> Cases</a></li>
-<li><a class="nav-link" href="#case-pinguins"><span class="header-section-number">7.1</span> Pinguins</a></li>
-<li><a class="nav-link" href="#case-fooien"><span class="header-section-number">7.2</span> Fooien</a></li>
-<li><a class="nav-link" href="#case-fctwente"><span class="header-section-number">7.3</span> Marktwaarde Voetbalclub</a></li>
-<li><a class="nav-link" href="#case-betaaltermijn"><span class="header-section-number">7.4</span> Gemiddelde betaaltermijn</a></li>
-<li><a class="nav-link" href="#case-beisterkamp"><span class="header-section-number">7.5</span> Beisterkamp</a></li>
-<li><a class="nav-link" href="#case-ziekteverzuim"><span class="header-section-number">7.6</span> Ziekteverzuim</a></li>
+<li><a class="nav-link" href="#cases"><span class="header-section-number">8</span> Cases</a></li>
+<li><a class="nav-link" href="#case-pinguins"><span class="header-section-number">8.1</span> Pinguins</a></li>
+<li><a class="nav-link" href="#case-fooien"><span class="header-section-number">8.2</span> Fooien</a></li>
+<li><a class="nav-link" href="#case-fctwente"><span class="header-section-number">8.3</span> Marktwaarde Voetbalclub</a></li>
+<li><a class="nav-link" href="#case-betaaltermijn"><span class="header-section-number">8.4</span> Gemiddelde betaaltermijn</a></li>
+<li><a class="nav-link" href="#case-beisterkamp"><span class="header-section-number">8.5</span> Beisterkamp</a></li>
+<li><a class="nav-link" href="#case-ziekteverzuim"><span class="header-section-number">8.6</span> Ziekteverzuim</a></li>
 </ul>
 
       <div class="book-extra">
@@ -606,7 +607,7 @@ De laatste 4 kolommen geven informatie over ziekmelding en ziektedagen in 2012 e
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 28 februari 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 03 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
