@@ -345,9 +345,6 @@ tidy001.data %>%
 ```
 
 4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
-    
-    a. Maak hiervan een gestructureerde dataset.
-    b. In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?
 
 ```{r levensonderhoud-data, echo=FALSE}
 levensonderhoud.data <- read_excel("data/levensonderhoud.xlsx")
@@ -355,6 +352,9 @@ levensonderhoud.data %>% head(8) %>%
 	kbl(format.args = list(decimal.mark = ","), caption = "Gemiddelde prijzen voor vier produkten.") %>% 
 	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
 ```
+
+   a. Maak hiervan een gestructureerde dataset.
+   b. In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?
 
 5. Op een bepaalde basischool krijgt elke leerling krijgt in elk kwartaal (Herfst, Winter en Lente) van elk jaar een toets voor rekenen en taal. De volgende tabel bevat een beperkte gegevensverzameling hiervan.
     
@@ -365,4 +365,10 @@ rekenentaal.data %>%
 	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
 ```
 
+   De analyse-eenheid is ID-Jaar-Kwartaal. Dus elke waarneming is die van een leerling gedurende een kwartaal in een bepaald jaar.
+   
+   a. Maak hiervan een gestructureerde gegevensverzameling.
+   b. Maak een draaigrafiek (staafdiagram) van de gemiddelde scores voor rekenen en taal per jaar
 :::
+
+
