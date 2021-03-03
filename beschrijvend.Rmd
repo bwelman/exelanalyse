@@ -45,9 +45,7 @@ De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemidd
 
 **Gemiddelde**
 
-Voor een populatie wordt het **gemiddelde** aangegeven met het symbool $\mu$ en berekend door de som van alle waarnemingen $x_i$ te delen door het totaal aantal waarnemingen $N$.
-
-$$\mu = \frac{1}{N} \sum_{i=1}^N x_i$$
+Voor een populatie wordt het **gemiddelde** aangegeven met het symbool $\mu$ en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen.
 
 **Mediaan**
 
@@ -86,11 +84,13 @@ Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een data
 
 **Variantie en Standaarddeviatie**
 
-De meest gebruikte maat voor de spreiding van de gegevens is de **variantie**, of de vierkantswortel hiervan, de **standaarddeviatie**. Voor een populatie wordt de standaardafwijking weergegeven met het symbool $\sigma$. Voor het berekenen van de variantie worden de verschillen van alle waarnemingen met het gemiddelde gekwadrateerd en de som hiervan gedeeld door het aantal waarnemingen.
+De meest gebruikte maten om de spreiding van de gegevens weer te geven zijn **variantie** en **standaarddeviatie**. De standaarddeviatie (standaardafwijking)is gedefinieerd als de wortel uit de variantie. Voor een populatie wordt de standaarddeviatie weergegeven met het symbool $\sigma$ en de variantie met $\sigma^2$.
+
+Voor het berekenen van de variantie worden de verschillen van alle waarnemingen ($x_i$) met het gemiddelde ($\mu$) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen ($N$).
 
 $$\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}{(x_i- \mu)}^2$$
 
-Om de logica van deze maatstaf voor de spreiding te begrijpen moet je bedenken dat $x_i - \mu$ de afwijking is van $x_i$ van het gemiddelde. Je berekent dus in feite het gemiddelde van de kwadratische afwijkingen.
+Om de logica van deze maatstaf voor de spreiding van de gegevens te begrijpen moet je bedenken dat $x_i - \mu$ de afwijking is van $x_i$ ten opzichte van het gemiddelde. Je berekent dus in feite het gemiddelde van de kwadratische afwijkingen.
 
 :::{ .important}
 Bij een steekproef met $n$ waarnemeningen uit de populatie wordt de variantie aangeduid met $s^2$ en berekend via $s^2 = \frac{1}{n-1}\sum_{i=1}^{n}{(x_i- \bar{x})}^2$, waarbij $\bar{x}$ het steekproefgemiddelde is.

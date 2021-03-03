@@ -23,7 +23,7 @@ Excel is niet ontworpen om als een statistische toepassing te dienen en heeft da
 
 Dit studieboek heeft een logische opbouw, beginnend met het verkrijgen van de data, het bestuderen daarvan, het onderzoeken van verbanden tot het trekken van conclusies. Daarna kan de verkregen kennis toegepast worden in cases.
 
-+ Hoofdstuk \@ref(importdata) richt zich op het verkrijgen van data en het eventuele opschonen hiervan. Dat gebeurt met de in Excel ingebouwde Power Query Editor. Dit hoofdstuk kun je overslaan wanneer je met dit proces voldoende bekend.
++ Hoofdstuk \@ref(importdata) richt zich op het verkrijgen van data en het eventuele opschonen hiervan. Dat gebeurt met de in Excel ingebouwde Power Query Editor. Dit hoofdstuk kun je overslaan wanneer je met dit proces voldoende bekend bent.
 
 + Hoofdstuk \@ref(data) behandelt soorten data en het structureren hiervan zodat de data geschikt is voor verdere analyse.
 

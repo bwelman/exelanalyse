@@ -186,8 +186,7 @@ Figuur 3.1: Staafdiagram
 </h3>
 <p>De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde, mediaan en modus.</p>
 <p><strong>Gemiddelde</strong></p>
-<p>Voor een populatie wordt het <strong>gemiddelde</strong> aangegeven met het symbool <span class="math inline">\(\mu\)</span> en berekend door de som van alle waarnemingen <span class="math inline">\(x_i\)</span> te delen door het totaal aantal waarnemingen <span class="math inline">\(N\)</span>.</p>
-<p><span class="math display">\[\mu = \frac{1}{N} \sum_{i=1}^N x_i\]</span></p>
+<p>Voor een populatie wordt het <strong>gemiddelde</strong> aangegeven met het symbool <span class="math inline">\(\mu\)</span> en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen.</p>
 <p><strong>Mediaan</strong></p>
 <p>De mediaan is de middelste waarneming van een gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden.</p>
 <div class="important">
@@ -220,9 +219,10 @@ Figuur 3.1: Staafdiagram
 </h3>
 <p>Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een dataset. Het is ook belangrijk om te beschrijven hoeveel de waarnemingen in de dataset van elkaar verschillen.</p>
 <p><strong>Variantie en Standaarddeviatie</strong></p>
-<p>De meest gebruikte maat voor de spreiding van de gegevens is de <strong>variantie</strong>, of de vierkantswortel hiervan, de <strong>standaarddeviatie</strong>. Voor een populatie wordt de standaardafwijking weergegeven met het symbool <span class="math inline">\(\sigma\)</span>. Voor het berekenen van de variantie worden de verschillen van alle waarnemingen met het gemiddelde gekwadrateerd en de som hiervan gedeeld door het aantal waarnemingen.</p>
+<p>De meest gebruikte maten om de spreiding van de gegevens weer te geven zijn <strong>variantie</strong> en <strong>standaarddeviatie</strong>. De standaarddeviatie (standaardafwijking)is gedefinieerd als de wortel uit de variantie. Voor een populatie wordt de standaarddeviatie weergegeven met het symbool <span class="math inline">\(\sigma\)</span> en de variantie met <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Voor het berekenen van de variantie worden de verschillen van alle waarnemingen (<span class="math inline">\(x_i\)</span>) met het gemiddelde (<span class="math inline">\(\mu\)</span>) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen (<span class="math inline">\(N\)</span>).</p>
 <p><span class="math display">\[\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}{(x_i- \mu)}^2\]</span></p>
-<p>Om de logica van deze maatstaf voor de spreiding te begrijpen moet je bedenken dat <span class="math inline">\(x_i - \mu\)</span> de afwijking is van <span class="math inline">\(x_i\)</span> van het gemiddelde. Je berekent dus in feite het gemiddelde van de kwadratische afwijkingen.</p>
+<p>Om de logica van deze maatstaf voor de spreiding van de gegevens te begrijpen moet je bedenken dat <span class="math inline">\(x_i - \mu\)</span> de afwijking is van <span class="math inline">\(x_i\)</span> ten opzichte van het gemiddelde. Je berekent dus in feite het gemiddelde van de kwadratische afwijkingen.</p>
 <div class="important">
 <p>Bij een steekproef met <span class="math inline">\(n\)</span> waarnemeningen uit de populatie wordt de variantie aangeduid met <span class="math inline">\(s^2\)</span> en berekend via <span class="math inline">\(s^2 = \frac{1}{n-1}\sum_{i=1}^{n}{(x_i- \bar{x})}^2\)</span>, waarbij <span class="math inline">\(\bar{x}\)</span> het steekproefgemiddelde is.</p>
 </div>
