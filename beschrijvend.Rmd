@@ -1,90 +1,154 @@
 # Beschrijvende statistiek {#beschrijvend}
 
 :::{.chapterintro}
-Bij wat de beschrijvende statistiek genoemd wordt, gaat het om het beschrijven van een gegevensverzameling door de gegevens te ordenen, samen te vatten en weer te geven op een informatieve manier.
-Hierbij kun je twee vormen onderscheiden:
-
-+ *Numerieke vorm* voor het samenvatten van gegevens zoals het berekenen van een gemiddelde en het maken van frequentietabellen.
-+ *Grafische vorm* voor het interpreteren van gegevens en het verkrijgen van nuttige informatie.
-
-Hierdoor ben je sneller in staat om de gegevensverzameling te begrijpen. Welke vorm je gebruikt hangt vooral af van de gewenste informatie over de gegevens.
+Bij wat de beschrijvende statistiek genoemd wordt, gaat het om het beschrijven van een gegevensverzameling door de gegevens te ordenen, samen te vatten en weer te geven op een informatieve manier. Dit kan in *numerieke* en *grafische* vorm. Hierdoor ben je sneller in staat om de gegevensverzameling te begrijpen. Welke vorm je gebruikt hangt vooral af van de gewenste informatie over de gegevens. Bij het gebruik van de verschillende technieken moet je een onderscheid maken tussen categoriale variabelen en numerieke variabelen.
 :::
 
-Bij het gebruik van de verschillende technieken moet je een onderscheid maken tussen kwalitatieve (categoriale) en kwantitatieve (numerieke) gegevens.
+## Ordening Categoriale variabelen
 
-## Kwalitatieve gegevens
+Het beoordelen van grote rijen gegevens is ondoenlijk. Om meer inzicht te krijgen worden van deze gegevens samenvattingen in tabellen gemaakt.
 
-Voor categoriale gegevens is het doel meestal om de gegevensverdeling weer te geven, dus laten zien hoe de waarnemingen zijn verdeeld over de verschillende mogelijke categorieën. Bij 1 variabele (*univariaat*) kun je de aantallen weergeven met een frequentietabel. Wanneer je bij meerdere variabelen (*multivariaat*) ook de onderlinge verhoudingen weer wilt geven dan kan dat met kruistabellen weergegeven. In Excel voer je dat uit met *draaitabellen*. Wanneer de totale aantallen voor de verschillende groepen sterk verschillen kun je beter *relatieve frequenties* gebruiken in plaats van absolute frequenties.
+**Samenvattende tabel**
 
-Voor een grafische weergave is een *staafdiagram* of *kolomdiagram* meestal de beste keuze. Bij een klein aantal categorieën kun je eventueel ook een *cirkeldiagram* gebruiken. Bij meerdere variabelen kun je bij deze soorten voor *gegroepeerde diagrammen* kiezen.
+Voor een enkele categoriale variabele tel je hoe vaak elke individuele waarde voorkomt en presenteer je de resultaten in een samenvattende tabel. Dit gaat het handigste met *draaitabellen*. Behalve als absolute aantallen voor elke categorie (frequenties) kun je ook percentages voor elke categorie weergeven. Verschillen tussen categorieën zijn hierdoor snel zichtbaar.
 
-### Voorbeeld met 2 variabelen
+::: {.workedexample}
+Aan 150 personen is gevraagd wat hun favoriete huisdier is. De samengevatte gegevens, zowel de aantallen als percentages, zijn in figuur \@ref(fig:huisdier) te zien.
 
-Het Gallup rapport [More Americans Say Real Estate Is Best Long-Term Investmen](https://news.gallup.com/poll/190850/americans-say-real-estate-best-long-term-investment.aspx) bevat de resultaten van een in 2016 uitgevoerde enquete onder 1015 Amerikanen. De relatieve frequenties van de antwoorden op de vraag naar de beste lange termijn investering, uitgesplitst naar mannen en vrouwen, zijn te zien in tabel \@ref(tab:gallup-freq). Om de verschillen tussen de twee groepen goed te kunnen vergelijken, is een een gegroepeerd staafdiagram gemaakt, dat in figuur \@ref(fig:gallup1-staaf) te zien is.
+```{r huisdier, fig.cap="Favoriete huisdier", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/huisdier.png")
+```
+:::
 
-```{r gallup-freq, fig.cap="Relatieve frequenties"}
-gallup <- data.frame(Investering = c("Vastgoed", "Aandelen/Beleggingsfondsen", "Goud", "Spaargeld", "Obligaties", "Anders"),
-					  Vrouwen = formattable::percent(c(0.33, 0.21, 0.14, 0.18, 0.08, 0.06), format = "d"),
-					  Mannen = formattable::percent(c(0.32, 0.25, 0.22, 0.12, 0.05, 0.04), format = "d"))
-gallup %>% 
-	kbl(caption = "Beste lange termijn investering Amerikanen") %>% 
-	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
+**Kruistabel**
+
+Voor het vergelijken van twee (of meer) categoriale variabelen onderling maak je een **kruistabel**. Hierin staan de categorieën van de ene variabele (de rijvariabele) in de rijen en de categorieën van de andere variabele (de kolomvariabele) in de kolommen. In de cel waar een rijwaarde en een kolomwaarde elkaar kruisen staat het aantal dat tot beide categorieën behoort. behalve als aantal (frequentie) kunnen de tellingen ook worden weergegeven als een percentage van het totale totaal, een percentage van het rijtotaal of een percentage van het kolomtotaal. Door deze weergave kun je patronen bestuderen die tussen de variabelen kunnen bestaan. Kruistabellen kun je ook het beste maken met *draaitabellen*.
+
+::: {.workedexample}
+Aan 200 personen van drie verschillende leeftijdsklasse (jong, middelbaar, oud) is gevraagd wat hun favoriete vakantieland (Griekenland, Spanje, Turkije, Italië) is. De samengevatte gegevens zijn in figuur \@ref(fig:vakantieland) weergegeven.
+
+```{r vakantieland, fig.cap="Favoriete vakantieland", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/vakantieland.png")
+```
+:::
+
+## Ordening Numerieke variabelen
+
+Wanneer het aantal waarnemingen van een numerieke variabele niet al te groot is kun je een beter gevoel voor de data krijgen door deze te ordenen (sorteren) van klein naar groot. Je ziet dan snel het bereik van de waarden. Bij een groter aantal data kun je beter van een *frequentietabel* gebruik maken.
+
+### Frequentieverdelingen {#frequentieverdelingen}
+
+Bij een *frequentieverdeling* van een numerieke variabele wordt het bereik van de waarden opgedeeld in een aantal geordende *klassen* en geteld hoeveel waarden in elke klasse voorkomen. De grenzen van een klasse, de ondergrens en bovengrens, worden met een combinatie van ronde haken () en blokhaken [] aangeduid. Een ronde haak betekent dat de grenswaarde niet tot de klasse behoort. Een blokhaak betekent dat de grenswaarde wel tot de klasse behoort. Zo hoort bij een klasse aangeduid met [25,40) de waarde 25 wel tot de klasse, maar de waarde 40 niet.
+
+De *klassebreedte* is het verschil tussen de bovengrens en de ondergrens van een klasse. Zo heeft de klasse [25,40) een klassebreedte 10.Om een bruikbare frequentieverdeling te maken moet je een beslissing nemen over het aantal klassen en dus over de klassebreedte. Bij teveel of te weinig klassen kun je weinig informatie uit de frequentieverdeling halen. In de praktijk zie je vaak 5 tot 15 klassen.
+
+Voor het maken van klassen (*bins* geheten in Excel) gelden de volgende regels:
+
++ De klassen mogen geen overlappingen vertonen. Een waarneming moet slechts in één klasse ondergebracht kunnen worden. Een klassindeling met hierin de klassen [25,50] en [50,75] kan dus niet. Want dit zou inhouden dat de waarde `50` tot 2 klassen kan behoren.
++ Voor elke waarneming moet er een klasse beschikbaar zijn. Dus alle waarnemingen moeten in een klasse ondergebracht kunnen worden. Vaak worden daarom de eerste en laatste klasse extra groot gemaakt.
++ Als het kan maak dan de klassen even breed. Excel kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.
++ De klassen moeten wel voldoende differentieren (verschillen vertonen) anders levert de frequentieverdeling te weinig informatie op. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (> 90%) vallen.
+
+In Excel kun je op meerdere manieren een freqentieverdeling maken:
+
++ Met de formule `INTERVAL(gegevensmatrix;interval_verw)`
++ Met een draaitabel
++ Met de histogram optie in gegevensanalyse (Analysis Toolpak)
++ Via Invoegen > grafieken > Histogram (alleen histogram, geen afzonderlijke frequenties)
+
+De eerste twee methodes worden hierna met een voorbeeld toegelicht. De andere twee mogelijkheden komen bij het maken van een histogram aan de orde. Welke manier je in de praktijk gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.
+
+Allereerst de formule INTERVAL.
+
+::: {.workedexample}
+Download het bestand [frequenties.xlsx](data/frequenties.xlsx) en open werkblad *interval*. In de kolom *getal* staan 25 willekeurige gehele getallen, gegenereerd uit het interval [1,10].
+
+Om een frequentieverdeling te maken moet je eerst de intervallen (bins) vaststellen waarin de waarden moeten vallen. Hiervoor maak je een kolom met de bovengrenzen van de intervallen. Deze staan in de kolom "bin" en typ je gewoon in.
+
+De frequenties staan in de kolom *freq* en zijn berekend met de formule `=INTERVAL(A2:A26;C2:C6)`. Het eerste argument is de matrix met de waarden waarvanje frequentie wilt bepalen. Het tweede argument is de matrix met de bovengrenzen van de klassen (de intervallen).
+
+Deze formule is een zogenaamde **matrixformule**. In Excel 365 kun je deze matrixformule gewoon in de begincel *D2* invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze *dynamische matrix* in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.
+
+```{r freq-interval, out.width="50%", fig.cap="Frequenties bepaald met functie INTERVAL."}
+knitr::include_graphics("images/beschrijvend/freq-interval.png", dpi = NA)
+```
+:::
+
+Ook met een draaitabel kun je een frequentieverdeling maken.
+
+::: {.workedexample}
+Selecteer het gegevensgebied *A1:A26* en kies dan *tab Invoegen > Draaitabel*. Plaats het veld `getal` in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.
+
+```{r freq-draaitabel-velden, out.width="40%", fig.cap="Velden voor de draaitabel."}
+knitr::include_graphics("images/beschrijvend/freq-draaitabel-velden.png", dpi = NA)
 ```
 
-```{r gallup1-staaf, fig.cap="Staafdiagram", echo=FALSE}
-knitr::include_graphics("images/beschrijvend/gallup1-staaf.png", dpi = NA)
+Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, *rechter muisklik* en kies dan *Groeperen*. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.
+
+```{r freq-draaitabel-resultaat, out.width="40%", fig.cap="Frequentieverdeling via een draaitabel."}
+knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png", dpi = NA)
 ```
+:::
 
-## Kwantitatieve gegevens
+De resultaten van beide methodes zijn hetzelfde. De werkwijze en presentatie van het resultaat verschillen.
 
-De twee meest gebruikte samenvattende kerngrootheden voor een dataset zijn het centrum en de verspreiding van de gegevens.
+**Relatieve frequentieverdeling*
+
+De relatieve frequenties worden uitgedrukt als fracties of als een percentages. Deze verdeling kun je het beste via draaitabellen maken.
+
+**Cumulatieve frequentieverdeling**
+
+De cumulatieve frequentie is de som van alle frequenties tot en met de frequentie van de desbetreffende waarde. Met name wanneer je gebruik maakt van percentages heb je een manier om te laten zien welk percentage waarden kleiner is dan een bepaalde waarde.
+
+## Numerieke statistieken
+
+Voor numerieke variabelen kun je ook samenvattende grootheden, statistieken geheten, voor de dataset maken, zoals wat het centrum van de gegevens is en hoe de gegevens verspreid zijn.
 
 ### Centrum dataset
 
-De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde, mediaan en modus.
-
-**Gemiddelde**
-
-Voor een populatie wordt het **gemiddelde** aangegeven met het symbool $\mu$ en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen.
-
-**Mediaan**
-
-De mediaan is de middelste waarneming van een gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden.
-
-:::{ .important}
-**Kwartielen**
-	
-Je kunt een gesorteerde reeks ook in vier gelijke stukken verdelen, elk van 25% van de waarnemingen. Deze heten dan **kwartielen**. Het eerste kwartiel $Q_1$ splitst de verzameling in de laagste 25% en de hoogste 75%, Het tweede kwartiel $Q_2$ is gelijk aan de mediaan. En het derde kwartiel $Q_3$ splitst de verzameling in de laagste 75% en de hoogste 25%. Verder is $Q_0$ gelijk aan de minimumwaarde en is $Q_4$ gelijk aan de maximumwaarde.
-
-**5-getallensamenvatting**
-
-Hiermee wordt bedoeld een opsomming van de waarden $Q_0$, $Q_1$, $Q_2$, $Q_3$ en $Q_4$. Hiermee heb je een beknopte samenvatting die je inzicht geeft in het centrum, de spreiding van de gegevens en het bereik..
-:::
-
-
-**Modus**
-
-De **modus** is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus.
-
-Welke maat het meest geschikt is om het centrum te bepalen hangt van de situatie af.
+De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde en mediaan. Welke maat het meest geschikt is om het centrum te bepalen hangt van de situatie af.
 
 + gemiddelde: is het meest geschikt voor symmetrische verdelingen zonder uitschieters.
 + mediaan: is het meest geschikt voor scheve verdelingen of data met uitschieters
 
-**Excel formules**
+#### Gemiddelde {.unnumbered}
 
-+ Rekenkundig gemiddelde: `GEMIDDELDE(data)`
-+ Mediaan: `MEDIAAN(data)`
-+ Modus: `MODUS(data)`
-+ Kwartiel: `KWARTIEL.EXC(data;kwartiel)` en `KWARTIEL.INC(data;kwartie)` waarbij de uiterste waarden respectievelijk niet en wel worden meegenomen.
+Voor een populatie wordt het *gemiddelde* aangegeven met het symbool $\mu$ en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen.
+
+Excel formule: `GEMIDDELDE(data)`
+
+#### Mediaan {.unnumbered}
+
+De mediaan is de middelste waarneming van een gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden.
+
+Excel formule: `MEDIAAN(data)`
+
+#### Modus {.unnumbered}
+
+De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus.
+
+Excel formule: `MODUS(data)`
+
+#### Kwartielen {.unnumbered} 
+	
+Je kunt een gesorteerde reeks ook in vier gelijke stukken verdelen, elk van 25% van de waarnemingen. Deze heten dan *kwartielen*. Het eerste kwartiel $Q_1$ splitst de verzameling in de laagste 25% en de hoogste 75%, Het tweede kwartiel $Q_2$ is gelijk aan de mediaan. En het derde kwartiel $Q_3$ splitst de verzameling in de laagste 75% en de hoogste 25%. Verder is $Q_0$ gelijk aan de minimumwaarde en is $Q_4$ gelijk aan de maximumwaarde.
+
+Excel formules: `KWARTIEL.EXC(data;kwartiel)` en `KWARTIEL.INC(data;kwartie)` waarbij de uiterste waarden respectievelijk niet en wel worden meegenomen.
+
+:::{ .important}
+
+**5-getallensamenvatting**
+
+Hiermee wordt bedoeld een opsomming van de waarden $Q_0$, $Q_1$, $Q_2$, $Q_3$ en $Q_4$. Hiermee heb je een beknopte samenvatting die je inzicht geeft in het centrum, de spreiding van de gegevens en het bereik.
+:::
 
 ### Spreiding dataset
 
 Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een dataset. Het is ook belangrijk om te beschrijven hoeveel de waarnemingen in de dataset van elkaar verschillen.
 
-**Variantie en Standaarddeviatie**
+#### Variantie en Standaarddeviatie {.unnumbered}
 
-De meest gebruikte maten om de spreiding van de gegevens weer te geven zijn **variantie** en **standaarddeviatie**. De standaarddeviatie (standaardafwijking)is gedefinieerd als de wortel uit de variantie. Voor een populatie wordt de standaarddeviatie weergegeven met het symbool $\sigma$ en de variantie met $\sigma^2$.
+De meest gebruikte maten om de spreiding van de gegevens weer te geven zijn *variantie* en *standaarddeviatie*. De standaarddeviatie (standaardafwijking)is gedefinieerd als de wortel uit de variantie. Voor een populatie wordt de standaarddeviatie weergegeven met het symbool $\sigma$ en de variantie met $\sigma^2$.
 
 Voor het berekenen van de variantie worden de verschillen van alle waarnemingen ($x_i$) met het gemiddelde ($\mu$) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen ($N$).
 
@@ -96,21 +160,31 @@ Om de logica van deze maatstaf voor de spreiding van de gegevens te begrijpen mo
 Bij een steekproef met $n$ waarnemeningen uit de populatie wordt de variantie aangeduid met $s^2$ en berekend via $s^2 = \frac{1}{n-1}\sum_{i=1}^{n}{(x_i- \bar{x})}^2$, waarbij $\bar{x}$ het steekproefgemiddelde is.
 :::
 
-Andere maten om de spreiding van de gegevens aan te geven zijn:
+Excel formules:
 
-**Spreidingsbreedte**
++ Variantie: `VAR.P(data)` voor populatie en `VAR.S(data)` voor steekproef
++ Standaarddeviatie: `STDEV.P(data)` voor populatie en `STDEV.S(data)` voor steekproef
++ Som kwadratische afwijkingen: `DEV.KWAD(data)`
+
+#### Spreidingsbreedte {.unnumbered}
 
 De spreidingsbreedte is het verschil tussen de grootste en de kleinste waarneming. Deze maat is eenvoudig uit te rekenen, maar wel erg gevoelig voor extreme waarden.
 
-**Gemiddelde absolute afwijking**
+Excel formule: `MAX(data) - MIN(data)`
+
+#### Gemiddelde absolute afwijking {.unnumbered}
 
 Dit is het gemiddelde van de absolute waarden van het verschil van een waarneming met het gemiddelde.
 
-**Interkwartielafstand**
+Excel formule: `GEM.DEVIATIE(data)`
+
+#### Interkwartielafstand {.unnumbered}
 
 Dit is het verschil tussen het derde kwartiel en het eerste kwartiel, dus $Q_3 - Q_1$. Het is een manier om de spreiding van de middelste 50% van de gegevens weer te geven.
 
-**Variatiecoëfficient**
+Excel formule: `KWARTIEL(data;3) - KWARTIEL(data;1)`
+
+#### Variatiecoëfficient {.unnumbered}
 
 De variatiecoëfficient (VC) is de standaarddeviatie gedeeld door het gemiddelde.
 
@@ -118,20 +192,11 @@ $VC = \frac{\sigma}{\mu}$ (voor een populatie),  $VC = \frac{s}{\bar{x}}$ (voor 
 
 Hiermee kun je aangeven of de standdardeviatie groot of klein is ten opzichte van het gemiddelde. Een kleine variatiecoefficient geeft aan dat de waarden slechts weinig fluctueren rond het gemiddelde. De variatiecoëfficiënt wordt vaak gebruikt om de variatie tussen twee verschillende datasets te vergelijken.
 
-**Excel formules**
-
-+ Variantie: `VAR.P(data)` voor populatie en `VAR.S(data)` voor steekproef
-+ Standaarddeviatie: `STDEV.P(data)` voor populatie en `STDEV.S(data)` voor steekproef
-+ Som kwadratische afwijkingen: `DEV.KWAD(data)`
-+ Gemiddelde absolute afwijking: `GEM.DEVIATIE(data)`
-+ Spreidingsbreedte: `MAX(data) - MIN(data)`
-+ Interkwartielafstand: `KWARTIEL(data;3) - KWARTIEL(data;1)`
-
 ### Scheefheid en Kurtosis
 
 Twee andere belangrijke grootheden zijn Scheefheid en Kurtosis.
 
-**Scheefheid** (Engels: Skewness)
+#### Scheefheid {.unnumbered}
 
 in vergelijking met een normale verdeling die symmetrisch is, kan een verdeling scheef verdeeld zijn aan de linker- of rechterkant.
 
@@ -141,7 +206,7 @@ knitr::include_graphics("images/beschrijvend/scheefheid.png", dpi = NA)
 
 Bij links-scheef ligt de staart links en bij rechts-scheef ligt de staart aan de rechterkant. Voor de berekening van de scheefheid bestaat een formule waarmee je de mate en soort scheefheid weer kunt geven. Een links-scheve verdeling heeft een negatieve waarde, een rechts-scheve verdeling heeft een positieve waarde. Ligt het gemiddelde precies in het midden dan is de waarde van de scheefheid 0. In de praktijk zal de scheefheid van een normaal verdeelde variabele rond de nul liggen, zo tussen -0,5 en +0,5.
 
-**Kurtosis**
+#### Kurtosis {.unnumbered}
 
 Bij kurtosis ga je na of de verdeling van de waarden van een variabele een scherpe piek heeft of dat de verdeling nogal plat is. Bij een normale verdeling is de kurtosis 0. Een negatieve waarde (meestal kleiner dan -3) geeft een plattere verdeling aan en een positieve waarde (meestal groter dan +3) een meer gepiekte verdeling.
 
@@ -151,11 +216,10 @@ knitr::include_graphics("images/beschrijvend/kurtosis.png", dpi = NA)
 
 Het onderzoeken van de kurtosis van variabelen kan van belang zijn bij het onderzoeken van mogelijke relaties tussen variabelen. Bij een variabele met een hoge kurtosis liggen de waarden dicht bij elkaar (vandaar de piek) en is de kans op een relatie met andere varibelen klein.
 
-**Excel formules**
+#### Excel formules {.unnumbered}
 
 + Scheefheid: `SCHEEFHEID(data)` en `SCHEEFHEID.P(data)` voor een populatie
 + Kurtosis: `KURTOSIS(data)`
-
 
 ### Normaliseren van gegevens
 
@@ -174,76 +238,11 @@ Deze uitkomsten worden ook wel *z-waarden*, *z-scores* of *standaard scores* gen
 
 Voor het gebruik hiervan moet je wel eerst het gemiddelde en de standaarddeviatie berekenen of de formule hiervoor opnemen..
 
-## Frequentieverdelingen {#frequentieverdelingen}
-
-De *frequentie* van een waarde is het aantal malen dat die waarde voorkomt. Deze frequenties worden dan geordend in een tabel waardoor er een *frequentieverdeling* ontstaat.
-
-Naast deze *absolute frequentie* kun je ook de *relatieve frequentie* bepalen. Dit is het aantal malen dat een meetwaarde voorkomt gedeeld door het totaal aantal waarnemingen. De relatieve frequentie wordt uitgedrukt als fractie of als een percentage. En tot slot kun je ook nog de *cumulatieve frequentie* bepalen. Dit is de som van alle frequenties tot en met de frequentie van de desbetreffende waarde. En de cumulatieve frequentie kun je zowel absoluut als relatief uitdrukken.
-
-Meestal zijn er van een variabele veel meetwaarden beschikbaar. Dan is het niet handig om van de afzonderlijke waarden een frequentieverdeling te maken omdat dit een lange lijst wordt welke niet meer inzicht in de variabele zal geven. In dat geval worden de frequenties samengevat in groepen, zogenaamde *klassen* of ook wel *bins* geheten. Het samenbrengen in klassen heet ook wel *classificeren*.
-
-De grenzen van de klasse, de ondergrens en bovengrens, worden met een combinatie van ronde haken () en blokhaken [] aangeduid. Een ronde haak betekent dat de grenswaarde niet tot de klasse behoort. Een blokhaak betekent dat de grenswaarde wel tot de klasse behoort. Zo hoort bij een klasse aangeduid met [25,40) de waarde 25 wel tot de klasse, maar de waarde 40 niet.
-
-De *klassebreedte* is het verschil tussen de bovengrens en de ondergrens van een klasse. Zo heeft de klasse [25,40) een klassebreedte 10. Het bepalen van de klassebreedte wordt door de onderzoeker bepaald en hangt vaak van de onderzoeksvraag af. Ook voor het totaal aantal klassen gelden geen harde afspraken. Is de klassebreedte groot, dan heb je minder klassen, maar krijg je ook minder inzicht. Sommige onderzoekers hanteren als vuistregel voor het aantal klassen: maximaal de wortel uit het totaal aantal waarnemingen.
-
-Voor het maken van klassen gelden de volgende regels.
-
-Harde regels:
-
-+ De klassen mogen geen overlappingen vertonen. Een waarneming moet slechts in één klasse ondergebracht kunnen worden. Een klassindeling met hierin de klassen [25,50] en [50,75] kan dus niet. Want dit zou inhouden dat de waarde `50` tot 2 klassen kan behoren.
-+ Voor elke waarneming moet er een klasse beschikbaar zijn. Dus alle waarnemingen moeten in een klasse ondergebracht kunnen worden. Vaak worden daarom de eerste en laatste klasse extra groot gemaakt.
-
-Zachte regels (voor de klassebreedte):
-
-+ Als het kan maak dan de klassen even breed. Excel kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.
-+ De klassen moeten wel voldoende differentieren, verschillen vertonen. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (> 90%) vallen.
-
-Er zijn meerdere manieren om een freqentieverdeling te maken, al dan niet met tevens een histogram.
-
-+ Met de formule `INTERVAL`
-+ Met een draaitabel en draaigrafiek
-+ Met de histogram optie in gegevensanalyse (Analysis Toolpak)
-+ Via Invoegen > grafieken > Histogram (alleen histogram, geen afzonderlijke frequenties)
-
-Welke manier je gebruikt hangt meestal van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.
-
-### INTERVAL functie (Eng: FREQUENCY) {#intervalfunctie}
-
-Syntax: `INTERVAL(gegevensmatrix;interval_verw)`
-
-+ `gegevensmatrix (data_array)`, een matrix met de waarden waarvan je de frequentie wilt bepalen
-+ `interval_verw (bins_array)`, een matrix met de bovengrenzen van de intervallen waarin je wilt verdelen
-
-Als voorbeeld zijn 25 willekeurige gehele getallen gegenereerd uit het interval [1,10]. Het bestand met deze getallen, alsmede alle uitwerkingen in deze paragraaf kun je downloaden via de link [frequenties.xlsx](data/frequenties.xlsx).
-
-Om een frequentieverdeling te maken moet je eerst de intervallen vaststellen waarin de waarden wilt laten vallen. Deze intervallen of groepen worden meestal **bins** genoemd. Hiervoor maak je een kolom met de bovengrenzen van de intervallen. In de afbeelding staan deze in de kolom "bin".
-
-De frequenties staan in de kolom *freq* en zijn berekend met de formule `=INTERVAL(A2:A26;C2:C6)`. Deze formule is een zogenaamde **matrixformule**. In Excel 365 kun je deze matrixformule gewoon in de begincel D2 invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze *dynamische matrix* in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.
-
-```{r freq-interval, out.width="50%", fig.cap="Frequenties bepaald met functie INTERVAL."}
-knitr::include_graphics("images/beschrijvend/freq-interval.png", dpi = NA)
-```
-
-### Frequenties via Draaitabel
-
-Ook met een draaitabel kun je een frequentieverdeling maken. Selecteer het gegevensgebied A1:A26 en tab Invoegen > Draaitabel. Plaats het veld getal in zowel het rijengebied als het waardengebied. Wijzig de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.
-
-```{r freq-draaitabel-velden, out.width="40%", fig.cap="Velden voor de draaitabel."}
-knitr::include_graphics("images/beschrijvend/freq-draaitabel-velden.png", dpi = NA)
-```
-
-Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, rechter muisklik en kies dan Groeperen. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.
-
-```{r freq-draaitabel-resultaat, out.width="40%", fig.cap="Frequentieverdeling via een draaitabel."}
-knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png", dpi = NA)
-```
 
 ## Opgaven {#opg-beschrijvend}
 
 ::: {.sectionexercise}
 1. In een straat wonen 9 personen met een inkomen tussen 15.000 en 30.000 euro en nog 1 persoon met een inkomen van ongeveer een miljoen. Welke maatstaf zou je gebruiken om het centrum van deze inkomens weer te geven?
-
-1. Voer in een Excel werkblad de frequentietabel uit tabel \@ref(tab:gallup-freq) in. Maak vervolgens het staafdiagram dat in figuur \@ref(fig:gallup1-staaf) te zien is.
 
 1. In een bedrijf met 12 werknemers zijn de verzuimdagen per werknemer in een bepaald jaar: 0, 0, 0, 2, 2, 4, 5, 6, 7, 8, 20, 30. Ga na dat gemiddelde = 7, mediaan = 4,5 en modus =0.
 

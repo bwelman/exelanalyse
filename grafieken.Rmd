@@ -17,7 +17,7 @@ Alhoewel je handmatig zo'n histogram kunt maken wordt in deze tutorial het autom
 
 ### Via Gegevensanalyse (Analysis Toolpak) {.unnumbered}
 
-Ook hier moet je net als bij de functie INTERVAL (\@ref(intervalfunctie)) een bereik voor de grenzen van de intervallen maken.
+Ook hier moet je net als bij de functie INTERVAL een bereik voor de grenzen van de intervallen maken.
 
 Kies *tab Gegevens > Gegevensanalyse > Histogram*. Specificeer het invoerbereik en het verzamelbereik, alsmede een cel voor het begin van de uitvoer. Wanneer je een histogram wilt kun je in dit scherm ook aangeven dat er een grafiek gemaakt moet worden
 
