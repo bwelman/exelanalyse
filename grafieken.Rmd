@@ -11,7 +11,8 @@ Een histogram is een grafische weergave van een frequentieverdeling in de vorm v
 1. Van wat voor soort verdeling zijn de gegevens afkomstig?
 1. Waar bevinden de gegevens zich?
 1. Hoe verspreid zijn de gegevens?
-1. Zijn de gegevens symmetrisch of scheef1Zijn er uitschieters in de gegevens?
+1. Zijn de gegevens symmetrisch of scheef?
+1. Zijn er uitschieters in de gegevens?
 
 Alhoewel je handmatig zo'n histogram kunt maken wordt in deze tutorial het automatische gereedschap van Exel gebruikt. Hiervoor zijn twee opties beschikbaar, via Gegevensanalyse (Analysis Toolpak) en via grafiektype histogram.
 

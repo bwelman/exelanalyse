@@ -92,7 +92,7 @@ knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png", dpi
 
 De resultaten van beide methodes zijn hetzelfde. De werkwijze en presentatie van het resultaat verschillen.
 
-**Relatieve frequentieverdeling*
+**Relatieve frequentieverdeling**
 
 De relatieve frequenties worden uitgedrukt als fracties of als een percentages. Deze verdeling kun je het beste via draaitabellen maken.
 
