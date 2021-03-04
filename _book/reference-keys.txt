@@ -105,8 +105,8 @@ frequentieverdelingen
 numerieke-statistieken
 centrum-dataset
 spreiding-dataset
+z-scores
 scheefheid-en-kurtosis
-normaliseren-van-gegevens
 opg-beschrijvend
 grafieken
 graf-histogram

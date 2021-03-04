@@ -106,26 +106,26 @@ Voor numerieke variabelen kun je ook samenvattende grootheden, statistieken gehe
 
 ### Centrum dataset
 
-De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde en mediaan. Welke maat het meest geschikt is om het centrum te bepalen hangt van de situatie af.
+De waarden van veel numerieke variabelen zitten verspreid rond een centrale waarde. De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde en mediaan. Welke maat het meest geschikt is om het centrum te bepalen hangt van de situatie af.
 
 + gemiddelde: is het meest geschikt voor symmetrische verdelingen zonder uitschieters.
 + mediaan: is het meest geschikt voor scheve verdelingen of data met uitschieters
 
 #### Gemiddelde {.unnumbered}
 
-Voor een populatie wordt het *gemiddelde* aangegeven met het symbool $\mu$ en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen.
+Voor een populatie wordt het *gemiddelde* aangegeven met het symbool $\mu$ en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen. Doordat alle waarnemingen meetellen bij het bepalen van het gemiddelde hebben uitschieters grote invloed. Wanneer er extreme waarden voorkomen kun je beter een andere maat voor het centrum gebruiken.
 
 Excel formule: `GEMIDDELDE(data)`
 
 #### Mediaan {.unnumbered}
 
-De mediaan is de middelste waarneming van een gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden.
+De mediaan is de middelste waarneming van een van klein naar groot gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden. Uitschieters hebben geen invloed op de mediaan, waardoor de mediaan een goed alternatief is voor het gemiddelde wanneer er extreme waarden aanwezig zijn.
 
 Excel formule: `MEDIAAN(data)`
 
 #### Modus {.unnumbered}
 
-De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus.
+De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus. Uitschieters hebben geen invloed op de modus.
 
 Excel formule: `MODUS(data)`
 
@@ -144,13 +144,13 @@ Hiermee wordt bedoeld een opsomming van de waarden $Q_0$, $Q_1$, $Q_2$, $Q_3$ en
 
 ### Spreiding dataset
 
-Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een dataset. Het is ook belangrijk om te beschrijven hoeveel de waarnemingen in de dataset van elkaar verschillen.
+Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een dataset. Het is ook belangrijk om te beschrijven hoe de waarnemingen rond het centrum verspreid zijn.
 
 #### Variantie en Standaarddeviatie {.unnumbered}
 
 De meest gebruikte maten om de spreiding van de gegevens weer te geven zijn *variantie* en *standaarddeviatie*. De standaarddeviatie (standaardafwijking)is gedefinieerd als de wortel uit de variantie. Voor een populatie wordt de standaarddeviatie weergegeven met het symbool $\sigma$ en de variantie met $\sigma^2$.
 
-Voor het berekenen van de variantie worden de verschillen van alle waarnemingen ($x_i$) met het gemiddelde ($\mu$) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen ($N$).
+Voor het berekenen van de variantie worden de verschillen van alle waarnemingen ($x_i$) met het gemiddelde ($\mu$) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen ($N$). Zowel de variantie als de standaarddeviatie kunnen dus nooit negatief zijn.
 
 $$\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}{(x_i- \mu)}^2$$
 
@@ -190,7 +190,21 @@ De variatiecoëfficient (VC) is de standaarddeviatie gedeeld door het gemiddelde
 
 $VC = \frac{\sigma}{\mu}$ (voor een populatie),  $VC = \frac{s}{\bar{x}}$ (voor een steekproef)
 
-Hiermee kun je aangeven of de standdardeviatie groot of klein is ten opzichte van het gemiddelde. Een kleine variatiecoefficient geeft aan dat de waarden slechts weinig fluctueren rond het gemiddelde. De variatiecoëfficiënt wordt vaak gebruikt om de variatie tussen twee verschillende datasets te vergelijken.
+De variatiecoëfficient wordt vaak als een percentage uitgedrukt. Je kunt er mee aangeven of de standdardeviatie groot of klein is ten opzichte van het gemiddelde. Een kleine variatiecoefficient geeft aan dat de waarden slechts weinig fluctueren rond het gemiddelde. De variatiecoëfficiënt wordt vaak gebruikt om de variatie tussen twee verschillende datasets te vergelijken.
+
+### Z scores
+
+Wanneer twee datsets verschillende gemiddelden en verschillende standaardwaarden hebben kun je niet zomaar een waarde uit de ene dataset vergelijken met een waarde uit een andere dataset. Om ze wel te kunnen vergelijken moet je de waarden in de datasets eerst standaardiseren door de waarden om te zetten in zogenaamde *z-waarden* of *z-scores*.
+
+De z-score van een waarde is het verschil tussen die waarde en het gemiddelde, gedeeld door de standaarddeviatie: $z = \frac{x - \mu}{\sigma}$
+
+Het gemiddelde zelf heeft een z-score van 0. Waarden groter dan het gemiddelde hebben een positieve z-score en waarden kleiner dan het gemiddelde een negatieve z-score. De z-score geeft in feite aan hoeveel keer de standaaarddeviatie een waarde van het gemiddelde af ligt.
+
+Via de z-scores kun je ook gemakkelijker eventuele uitschieters opsporen. Een vuistregel is dat een waarde met een z-score kleiner dan -3 of groter dan 3 als een uitschieter beschouwd kan worden.
+
+Excel formule: `NORMALISEREN(x ; gemiddelde ; standaarddeviatie)`
+
+Voor het gebruik hiervan moet je wel eerst het gemiddelde en de standaarddeviatie berekenen of een formule hiervoor opnemen.
 
 ### Scheefheid en Kurtosis
 
@@ -206,6 +220,8 @@ knitr::include_graphics("images/beschrijvend/scheefheid.png", dpi = NA)
 
 Bij links-scheef ligt de staart links en bij rechts-scheef ligt de staart aan de rechterkant. Voor de berekening van de scheefheid bestaat een formule waarmee je de mate en soort scheefheid weer kunt geven. Een links-scheve verdeling heeft een negatieve waarde, een rechts-scheve verdeling heeft een positieve waarde. Ligt het gemiddelde precies in het midden dan is de waarde van de scheefheid 0. In de praktijk zal de scheefheid van een normaal verdeelde variabele rond de nul liggen, zo tussen -0,5 en +0,5.
 
+Excel formules: `SCHEEFHEID(data)` en `SCHEEFHEID.P(data)` voor een populatie
+
 #### Kurtosis {.unnumbered}
 
 Bij kurtosis ga je na of de verdeling van de waarden van een variabele een scherpe piek heeft of dat de verdeling nogal plat is. Bij een normale verdeling is de kurtosis 0. Een negatieve waarde (meestal kleiner dan -3) geeft een plattere verdeling aan en een positieve waarde (meestal groter dan +3) een meer gepiekte verdeling.
@@ -216,28 +232,7 @@ knitr::include_graphics("images/beschrijvend/kurtosis.png", dpi = NA)
 
 Het onderzoeken van de kurtosis van variabelen kan van belang zijn bij het onderzoeken van mogelijke relaties tussen variabelen. Bij een variabele met een hoge kurtosis liggen de waarden dicht bij elkaar (vandaar de piek) en is de kans op een relatie met andere varibelen klein.
 
-#### Excel formules {.unnumbered}
-
-+ Scheefheid: `SCHEEFHEID(data)` en `SCHEEFHEID.P(data)` voor een populatie
-+ Kurtosis: `KURTOSIS(data)`
-
-### Normaliseren van gegevens
-
-Wanneer twee datsets verschillende gemiddelden en verschillende standaardwaarden hebben kun je niet zomaar een waarde uit de ene dataset vergelijken met een waarde uit een andere dataset. Om ze wel te kunnen vergelijken moet je de waarden in de datasets eerst standaardiseren.
-Om een waarneming uit een dataset te vergelijken met een waarneming uit een andere dataset 
-
-Een standaardnormale verdeling heeft een gemiddelde van 0 en een standaarddeviatie van 1 en wordt weergegeven met $N(0,1)$. Een verdeling met een ander gemiddelde $\mu$ en met een andere standaarddeviatie $\sigma$ kun je omzetten naar een standaardnormale verdeling met de formule
-
-$z = \frac{x - \mu}{\sigma}$
-
-Deze uitkomsten worden ook wel *z-waarden*, *z-scores* of *standaard scores* genoemd.
-
-**Excel formule**
-
-`NORMALISEREN(x ; gemiddelde ; standaarddeviatie)`
-
-Voor het gebruik hiervan moet je wel eerst het gemiddelde en de standaarddeviatie berekenen of de formule hiervoor opnemen..
-
+Excel formule: `KURTOSIS(data)`
 
 ## Opgaven {#opg-beschrijvend}
 

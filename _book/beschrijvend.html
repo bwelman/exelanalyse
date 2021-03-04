@@ -164,7 +164,7 @@ Figuur 3.5: Frequentieverdeling via een draaitabel.
 <h3>
 <span class="header-section-number">3.3.1</span> Centrum dataset<a class="anchor" aria-label="anchor" href="#centrum-dataset"><i class="fas fa-link"></i></a>
 </h3>
-<p>De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde en mediaan. Welke maat het meest geschikt is om het centrum te bepalen hangt van de situatie af.</p>
+<p>De waarden van veel numerieke variabelen zitten verspreid rond een centrale waarde. De meest gebruikte maten om het centrum van een dataset aan te geven zijn gemiddelde en mediaan. Welke maat het meest geschikt is om het centrum te bepalen hangt van de situatie af.</p>
 <ul>
 <li>gemiddelde: is het meest geschikt voor symmetrische verdelingen zonder uitschieters.</li>
 <li>mediaan: is het meest geschikt voor scheve verdelingen of data met uitschieters</li>
@@ -172,19 +172,19 @@ Figuur 3.5: Frequentieverdeling via een draaitabel.
 <div id="gemiddelde" class="section level4 unnumbered">
 <h4>Gemiddelde<a class="anchor" aria-label="anchor" href="#gemiddelde"><i class="fas fa-link"></i></a>
 </h4>
-<p>Voor een populatie wordt het <em>gemiddelde</em> aangegeven met het symbool <span class="math inline">\(\mu\)</span> en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen.</p>
+<p>Voor een populatie wordt het <em>gemiddelde</em> aangegeven met het symbool <span class="math inline">\(\mu\)</span> en berekend door de som van alle waarnemingen te delen door het totaal aantal waarnemingen. Doordat alle waarnemingen meetellen bij het bepalen van het gemiddelde hebben uitschieters grote invloed. Wanneer er extreme waarden voorkomen kun je beter een andere maat voor het centrum gebruiken.</p>
 <p>Excel formule: <code>GEMIDDELDE(data)</code></p>
 </div>
 <div id="mediaan" class="section level4 unnumbered">
 <h4>Mediaan<a class="anchor" aria-label="anchor" href="#mediaan"><i class="fas fa-link"></i></a>
 </h4>
-<p>De mediaan is de middelste waarneming van een gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden.</p>
+<p>De mediaan is de middelste waarneming van een van klein naar groot gesorteerde reeks. Deze splitst dus de verzameling in twee helften: de laagste 50% en de hoogste 50%. Bij een oneven aantal is de mediaan de middelste waarneming. Bij een even aantal zijn er twee waarden die het midden vormen en neem je het gemiddelde van deze twee waarden. Uitschieters hebben geen invloed op de mediaan, waardoor de mediaan een goed alternatief is voor het gemiddelde wanneer er extreme waarden aanwezig zijn.</p>
 <p>Excel formule: <code>MEDIAAN(data)</code></p>
 </div>
 <div id="modus" class="section level4 unnumbered">
 <h4>Modus<a class="anchor" aria-label="anchor" href="#modus"><i class="fas fa-link"></i></a>
 </h4>
-<p>De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus.</p>
+<p>De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus. Uitschieters hebben geen invloed op de modus.</p>
 <p>Excel formule: <code>MODUS(data)</code></p>
 </div>
 <div id="kwartielen" class="section level4 unnumbered">
@@ -202,12 +202,12 @@ Figuur 3.5: Frequentieverdeling via een draaitabel.
 <h3>
 <span class="header-section-number">3.3.2</span> Spreiding dataset<a class="anchor" aria-label="anchor" href="#spreiding-dataset"><i class="fas fa-link"></i></a>
 </h3>
-<p>Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een dataset. Het is ook belangrijk om te beschrijven hoeveel de waarnemingen in de dataset van elkaar verschillen.</p>
+<p>Het bepalen van het centrum geeft slechts gedeeltelijke informatie over een dataset. Het is ook belangrijk om te beschrijven hoe de waarnemingen rond het centrum verspreid zijn.</p>
 <div id="variantie-en-standaarddeviatie" class="section level4 unnumbered">
 <h4>Variantie en Standaarddeviatie<a class="anchor" aria-label="anchor" href="#variantie-en-standaarddeviatie"><i class="fas fa-link"></i></a>
 </h4>
 <p>De meest gebruikte maten om de spreiding van de gegevens weer te geven zijn <em>variantie</em> en <em>standaarddeviatie</em>. De standaarddeviatie (standaardafwijking)is gedefinieerd als de wortel uit de variantie. Voor een populatie wordt de standaarddeviatie weergegeven met het symbool <span class="math inline">\(\sigma\)</span> en de variantie met <span class="math inline">\(\sigma^2\)</span>.</p>
-<p>Voor het berekenen van de variantie worden de verschillen van alle waarnemingen (<span class="math inline">\(x_i\)</span>) met het gemiddelde (<span class="math inline">\(\mu\)</span>) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen (<span class="math inline">\(N\)</span>).</p>
+<p>Voor het berekenen van de variantie worden de verschillen van alle waarnemingen (<span class="math inline">\(x_i\)</span>) met het gemiddelde (<span class="math inline">\(\mu\)</span>) gekwadrateerd en de som hiervan gedeeld door het totaal aantal waarnemingen (<span class="math inline">\(N\)</span>). Zowel de variantie als de standaarddeviatie kunnen dus nooit negatief zijn.</p>
 <p><span class="math display">\[\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}{(x_i- \mu)}^2\]</span></p>
 <p>Om de logica van deze maatstaf voor de spreiding van de gegevens te begrijpen moet je bedenken dat <span class="math inline">\(x_i - \mu\)</span> de afwijking is van <span class="math inline">\(x_i\)</span> ten opzichte van het gemiddelde. Je berekent dus in feite het gemiddelde van de kwadratische afwijkingen.</p>
 <div class="important">
@@ -244,12 +244,23 @@ Figuur 3.5: Frequentieverdeling via een draaitabel.
 </h4>
 <p>De variatiecoëfficient (VC) is de standaarddeviatie gedeeld door het gemiddelde.</p>
 <p><span class="math inline">\(VC = \frac{\sigma}{\mu}\)</span> (voor een populatie), <span class="math inline">\(VC = \frac{s}{\bar{x}}\)</span> (voor een steekproef)</p>
-<p>Hiermee kun je aangeven of de standdardeviatie groot of klein is ten opzichte van het gemiddelde. Een kleine variatiecoefficient geeft aan dat de waarden slechts weinig fluctueren rond het gemiddelde. De variatiecoëfficiënt wordt vaak gebruikt om de variatie tussen twee verschillende datasets te vergelijken.</p>
+<p>De variatiecoëfficient wordt vaak als een percentage uitgedrukt. Je kunt er mee aangeven of de standdardeviatie groot of klein is ten opzichte van het gemiddelde. Een kleine variatiecoefficient geeft aan dat de waarden slechts weinig fluctueren rond het gemiddelde. De variatiecoëfficiënt wordt vaak gebruikt om de variatie tussen twee verschillende datasets te vergelijken.</p>
 </div>
 </div>
-<div id="scheefheid-en-kurtosis" class="section level3" number="3.3.3">
+<div id="z-scores" class="section level3" number="3.3.3">
 <h3>
-<span class="header-section-number">3.3.3</span> Scheefheid en Kurtosis<a class="anchor" aria-label="anchor" href="#scheefheid-en-kurtosis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3.3</span> Z scores<a class="anchor" aria-label="anchor" href="#z-scores"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wanneer twee datsets verschillende gemiddelden en verschillende standaardwaarden hebben kun je niet zomaar een waarde uit de ene dataset vergelijken met een waarde uit een andere dataset. Om ze wel te kunnen vergelijken moet je de waarden in de datasets eerst standaardiseren door de waarden om te zetten in zogenaamde <em>z-waarden</em> of <em>z-scores</em>.</p>
+<p>De z-score van een waarde is het verschil tussen die waarde en het gemiddelde, gedeeld door de standaarddeviatie: <span class="math inline">\(z = \frac{x - \mu}{\sigma}\)</span></p>
+<p>Het gemiddelde zelf heeft een z-score van 0. Waarden groter dan het gemiddelde hebben een positieve z-score en waarden kleiner dan het gemiddelde een negatieve z-score. De z-score geeft in feite aan hoeveel keer de standaaarddeviatie een waarde van het gemiddelde af ligt.</p>
+<p>Via de z-scores kun je ook gemakkelijker eventuele uitschieters opsporen. Een vuistregel is dat een waarde met een z-score kleiner dan -3 of groter dan 3 als een uitschieter beschouwd kan worden.</p>
+<p>Excel formule: <code>NORMALISEREN(x ; gemiddelde ; standaarddeviatie)</code></p>
+<p>Voor het gebruik hiervan moet je wel eerst het gemiddelde en de standaarddeviatie berekenen of een formule hiervoor opnemen.</p>
+</div>
+<div id="scheefheid-en-kurtosis" class="section level3" number="3.3.4">
+<h3>
+<span class="header-section-number">3.3.4</span> Scheefheid en Kurtosis<a class="anchor" aria-label="anchor" href="#scheefheid-en-kurtosis"><i class="fas fa-link"></i></a>
 </h3>
 <p>Twee andere belangrijke grootheden zijn Scheefheid en Kurtosis.</p>
 <div id="scheefheid" class="section level4 unnumbered">
@@ -263,6 +274,7 @@ Figuur 3.6: Linker en rechter scheefheid met kenmerken.
 </p>
 </div>
 <p>Bij links-scheef ligt de staart links en bij rechts-scheef ligt de staart aan de rechterkant. Voor de berekening van de scheefheid bestaat een formule waarmee je de mate en soort scheefheid weer kunt geven. Een links-scheve verdeling heeft een negatieve waarde, een rechts-scheve verdeling heeft een positieve waarde. Ligt het gemiddelde precies in het midden dan is de waarde van de scheefheid 0. In de praktijk zal de scheefheid van een normaal verdeelde variabele rond de nul liggen, zo tussen -0,5 en +0,5.</p>
+<p>Excel formules: <code>SCHEEFHEID(data)</code> en <code>SCHEEFHEID.P(data)</code> voor een populatie</p>
 </div>
 <div id="kurtosis" class="section level4 unnumbered">
 <h4>Kurtosis<a class="anchor" aria-label="anchor" href="#kurtosis"><i class="fas fa-link"></i></a>
@@ -275,29 +287,8 @@ Figuur 3.7: Kurtosis, gepiekt en plat.
 </p>
 </div>
 <p>Het onderzoeken van de kurtosis van variabelen kan van belang zijn bij het onderzoeken van mogelijke relaties tussen variabelen. Bij een variabele met een hoge kurtosis liggen de waarden dicht bij elkaar (vandaar de piek) en is de kans op een relatie met andere varibelen klein.</p>
+<p>Excel formule: <code>KURTOSIS(data)</code></p>
 </div>
-<div id="excel-formules" class="section level4 unnumbered">
-<h4>Excel formules<a class="anchor" aria-label="anchor" href="#excel-formules"><i class="fas fa-link"></i></a>
-</h4>
-<ul>
-<li>Scheefheid: <code>SCHEEFHEID(data)</code> en <code>SCHEEFHEID.P(data)</code> voor een populatie</li>
-<li>Kurtosis: <code>KURTOSIS(data)</code>
-</li>
-</ul>
-</div>
-</div>
-<div id="normaliseren-van-gegevens" class="section level3" number="3.3.4">
-<h3>
-<span class="header-section-number">3.3.4</span> Normaliseren van gegevens<a class="anchor" aria-label="anchor" href="#normaliseren-van-gegevens"><i class="fas fa-link"></i></a>
-</h3>
-<p>Wanneer twee datsets verschillende gemiddelden en verschillende standaardwaarden hebben kun je niet zomaar een waarde uit de ene dataset vergelijken met een waarde uit een andere dataset. Om ze wel te kunnen vergelijken moet je de waarden in de datasets eerst standaardiseren.
-Om een waarneming uit een dataset te vergelijken met een waarneming uit een andere dataset</p>
-<p>Een standaardnormale verdeling heeft een gemiddelde van 0 en een standaarddeviatie van 1 en wordt weergegeven met <span class="math inline">\(N(0,1)\)</span>. Een verdeling met een ander gemiddelde <span class="math inline">\(\mu\)</span> en met een andere standaarddeviatie <span class="math inline">\(\sigma\)</span> kun je omzetten naar een standaardnormale verdeling met de formule</p>
-<p><span class="math inline">\(z = \frac{x - \mu}{\sigma}\)</span></p>
-<p>Deze uitkomsten worden ook wel <em>z-waarden</em>, <em>z-scores</em> of <em>standaard scores</em> genoemd.</p>
-<p><strong>Excel formule</strong></p>
-<p><code>NORMALISEREN(x ; gemiddelde ; standaarddeviatie)</code></p>
-<p>Voor het gebruik hiervan moet je wel eerst het gemiddelde en de standaarddeviatie berekenen of de formule hiervoor opnemen..</p>
 </div>
 </div>
 <div id="opg-beschrijvend" class="section level2" number="3.4">
@@ -328,8 +319,8 @@ Om een waarneming uit een dataset te vergelijken met een waarneming uit een ande
 <a class="nav-link" href="#numerieke-statistieken"><span class="header-section-number">3.3</span> Numerieke statistieken</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#centrum-dataset"><span class="header-section-number">3.3.1</span> Centrum dataset</a></li>
 <li><a class="nav-link" href="#spreiding-dataset"><span class="header-section-number">3.3.2</span> Spreiding dataset</a></li>
-<li><a class="nav-link" href="#scheefheid-en-kurtosis"><span class="header-section-number">3.3.3</span> Scheefheid en Kurtosis</a></li>
-<li><a class="nav-link" href="#normaliseren-van-gegevens"><span class="header-section-number">3.3.4</span> Normaliseren van gegevens</a></li>
+<li><a class="nav-link" href="#z-scores"><span class="header-section-number">3.3.3</span> Z scores</a></li>
+<li><a class="nav-link" href="#scheefheid-en-kurtosis"><span class="header-section-number">3.3.4</span> Scheefheid en Kurtosis</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#opg-beschrijvend"><span class="header-section-number">3.4</span> Opgaven</a></li>
