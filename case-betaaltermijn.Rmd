@@ -1,7 +1,7 @@
 ## Gemiddelde betaaltermijn {#case-betaaltermijn}
 
-```{r betaaltermijn, fig.cap="Workflow betaaltermijn debiteuren.", out.width="40%"}
-knitr::include_graphics("images/case-betaaltermijn/betaaltermijn.png")
+```{r betaaltermijn, fig.cap="Iris.", out.width="40%"}
+knitr::include_graphics("images/case-betaaltermijn/iris.jpg")
 ```
 
 IRIS BV heeft cashflow problemen sinds de uitbraak van de Corona crisis. In deze bijzondere tijden is het voor het bedrijf nog belangrijker dan anders om de liquiditeitspositie onder controle te houden. Belangrijk is dat de debiteuren sneller aan IRIS BV gaan betalen. Vanaf 1 juli 2020 is er daarom speciale actie van kracht. Klanten krijgen korting op de volgende orde als ze sneller betalen. Een medewerker is vrijgemaakt om bij de klanten langs te gaan en ze over deze actie te informeren. Die medewerker gaat actief achter debiteuren aan als een factuur meer dan 30 dagen openstaat.
