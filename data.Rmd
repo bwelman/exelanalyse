@@ -10,17 +10,14 @@ In het tweede deel van dit hoofdstuk ligt de nadruk op de verschillende soorten 
 
 Vaak zijn de gegevens zijn niet goed gestructureerd, waardoor je niet met draaitabellen kunt werken of de gewenste grafieken niet kunt maken. Wanneer de gegevens goed gestructureerd zijn kun je ze gemakkelijker modelleren, visualiseren en transformeren waardoor de analyse eenvoudiger wordt.
 
-Gestructureerde gegevens moeten voldoen aan de volgende drie voorwaarden:
+Gestructureerde gegevens moeten voldoen aan de volgende voorwaarden:
 
 1. Elke gemeten variabele staat in een kolom.
 1. Elke waarneming van de variabele staat in een rij.
-1. Elk type waarneming vormt een tabel.
 
-```{r tidy-data, fig.cap="Grafische weergave van gestructureerde gegevens"}
+```{r tidy-data, fig.cap="Grafische weergave van gestructureerde gegevens", out.width="70%"}
 knitr::include_graphics("images/data/tidy-data.png")
 ```
-
-Meestal staan de waarnemingen wel in een eigen tabel en hoef je alleen maar de eerste twee voorwaarden te controleren. Bij het ontwerp van databases kom je deze voorwaarden ook tegen en wordt het proces * normaliseren* genoemd. Wanneer aan deze drie voorwaarden voldaan wordt heb je in feite de 3e normaalvorm.
 
 **Voorbeeld**
 
@@ -36,7 +33,7 @@ exp1 <- tribble(
 
 exp1 %>% 
 	kbl(caption = 'Personen als rij.') %>% 
-	kable_styling(full_width = FALSE, bootstrap_options = "condensed")
+	kable_styling(full_width = FALSE, bootstrap_options = "condensed", font_size = 14)
 ```
 
 Wanneer je de rijen en kolommen verwisselt heb je dezelfde gegevens, maar de tabel ziet er dan iets anders uit, zie tabel \@ref(tab:exp2).
@@ -50,7 +47,7 @@ exp2 <- tribble(
 
 exp2 %>% 
 	kable(caption = 'Behandelingen als rij.') %>% 
-	kable_styling(full_width = FALSE, bootstrap_options = "condensed")
+	kable_styling(full_width = FALSE, bootstrap_options = "condensed", font_size = 14)
 ```
 
 Gestructureerd ziet de gegevensverzameling er uit zoals in tabel \@ref(tab:exp3).
@@ -61,7 +58,7 @@ exp3 <- exp1 %>%
 
 exp3 %>% 
 	kbl(caption = 'Gegevens in gestructureerde vorm.') %>% 
-	kable_styling(full_width = FALSE, bootstrap_options = "condensed")
+	kable_styling(full_width = FALSE, bootstrap_options = "condensed", font_size = 14)
 ```
 
 Dit maakt de waarden, variabelen en waarnemingen duidelijker.
@@ -75,7 +72,7 @@ Dit maakt de waarden, variabelen en waarnemingen duidelijker.
 
 [^tidydata-02]: Ja, elke variabele heeft een eigen kolom en de waarnemingen staan in de rijen.
 
-Echte gegevensverzamelingen zijn vaak op bijna elke denkbare manier in strijd met de drie voorwaarden voor gestructureerde gegevens. De meest voorkomende problemen bij niet goed gestructureerde gegevensverzamelingen zijn:
+Echte gegevensverzamelingen zijn vaak op bijna elke denkbare manier in strijd met de voorwaarden voor gestructureerde gegevens. De meest voorkomende problemen bij niet goed gestructureerde gegevensverzamelingen zijn:
 
 + Kolomkoppen bevatten waarden van een variabele i.p.v. een variabelenaam.
 + Combinatie van variabelen in een kolom.
@@ -91,7 +88,7 @@ Een veel voorkomende vorm van een gegevensverzameling is een tabelvorm waarbij d
 scores1 <- read_excel("data/scores1.xlsx")
 scores1 %>% 
 	kbl(caption = "Tabel waarin de kolomkoppen man en vrouw in feite waarden van variabele geslacht zijn.") %>% 
-	kable_styling(bootstrap_options = "condensed")
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 Deze gegevensverzameling heeft in feite drie variabelen:
@@ -128,7 +125,7 @@ Het resultaat is een tabel met gestructureerde gegevens. Elke kolom is één var
 scores1 %>% 
 	pivot_longer(-score, names_to = "geslacht", values_to = "aantal") %>%
 	kbl(caption = "Scores1 nu gestructureerd") %>%
-	kable_styling(bootstrap_options = c("striped","condensed"), full_width = F, font_size = 12)
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 ### Kolomkoppen zijn gecombineerde variabelen
@@ -139,10 +136,10 @@ Soms zijn kolommen een combinatie van meerdere onderliggende variabelen. Dit is 
 scores2 <- read_excel("data/scores2.xlsx")
 scores2 %>% 
 	kbl(caption = "Tabel met vier kolomkoppen die een combinatie van de variabelen geslacht en klas zijn.") %>% 
-	kable_styling(bootstrap_options = "condensed")
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
-**oefening**
+**Oefening**
 
 1. Download eerst het hulpbestand [scores2.xlsx](data/scores2.xlsx) en open het daarna.
 
@@ -171,7 +168,7 @@ scores2 %>%
 	pivot_longer(-score, names_to = "geslacht_klas", values_to = "aantal") %>% 
 	separate(geslacht_klas, c("geslacht", "klas")) %>% 
 	kbl(caption = "Scores2 nu gestructureerd") %>%
-	kable_styling(bootstrap_options = c("striped","condensed"), full_width = F, font_size = 12)
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 ### Variabelen in rijen en kolommen
@@ -182,7 +179,7 @@ Een meer gecompliceerde vorm van rommelige gegevens krijg je wanneer er variabel
 scores3 <- read_excel("data/scores3.xlsx")
 scores3 %>% 
 	kbl(caption = "Een tabel met variabelen in zowel rijen als kolommen.") %>% 
-	kable_styling(bootstrap_options = "condensed")
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 De eerste kolom met de variabele `naam` is in orde en moet zo blijven. De koppen van de laatste vijf kolommen zijn allemaal waarden van de variabele `klas`. De waarden in de tweede kolom, tussentoets en eindtoets, moeten eigen variabelen worden met als waarde de beoordeling van de student op dit onderdeel.
@@ -204,7 +201,7 @@ De eerste kolom met de variabele `naam` is in orde en moet zo blijven. De koppen
 1. Selecteer kolom `toets` en kies *tab Transformeren > Draaikolom*. Het dialoogvenster Draaikolom verschijnt
 
 1. Kies als Waardenkolom `Waarde`. En geef onder geavanceerde opties aan dat er niet samengevoegd moet worden.
-```{r scores3-pivotcolumn, out.width="40%", fig.cap="Instellingen voor de draaikolom."}
+```{r scores3-pivotcolumn, fig.cap="Instellingen voor de draaikolom.", out.width="70%", }
 knitr::include_graphics("images/data/scores3_pivotcolumn.png")
 ```
 
@@ -219,7 +216,7 @@ scores3 %>%
 	pivot_longer(klas1:klas5, names_to = "klas", values_to = "score", values_drop_na = TRUE) %>% 
 	pivot_wider(names_from = toets, values_from = score) %>%
 	kbl(caption = "Scores3 nu gestructureerd") %>%
-	kable_styling(bootstrap_options = c("striped","condensed"), full_width = F, font_size = 12)
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 ### Analyse populatie Benelux
@@ -230,7 +227,7 @@ In tabel \@ref(tab:benelux-data) staat de populatie mannen en vrouwen in de land
 Benelux_Populatie <- read_excel("data/benelux-populatie.xlsx")
 Benelux_Populatie %>% 
 	kbl(caption = "Populatie Benelux voor de jaren 2000, 2005, 2010 en 2015.") %>% 
-	kable_styling(bootstrap_options = "condensed")
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 Deze gegevens wil je analyseren en bijvoorbeeld de ontwikkeling van de populatie per geslacht per jaar bestuderen en dat eventueel nog per land. Een draaitabel en draaigrafiek lenen zich daar het beste voor.
@@ -265,7 +262,7 @@ knitr::include_graphics("images/data/benelux_tidy.png")
 
 8. Maak de volgende draaitabel en draaigrafiek.
 
-```{r benelux-pivot-chart, fig.cap="Draaitabel en draaigrafiek van de populatie per geslacht per jaar."}
+```{r benelux-pivot-chart, fig.cap="Draaitabel en draaigrafiek van de populatie per geslacht per jaar.", out.width="70%"}
 knitr::include_graphics("images/data/benelux_pivot_chart.png")
 ```
 
@@ -327,7 +324,7 @@ demotabel <- data.frame(
 
 demotabel %>% 
   kbl(caption = "Voorbeeldtabel met kenmerken van een aantal personen") %>% 
-  kable_styling(bootstrap_options = "condensed")
+  kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
    a. Hoeveel waarnemingen en hoeveel variabelen telt de dataset in tabel \@ref(tab:demotabel)?
@@ -341,7 +338,7 @@ demotabel %>%
 tidy001.data <- read_excel("data/koffieprijzen.xlsx")
 tidy001.data %>% 
 	kbl(format.args = list(decimal.mark = ","), caption = "Starbucks koffieprijzen voor drie verschillende groottes.") %>% 
-	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
+	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 14)
 ```
 
 4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
@@ -350,7 +347,7 @@ tidy001.data %>%
 levensonderhoud.data <- read_excel("data/levensonderhoud.xlsx")
 levensonderhoud.data %>% head(8) %>% 
 	kbl(format.args = list(decimal.mark = ","), caption = "Gemiddelde prijzen voor vier produkten.") %>% 
-	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
+	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 14)
 ```
 
    a. Maak hiervan een gestructureerde dataset.
@@ -362,7 +359,7 @@ levensonderhoud.data %>% head(8) %>%
 rekenentaal.data <- read_excel("data/rekenentaal.xlsx")
 rekenentaal.data %>% 
 	kbl(caption = "Schoolresultaten voor rekenen en taal.") %>% 
-	kable_styling(bootstrap_options = "condensed", full_width = FALSE)
+	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 14)
 ```
 
    De analyse-eenheid is ID-Jaar-Kwartaal. Dus elke waarneming is die van een leerling gedurende een kwartaal in een bepaald jaar.

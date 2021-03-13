@@ -14,17 +14,21 @@ suppressMessages(library(readxl))
 # knitr chunk options ----------------------------------------------------------
 
 knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE,
+  echo = FALSE,
   message = FALSE,
   warning = FALSE,
   #cache = TRUE,
-  echo = FALSE, # hide code unless otherwise noted in chunk options
-  out.width = "70%",
-  fig.align = 'center',
+  comment = "#>",
+  collapse = TRUE,
+  fig.retina = 2,   # Control using dpi
   fig.width = 6,
-  fig.asp = 0.618,  # 1 / phi
-  fig.show = "hold"
+  fig.pos = "t",    # pdf mode
+  fig.align = 'center',
+  fig.asp = 0.618,  # golden ratio
+  fig.show = "hold",
+  out.width = "100%",
+  dev = "svg",
+  dev.args = list(png = list(type = "cairo-png"))
 )
 
 # knit options -----------------------------------------------------------------

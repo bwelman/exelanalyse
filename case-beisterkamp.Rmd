@@ -1,6 +1,6 @@
 ## Beisterkamp {#case-beisterkamp}
 
-```{r vrachtwagen, echo=FALSE, fig.show='hold', out.width="30%", fig.cap="Een van de vrachtwagens van Beisterkamp"}
+```{r vrachtwagen, fig.cap="Een van de vrachtwagens van Beisterkamp", out.width="40%"}
 knitr::include_graphics("images/case-beisterkamp/beisterkamp.png")
 ```
 
@@ -14,7 +14,9 @@ Zie hieronder de data van week 1.
 
 ```{r}
 registratie <- read_csv2(file = "data/beisterkamp.csv")
-kable(head(registratie, 10))
+registratie %>% head(10) %>% 
+	kbl(caption = "Data week 1") %>%
+	kable_styling(bootstrap_options = "condensed", font_size = 14)
 ```
 
 Belangrijk om te weten:

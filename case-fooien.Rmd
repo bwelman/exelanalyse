@@ -1,6 +1,6 @@
 ## Fooien {#case-fooien}
 
-```{r fooi, out.width="40%", fig.cap="Een fooi van een tevreden klant."}
+```{r fooi, fig.cap="Een fooi van een tevreden klant.", out.width="40%"}
 knitr::include_graphics("images/case-fooien/fooi.png")
 ```
 

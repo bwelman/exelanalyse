@@ -185,7 +185,7 @@ Figuur 8.3: Elftalfoto FC Twente, augustus 2020, © Emiel Muijderman
 <p>Kies <em>tab Gegevens &gt; Van het web</em>. Voer de genoteerde URL in en klik OK. Na even wachten verschijnt het venster Navigator met in de linkerkant de mogelijke tabellen. Je moet nu uitzoeken in welke tabel de gezochte informatie zit. Wanneer je een tabel selecteert krijg je in het rechterdeel een voorbeeld van de gegevens te zien. Je hoeft niet lang te zoeken want de eerste tabel <em>Table 0</em> is al de goede tabel.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:fctwente-01"></span>
-<img src="images/case-fctwente/fctwente-01.png" alt="Selectie van de juiste tabel in Navigator." width="70%"><p class="caption">
+<img src="images/case-fctwente/fctwente-01.png" alt="Selectie van de juiste tabel in Navigator." width="100%"><p class="caption">
 Figuur 8.4: Selectie van de juiste tabel in Navigator.
 </p>
 </div>
@@ -200,30 +200,55 @@ Figuur 8.5: Startscherm Power Query Editor.
 </p>
 </div>
 <p>Verwijder de eerste twee kolommen. Hernoem de kolom met de namen van de spelers in “Speler”. Wijzig de naam van de query in “qryfctwente”.</p>
-<div class="inline-figure"><img src="images/case-fctwente/fctwente-03.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="figure" style="text-align: center">
+<span id="fig:fctwente-03"></span>
+<img src="images/case-fctwente/fctwente-03.png" alt="Kolommen verwijderd, kolomnamen gewijzigd." width="100%"><p class="caption">
+Figuur 8.6: Kolommen verwijderd, kolomnamen gewijzigd.
+</p>
+</div>
 <p>De inhoud van de kolommen <em>Geb./leeftijd</em> en <em>Marktwaarde</em> is niet zodanig dat je er in Excel goed mee kunt werken. Een geboortedatum willen we in de vorm “16-11-1996”. En voor de marktwaarde moet alleen een getal komen. Voor dit herstructureren van gegevens leent Power Query zich uitstekend.</p>
 <p><em>Geboortedatum</em></p>
 <p>Wanneer je de gegevens in de kolom <em>Geb./leeftijd</em> bekijkt dan zie dat dag, maand, jaartal en leeftijd steeds van elkaar gescheiden worden door een spatie. Dat betekent dat je de inhoud van deze kolom kunt splitsen en over vier nieuwe kolommen kunt verdelen.</p>
 <p>Selecteer kolom <em>Geb./leeftijd</em>. Kies <em>tab Transformeren &gt; Kolom splitsen (groep Kolom Tekst) &gt; Op scheidingsteken</em>. Selecteer de <em>spatie</em> als scheidingsteken en ook dat er op elke spatie gesplitst moet worden.</p>
-<div class="inline-figure"><img src="images/case-fctwente/fctwente-04.png" width="70%" style="display: block; margin: auto;"></div>
+<div class="figure" style="text-align: center">
+<span id="fig:fctwente-04"></span>
+<img src="images/case-fctwente/fctwente-04.png" alt="Dialoogscherm kolom splitsen" width="70%"><p class="caption">
+Figuur 8.7: Dialoogscherm kolom splitsen
+</p>
+</div>
 <p>Klik op <em>OK</em>. De oude kolom is nu verdwenen en er zijn vier nieuwe kolommen voor terug gekomen. Wijzig de naam van de eerste drie kolommen in resp. <em>Dag</em>, <em>Maand</em> en <em>Jaar</em>.</p>
 <p>Achter de maandnaam staat een punt. Deze moet verwijderd worden anders kunnen de datumfuncties van Excel er niet mee overweg. Selecteer de kolom <em>Maand</em>. Kies <em>tab Transformeren &gt; Waarden vervangen (groep Alle kolommen)</em>. Specificeer voor de te zoeken waarde een <em>punt</em> en laat het vakje voor de te vervangen waarde leeg. Klik <strong>OK</strong>.</p>
 <p>Nu moet er uit dag, maand en jaar een nieuwe kolom met de geboortedata gemaakt worden. Kies <em>tab Kolom toevoegen &gt; Aangepaste kolom</em>. Noem de nieuwe kolom “Geboortedatum” en voer de volgende formule achter <code><a href="https://rdrr.io/r/base/assignOps.html">=</a></code> in: <code>Text.From([Dag]) &amp; "-" &amp; [Maand] &amp; "-" &amp; Text.From([Jaar])</code></p>
-<div class="inline-figure"><img src="images/case-fctwente/fctwente-05.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="figure" style="text-align: center">
+<span id="fig:fctwente-05"></span>
+<img src="images/case-fctwente/fctwente-05.png" alt="Aangepaste kolom." width="100%"><p class="caption">
+Figuur 8.8: Aangepaste kolom.
+</p>
+</div>
 <p>Klik op <em>OK</em>. Het gegevenstype van deze kolom moet nog op Datum gezet worden. Met de kolom Geboortedatum nog geselecteerd kies je <em>tab Startpagina &gt; Gegevenstype (groep Transformeren) &gt; Datum</em>.</p>
 <p><strong>Leeftijd</strong></p>
 <p>De leeftijden zijn negatief, veroorzaakt doordat in de brondata de leeftijden tussen haakjes staan. Dat kan gewijzigd worden door een nieuwe kolom <em>Leeftijd</em> te maken met daarin de absolute waarde van het veld.</p>
 <p>Kies <em>tab Kolom toevoegen &gt; Aangepaste kolom</em>. Noem de nieuwe kolom <em>Leeftijd</em> en voer de volgende formule in: <code>Number.Abs([#"Geb. / leeftijd.4"])</code>.</p>
 <p>Opmerking zodra je begint met het intypen van het woord <code>Number</code> verschijnen automatisch de mogelijke functies. In plaats van de formule in te typen kun je ook de functie selecteren. Ook het veld kun je invoegen door klikken.</p>
 <p>Verwijder nu de overbodige kolommen <em>Dag</em>, <em>Maand</em>, <em>Jaar</em> en <em>Geb. / leeftijd.4</em>.</p>
-<div class="inline-figure"><img src="images/case-fctwente/fctwente-06.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="figure" style="text-align: center">
+<span id="fig:fctwente-06"></span>
+<img src="images/case-fctwente/fctwente-06.png" alt="Nu met kolom Leeftijd." width="100%"><p class="caption">
+Figuur 8.9: Nu met kolom Leeftijd.
+</p>
+</div>
 <p><strong>Marktwaarde</strong></p>
 <p>De gegevens in de kolom <em>Marktwaarde</em> eindigen allemaal met <code>. €</code>. Dit moet eerst verwijderd worden.</p>
 <p>Selecteer de kolom <em>Marktwaarde</em>. Kies <em>tab Transformeren &gt; Waarden vervangen (groep Alle kolommen)</em>. Specificeer voor de te zoeken waarde <code>. €</code> en laat het vakje voor de te vervangen waarde leeg. Klik <em>OK</em>.</p>
 <p>De inhoud van de kolom Marktwaarde bestaat nu uit een getal en een tekstaanduiding voor de eenheid, welke van elkaar gescheiden zijn door een spatie. Ga op dezelfde manier als bij geboortedatum te werk om deze kolom te splitsen op de spatie. De oude kolom wordt hierdoor vervangen door twee nieuwe kolommen: <em>Marktwaarde.1</em> met het getal en <em>Marktwaarde.2</em> met de eenheid.</p>
 <p>De tekst van deze eenheid ga je nu vervangen door het overeenkomstige getal. Selecteer kolom <em>Marktwaarde.2</em>. Vervang nu de waarde <code>dzd</code> door <code>1000</code> en daarna de waarde <code>mln</code> door <code>1000000</code>. Wijzig daarna het gegevenstype van deze kolom in <em>Geheel getal</em>.</p>
 <p>Nu kan er een nieuwe kolom <em>Marktwaarde</em> door de inhoud van de twee kolommen met elkaar te vermenigvuldigen. Kies <em>tab Kolom toevoegen &gt; Aangepaste kolom</em>. Noem de nieuwe kolom <em>Marktwaarde</em> en voer de volgende formule in: <code>[Marktwaarde.1]*[Marktwaarde.2]</code> en klik daarna op OK. Verwijder vervolgens de overbodig geworden kolommen <em>Marktwaarde.1</em> en <em>Marktwaarde.2</em>. Wijzig tot slot het gegevenstype van deze kolom in <em>Valuta</em>.</p>
-<div class="inline-figure"><img src="images/case-fctwente/fctwente-07.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="figure" style="text-align: center">
+<span id="fig:fctwente-07"></span>
+<img src="images/case-fctwente/fctwente-07.png" alt="Kolom Marktwaarde opgenomen." width="100%"><p class="caption">
+Figuur 8.10: Kolom Marktwaarde opgenomen.
+</p>
+</div>
 <p><strong>Laden in Excel</strong></p>
 <p>De query is nu klaar en de gegevens kunnen in een Excel werkblad geladen worden. Kies <em>tab Startpagina &gt; Sluiten en laden</em>.</p>
 <p>Maak in het Excel werkblad de inhoud van Marktwaarde op als Valuta zonder decimalen.</p>
@@ -231,7 +256,7 @@ Figuur 8.5: Startscherm Power Query Editor.
 <div class="figure" style="text-align: center">
 <span id="fig:fctwente-08"></span>
 <img src="images/case-fctwente/fctwente-08.png" alt="De tabel in het Excel werkblad." width="70%"><p class="caption">
-Figuur 8.6: De tabel in het Excel werkblad.
+Figuur 8.11: De tabel in het Excel werkblad.
 </p>
 </div>
 <p>Wanneer de marktwaarde van een speler wijzigt, er spelers vertrekken of bijkomen, hoef je alleen maar de query te vernieuwen via <em>tab Gegevens &gt; Alles vernieuwen (groep Query’s en verbindingen)</em>.</p>
@@ -259,8 +284,8 @@ Figuur 8.6: De tabel in het Excel werkblad.
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:betaaltermijn"></span>
-<img src="images/case-betaaltermijn/betaaltermijn.png" alt="Workflow betaaltermijn debiteuren." width="70%"><p class="caption">
-Figuur 8.7: Workflow betaaltermijn debiteuren.
+<img src="images/case-betaaltermijn/betaaltermijn.png" alt="Workflow betaaltermijn debiteuren." width="40%"><p class="caption">
+Figuur 8.12: Workflow betaaltermijn debiteuren.
 </p>
 </div>
 <p>IRIS BV heeft cashflow problemen sinds de uitbraak van de Corona crisis. In deze bijzondere tijden is het voor het bedrijf nog belangrijker dan anders om de liquiditeitspositie onder controle te houden. Belangrijk is dat de debiteuren sneller aan IRIS BV gaan betalen. Vanaf 1 juli 2020 is er daarom speciale actie van kracht. Klanten krijgen korting op de volgende orde als ze sneller betalen. Een medewerker is vrijgemaakt om bij de klanten langs te gaan en ze over deze actie te informeren. Die medewerker gaat actief achter debiteuren aan als een factuur meer dan 30 dagen openstaat.</p>
@@ -282,8 +307,8 @@ Figuur 8.7: Workflow betaaltermijn debiteuren.
 </h2>
 <div class="figure" style="text-align: center">
 <span id="fig:vrachtwagen"></span>
-<img src="images/case-beisterkamp/beisterkamp.png" alt="Een van de vrachtwagens van Beisterkamp" width="30%"><p class="caption">
-Figuur 8.8: Een van de vrachtwagens van Beisterkamp
+<img src="images/case-beisterkamp/beisterkamp.png" alt="Een van de vrachtwagens van Beisterkamp" width="40%"><p class="caption">
+Figuur 8.13: Een van de vrachtwagens van Beisterkamp
 </p>
 </div>
 <p>Beisterkamp Transport BV is een middelgrote transportonderneming gevestigd in Oldenzaal. Het bedrijf heeft een kleine vloot van 10 vrachtwagens en heeft evenveel chauffeurs in dienst. De concurrentie in de transportwereld is groot en de marges per kilometer zijn klein. Belangrijke kostenposten voor het bedrijf zijn het dieselverbruik en de uren van de chauffeurs. De directie wil weten of er op deze twee posten geld bespaard kan worden. Jij bent net begonnen als junior-controller bij Beisterkamp en de directie heeft jou gevraagd om met adviezen te komen.</p>
@@ -291,7 +316,10 @@ Figuur 8.8: Een van de vrachtwagens van Beisterkamp
 <p>In het databestand <a href="data/beisterkamp.csv">beisterkamp.csv</a> vind je de data over de afgelegde kilometers, het dieselverbruik in liters en het aantal geboekte uren in 2020. Begin met een nieuwe lege werkmap, importeer hierin de gegevens en voer hierin alle analyses uit. Bewaar het bestand onder de naam “beisterkamp.xlsx”.</p>
 </div>
 <p>Zie hieronder de data van week 1.</p>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-condensed" style="font-size: 14px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-16">Tabel 8.1: </span>Data week 1
+</caption>
 <thead><tr>
 <th style="text-align:right;">
 Weeknummer
@@ -543,7 +571,7 @@ HJ-KH-79
 <div class="figure" style="text-align: center">
 <span id="fig:ziekteverzuim"></span>
 <img src="images/case-ziekteverzuim/ziekteverzuim.png" alt="Zo pakt Universiteit Wageningen het ziekteverzuim aan." width="70%"><p class="caption">
-Figuur 8.9: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
+Figuur 8.14: Zo pakt Universiteit Wageningen het ziekteverzuim aan.
 </p>
 </div>
 <p>Een bedrijf heeft een onderzoek naar het ziekteverzuim en tevredenheid uitgevoerd onder al haar 75 werknemers. Voor het tevredenheidsonderzoek zijn een twaalftal stellingen voorgelegd aan de medewerkers. Per stelling kon de medewerker een score op een 5-punts schaal geven. Die scores zijn opgeteld en weergegeven in de kolom Tevreden. De cijfers met betrekking tot het ziekteverzuim komen van de afdeling administratie.</p>
@@ -607,7 +635,7 @@ De laatste 4 kolommen geven informatie over ziekmelding en ziektedagen in 2012 e
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 04 maart 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 13 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

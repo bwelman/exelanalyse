@@ -83,7 +83,7 @@ sim1.data %>%
 
 In figuur \@ref(fig:sim1-basis) kun je zien hoe ze aan elkaar gerelateerd zijn.
 
-```{r sim1-basis, fig.cap="Spreidingsdiagram voor de 15 waarnemingen.", echo=FALSE}
+```{r sim1-basis, fig.cap="Spreidingsdiagram voor de 15 waarnemingen."}
 ggplot(data = sim1.data, aes(x, y)) +
 	geom_point(colour = "black") +
 	theme_bw()
@@ -95,7 +95,7 @@ De kunst is nu om zodanige waarden voor $\beta_0$ en $\beta_1$ te vinden, zodat 
 
 In figuur \@ref(fig:sim1-regressie) is een regressielijn (rood) getekend met daarnaast vertikale afstanden (blauwe lijnstukjes) tussen de echte y-waarde (de zwarte punt) en de voorspelde y-waarde (het punt op de rode lijn.
 
-```{r sim1-regressie, fig.cap="Spreidingsdiagram nu met regressielijn en afstandslijntjes.", echo=FALSE}
+```{r sim1-regressie, fig.cap="Spreidingsdiagram nu met regressielijn en afstandslijntjes."}
 sim1.data %>% 
 	mutate(prog = 4.71 + 2.05*x) %>% 
 	ggplot(aes(x, y)) + 
@@ -132,7 +132,7 @@ knitr::include_graphics("images/linregressie/sim1-spreiding.png")
 
 Met deze methode kun je een uitvoerige analyse maken. Kies *Gegevens > Gegevensanalyse > Regressie*. Je krijgt dan het volgende dialoogscherm:
 
-```{r toolpak-regressie, fig.cap="Dialoogscherm regressie."}
+```{r toolpak-regressie, fig.cap="Dialoogscherm regressie.", out.width="70%"}
 knitr::include_graphics("images/linregressie/toolpak-regressie.png")
 ```
 
@@ -152,7 +152,7 @@ De uitvoer bestaat uit een aantal onderdelen. De belangrijkste daarvan zullen hi
 
 **Samenvatting regressie**
 
-```{r sim1-samenvatting, echo=FALSE, fig.cap="Samenvatting regressie."}
+```{r sim1-samenvatting, echo=FALSE, fig.cap="Samenvatting regressie.", out.width="70%"}
 knitr::include_graphics("images/linregressie/sim1-samenvatting.png")
 ```
 
@@ -201,13 +201,13 @@ Bij een bepaald natuurkundig experiment wil men onderzoeken of de druk lineair a
 ```{r sim2-data, echo=FALSE}
 sim2.data <- read_csv2("data/sim2.csv")
 sim2.data %>% 
-	kbl(digits = 1, format.args = list(decimal.mark = ","), caption = "") %>% 
-	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 12)
+	kbl(digits = 1, format.args = list(decimal.mark = ","), caption = "Temp-Druk") %>% 
+	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 14)
 ```
 
 In figuur \@ref(fig:sim2-spreiding) is de druk tegen de temperatuur uitgezet.
 
-```{r sim2-spreiding, fig.cap="Spreidingsdiagram in Excel met vergelijking lijn."}
+```{r sim2-spreiding, fig.cap="Spreidingsdiagram in Excel met vergelijking lijn.", out.width="70%"}
 knitr::include_graphics("images/linregressie/sim2-spreiding.png")
 ```
 
@@ -215,7 +215,7 @@ Er is een duidelijk positief verband te zien dat redelijk bij een rechte lijn in
 
 Vervolgens wordt een regressie-analyse via Gegevensanalyse uitgevoerd.
 
-```{r sim2-samenvatting, fig.cap="Samenvatting regressie."}
+```{r sim2-samenvatting, fig.cap="Samenvatting regressie.", out.width="70%"}
 knitr::include_graphics("images/linregressie/sim2-samenvatting.png")
 ```
 
@@ -240,7 +240,7 @@ $druk = \beta_0 + \beta_1 * temperatuur + \beta2 * temperatuur^2 + \epsilon$
 
 Het valt buiten het karakter van dit hoofdstuk om deze analyse uit te voeren. Wel kun je in het spreidingsdiagram voor een andere trendlijn dan lineair kiezen. Zo levert de keuze voor een polynoom van de graad 2 het volgende op.
 
-```{r sim2-polynoom2, fig.cap="Spreidingsdiagram met een polynoom van de graad 2 als trendlijn."}
+```{r sim2-polynoom2, fig.cap="Spreidingsdiagram met een polynoom van de graad 2 als trendlijn.", out.width="70%"}
 knitr::include_graphics("images/linregressie/sim2-polynoom2.png")
 ```
 
@@ -257,7 +257,7 @@ $y = \beta_0 + \beta_1 * x_1 + \beta_2 * x_2 + \beta_3 * x_3 + \cdots  + \epsilo
 
 Om het overzichtelijk en niet te ingewikkeld te maken, een voorbeeld met een gefingeerde verzameling economische gegevens. Deze data kun je in Excel importeren via het bestand [economiedata.xlsx](data/economiedata.xlsx).
 
-```{r ecdata, fig.cap="Dataset economische gegevens."}
+```{r ecdata, fig.cap="Dataset economische gegevens.", out.width="70%"}
 knitr::include_graphics("images/linregressie/ecdata.png")
 ```
 
@@ -283,14 +283,13 @@ $Aandelenindex = \beta_0 + \beta_1 * Renteperc + \beta_2 * Werkloosheidsperc  + 
 
 Bij het dialoogscherm Regressie in Gegevensanalyse moet je er wel op letten dat je in het invoerbereik voor X beide onafhankelijke variabelen opneemt, zie figuur \@ref(fig:ecdata-regressie).
 
-
-```{r ecdata-regressie, fig.cap="Dialoogscherm regressie voor economiedata."}
+```{r ecdata-regressie, fig.cap="Dialoogscherm regressie voor economiedata.", out.width="70%"}
 knitr::include_graphics("images/linregressie/ecdata-regressie.png")
 ```
 
 Vervolgens wordt een regressie-analyse via Gegevensanalyse uitgevoerd.
 
-```{r ecdata-samenvatting, fig.cap="Samenvatting regressie meervoudige lineaire regressie."}
+```{r ecdata-samenvatting, fig.cap="Samenvatting regressie meervoudige lineaire regressie.", out.width="70%"}
 knitr::include_graphics("images/linregressie/ecdata-samenvatting.png")
 ```
 

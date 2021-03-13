@@ -1,4 +1,6 @@
+fig:ribbon-queries
 fig:salesjan2009-preview
+fig:datatype
 fig:weburl-textbox
 fig:uefa-navigatorpane
 fig:replace-values-dialogbox
@@ -68,9 +70,15 @@ fig:fooi
 fig:elftalfoto
 fig:fctwente-01
 fig:fctwente-02
+fig:fctwente-03
+fig:fctwente-04
+fig:fctwente-05
+fig:fctwente-06
+fig:fctwente-07
 fig:fctwente-08
 fig:betaaltermijn
 fig:vrachtwagen
+tab:unnamed-chunk-16
 fig:ziekteverzuim
 fig:q-options-global-data
 fig:q-options-global-editor

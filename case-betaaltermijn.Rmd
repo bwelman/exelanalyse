@@ -1,6 +1,6 @@
 ## Gemiddelde betaaltermijn {#case-betaaltermijn}
 
-```{r betaaltermijn, fig.cap="Workflow betaaltermijn debiteuren."}
+```{r betaaltermijn, fig.cap="Workflow betaaltermijn debiteuren.", out.width="40%"}
 knitr::include_graphics("images/case-betaaltermijn/betaaltermijn.png")
 ```
 

@@ -13,7 +13,7 @@ Een aantal verschillende instellingen spreken voor zich. Alleen de meest relevan
 Met behulp van een van de bovengenoemde methoden krijg je het volgende venster.
 
 ```{r q-options-global-data, fig.cap="Globale query opties voor het laden van gegevens."}
-knitr::include_graphics("images/app-powerquery/q_options_global_data.png", dpi = NA)
+knitr::include_graphics("images/app-powerquery/q_options_global_data.png")
 ```
 
 Het is belangrijk om onderscheid te maken tussen de instellingen voor GLOBAAL en HUIDIGE WERKMAP:
@@ -48,7 +48,7 @@ Het wissen van de cache kan handig zijn als iets niet werkt zoals verwacht.
 ### GLOBAAL Power Query-editor {.unnumbered}
 
 ```{r q-options-global-editor, fig.cap="Globale query opties voor de Power Query-editor."}
-knitr::include_graphics("images/app-powerquery/q_options_global_editor.png", dpi = NA)
+knitr::include_graphics("images/app-powerquery/q_options_global_editor.png")
 ```
 
 Deze opties hebben voornamelijk te maken met hoe de Query-editor wordt weergegeven. De formulebalk vertaalt de acties naar de Power Query M taal. Het is mogelijk om de code in de formulebalk te bewerken. Als je wilt kun je ervoor kiezen om de voorbeeldinhoud in monospace-lettertype weer te geven en voor het niet tonen van witruimte en regeleinden.
@@ -60,7 +60,7 @@ Sommige van deze opties kunnen ook gevonden worden met *tab Weergeven* in de Que
 ### GLOBAAL Privacy {.unnumbered}
 
 ```{r q-options-global-privacy, fig.cap="Globale query opties voor privacy instellingen."}
-knitr::include_graphics("images/app-powerquery/q_options_global_privacy.png", dpi = NA)
+knitr::include_graphics("images/app-powerquery/q_options_global_privacy.png")
 ```
 
 Wanneer je gegevens uit verschillende bronnen combineert, is het mogelijk dat je veel foutmeldingen krijgt omdat deze acties kunnen conflicteren met jouw privacyniveau-instellingen. Deze berichten hebben meestal geen zin voor de eindgebruiker. Om deze berichten te voorkomen, kun je veilig selecteren *Privacyniveau-instellingen altijd negeren*.
@@ -68,7 +68,7 @@ Wanneer je gegevens uit verschillende bronnen combineert, is het mogelijk dat je
 ### HUIDIGE WERKMAP Regionale instellingen {.unnumbered}
 
 ```{r q-options-current-regional, fig.cap="Query opties voor regionale instellingen in de huidige werkmap."}
-knitr::include_graphics("images/app-powerquery/q_options_current_regional.png", dpi = NA)
+knitr::include_graphics("images/app-powerquery/q_options_current_regional.png")
 ```
 
 De regionale instellingen beïnvloeden de manier waarop Power Query datums, valuta's en andere functies manipuleert die specifiek zijn voor regio's en landen.

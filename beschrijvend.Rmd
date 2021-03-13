@@ -69,8 +69,8 @@ De frequenties staan in de kolom *freq* en zijn berekend met de formule `=INTERV
 
 Deze formule is een zogenaamde **matrixformule**. In Excel 365 kun je deze matrixformule gewoon in de begincel *D2* invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze *dynamische matrix* in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.
 
-```{r freq-interval, out.width="50%", fig.cap="Frequenties bepaald met functie INTERVAL."}
-knitr::include_graphics("images/beschrijvend/freq-interval.png", dpi = NA)
+```{r freq-interval, fig.cap="Frequenties bepaald met functie INTERVAL.", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/freq-interval.png")
 ```
 :::
 
@@ -79,14 +79,14 @@ Ook met een draaitabel kun je een frequentieverdeling maken.
 ::: {.workedexample}
 Selecteer het gegevensgebied *A1:A26* en kies dan *tab Invoegen > Draaitabel*. Plaats het veld `getal` in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.
 
-```{r freq-draaitabel-velden, out.width="40%", fig.cap="Velden voor de draaitabel."}
-knitr::include_graphics("images/beschrijvend/freq-draaitabel-velden.png", dpi = NA)
+```{r freq-draaitabel-velden, fig.cap="Velden voor de draaitabel.", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/freq-draaitabel-velden.png")
 ```
 
 Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, *rechter muisklik* en kies dan *Groeperen*. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.
 
-```{r freq-draaitabel-resultaat, out.width="40%", fig.cap="Frequentieverdeling via een draaitabel."}
-knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png", dpi = NA)
+```{r freq-draaitabel-resultaat, fig.cap="Frequentieverdeling via een draaitabel.", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png")
 ```
 :::
 
@@ -214,8 +214,8 @@ Twee andere belangrijke grootheden zijn Scheefheid en Kurtosis.
 
 in vergelijking met een normale verdeling die symmetrisch is, kan een verdeling scheef verdeeld zijn aan de linker- of rechterkant.
 
-```{r scheefheid, fig.cap="Linker en rechter scheefheid met kenmerken."}
-knitr::include_graphics("images/beschrijvend/scheefheid.png", dpi = NA)
+```{r scheefheid, fig.cap="Linker en rechter scheefheid met kenmerken.", out.width="70%"}
+knitr::include_graphics("images/beschrijvend/scheefheid.png")
 ```
 
 Bij links-scheef ligt de staart links en bij rechts-scheef ligt de staart aan de rechterkant. Voor de berekening van de scheefheid bestaat een formule waarmee je de mate en soort scheefheid weer kunt geven. Een links-scheve verdeling heeft een negatieve waarde, een rechts-scheve verdeling heeft een positieve waarde. Ligt het gemiddelde precies in het midden dan is de waarde van de scheefheid 0. In de praktijk zal de scheefheid van een normaal verdeelde variabele rond de nul liggen, zo tussen -0,5 en +0,5.
@@ -226,8 +226,8 @@ Excel formules: `SCHEEFHEID(data)` en `SCHEEFHEID.P(data)` voor een populatie
 
 Bij kurtosis ga je na of de verdeling van de waarden van een variabele een scherpe piek heeft of dat de verdeling nogal plat is. Bij een normale verdeling is de kurtosis 0. Een negatieve waarde (meestal kleiner dan -3) geeft een plattere verdeling aan en een positieve waarde (meestal groter dan +3) een meer gepiekte verdeling.
 
-```{r kurtosis, fig.cap="Kurtosis, gepiekt en plat."}
-knitr::include_graphics("images/beschrijvend/kurtosis.png", dpi = NA)
+```{r kurtosis, fig.cap="Kurtosis, gepiekt en plat.", out.width="70%"}
+knitr::include_graphics("images/beschrijvend/kurtosis.png")
 ```
 
 Het onderzoeken van de kurtosis van variabelen kan van belang zijn bij het onderzoeken van mogelijke relaties tussen variabelen. Bij een variabele met een hoge kurtosis liggen de waarden dicht bij elkaar (vandaar de piek) en is de kans op een relatie met andere varibelen klein.

@@ -22,8 +22,8 @@ Deze produceert een getal groter of gelijk aan 0 en kleiner dan 1. Dus een decim
 
 In de volgende afbeelding zie je hoe willekeurige getallen in het interval [10,50) zijn gegenereerd.
 
-```{r aselect, fig.cap="Gegenereerde getallen met functie ASELECT."}
-knitr::include_graphics("images/app-aselect/aselect.png", dpi = NA)
+```{r aselect, fig.cap="Gegenereerde getallen met functie ASELECT.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselect.png")
 ```
 
 Wanneer je gehele getallen wilt moet je voorgaande formule binnnen de functie *INTEGER()* plaatsen, die een getal naar beneden afrondt op het dichtstbijzijnde gehele getal.
@@ -37,28 +37,28 @@ Syntax: *ASELECTTUSSEN(laagst;hoogst)*
 
 Deze functie produceert een willekeurig geheel getal uit het interval [laagst,hoogst]. In tegenstelling tot *ASELECT()* doen hier beide grenswaarden mee.
 
-```{r aselecttussen, fig.cap="Gegenereerde getallen met functie ASELECTTUSSEN."}
-knitr::include_graphics("images/app-aselect/aselecttussen.png", dpi = NA)
+```{r aselecttussen, fig.cap="Gegenereerde getallen met functie ASELECTTUSSEN.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselecttussen.png")
 ```
 
 Met wat trucs kun je ook andere getallen dan gehele getallen genereren. Zo zou je voor prijzen van artikelen die tussen €10,00 en €90,00 liggen gebruik kunnen maken van de formule in de volgende afbeelding
 
-```{r aselecttussen-euro, fig.cap="Gegenereerde geldbedragen met functie ASELECTTUSSEN."}
-knitr::include_graphics("images/app-aselect/aselecttussen-euro.png", dpi = NA)
+```{r aselecttussen-euro, fig.cap="Gegenereerde geldbedragen met functie ASELECTTUSSEN.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselecttussen-euro.png")
 ```
 
 Om twee decimalen te krijgen worden de grenswaarden 10 en 90 eerst met 100 vermenigvuldigd, dan wordt er een getal gegenereerd uit het interval [1000,9000] waarna dit getal door 100 gedeeld wordt en je precies twee decimalen krijgt. De cellen kun je vooraf of achteraf opmaken als geldbedragen.
 
 En door creatief gebruik te maken van afrondfuncties zijn er verrassende mogelijkheden. Het volgende voorbeeld genereert 5-vouden uit het interval [0,100].
 
-```{r aselecttussen-5voud, fig.cap="Gegenereerde vijfvouden met functie ASELECTTUSSEN."}
-knitr::include_graphics("images/app-aselect/aselecttussen-5voud.png", dpi = NA)
+```{r aselecttussen-5voud, fig.cap="Gegenereerde vijfvouden met functie ASELECTTUSSEN.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselecttussen-5voud.png")
 ```
 
 Ook het genereren van datums (alsmede tijdstippen) is hiermee mogelijk, omdat intern in Excel een datum en tijd als een getal wordt opgeslagen. Zo staat het getal 1 voor "1-1-1900 00:00:00". In het volgende voorbeeld worden willekeurige datums uit het jaar 2019 gegenereerd. Ook hier moet je de cellen waarin het resultaat komt, opmaken in het gewenste datumformaat.
 
-```{r aselecttussen-datums, fig.cap="Gegenereerde datums met functie ASELECTTUSSEN."}
-knitr::include_graphics("images/app-aselect/aselecttussen-datums.png", dpi = NA)
+```{r aselecttussen-datums, fig.cap="Gegenereerde datums met functie ASELECTTUSSEN.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselecttussen-datums.png")
 ```
 
 OPMERKING: In plaats van de functie *DATUM()* kun je hier ook de functie *DATUMWAARDE()* gebruiken. De formule wordt dan
@@ -83,8 +83,8 @@ Als voorbeeld weer het genereren van gehele getallen tussen 10 en 50. De formule
 
 In tegenstelling tot de vorige functies selecteer je hier maar één cel waar je de formule invoert. Het resultaat is een array, een nieuwe gegevensstructuur in Excel. De waarden van de array komen niet alleen in de geselecteerde cel, maar *lopen over* naar de naburige cellen. Excel maakt dynamisch de benodigde ruimte voor de array wanneer de formule ingevoerd wordt. Wanneer een van die benodigde cellen bezet is krijg je een foutmelding.
 
-```{r aselectmatrix, fig.cap="Gegenereerde getallen met functie ASELECT.MATRIX."}
-knitr::include_graphics("images/app-aselect/aselectmatrix.png", dpi = NA)
+```{r aselectmatrix, fig.cap="Gegenereerde getallen met functie ASELECT.MATRIX.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselectmatrix.png")
 ```
 
 Dit ziet er bij de eerste aanblik hetzelfde uit als bij ASELECTTUSSEN(), maar er zijn verschillen omdat het een array is. Allereerst zie je een lichtblauw kader om de array. En wanneer je een andere cel selecteert dan die waar de formule is ingevoerd, zie je in de formulebalk dat de formule grijs geworden is. Ook kun je in de andere cellen geen wijzigingen aanbrengen.
@@ -97,8 +97,8 @@ In het hulpprogramma Gegevensanalyse zit ook een keuze om willekeurige getallen 
 
 Het dialoogscherm dat je krijgt kan wat van het volgende afwijken, maar ziet er grotendeels hetzelfde uit.
 
-```{r aselect-toolpak-discreet, fig.cap="Invulscherm Gegevensanalyse voor aselecte getallen."}
-knitr::include_graphics("images/app-aselect/aselect-toolpak-discreet.png", dpi = NA)
+```{r aselect-toolpak-discreet, fig.cap="Invulscherm Gegevensanalyse voor aselecte getallen.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselect-toolpak-discreet.png")
 ```
 
 *Aantal variabelen*: het aantal kolommen in het uitvoergebied dat je met waarden wilt vullen.
@@ -125,14 +125,14 @@ Voor het genereren van willekeurige getallen tussen twee grenzen kies je voor Un
 
 Als voorbeeld worden weer getallen gegenereerd tussen 10 en 50.
 
-```{r aselect-toolpak-uniform, fig.cap="Invulscherm Gegevensanalyse voor uniform verdeelde aselecte getallen."}
-knitr::include_graphics("images/app-aselect/aselect-toolpak-uniform.png", dpi = NA)
+```{r aselect-toolpak-uniform, fig.cap="Invulscherm Gegevensanalyse voor uniform verdeelde aselecte getallen.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselect-toolpak-uniform.png")
 ```
 
 Het resultaat ziet er ongeveer uit als volgt:
 
-```{r aselect-toolpak-resultaat, fig.cap="Gegenereerde uniform verdeelde getallen via Gegevensanalyse."}
-knitr::include_graphics("images/app-aselect/aselect-toolpak-resultaat.png", dpi = NA)
+```{r aselect-toolpak-resultaat, fig.cap="Gegenereerde uniform verdeelde getallen via Gegevensanalyse.", out.width="70%"}
+knitr::include_graphics("images/app-aselect/aselect-toolpak-resultaat.png")
 ```
 
 Er staat geen formule in een van de cellen. De getallen veranderen dan ook niet wanneer er een wijziging in het werkblad komt.

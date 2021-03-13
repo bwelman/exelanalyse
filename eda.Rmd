@@ -33,7 +33,7 @@ Tijdens de verkenningen ga je snel diverse grafieken maken om jouw ideeën te on
 Dat je voor het inzicht krijgen in een gegevensverzameling niet alleen maar af kunt gaan op een aantal statistische parameters, maar ook altijd een grafiek moet bekijken, wordt fraai gedemonstreerd met de dataset van Anscombe. Deze klassieke dataset bestaat uit vier eenvoudige gekunstelde verzamelingen van 11 paren x- en y-waarden. Hierbij zijn de gemiddelden en de variantie van respectievelijk de vier x en y variabelen gelijk en zijn ook de onderlinge correlaties voor de vier paren x en y variabelen gelijk zijn. In figuur \@ref(fig:anscombe) is te zien dat de spreidingsdiagrammen voor de vier verschillende paren x en y variabelen compleet verschillend zijn.
 
 ```{r anscombe, fig.cap="Spreidingsdiagrammen voor de vier datasets van Anscombe."}
-knitr::include_graphics("images/eda/anscombe.png", dpi = NA)
+knitr::include_graphics("images/eda/anscombe.png")
 ```
 
 Conclusies uit de spreidingsdiagrammen:
@@ -149,7 +149,7 @@ Je wilt dan de verdeling van een categorische variabele (haarkleur) weten over d
 
 Vraag: Is de verdeling van de haarkleuren bij mannen anders dan bij vrouwen?
 
-```{r eda-c2, out.width="40%", fig.cap="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht."}
+```{r eda-c2, out.width="50%", fig.cap="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht."}
 knitr::include_graphics("images/eda/eda-c2-kruistabel.png")
 knitr::include_graphics("images/eda/eda-c2-staaf.png")
 ```

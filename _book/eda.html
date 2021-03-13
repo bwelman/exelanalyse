@@ -94,7 +94,7 @@
 <p>Dat je voor het inzicht krijgen in een gegevensverzameling niet alleen maar af kunt gaan op een aantal statistische parameters, maar ook altijd een grafiek moet bekijken, wordt fraai gedemonstreerd met de dataset van Anscombe. Deze klassieke dataset bestaat uit vier eenvoudige gekunstelde verzamelingen van 11 paren x- en y-waarden. Hierbij zijn de gemiddelden en de variantie van respectievelijk de vier x en y variabelen gelijk en zijn ook de onderlinge correlaties voor de vier paren x en y variabelen gelijk zijn. In figuur <a href="eda.html#fig:anscombe">5.1</a> is te zien dat de spreidingsdiagrammen voor de vier verschillende paren x en y variabelen compleet verschillend zijn.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:anscombe"></span>
-<img src="images/eda/anscombe.png" alt="Spreidingsdiagrammen voor de vier datasets van Anscombe." width="70%"><p class="caption">
+<img src="images/eda/anscombe.png" alt="Spreidingsdiagrammen voor de vier datasets van Anscombe." width="100%"><p class="caption">
 Figuur 5.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 </p>
 </div>
@@ -128,7 +128,7 @@ Figuur 5.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 <p>Op welke manier je data kunt samenvatten en welke grafiek het meest geschikt is voor visualisatie hangt vooral van de soort variabele(n) en de vraag af. Het volgende schema kan je hierbij een handje helpen.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:diagramselectie"></span>
-<div id="htmlwidget-f50f63c007c2286b17b9" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
+<div id="htmlwidget-f50f63c007c2286b17b9" style="width:100%;height:355.968px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-f50f63c007c2286b17b9">{"x":{"diagram":"\n    digraph desc {\n      # graph opdracht\n      graph [rankdir = LR, bgcolor=transparent]\n\n      # node opdrachten\n      node[fontname = Sans, shape = cds, style = filled, fillcolor = Khaki, width = 1.5]\n      T [label = \"Type variabele\"]\n      node[fontname = Sans, shape = ellipse, style = filled, fillcolor = Beige, width = 2.0]\n      C1 [label = \"1 categorie\n variabele\"]\n      C2 [label = \"2 categorie\nvariabelen\"]\n      N1 [label = \"1 numerieke\nvariabele\"]\n      N2 [label = \"2 numerieke\nvariabelen\"]\n      CN [label = \"1 cat & 1 num\nvariabele\"]\n      node[fontname = Sans, shape = box, style = filled, fillcolor = Azure, width = 2.7]\n      C1R [label = \"Frequentietabel\nCirkeldiagram\nStaafdiagram\"]\n      C2R [label = \"Kruistabel\nStaafdiagram (gegroepeerd)\"]\n      N1R [label = \"Statistieken\nHistogram\nBoxplot\"]\n      N2R [label = \"Spreidingsdiagram\nLijndiagram\"]\n      CNR [label = \"Boxplot (gegroepeerd)\"]\n      # edge opdrachten\n      T -> {C1, N1,C2,CN,N2}\n      C1 -> C1R\n      C2 -> C2R\n      N1 -> N1R\n      N2 -> N2R\n      CN -> CNR\n    }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
 Figuur 5.2: Schema voor selectie samenvatting en visualisatie
 </p>
@@ -197,7 +197,7 @@ Figuur 5.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij e
 <p>Vraag: Is de verdeling van de haarkleuren bij mannen anders dan bij vrouwen?</p>
 <div class="figure" style="text-align: center">
 <span id="fig:eda-c2"></span>
-<img src="images/eda/eda-c2-kruistabel.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="40%"><img src="images/eda/eda-c2-staaf.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="40%"><p class="caption">
+<img src="images/eda/eda-c2-kruistabel.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="50%"><img src="images/eda/eda-c2-staaf.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="50%"><p class="caption">
 Figuur 5.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
 </p>
 </div>
@@ -218,7 +218,7 @@ Figuur 5.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
 <p>Vraag: Is de levensduur van een bepaald type lamp afhankelijk van het merk</p>
 <div class="figure" style="text-align: center">
 <span id="fig:eda-cn"></span>
-<img src="images/eda/eda-cn-boxplot.png" alt="Boxplot voor vergelijking levensduur lamptype van 2 merken." width="70%"><p class="caption">
+<img src="images/eda/eda-cn-boxplot.png" alt="Boxplot voor vergelijking levensduur lamptype van 2 merken." width="100%"><p class="caption">
 Figuur 5.6: Boxplot voor vergelijking levensduur lamptype van 2 merken.
 </p>
 </div>
@@ -276,7 +276,7 @@ Figuur 5.7: Lijndiagram (links) en spreidingsdiagram (rechts).
 </div>
 <div class="figure" style="text-align: center">
 <span id="fig:faithful-ecdf"></span>
-<img src="images/eda/faithful-ECDF.png" alt="Histogram met cumulatief percentages." width="70%"><p class="caption">
+<img src="images/eda/faithful-ECDF.png" alt="Histogram met cumulatief percentages." width="100%"><p class="caption">
 Figuur 5.8: Histogram met cumulatief percentages.
 </p>
 </div>
@@ -321,7 +321,7 @@ Figuur 5.8: Histogram met cumulatief percentages.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 04 maart 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 13 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
