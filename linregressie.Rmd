@@ -85,8 +85,7 @@ In figuur \@ref(fig:sim1-basis) kun je zien hoe ze aan elkaar gerelateerd zijn.
 
 ```{r sim1-basis, fig.cap="Spreidingsdiagram voor de 15 waarnemingen."}
 ggplot(data = sim1.data, aes(x, y)) +
-	geom_point(colour = "black") +
-	theme_bw()
+	geom_point(colour = "black")
 ```
 
 De gegevens laten een sterk lineair patroon zien en lenen zich ervoor om het patroon in een lineair model vast te leggen. Wanneer je de waarden voor $\beta_0$ en $\beta_1$ hebt, kun je via de vergelijking van de regressielijn voor elke waarde van $x$ een bijbehorende waarde van $y$ berekenen. Deze voorspelde y-waarden worden ook wel de geschatte waarden genoemd.
@@ -101,8 +100,7 @@ sim1.data %>%
 	ggplot(aes(x, y)) + 
 	geom_abline(intercept = 4.71, slope = 2.05, colour = "red") +
  	geom_point(colour = "black") + 
- 	geom_linerange(aes(ymin = y, ymax = prog), colour = "blue") + 
- 	theme_bw()
+ 	geom_linerange(aes(ymin = y, ymax = prog), colour = "blue")
 ```
 
 Voor elk punt is afstand = $y - y_{voorspeld}$. Dit verschil wordt ook wel **residu** genoemd. En de beste lijn is de lijn waarvoor de som van de kwadratische afstanden zo klein mogelijk is. Deze methode heet ook wel de **kleinste kwadraten methode**. Hoe je dit precies berekend is in dit kader niet van belang. Excel gebruikt deze methode ook.

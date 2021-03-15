@@ -38,3 +38,7 @@ options(knitr.kable.NA = "")
 # kableExtra options -----------------------------------------------------------
 
 options(kableExtra.html.bsTable = TRUE)
+
+# ggplot2 options
+
+theme_set(theme_bw())

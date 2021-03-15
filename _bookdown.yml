@@ -33,6 +33,8 @@ rmd_files:
     - "cases.Rmd"
     - "app-toolpak.Rmd"
     - "app-powerquery.Rmd"
+    - "app-prognosewerkblad.Rmd"
+    - "app-exceltrendlijnen.Rmd"
     - "app-aselect.Rmd"
     - "referenties.Rmd"
 
