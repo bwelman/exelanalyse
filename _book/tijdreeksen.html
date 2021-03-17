@@ -211,10 +211,40 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 <p>Er worden twee wiskundige modellen voor tijdreeksen gehanteerd: Additief en Multiplicatief. En het ontleden van de tijdreeks in de afzonderlijke componenten heet <em>decompositie</em> van de tijdreeks.</p>
 <p><strong>Additief model</strong></p>
 <p>Je kiest hiervoor wanneer de seizoenseffecten in grootte nagenoeg constant blijven.</p>
-<p><span class="math inline">\(Y_t = T_t + S_t + C_t + R_t\)</span></p>
+<p><span class="math inline">\(Y_t = T_t + S_t + R_t\)</span></p>
+<ul>
+<li>
+<span class="math inline">\(Y_t\)</span> - de waargenomen waarde in de tijdreeks op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(T_t\)</span> - waarde trend component op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(S_t\)</span> - waarde seizoen component op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(R_t\)</span> - waarde random component op tijdstip <span class="math inline">\(t\)</span>
+</li>
+</ul>
+<p>Je telt dus gewoon de waarden van de drie componenten op om de waarde in de tijdreeks te krijgen.</p>
 <p><strong>Multiplicatief model</strong></p>
 <p>Je kiest hiervoor wanneer de seizoenseffecten in grootte toenemen of afnemen.</p>
-<p><span class="math inline">\(Y_t = T_t \times S_t \times C_t \times R_t\)</span></p>
+<p><span class="math inline">\(Y_t = T_t \times S_t \times R_t\)</span></p>
+<ul>
+<li>
+<span class="math inline">\(Y_t\)</span> - de waargenomen waarde in de tijdreeks op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(T_t\)</span> - waarde trend component op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(S_t\)</span> - seizoenindex op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(R_t\)</span> - randomindex op tijdstip <span class="math inline">\(t\)</span>
+</li>
+</ul>
+<p>De trend wordt gemeten in eenheden van de variabele in de tijdreeks. De seizoenscomponenten en onregelmatige componenten worden echter relatief gemeten, waarbij waarden boven de 1,00 duiden op effecten boven de trend en waarden onder 1,00 op effecten onder de trend. Om de tijdreekswaarde te krijgen worden deze drie componenten met elkaar vermenigvuldigd. Veel zakelijke en economische tijdreeksen volgen dit patroon.</p>
 <p>In figuur <a href="tijdreeksen.html#fig:airpassengers">7.1</a> zie je de seizoenseffecten steeds groter worden, hier past dus een multiplicatief model bij.</p>
 <div class="tip">
 <p>Een multiplicatieve tijdreeks kan via de logaritme functie omgezet worden in een additieve tijdreeks:</p>
@@ -293,9 +323,93 @@ Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 <p>Nu kun je goed zien dat de eerder waargenomen stijgende trend voor elk kwartaal geldt.</p>
 </div>
 </div>
-<div id="voorspellen-in-excel" class="section level2" number="7.4">
+<div id="voortschrijdend-gemiddelde" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">7.4</span> Voorspellen in Excel<a class="anchor" aria-label="anchor" href="#voorspellen-in-excel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#voortschrijdend-gemiddelde"><i class="fas fa-link"></i></a>
+</h2>
+<p>Het voortschrijdend gemiddelde (Moving Average, MA) is een gemiddelde van een vast aantal opeenvolgende waarnemingen. De verzameling waarnemingen waarover het gemiddelde berekend wordt, schuift mee in de tijd.
+Het aantal van deze waarnemingen wordt ook wel de <em>breedte</em> genoemd van een venster dat als het ware over de waarnemingen wordt gelegd. Door het venster steeds één periode op te schuiven ontstaat een reeks van gemiddelden. Deze reeks van gemiddelden geeft een gladder (smooth) verloop van de tijdreeks weer, doordat seizoensinvloeden en ruis (random component) vereffent worden, waardoor het verloop op de langere termijn (de trend) getoond wordt.
+Het doel van deze vereffeningsmethode is dan ook om seizoensinvloeden en ruis te verwijderen. Daarom is de vensterbreedte meestal ook gelijk aan de lengte van het seizoen.
+Het voortschrijdend gemiddelde is gevoelig voor de breedte van het venster. Bij een smaller venster wordt er sneller gereageerd op veranderingen in de trend.</p>
+<p>Er zijn twee methodes om het voortschrijdend gemiddelde te berekenen.</p>
+<p><strong>Gecentreerd (Middeling rond <span class="math inline">\(t_n\)</span>)</strong></p>
+<p>Het gemiddelde wordt hier berekend voor een tijdstip <span class="math inline">\(t_n\)</span> dat in het midden van het venster ligt. Er wordt dus het gemiddelde berekend van waarden rondom dat tijdstip.
+Voor een 5-punts voortschrijdend gemiddelde op tijdstip <span class="math inline">\(t_n\)</span> bereken je dan het gemiddelde van de waarden op de tijdstippen <span class="math inline">\(t_{n-2}\)</span>, <span class="math inline">\(t_{n-1}\)</span>, <span class="math inline">\(t_n\)</span>, <span class="math inline">\(t_{n+1}\)</span>, <span class="math inline">\(t_{n+2}\)</span>. Het tijdstip <span class="math inline">\(t_n\)</span> ligt dus in het midden van het venster. Je kunt dan geen voortschrijdend gemiddelde berekenen voor de eerste twee en de laatste twee tijdstippen in de tijdreeks.</p>
+<p>De middeling wordt dan altijd gebaseerd op een oneven aantal meetwaarden, zodat het interval symmetrisch rond <span class="math inline">\(t_n\)</span> ligt.</p>
+<p>Omdat bij deze methode ook altijd waarden na tijdstip <span class="math inline">\(t_n\)</span> bekend moeten zijn, kun je deze methode niet gebruiken worden voor het maken van prognoses. De methode is wel zeer geschikt om tijdreeksen te visualiseren en seizoensinvloeden en ruis te onderdrukken.</p>
+<p><strong>Achterlopend (Middeling over voorgaande periode)</strong></p>
+<p>Hier is het tijdstip <span class="math inline">\(t_n\)</span> waarvoor het voortschrijdend gemiddelde bepaald wordt de laatste periode in het venster. Het gemiddelde wordt dus berekend uit waarden op tijdstip <span class="math inline">\(t_n\)</span> en daarvoor.
+Voor een voortschrijdend gemiddelde van drie maanden wordt de waarde voor de maand maart het gemiddelde van de waarden voor januari,februari en maart. Het volgende voortschrijdend gemiddelde is dat voor de maand april, dat het gemiddelde van februari, maart en april is. Dat gaat zo door tot je bij de laatste waarde uit de reeks bent. Voor de eerste twee maanden kun je geen voortschrijdend gemiddelde berekenen.
+Zou je een halfjaars voortschrijdend gemiddelde gebruiken, dan kan dat pas voor het eerst voor de maand juni, dat dan het gemiddelde wordt van de maanden januari t/m juni)</p>
+<p>Omdat je met deze methode ook voor het laatste tijdstip het voortschrijdend gemiddelde kunt berekenen kan deze methode ook gebruikt worden bij het maken van prognoses. Voor visualisatie van de tijdreeks is deze methode watminder geschikt omdat het voortschrijdend gemiddelde achter loopt en de trend minder zichtbaar wordt.</p>
+<p>In de financiële wereld, vooral bij de analyse van aandelenkoersen, wordt voornamelijk met deze methode gewerkt.</p>
+<div class="tip">
+<p>Er zijn ook varianten met weegfactoren zodat je een <strong>gewogen voortschrijdend gemiddelde</strong> krijgt.</p>
+</div>
+<p><strong>Voorbeeld</strong></p>
+<p>Een eenvoudig voorbeeld van beide soorten zie je in de volgende figuur.</p>
+<div class="inline-figure"><img src="images/timeseries/ma-verkoop.png"></div>
+<!-- In repository tijdreeksen staan nog meer voorbeelden o.a. voor AirPassengers. -->
+<div id="berekening" class="section level3" number="7.4.1">
+<h3>
+<span class="header-section-number">7.4.1</span> Berekening<a class="anchor" aria-label="anchor" href="#berekening"><i class="fas fa-link"></i></a>
+</h3>
+<p>In Excel kun je op drie manieren het voortschrijdend gemiddelde berekenen.</p>
+<ol style="list-style-type: decimal">
+<li><p>Met de werkblad functie <code>=GEMIDDELDE()</code>. Je kunt dan zelf kiezen welke van de hiervoor genoemde twee methodes je wilt gebruiken.</p></li>
+<li><p>Via een trendlijn aan een bestaande grafiek toevoegen. Deze gebruikt de achterlopende methode (middeling over voorgaande periode). Je kunt de breedte van het venster instellen. Er wordt een lijn in de grafiek geplaatst die de voortschrijdende gemiddeldes volgt. De waarden van de gemiddeldes zelf worden niet getoond. Voor de werkwijze en een voorbeeld zie bijlage <a href="app-excel-trendlijnen.html#app-excel-trendlijnen">D</a>.</p></li>
+<li><p>Via <em>Gegevens &gt; Gegevensanalyse &gt; Zwevend Gemiddelde</em>. Ook hier wordt de achterlopende methode (middeling over voorgaande periode) gebruikt. De gemiddeldes worden in het werkblad geplaatst en je kunt in het dialoogscherm, zie figuur <a href="tijdreeksen.html#fig:dialog-ma">7.9</a>, aangeven dat je een grafiek en eventueel ook de standaardfouten wilt zien. De breedte van het venster specificeer je in het vak voor interval.</p></li>
+</ol>
+<div class="workedexample">
+<p><strong>Autoverkopen</strong></p>
+<p>In het bestand <a href="data/autoverkoop.xlsx">autoverkoop.xlsx</a> staan de autoverkopen per kwartaal over vier jaar. De verkopen worden beïnvloed door het kwartaal. Om de trend te bestuderen wordt daarom een voortschrijdend gemiddelde gemaakt met een vensterbreedte van 4.</p>
+<p>Download het bestand, open het en kies <em>Gegevens &gt; Gegevensanalyse &gt; Zwevend Gemiddelde</em></p>
+<div class="figure" style="text-align: center">
+<span id="fig:dialog-ma"></span>
+<img src="images/timeseries/zwevend-gemiddelde.png" alt="Dialoogscherm Zwevend Gemiddelde" width="50%"><p class="caption">
+Figuur 7.9: Dialoogscherm Zwevend Gemiddelde
+</p>
+</div>
+<p>Specificeer het volgende.</p>
+<ul>
+<li>
+<em>Invoerbereik</em>: C2:C17</li>
+<li>
+<em>Interval</em>: 4</li>
+<li>
+<em>Uitvoerbereik</em>: D2</li>
+<li>
+<em>Grafiek maken</em>: aanvinken</li>
+</ul>
+<p>In het werkblad verschijnen de berekende gemiddeldes:</p>
+<div class="figure" style="text-align: center">
+<span id="fig:autoverkoop-ma-data"></span>
+<img src="images/timeseries/autoverkoop-ma-data.png" alt="Berekende voortschrijdend gemiddeldes." width="40%"><p class="caption">
+Figuur 7.10: Berekende voortschrijdend gemiddeldes.
+</p>
+</div>
+<p>En een lijngrafiek met de data en een voortschrijdend gemiddelde:</p>
+<div class="figure" style="text-align: center">
+<span id="fig:autoverkoop-ma-origineel"></span>
+<img src="images/timeseries/autoverkoop-ma-origineel.png" alt="Standaardgrafiek voortschrijdend gemiddeldes." width="70%"><p class="caption">
+Figuur 7.11: Standaardgrafiek voortschrijdend gemiddeldes.
+</p>
+</div>
+<p>De seizoensafhankelijkheid is duidelijk zichtbaar. Het voortschrijdend gemiddelde verwijdert deze afhankelijkheid en de ruis. De overblijvende trend is nagenoeg lineair en licht stijgend.</p>
+<p>Voor een eerste indruk is de kwaliteit van deze grafiek voldoende. Voor publicatiedoeleinden moet je wel wat verbeteringen aanbrengen. Corrigeer de teksten in de grafiektitel en de titel langs de Y-as. Breng lichte horizontale rasterlijnen aan. Wijzig de labels langs de X-as en de legendatekst als volgt.</p>
+<p>Selecteer de gegevensreeks in de grafiek. dan <em>Rechter muisklik &gt; Gegevens selecteren</em>. Kies <em>Horizontale aslabels &gt; Bewerken</em> en geef als <em>Aslabelbereik</em> op <code>A2:B17</code> en <em>OK</em>. Kies <em>Legendagegevens Voorspelling &gt; Bewerken</em> en wijzig de reeksnaam in ‘Voortschrijdend gemiddelde’. Het resultaat is in figuur <a href="tijdreeksen.html#fig:autoverkoop-ma-aangepast">7.12</a> te zien.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:autoverkoop-ma-aangepast"></span>
+<img src="images/timeseries/autoverkoop-ma-aangepast.png" alt="Aangepaste grafiek voortschrijdend gemiddeldes." width="70%"><p class="caption">
+Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="voorspellen-in-excel" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Voorspellen in Excel<a class="anchor" aria-label="anchor" href="#voorspellen-in-excel"><i class="fas fa-link"></i></a>
 </h2>
 <p>Voorspellen is het extrapoleren van tijdreeksen naar de toekomst. Hiervoor worden verschillende statistische technieken gebruikt. Om een goede voorspelling te kunnen maken is het belangrijk om een patroon in de historische gegevens te ontdekken. Dat gebeurt door analyse van de tijdreeks.</p>
 <p>Excel heeft diverse mogelijkheden om voorspellingen te maken.</p>
@@ -326,9 +440,9 @@ Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 <li>Via de addin Gegevensanalyse. Deze biedt aan Exponentiele demping (Exponential Smoothing) en Zwevend gemiddelde (Moving Average). Verder kun je hiermee ook correlatie en regressieberekeningen uitvoeren.</li>
 </ul>
 </div>
-<div id="nauwkeurigheid-voorspellingen" class="section level2" number="7.5">
+<div id="nauwkeurigheid-voorspellingen" class="section level2" number="7.6">
 <h2>
-<span class="header-section-number">7.5</span> Nauwkeurigheid voorspellingen<a class="anchor" aria-label="anchor" href="#nauwkeurigheid-voorspellingen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6</span> Nauwkeurigheid voorspellingen<a class="anchor" aria-label="anchor" href="#nauwkeurigheid-voorspellingen"><i class="fas fa-link"></i></a>
 </h2>
 <p>Het verschil tussen de werkelijke waarde en de voorspelde waarde wordt prognosefout genoemd. Bij het ontwikkelen van prognosemodellen wordt getracht om deze prognosefouten zo klein mogelijk te maken. Er zijn verschillende kentallen ontwikkeld om de nauwkeurigheid te beoordelen. Je kunt niet zomaar een van deze kentallen als het beste kental beschouwen. In het algemeen geldt hoe kleiner de waarde, des te beter.</p>
 <p>De kentallen die standaard in Excel beschikbaar zijn:</p>
@@ -343,9 +457,9 @@ Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 <strong>MAE</strong> - Mean Absolute Percentage Error</li>
 </ul>
 </div>
-<div id="exponentiële-effening" class="section level2" number="7.6">
+<div id="exponentiële-effening" class="section level2" number="7.7">
 <h2>
-<span class="header-section-number">7.6</span> Exponentiële effening<a class="anchor" aria-label="anchor" href="#exponenti%C3%ABle-effening"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7</span> Exponentiële effening<a class="anchor" aria-label="anchor" href="#exponenti%C3%ABle-effening"><i class="fas fa-link"></i></a>
 </h2>
 <p>Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen.</p>
 <p>In onderstaande formule is <span class="math inline">\(F_{t+1}\)</span> de prognosewaarde voor de eerstvolgende periode <span class="math inline">\(t+1\)</span>. De <span class="math inline">\(Y\)</span>-waarden zijn de waarden voor de huidige periode <span class="math inline">\(t\)</span> en de voorgaande perioden <span class="math inline">\(t-1, t-2, ...\)</span>. Deze <span class="math inline">\(Y\)</span>-waarden worden met coëfficiënten vermenigvuldigd waarin een factor <span class="math inline">\(\alpha\)</span> voorkomt. Deze <span class="math inline">\(\alpha\)</span> heet de dempingscoëfficiënt of dempingsconstante en heeft een waarde tussen 0 en 1.</p>
@@ -358,9 +472,9 @@ Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 </div>
 <p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. In de nieuwere versies van Excel is de ETS (Exponential Smoothing) methode beschikbaar. Het grootste voordeel van de ETS methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.</p>
 </div>
-<div id="taak-voorspellingenblad-in-excel" class="section level2" number="7.7">
+<div id="taak-voorspellingenblad-in-excel" class="section level2" number="7.8">
 <h2>
-<span class="header-section-number">7.7</span> Taak: Voorspellingenblad in Excel<a class="anchor" aria-label="anchor" href="#taak-voorspellingenblad-in-excel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8</span> Taak: Voorspellingenblad in Excel<a class="anchor" aria-label="anchor" href="#taak-voorspellingenblad-in-excel"><i class="fas fa-link"></i></a>
 </h2>
 <p>Wanneer je in Excel een prognose maakt, dan wordt hiervoor een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van de AAA versie van het ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden. Dit nieuwe werkblad wordt ook wel <em>Voorspellingblad</em> of <em>prognosewerkblad</em> genoemd.</p>
 <div class="workedexample">
@@ -372,7 +486,7 @@ Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 <div class="figure" style="text-align: center">
 <span id="fig:prognosewerkblad"></span>
 <img src="images/timeseries/sales_fcast_sheet.png" alt="Prognosewerkblad maken" width="100%"><p class="caption">
-Figuur 7.9: Prognosewerkblad maken
+Figuur 7.13: Prognosewerkblad maken
 </p>
 </div>
 </div>
@@ -459,23 +573,23 @@ Hoogste betrouwbaarheidsgrens
 </div>
 <!-- Bron: https://support.office.com/nl-nl/article/Een-prognose-maken-in-Excel-2016-voor-Windows-22c500da-6da7-45e5-bfdc-60a7062329fd?ui=nl-NL&rs=nl-NL&ad=NL&fromAR=1  -->
 </div>
-<div id="opg-timeseries" class="section level2" number="7.8">
+<div id="opg-timeseries" class="section level2" number="7.9">
 <h2>
-<span class="header-section-number">7.8</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-timeseries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-timeseries"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
 <li>
-<p><strong>fcast001 - Inkomsten uit advertenties</strong></p>
-<p>In het hulpbestand <a href="data/fcast001.xlsx">fcast001.xlsx</a> staan de inkomsten uit advertenties van een tweewekelijks verschijnend huis-aan-huisblad.</p>
+<p><strong>Inkomsten uit advertenties</strong></p>
+<p>In het hulpbestand <a href="data/advertenties.xlsx">advertenties.xlsx</a> staan de inkomsten uit advertenties van een tweewekelijks verschijnend huis-aan-huisblad.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Maak een grafiek waarin de inkomsten tegen het weeknummer zijn uitgezet.</li>
 <li>Voeg een polynoom trendlijn toe. Experimenteer met een polynoom van de 2e, 3e en 4e graad. Verzamel voor elk van deze trendlijnen de R-kwadraat waarde. Maak een keuze voor de meest geschikte trendlijn.</li>
 </ol>
 </li>
 <li>
-<p><strong>fcast002 - Voorspelling omzet</strong></p>
-<p>In het hulpbestand <a href="data/fcast002.xlsx">fcast002.xlsx</a> staan de omzetten van een bedrijf over de jaren 2007-2015.</p>
+<p><strong>Omzetvoorspelling</strong></p>
+<p>In het hulpbestand <a href="data/bedrijfsomzet.xlsx">bedrijfsomzet.xlsx</a> staan de omzetten van een bedrijf over de jaren 2007-2015.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Maak een grafiek van de omzet tegen het jaar.</li>
 <li>Voeg achtereenvolgens de volgende trendlijnen toe; lineair, logaritmisch en exponentieel.Verzamel voor elk van deze trendlijnen de waarde van R-kwadraat. Maak op basis hiervan een keuze voor het meest geschikte model.</li>
@@ -510,11 +624,14 @@ Hoogste betrouwbaarheidsgrens
 <li><a class="nav-link" href="#oefening-australische-bierproductie"><span class="header-section-number">7.3.6</span> Oefening: Australische bierproductie</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#voorspellen-in-excel"><span class="header-section-number">7.4</span> Voorspellen in Excel</a></li>
-<li><a class="nav-link" href="#nauwkeurigheid-voorspellingen"><span class="header-section-number">7.5</span> Nauwkeurigheid voorspellingen</a></li>
-<li><a class="nav-link" href="#exponenti%C3%ABle-effening"><span class="header-section-number">7.6</span> Exponentiële effening</a></li>
-<li><a class="nav-link" href="#taak-voorspellingenblad-in-excel"><span class="header-section-number">7.7</span> Taak: Voorspellingenblad in Excel</a></li>
-<li><a class="nav-link" href="#opg-timeseries"><span class="header-section-number">7.8</span> Opgaven</a></li>
+<li>
+<a class="nav-link" href="#voortschrijdend-gemiddelde"><span class="header-section-number">7.4</span> Voortschrijdend gemiddelde</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#berekening"><span class="header-section-number">7.4.1</span> Berekening</a></li></ul>
+</li>
+<li><a class="nav-link" href="#voorspellen-in-excel"><span class="header-section-number">7.5</span> Voorspellen in Excel</a></li>
+<li><a class="nav-link" href="#nauwkeurigheid-voorspellingen"><span class="header-section-number">7.6</span> Nauwkeurigheid voorspellingen</a></li>
+<li><a class="nav-link" href="#exponenti%C3%ABle-effening"><span class="header-section-number">7.7</span> Exponentiële effening</a></li>
+<li><a class="nav-link" href="#taak-voorspellingenblad-in-excel"><span class="header-section-number">7.8</span> Taak: Voorspellingenblad in Excel</a></li>
+<li><a class="nav-link" href="#opg-timeseries"><span class="header-section-number">7.9</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">
@@ -531,7 +648,7 @@ Hoogste betrouwbaarheidsgrens
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 15 maart 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 17 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

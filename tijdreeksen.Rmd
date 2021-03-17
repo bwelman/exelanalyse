@@ -157,13 +157,27 @@ Er worden twee wiskundige modellen voor tijdreeksen gehanteerd: Additief en Mult
 
 Je kiest hiervoor wanneer de seizoenseffecten in grootte nagenoeg constant blijven.
 
-$Y_t = T_t + S_t + C_t + R_t$
+$Y_t = T_t + S_t + R_t$
+
++ $Y_t$ - de waargenomen waarde in de tijdreeks op tijdstip $t$
++ $T_t$ - waarde trend component op tijdstip $t$
++ $S_t$ - waarde seizoen component op tijdstip $t$
++ $R_t$ - waarde random component op tijdstip $t$
+
+Je telt dus gewoon de waarden van de drie componenten op om de waarde in de tijdreeks te krijgen.
 
 **Multiplicatief model**
 
 Je kiest hiervoor wanneer de seizoenseffecten in grootte toenemen of afnemen.
 
-$Y_t = T_t \times S_t \times C_t \times R_t$
+$Y_t = T_t \times S_t \times R_t$
+
++ $Y_t$ - de waargenomen waarde in de tijdreeks op tijdstip $t$
++ $T_t$ - waarde trend component op tijdstip $t$
++ $S_t$ - seizoenindex op tijdstip $t$
++ $R_t$ - randomindex op tijdstip $t$
+
+De trend wordt gemeten in eenheden van de variabele in de tijdreeks. De seizoenscomponenten en onregelmatige componenten worden echter relatief gemeten, waarbij waarden boven de 1,00 duiden op effecten boven de trend en waarden onder 1,00 op effecten onder de trend. Om de tijdreekswaarde te krijgen worden deze drie componenten met elkaar vermenigvuldigd. Veel zakelijke en economische tijdreeksen volgen dit patroon. 
 
 In figuur \@ref(fig:airpassengers) zie je de seizoenseffecten steeds groter worden, hier past dus een multiplicatief model bij.
 
@@ -238,6 +252,98 @@ knitr::include_graphics("images/timeseries/ts_beer3.png")
 ```
 
 Nu kun je goed zien dat de eerder waargenomen stijgende trend voor elk kwartaal geldt.
+
+## Voortschrijdend gemiddelde
+
+Het voortschrijdend gemiddelde (Moving Average, MA) is een gemiddelde van een vast aantal opeenvolgende waarnemingen. De verzameling waarnemingen waarover het gemiddelde berekend wordt, schuift mee in de tijd.
+Het aantal van deze waarnemingen wordt ook wel de *breedte* genoemd van een venster dat als het ware over de waarnemingen wordt gelegd. Door het venster steeds één periode op te schuiven ontstaat een reeks van gemiddelden. Deze reeks van gemiddelden geeft een gladder (smooth) verloop van de tijdreeks weer, doordat seizoensinvloeden en ruis (random component) vereffent worden, waardoor het verloop op de langere termijn (de trend) getoond wordt.
+Het doel van deze vereffeningsmethode is dan ook om seizoensinvloeden en ruis te verwijderen. Daarom is de vensterbreedte meestal ook gelijk aan de lengte van het seizoen.
+Het voortschrijdend gemiddelde is gevoelig voor de breedte van het venster. Bij een smaller venster wordt er sneller gereageerd op veranderingen in de trend.
+
+Er zijn twee methodes om het voortschrijdend gemiddelde te berekenen.
+
+**Gecentreerd (Middeling rond $t_n$)**
+
+Het gemiddelde wordt hier berekend voor een tijdstip $t_n$ dat in het midden van het venster ligt. Er wordt dus het gemiddelde berekend van waarden rondom dat tijdstip.
+Voor een 5-punts voortschrijdend gemiddelde op tijdstip $t_n$ bereken je dan het gemiddelde van de waarden op de tijdstippen $t_{n-2}$, $t_{n-1}$, $t_n$, $t_{n+1}$, $t_{n+2}$. Het tijdstip $t_n$ ligt dus in het midden van het venster. Je kunt dan geen voortschrijdend gemiddelde berekenen voor de eerste twee en de laatste twee tijdstippen in de tijdreeks.
+
+De middeling wordt dan altijd gebaseerd op een oneven aantal meetwaarden, zodat het interval symmetrisch rond $t_n$ ligt.
+
+Omdat bij deze methode ook altijd waarden na tijdstip $t_n$ bekend moeten zijn, kun je deze methode niet gebruiken worden voor het maken van prognoses. De methode is wel zeer geschikt om tijdreeksen te visualiseren en seizoensinvloeden en ruis te onderdrukken.
+
+**Achterlopend (Middeling over voorgaande periode)**
+
+Hier is het tijdstip $t_n$ waarvoor het voortschrijdend gemiddelde bepaald wordt de laatste periode in het venster. Het gemiddelde wordt dus berekend uit waarden op tijdstip $t_n$ en daarvoor.
+Voor een voortschrijdend gemiddelde van drie maanden wordt de waarde voor de maand maart het gemiddelde van de waarden voor januari,februari en maart. Het volgende voortschrijdend gemiddelde is dat voor de maand april, dat het gemiddelde van februari, maart en april is. Dat gaat zo door tot je bij de laatste waarde uit de reeks bent. Voor de eerste twee maanden kun je geen voortschrijdend gemiddelde berekenen.
+Zou je een halfjaars voortschrijdend gemiddelde gebruiken, dan kan dat pas voor het eerst voor de maand juni, dat dan het gemiddelde wordt van de maanden januari t/m juni)
+
+Omdat je met deze methode ook voor het laatste tijdstip het voortschrijdend gemiddelde kunt berekenen kan deze methode ook gebruikt worden bij het maken van prognoses. Voor visualisatie van de tijdreeks is deze methode watminder geschikt omdat het voortschrijdend gemiddelde achter loopt en de trend minder zichtbaar wordt.
+
+In de financiële wereld, vooral bij de analyse van aandelenkoersen, wordt voornamelijk met deze methode gewerkt.
+
+:::{.tip}
+Er zijn ook varianten met weegfactoren zodat je een **gewogen voortschrijdend gemiddelde** krijgt.
+:::
+
+**Voorbeeld**
+
+Een eenvoudig voorbeeld van beide soorten zie je in de volgende figuur.
+
+![](images/timeseries/ma-verkoop.png)
+
+<!-- In repository tijdreeksen staan nog meer voorbeelden o.a. voor AirPassengers. -->
+
+### Berekening
+
+In Excel kun je op drie manieren het voortschrijdend gemiddelde berekenen.
+
+1. Met de werkblad functie `=GEMIDDELDE()`. Je kunt dan zelf kiezen welke van de hiervoor genoemde twee methodes je wilt gebruiken.
+
+2. Via een trendlijn aan een bestaande grafiek toevoegen. Deze gebruikt de achterlopende methode (middeling over voorgaande periode). Je kunt de breedte van het venster instellen. Er wordt een lijn in de grafiek geplaatst die de voortschrijdende gemiddeldes volgt. De waarden van de gemiddeldes zelf worden niet getoond. Voor de werkwijze en een voorbeeld zie bijlage \@ref(app-excel-trendlijnen).
+
+3. Via *Gegevens > Gegevensanalyse > Zwevend Gemiddelde*. Ook hier wordt de achterlopende methode (middeling over voorgaande periode) gebruikt. De gemiddeldes worden in het werkblad geplaatst en je kunt in het dialoogscherm, zie figuur \@ref(fig:dialog-ma), aangeven dat je een grafiek en eventueel ook de standaardfouten wilt zien. De breedte van het venster specificeer je in het vak voor interval.
+
+:::{.workedexample}
+**Autoverkopen**
+
+In het bestand [autoverkoop.xlsx](data/autoverkoop.xlsx) staan de autoverkopen per kwartaal over vier jaar. De verkopen worden beïnvloed door het kwartaal. Om de trend te bestuderen wordt daarom een voortschrijdend gemiddelde gemaakt met een vensterbreedte van 4.
+
+Download het bestand, open het en kies *Gegevens > Gegevensanalyse > Zwevend Gemiddelde*
+
+```{r dialog-ma, fig.cap="Dialoogscherm Zwevend Gemiddelde", out.width="50%"}
+knitr::include_graphics("images/timeseries/zwevend-gemiddelde.png")
+```
+
+Specificeer het volgende.
+
++ *Invoerbereik*: C2:C17
++ *Interval*: 4
++ *Uitvoerbereik*: D2
++ *Grafiek maken*: aanvinken
+
+In het werkblad verschijnen de berekende gemiddeldes:
+
+```{r autoverkoop-ma-data, fig.cap="Berekende voortschrijdend gemiddeldes.", out.width="40%"}
+knitr::include_graphics("images/timeseries/autoverkoop-ma-data.png")
+```
+
+En een lijngrafiek met de data en een voortschrijdend gemiddelde:
+
+```{r autoverkoop-ma-origineel, fig.cap="Standaardgrafiek voortschrijdend gemiddeldes.", out.width="70%"}
+knitr::include_graphics("images/timeseries/autoverkoop-ma-origineel.png")
+```
+
+De seizoensafhankelijkheid is duidelijk zichtbaar. Het voortschrijdend gemiddelde verwijdert deze afhankelijkheid en de ruis. De overblijvende trend is nagenoeg lineair en licht stijgend.
+
+Voor een eerste indruk is de kwaliteit van deze grafiek voldoende. Voor publicatiedoeleinden moet je wel wat verbeteringen aanbrengen. Corrigeer de teksten in de grafiektitel en de titel langs de Y-as. Breng lichte horizontale rasterlijnen aan. Wijzig de labels langs de X-as en de legendatekst als volgt.
+
+Selecteer de gegevensreeks in de grafiek. dan *Rechter muisklik > Gegevens selecteren*. Kies *Horizontale aslabels > Bewerken* en geef als *Aslabelbereik* op `A2:B17` en *OK*. Kies *Legendagegevens Voorspelling > Bewerken* en wijzig de reeksnaam in 'Voortschrijdend gemiddelde'. Het resultaat is in figuur \@ref(fig:autoverkoop-ma-aangepast) te zien.
+
+```{r autoverkoop-ma-aangepast, fig.cap="Aangepaste grafiek voortschrijdend gemiddeldes.", out.width="70%"}
+knitr::include_graphics("images/timeseries/autoverkoop-ma-aangepast.png")
+```
+
+:::
 
 ## Voorspellen in Excel
 
@@ -345,16 +451,16 @@ result %>%
 ## Opgaven {#opg-timeseries}
 
 ::: {.sectionexercise}
-1. **fcast001 - Inkomsten uit advertenties**
+1. **Inkomsten uit advertenties**
 
-    In het hulpbestand [fcast001.xlsx](data/fcast001.xlsx) staan de inkomsten uit advertenties van een tweewekelijks verschijnend huis-aan-huisblad.
+    In het hulpbestand [advertenties.xlsx](data/advertenties.xlsx) staan de inkomsten uit advertenties van een tweewekelijks verschijnend huis-aan-huisblad.
     
     a. Maak een grafiek waarin de inkomsten tegen het weeknummer zijn uitgezet.
     b. Voeg een polynoom trendlijn toe. Experimenteer met een polynoom van de 2e, 3e en 4e graad. Verzamel voor elk van deze trendlijnen de R-kwadraat waarde. Maak een keuze voor de meest geschikte trendlijn.
 
-2. **fcast002 - Voorspelling omzet**
+2. **Omzetvoorspelling**
 
-    In het hulpbestand [fcast002.xlsx](data/fcast002.xlsx) staan de omzetten van een bedrijf over de jaren 2007-2015.
+    In het hulpbestand [bedrijfsomzet.xlsx](data/bedrijfsomzet.xlsx) staan de omzetten van een bedrijf over de jaren 2007-2015.
     
     a. Maak een grafiek van de omzet tegen het jaar.
     a. Voeg achtereenvolgens de volgende trendlijnen toe; lineair, logaritmisch en exponentieel.Verzamel voor elk van deze trendlijnen de waarde van R-kwadraat. Maak op basis hiervan een keuze voor het meest geschikte model.

@@ -127,7 +127,7 @@ De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt 
 ## Opgaven {#opg-importdata}
 
 ::: {.sectionexercise}
-1. **data001 - Eenvoudig csv bestand importeren**
+1. **Eenvoudig csv bestand importeren**
 
     Download het hulpbestand [verkopen.csv](data/verkopen.csv) en open het eerst met een kale tekstverwerker (Kladblok, Notepad) om te onderzoeken hoe het bestand er uit ziet. Het is belangrijk om te weten is of er veldnamen in staan en welk scheidingssymbool (komma, puntkomma, ...) gebruikt is. Meestal herkent Excel dit zelf, maar het is toch wel nuttig om dit zelf eerst na te gaan.
 

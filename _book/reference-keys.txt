@@ -73,6 +73,10 @@ fig:ap-random
 fig:ts-beer1
 fig:ts-beer2
 fig:ts-beer3
+fig:dialog-ma
+fig:autoverkoop-ma-data
+fig:autoverkoop-ma-origineel
+fig:autoverkoop-ma-aangepast
 fig:prognosewerkblad
 tab:voorspelling
 fig:pinguins
@@ -170,6 +174,8 @@ component-random
 component-cyclisch
 modellen
 oefening-australische-bierproductie
+voortschrijdend-gemiddelde
+berekening
 voorspellen-in-excel
 nauwkeurigheid-voorspellingen
 exponentiële-effening
