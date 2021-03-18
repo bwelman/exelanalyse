@@ -35,5 +35,7 @@ Na eerst een aantal jaren scheikunde en wiskunde te hebben gegeven op middelbare
 
 Na mijn pensionering heb ik tijd voor mijn hobby's: biljarten, bridgen, bierbrouwen, broodbakken en reizen (vooral met de camper en de fiets mee). Daarnaast hou ik naast het maken van studieboeken nog wat tijd over om me te verdiepen in data analyse en dan vooral met [R](https://en.wikipedia.org/wiki/R_(programming_language)) en wat minder met [Python](https://www.python.org/).
 
-Ben Welman <br>[Leer Excel](https://leerexcel.netlify.app/), [Leer Access](https://leeraccess.netlify.app/)<br>[Brouw je bier](https://brouwjebier.nu/)<br>
+Ben Welman
+
+ Andere studieboeken: [Leer Excel](https://leerexcel.netlify.app/), [Leer Access](https://leeraccess.netlify.app/)
 :::

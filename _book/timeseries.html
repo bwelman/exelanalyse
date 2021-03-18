@@ -51,7 +51,7 @@
 <li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
 <li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
 <li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="active" href="tijdreeksen.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
+<li><a class="active" href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
 <li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
 <li class="book-part">Bijlagen</li>
 <li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Gegevensanalyse</a></li>
@@ -66,16 +66,16 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tijdreeksen" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="timeseries" class="section level1" number="7">
 <h1>
-<span class="header-section-number">Hoofdstuk 7</span> Tijdreeksen<a class="anchor" aria-label="anchor" href="#tijdreeksen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 7</span> Tijdreeksen<a class="anchor" aria-label="anchor" href="#timeseries"><i class="fas fa-link"></i></a>
 </h1>
 <div class="chapterintro">
 <p>Veel bedrijfskritische beslissingen zijn afhankelijk van goede prognoses voor de toekomst. Het maken van een prognose is gebaseerd op historische gegevens en dat zijn meestal <em>tijdreeksen</em>, een reeks waarnemingen van een variabele gemeten op opeenvolgende tijdstippen of over opeenvolgende periodes.</p>
 </div>
-<div id="intro" class="section level2" number="7.1">
+<div id="ts-intro" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">7.1</span> Intro<a class="anchor" aria-label="anchor" href="#intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> Introductie<a class="anchor" aria-label="anchor" href="#ts-intro"><i class="fas fa-link"></i></a>
 </h2>
 <p>De historische gegevens omvatten vaak trends, seizoenpatronen en externe factoren. Een tweetal veel voorkomende scenario’s zijn:</p>
 <ul>
@@ -88,11 +88,7 @@
 <li>Introductie van prognosetechnieken in het algemeen en de mogelijkheden met Excel</li>
 <li>Het opdoen van praktische vaardigheden via taken en oefeningen</li>
 </ol>
-</div>
-<div id="wat-is-een-tijdreeks" class="section level2" number="7.2">
-<h2>
-<span class="header-section-number">7.2</span> Wat is een tijdreeks?<a class="anchor" aria-label="anchor" href="#wat-is-een-tijdreeks"><i class="fas fa-link"></i></a>
-</h2>
+<p><strong>Wat is een tijdreeks?</strong></p>
 <p>Een tijdreeks is een reeks waarnemingen van een variabele gemeten op opeenvolgende tijdstippen of over opeenvolgende periodes. Wanneer de gegevens een bepaald patroon in de tijd vormen, dan kan dit patroon gebruikt worden om een prognose voor een toekomstige waarde te maken.</p>
 <div class="tip">
 <p>Het kan ook zijn dat de waarde van een variabele afhangt van andere variabelen dan de tijd. Zo zou er een verband kunnen zijn tussen de hoogte van de bloeddruk en de leeftijd. Je hebt dan een onafhankelijke variabele (leeftijd) en een afhankelijke variabele (bloeddruk). Dergelijke verbanden tussen variabelen worden onderzocht met <em>regressie-analyse</em>. Wanneer je de tijd als een onafhankelijke variabele beschouwt, dan kan regressie-analyse ook bij tijdreeksen worden gebruikt.</p>
@@ -108,9 +104,9 @@
 </ul>
 <p>Veel tijdreeksen vertonen een trend (toename of afname) en/of zijn seizoensgebonden, dat wil zeggen variaties die specifiek voor een bepaald tijdsbestek zijn. Zo zal bijvoorbeeld de verkoop van ijs in de zomer hoger zijn dan in de winter.</p>
 </div>
-<div id="componenten-tijdreeks" class="section level2" number="7.3">
+<div id="ts-componenten" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">7.3</span> Componenten tijdreeks<a class="anchor" aria-label="anchor" href="#componenten-tijdreeks"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> Componenten tijdreeks<a class="anchor" aria-label="anchor" href="#ts-componenten"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een tijdreeksanalyse is de analyse van gegevens die in de loop van een bepaalde periode verzameld zijn. Het is dus een onderzoek naar de samenhang tussen twee variabelen, waarvan de onafhankelijke variabele de tijd is.</p>
 <p>Een tijdreeksanalyse begint altijd met het weergeven van de tijdreeks in een grafiek. Op de horizontale as staat altijd de tijd en op de verticale as de te onderzoeken variabele. De grafiek geeft vaak al een eerste beeld van de kenmerken van de tijdreeks.</p>
@@ -145,9 +141,9 @@ Figuur 7.1: Tijdreeks van het aantal internationale vliegtuigpassagiers per maan
 Figuur 7.2: Componenten van een tijdreeks.
 </p>
 </div>
-<div id="component-trend" class="section level3" number="7.3.1">
+<div id="ts-comp-trend" class="section level3" number="7.2.1">
 <h3>
-<span class="header-section-number">7.3.1</span> Component Trend<a class="anchor" aria-label="anchor" href="#component-trend"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.1</span> Component Trend<a class="anchor" aria-label="anchor" href="#ts-comp-trend"><i class="fas fa-link"></i></a>
 </h3>
 <p>De neiging om over langere tijd te stijgen (positieve trend) of te dalen (negatieve trend). Deze hoeft niet lineair te zijn. Soms wordt alleen naar een trend verwezen als de richting (stijgend of dalen) waarin de veranderingen plaatsvinden.</p>
 <div class="workedexample">
@@ -160,9 +156,9 @@ Figuur 7.3: Trendcomponent aantal internationale vliegtuigpassagiers.
 <p>De trend is nagenoeg lineair.</p>
 </div>
 </div>
-<div id="component-seizoen" class="section level3" number="7.3.2">
+<div id="ts-comp-season" class="section level3" number="7.2.2">
 <h3>
-<span class="header-section-number">7.3.2</span> Component Seizoen<a class="anchor" aria-label="anchor" href="#component-seizoen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.2</span> Component Seizoen<a class="anchor" aria-label="anchor" href="#ts-comp-season"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dit zijn regelmatige schommelingen (fluctuaties) per dag/maand/kwartaal (meestal binnen een jaar). Zo zullen ijsverkopen in de zomer hoger zijn dan in de winter. Seizoensgebondenheid betreft altijd een vaste, bekende periode.</p>
 <div class="workedexample">
@@ -175,9 +171,9 @@ Figuur 7.4: Seizoencomponent aantal internationale vliegtuigpassagiers.
 <p>De seizoenscomponent lijkt elk jaar laag te beginnen, halverwege te stijgen (zomer?) en dan weer te dalen.</p>
 </div>
 </div>
-<div id="component-random" class="section level3" number="7.3.3">
+<div id="ts-comp-random" class="section level3" number="7.2.3">
 <h3>
-<span class="header-section-number">7.3.3</span> Component Random<a class="anchor" aria-label="anchor" href="#component-random"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.3</span> Component Random<a class="anchor" aria-label="anchor" href="#ts-comp-random"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dit zijn onregelmatige schommelingen die niet uit een van de eerder genoemde onderdelen verklaard kunnen worden. Ze worden ook wel toevallige invloeden genoemd.</p>
 <div class="workedexample">
@@ -190,9 +186,9 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 <p>Het lijkt er op dat deze component niet volledig willekeurig is, omdat er in het midden een stukje zit dat minder variatie heeft dan de rest. Wanneer dat zo is en er dus nog een patroon in deze component zit, dan is de decompositie niet volledig geslaagd.</p>
 </div>
 </div>
-<div id="component-cyclisch" class="section level3" number="7.3.4">
+<div id="ts-comp-cyclic" class="section level3" number="7.2.4">
 <h3>
-<span class="header-section-number">7.3.4</span> Component Cyclisch<a class="anchor" aria-label="anchor" href="#component-cyclisch"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.4</span> Component Cyclisch<a class="anchor" aria-label="anchor" href="#ts-comp-cyclic"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dit zijn schommelingen (golfbewegingen) over een langere periode, vaak vele jaren, door schommelingen in de conjunctuur. Kenmerkend is ook dat deze periodes geen vaste lengte hebben. In veel gevallen wordt de cyclische component weggelaten of gecombineerd met de trend tot één trendcyclus.</p>
 <div class="tip">
@@ -203,9 +199,9 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </ul>
 </div>
 </div>
-<div id="modellen" class="section level3" number="7.3.5">
+<div id="ts-models" class="section level3" number="7.2.5">
 <h3>
-<span class="header-section-number">7.3.5</span> Modellen<a class="anchor" aria-label="anchor" href="#modellen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.5</span> Modellen<a class="anchor" aria-label="anchor" href="#ts-models"><i class="fas fa-link"></i></a>
 </h3>
 <p>Er worden twee wiskundige modellen voor tijdreeksen gehanteerd: Additief en Multiplicatief. En het ontleden van de tijdreeks in de afzonderlijke componenten heet <em>decompositie</em> van de tijdreeks.</p>
 <p><strong>Additief model</strong></p>
@@ -244,16 +240,16 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </li>
 </ul>
 <p>De trend wordt gemeten in eenheden van de variabele in de tijdreeks. De seizoenscomponenten en onregelmatige componenten worden echter relatief gemeten, waarbij waarden boven de 1,00 duiden op effecten boven de trend en waarden onder 1,00 op effecten onder de trend. Om de tijdreekswaarde te krijgen worden deze drie componenten met elkaar vermenigvuldigd. Veel zakelijke en economische tijdreeksen volgen dit patroon.</p>
-<p>In figuur <a href="tijdreeksen.html#fig:airpassengers">7.1</a> zie je de seizoenseffecten steeds groter worden, hier past dus een multiplicatief model bij.</p>
+<p>In figuur <a href="timeseries.html#fig:airpassengers">7.1</a> zie je de seizoenseffecten steeds groter worden, hier past dus een multiplicatief model bij.</p>
 <div class="tip">
 <p>Een multiplicatieve tijdreeks kan via de logaritme functie omgezet worden in een additieve tijdreeks:</p>
 <p><span class="math inline">\(log(T*S*C*R) = log(T) + log(S) + log(C) + log(R)\)</span></p>
 </div>
 <p>Er zijn verschillende methodes voor het bepalen van de afzonderlijke componenten. Het gewogen gemiddelde wordt meestal gebruikt om te corrigeren voor de seizoensinvloed. Hierna wordt de trend bepaald voor de seizoengecorrigeerde reeks. Wat er dan nog overblijft is de randomcomponent. Het uitvoeren van een decompositie valt buiten het bestek van dit studieboek.</p>
 </div>
-<div id="oefening-australische-bierproductie" class="section level3" number="7.3.6">
+<div id="oefening-australische-bierproductie" class="section level3" number="7.2.6">
 <h3>
-<span class="header-section-number">7.3.6</span> Oefening: Australische bierproductie<a class="anchor" aria-label="anchor" href="#oefening-australische-bierproductie"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2.6</span> Oefening: Australische bierproductie<a class="anchor" aria-label="anchor" href="#oefening-australische-bierproductie"><i class="fas fa-link"></i></a>
 </h3>
 <p>Als voorbeeld van een tijdreeks wordt de bierproductie (in megaliters) in Australie voor de jaren 1956-1973 bekeken en geanalyseerd.</p>
 <ol style="list-style-type: decimal">
@@ -275,7 +271,7 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </ul>
 </li>
 </ol>
-<p>Het resultaat zie je in figuur <a href="tijdreeksen.html#fig:ts-beer1">7.6</a></p>
+<p>Het resultaat zie je in figuur <a href="timeseries.html#fig:ts-beer1">7.6</a></p>
 <div class="figure" style="text-align: center">
 <span id="fig:ts-beer1"></span>
 <img src="images/timeseries/ts_beer1.png" alt="Australische bierproductie (megaliters) per kwartaal." width="100%"><p class="caption">
@@ -302,7 +298,7 @@ Figuur 7.6: Australische bierproductie (megaliters) per kwartaal.
 </ul>
 </li>
 </ol>
-<p>In de nu ontstane grafiek <a href="tijdreeksen.html#fig:ts-beer2">7.7</a> is de seizoensgebondenheid duidelijk waar te nemen.</p>
+<p>In de nu ontstane grafiek <a href="timeseries.html#fig:ts-beer2">7.7</a> is de seizoensgebondenheid duidelijk waar te nemen.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:ts-beer2"></span>
 <img src="images/timeseries/ts_beer2.png" alt="Jaarlijkse Australische bierproductie (megaliters) per kwartaal." width="100%"><p class="caption">
@@ -322,9 +318,9 @@ Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 <p>Nu kun je goed zien dat de eerder waargenomen stijgende trend voor elk kwartaal geldt.</p>
 </div>
 </div>
-<div id="voortschrijdend-gemiddelde" class="section level2" number="7.4">
+<div id="ts-ma" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">7.4</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#voortschrijdend-gemiddelde"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#ts-ma"><i class="fas fa-link"></i></a>
 </h2>
 <p>Het voortschrijdend gemiddelde (Moving Average, MA) is een gemiddelde van een vast aantal opeenvolgende waarnemingen. De verzameling waarnemingen waarover het gemiddelde berekend wordt, schuift mee in de tijd.
 Het aantal van deze waarnemingen wordt ook wel de <em>breedte</em> genoemd van een venster dat als het ware over de waarnemingen wordt gelegd. Door het venster steeds één periode op te schuiven ontstaat een reeks van gemiddelden. Deze reeks van gemiddelden geeft een gladder (smooth) verloop van de tijdreeks weer, doordat seizoensinvloeden en ruis (random component) vereffent worden, waardoor het verloop op de langere termijn (de trend) getoond wordt.
@@ -349,15 +345,15 @@ Zou je een halfjaars voortschrijdend gemiddelde gebruiken, dan kan dat pas voor 
 <p>Een eenvoudig voorbeeld van beide soorten zie je in de volgende figuur.</p>
 <div class="inline-figure"><img src="images/timeseries/ma-verkoop.png"></div>
 <!-- In repository tijdreeksen staan nog meer voorbeelden o.a. voor AirPassengers. -->
-<div id="berekening" class="section level3" number="7.4.1">
+<div id="ts-ma-calc" class="section level3" number="7.3.1">
 <h3>
-<span class="header-section-number">7.4.1</span> Berekening<a class="anchor" aria-label="anchor" href="#berekening"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1</span> Berekening<a class="anchor" aria-label="anchor" href="#ts-ma-calc"><i class="fas fa-link"></i></a>
 </h3>
 <p>In Excel kun je op drie manieren het voortschrijdend gemiddelde berekenen.</p>
 <ol style="list-style-type: decimal">
 <li><p>Met de werkblad functie <code>=GEMIDDELDE()</code>. Je kunt dan zelf kiezen welke van de hiervoor genoemde twee methodes je wilt gebruiken.</p></li>
 <li><p>Via een trendlijn aan een bestaande grafiek toevoegen. Deze gebruikt de achterlopende methode (middeling over voorgaande periode). Je kunt de breedte van het venster instellen. Er wordt een lijn in de grafiek geplaatst die de voortschrijdende gemiddeldes volgt. De waarden van de gemiddeldes zelf worden niet getoond. Voor de werkwijze en een voorbeeld zie bijlage <a href="app-excel-trendlijnen.html#app-excel-trendlijnen">C</a>.</p></li>
-<li><p>Via <em>Gegevens &gt; Gegevensanalyse &gt; Zwevend Gemiddelde</em>. Ook hier wordt de achterlopende methode (middeling over voorgaande periode) gebruikt. De gemiddeldes worden in het werkblad geplaatst en je kunt in het dialoogscherm, zie figuur <a href="tijdreeksen.html#fig:dialog-ma">7.9</a>, aangeven dat je een grafiek en eventueel ook de standaardfouten wilt zien. De breedte van het venster specificeer je in het vak voor interval.</p></li>
+<li><p>Via <em>Gegevens &gt; Gegevensanalyse &gt; Zwevend Gemiddelde</em>. Ook hier wordt de achterlopende methode (middeling over voorgaande periode) gebruikt. De gemiddeldes worden in het werkblad geplaatst en je kunt in het dialoogscherm, zie figuur <a href="timeseries.html#fig:dialog-ma">7.9</a>, aangeven dat je een grafiek en eventueel ook de standaardfouten wilt zien. De breedte van het venster specificeer je in het vak voor interval.</p></li>
 </ol>
 <div class="workedexample">
 <p><strong>Autoverkopen</strong></p>
@@ -396,7 +392,7 @@ Figuur 7.11: Standaardgrafiek voortschrijdend gemiddeldes.
 </div>
 <p>De seizoensafhankelijkheid is duidelijk zichtbaar. Het voortschrijdend gemiddelde verwijdert deze afhankelijkheid en de ruis. De overblijvende trend is nagenoeg lineair en licht stijgend.</p>
 <p>Voor een eerste indruk is de kwaliteit van deze grafiek voldoende. Voor publicatiedoeleinden moet je wel wat verbeteringen aanbrengen. Corrigeer de teksten in de grafiektitel en de titel langs de Y-as. Breng lichte horizontale rasterlijnen aan. Wijzig de labels langs de X-as en de legendatekst als volgt.</p>
-<p>Selecteer de gegevensreeks in de grafiek. dan <em>Rechter muisklik &gt; Gegevens selecteren</em>. Kies <em>Horizontale aslabels &gt; Bewerken</em> en geef als <em>Aslabelbereik</em> op <code>A2:B17</code> en <em>OK</em>. Kies <em>Legendagegevens Voorspelling &gt; Bewerken</em> en wijzig de reeksnaam in ‘Voortschrijdend gemiddelde’. Het resultaat is in figuur <a href="tijdreeksen.html#fig:autoverkoop-ma-aangepast">7.12</a> te zien.</p>
+<p>Selecteer de gegevensreeks in de grafiek. dan <em>Rechter muisklik &gt; Gegevens selecteren</em>. Kies <em>Horizontale aslabels &gt; Bewerken</em> en geef als <em>Aslabelbereik</em> op <code>A2:B17</code> en <em>OK</em>. Kies <em>Legendagegevens Voorspelling &gt; Bewerken</em> en wijzig de reeksnaam in ‘Voortschrijdend gemiddelde’. Het resultaat is in figuur <a href="timeseries.html#fig:autoverkoop-ma-aangepast">7.12</a> te zien.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:autoverkoop-ma-aangepast"></span>
 <img src="images/timeseries/autoverkoop-ma-aangepast.png" alt="Aangepaste grafiek voortschrijdend gemiddeldes." width="70%"><p class="caption">
@@ -406,9 +402,9 @@ Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
 </div>
 </div>
 </div>
-<div id="voorspellen-in-excel" class="section level2" number="7.5">
+<div id="ts-forecast" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">7.5</span> Voorspellen in Excel<a class="anchor" aria-label="anchor" href="#voorspellen-in-excel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Voorspellen in Excel<a class="anchor" aria-label="anchor" href="#ts-forecast"><i class="fas fa-link"></i></a>
 </h2>
 <p>Voorspellen is het extrapoleren van tijdreeksen naar de toekomst. Hiervoor worden verschillende statistische technieken gebruikt. Om een goede voorspelling te kunnen maken is het belangrijk om een patroon in de historische gegevens te ontdekken. Dat gebeurt door analyse van de tijdreeks.</p>
 <p>Excel heeft diverse mogelijkheden om voorspellingen te maken.</p>
@@ -439,9 +435,9 @@ Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
 <li>Via de opie <em>Exponentiele demping</em> (Exponential Smoothing) in <em>Gegevensanalyse</em>. Deze biedt aan en Zwevend gemiddelde (Moving Average).</li>
 <li>Via het <em>Voorspellingblad</em>.</li>
 </ul>
-<div id="nauwkeurigheid-voorspellingen" class="section level3" number="7.5.1">
+<div id="nauwkeurigheid-voorspellingen" class="section level3" number="7.4.1">
 <h3>
-<span class="header-section-number">7.5.1</span> Nauwkeurigheid voorspellingen<a class="anchor" aria-label="anchor" href="#nauwkeurigheid-voorspellingen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.1</span> Nauwkeurigheid voorspellingen<a class="anchor" aria-label="anchor" href="#nauwkeurigheid-voorspellingen"><i class="fas fa-link"></i></a>
 </h3>
 <p>Het verschil tussen de werkelijke waarde en de voorspelde waarde wordt <em>prognosefout</em> genoemd. Bij het ontwikkelen van prognosemodellen wordt getracht om deze prognosefouten zo klein mogelijk te maken. Er zijn verschillende kentallen ontwikkeld om de nauwkeurigheid te beoordelen. Je kunt niet zomaar een van deze kentallen als het beste kental beschouwen. In het algemeen geldt hoe kleiner de waarde, des te beter.</p>
 <p>De kentallen die standaard in Excel beschikbaar zijn:</p>
@@ -455,10 +451,11 @@ Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
 <li>
 <strong>MAE</strong> - Mean Absolute Percentage Error</li>
 </ul>
+<!-- Bron: https://support.office.com/nl-nl/article/Een-prognose-maken-in-Excel-2016-voor-Windows-22c500da-6da7-45e5-bfdc-60a7062329fd?ui=nl-NL&rs=nl-NL&ad=NL&fromAR=1  -->
 </div>
-<div id="exponentiële-effening" class="section level3" number="7.5.2">
+<div id="ts-expsmooth" class="section level3" number="7.4.2">
 <h3>
-<span class="header-section-number">7.5.2</span> Exponentiële effening<a class="anchor" aria-label="anchor" href="#exponenti%C3%ABle-effening"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.2</span> Exponentiële effening<a class="anchor" aria-label="anchor" href="#ts-expsmooth"><i class="fas fa-link"></i></a>
 </h3>
 <p>Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen.</p>
 <p>In onderstaande formule is <span class="math inline">\(F_{t+1}\)</span> de prognosewaarde voor de eerstvolgende periode <span class="math inline">\(t+1\)</span>. De <span class="math inline">\(Y\)</span>-waarden zijn de waarden voor de huidige periode <span class="math inline">\(t\)</span> en de voorgaande perioden <span class="math inline">\(t-1, t-2, ...\)</span>. Deze <span class="math inline">\(Y\)</span>-waarden worden met coëfficiënten vermenigvuldigd waarin een factor <span class="math inline">\(\alpha\)</span> voorkomt. Deze <span class="math inline">\(\alpha\)</span> heet de dempingscoëfficiënt of dempingsconstante en heeft een waarde tussen 0 en 1.</p>
@@ -471,9 +468,9 @@ Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
 </div>
 <p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. In de nieuwere versies van Excel is de ETS (Exponential Smoothing) methode beschikbaar. Het grootste voordeel van de ETS methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.</p>
 </div>
-<div id="voorspellingenblad" class="section level3" number="7.5.3">
+<div id="ts-forecastsheet" class="section level3" number="7.4.3">
 <h3>
-<span class="header-section-number">7.5.3</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#voorspellingenblad"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.3</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#ts-forecastsheet"><i class="fas fa-link"></i></a>
 </h3>
 <p>Wanneer je in Excel een prognose maakt, dan wordt hiervoor een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van de AAA versie (Additieve Trend, Seizoen, Random) van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Dit nieuwe werkblad wordt ook wel <em>Voorspellingblad</em> of <em>prognosewerkblad</em> genoemd. Aan de hand van een oefening worden de mogelijkheden van dit Voorspellingenblad verkend.</p>
 <div class="workedexample">
@@ -518,117 +515,22 @@ Figuur 7.14: Opties prognosewerkblad.
 <p><strong>Betrouwbaarheidsinterval</strong></p>
 <p>Hier kun je het weergeven van een betrouwbaarheidsinterval in of uit schakelen. Hiermee kun je de nauwkeurigheid van de voorspelling vaststellen. Een kleiner interval betekent een betrouwbaardere voorspelling voor het specifieke punt. Standaard is het een 95% betrouwbaarheidsinterval dat gewijzigd kan worden.</p>
 <p><strong>Seizoensgebonden</strong></p>
-<p>Wanneer het patroon van de gegevens een seizoensgebondenheid bevat dan kun je hier het aantal waarnemingen voor het patroon instellen. Standaard is automatisch detecteren ingesteld. Wanneer het Excel niet lukt om automatisch een seizoenspatroon te ontdekken, krijg je een waarschuwing met het advies om over te stappen op Handmatig.</p>
-<div class="important">
-<p>Gebruik geen waarde voor minder dan twee cycli met historische gegevens wanneer je seizoensgebondenheid handmatig instelt. Met minder dan twee cycli kunnen de seizoensgebonden items niet worden geïdentificeerd in Excel. Als de seizoensgebondenheid niet belangrijk genoeg is om te worden gedetecteerd met de algoritme, wordt de voorspelling weer omgezet in een lineaire trend.</p>
-</div>
+<p>Wanneer het patroon van de gegevens een seizoensgebondenheid bevat dan kun je hier het aantal waarnemingen voor het patroon instellen. Standaard is automatisch detecteren ingesteld, waardoor Excel via een algoritme automatisch het aantal tijdsperioden van het seizoenspatroon vaststelt. Je kunt het beste via de optie Handmatig zelf de lengte van het seizoenspatroon ingeven en de mogelijkheid voor automatische detectie alleen gebruiken om jouw vermoeden over de lengte te laten bevestigen.</p>
 <p><strong>Bereik van de tijdlijn</strong></p>
 <p>Hiermee kun je het bereik voor de kolom met tijdgegevens instellen. Dit bereik moet hetzelfde zijn als het Bereik van waarden.</p>
 <p><strong>Bereik van waarden</strong></p>
 <p>Hiermee kun je het bereik voor de kolom met waarden instellen. Dit bereik moet hetzelfde zijn als het Bereik van de tijdlijn.</p>
 <p><strong>Ontbrekende punten invullen met</strong></p>
-<p>Wanneer in de gegevensverzameling ontbrekende waarden voorkomen, dan vult Excel deze zelf in op basis van interpolatie. Dit houdt in dat een ontbrekend punt wordt ingevuld als het gewogen gemiddelde van de aangrenzende punten mits er minder dan 30% van de punten ontbreekt. Als je in plaats hiervan de ontbrekende waarden als nullen wilt behandelen, dan selecteer je Nullen in de lijst.</p>
+<p>Wanneer in de gegevensverzameling ontbrekende waarden voorkomen, dan vult Excel deze zelf in op basis van interpolatie. Dit houdt in dat een ontbrekend punt wordt ingevuld als het gewogen gemiddelde van de aangrenzende punten mits er minder dan 30% van de punten ontbreekt. Als je in plaats hiervan de ontbrekende waarden als nullen wilt behandelen, dan selecteer je “Nullen” in de lijst.</p>
 <p><strong>Duplicaten samenvoegen met</strong></p>
 <p>Wanneer de gegevens meerdere waarden met de dezelfde tijdstempel bevatten, dan neemt Excel hiervoor het gemiddelde van deze waarden. Als je een andere berekeningsmethode wilt gebruiken, dan kun je in de lijst kiezen uit: Gemiddelde, Aantal, AantalArg, Max, Mediaan, Min en Som.</p>
 <p><strong>Prognose van statistieken opnemen</strong></p>
-<p>Via dit selectievakje kun je aanvullende statistische informatie over de prognose in het voorspellingblad laten opnemen. Met behulp van de functie <code>VOORSPELLEN.ETS.STAT</code> wordt een tabel met statistieken gegenereerd. Zie het voorbeeld hierna.</p>
-<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
-<thead><tr>
-<th style="text-align:left;">
-Statistieken
-</th>
-<th style="text-align:left;">
-Waarde
-</th>
-<th style="text-align:left;">
-Toelichting
-</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Alpha
-</td>
-<td style="text-align:left;">
-0,00
-</td>
-<td style="text-align:left;">
-Dempingscoëfficient van het ETS algoritme. Een hogere waarde kent meer gewicht toe aan recente waarden.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Beta
-</td>
-<td style="text-align:left;">
-0,00
-</td>
-<td style="text-align:left;">
-Dempingscoëfficient van het ETS algoritme. Een hogere waarde kent meer gewicht toe aan de recente trend.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Gamma
-</td>
-<td style="text-align:left;">
-0,25
-</td>
-<td style="text-align:left;">
-Dempingscoëfficient van het ETS algoritme. Een hogere waarde kent meer gewicht toe aan de recente seizoensperiode.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-MASE
-</td>
-<td style="text-align:left;">
-0,46
-</td>
-<td style="text-align:left;">
-Mean Absolute Scaled Error
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SMAPE
-</td>
-<td style="text-align:left;">
-0,03
-</td>
-<td style="text-align:left;">
-Symmetric Mean Absolute Percentage Error
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-MAE
-</td>
-<td style="text-align:left;">
-128.317,53
-</td>
-<td style="text-align:left;">
-Mean Absolute Percentage Error
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RMSE
-</td>
-<td style="text-align:left;">
-187.920,90
-</td>
-<td style="text-align:left;">
-Root Mean Square Error
-</td>
-</tr>
-</tbody>
-</table></div>
-<!-- Bron: https://support.office.com/nl-nl/article/Een-prognose-maken-in-Excel-2016-voor-Windows-22c500da-6da7-45e5-bfdc-60a7062329fd?ui=nl-NL&rs=nl-NL&ad=NL&fromAR=1  --><div class="workedexample">
+<p>Via dit selectievakje kun je aanvullende statistische informatie over de prognose in het voorspellingblad laten opnemen. Met behulp van de functie <code>VOORSPELLEN.ETS.STAT</code> wordt een tabel met statistieken gegenereerd.</p>
+<div class="workedexample">
 <ol start="6" style="list-style-type: decimal">
 <li>Klik op <em>Maken</em>. Er wordt een nieuw werkblad gemaakt met daarin de historische gegevens, de voorspelde waarden, betrouwbaarheidsgrenzen (standaard 95%) en een grafiek.</li>
 </ol>
-<p>De resultaten van de voorspellingem staan in tabel <a href="tijdreeksen.html#tab:voorspelling">7.1</a> weergegeven</p>
+<p>De resultaten van de voorspellingen staan in tabel <a href="timeseries.html#tab:voorspelling">7.1</a> weergegeven</p>
 <div class="inline-table"><table class=" lightable-paper" style='font-size: 14px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
 <caption style="font-size: initial !important;">
 <span id="tab:voorspelling">Tabel 7.1: </span>Voorspelde waarden en betrouwbaarheidsgrenzen
@@ -696,12 +598,16 @@ Hoogste betrouwbaarheidsgrens
 <!-- Bron: https://support.office.com/nl-nl/article/Een-prognose-maken-in-Excel-2016-voor-Windows-22c500da-6da7-45e5-bfdc-60a7062329fd?ui=nl-NL&rs=nl-NL&ad=NL&fromAR=1  -->
 </div>
 </div>
-<div id="opg-timeseries" class="section level2" number="7.6">
+<div id="opg-timeseries" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">7.6</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-timeseries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-timeseries"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
+<li>
+<p><strong>Autoverkopen</strong></p>
+<p>In het bestand <a href="data/autoverkoop.xlsx">autoverkoop.xlsx</a> staan de de autoverkopen per kwartaal van 4 jaren, zie ook <a href="timeseries.html#ts-ma-calc">7.3.1</a>. Maak met behulp van het Voorspellingenblad een prognose van de verkopen voor de vier kwartalen van jaar 5.</p>
+</li>
 <li>
 <p><strong>Inkomsten uit advertenties</strong></p>
 <p>In het hulpbestand <a href="data/advertenties.xlsx">advertenties.xlsx</a> staan de inkomsten uit advertenties van een tweewekelijks verschijnend huis-aan-huisblad.</p>
@@ -734,30 +640,29 @@ Hoogste betrouwbaarheidsgrens
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#tijdreeksen"><span class="header-section-number">7</span> Tijdreeksen</a></li>
-<li><a class="nav-link" href="#intro"><span class="header-section-number">7.1</span> Intro</a></li>
-<li><a class="nav-link" href="#wat-is-een-tijdreeks"><span class="header-section-number">7.2</span> Wat is een tijdreeks?</a></li>
+<li><a class="nav-link" href="#timeseries"><span class="header-section-number">7</span> Tijdreeksen</a></li>
+<li><a class="nav-link" href="#ts-intro"><span class="header-section-number">7.1</span> Introductie</a></li>
 <li>
-<a class="nav-link" href="#componenten-tijdreeks"><span class="header-section-number">7.3</span> Componenten tijdreeks</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#component-trend"><span class="header-section-number">7.3.1</span> Component Trend</a></li>
-<li><a class="nav-link" href="#component-seizoen"><span class="header-section-number">7.3.2</span> Component Seizoen</a></li>
-<li><a class="nav-link" href="#component-random"><span class="header-section-number">7.3.3</span> Component Random</a></li>
-<li><a class="nav-link" href="#component-cyclisch"><span class="header-section-number">7.3.4</span> Component Cyclisch</a></li>
-<li><a class="nav-link" href="#modellen"><span class="header-section-number">7.3.5</span> Modellen</a></li>
-<li><a class="nav-link" href="#oefening-australische-bierproductie"><span class="header-section-number">7.3.6</span> Oefening: Australische bierproductie</a></li>
+<a class="nav-link" href="#ts-componenten"><span class="header-section-number">7.2</span> Componenten tijdreeks</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ts-comp-trend"><span class="header-section-number">7.2.1</span> Component Trend</a></li>
+<li><a class="nav-link" href="#ts-comp-season"><span class="header-section-number">7.2.2</span> Component Seizoen</a></li>
+<li><a class="nav-link" href="#ts-comp-random"><span class="header-section-number">7.2.3</span> Component Random</a></li>
+<li><a class="nav-link" href="#ts-comp-cyclic"><span class="header-section-number">7.2.4</span> Component Cyclisch</a></li>
+<li><a class="nav-link" href="#ts-models"><span class="header-section-number">7.2.5</span> Modellen</a></li>
+<li><a class="nav-link" href="#oefening-australische-bierproductie"><span class="header-section-number">7.2.6</span> Oefening: Australische bierproductie</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#voortschrijdend-gemiddelde"><span class="header-section-number">7.4</span> Voortschrijdend gemiddelde</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#berekening"><span class="header-section-number">7.4.1</span> Berekening</a></li></ul>
+<a class="nav-link" href="#ts-ma"><span class="header-section-number">7.3</span> Voortschrijdend gemiddelde</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#ts-ma-calc"><span class="header-section-number">7.3.1</span> Berekening</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#voorspellen-in-excel"><span class="header-section-number">7.5</span> Voorspellen in Excel</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#nauwkeurigheid-voorspellingen"><span class="header-section-number">7.5.1</span> Nauwkeurigheid voorspellingen</a></li>
-<li><a class="nav-link" href="#exponenti%C3%ABle-effening"><span class="header-section-number">7.5.2</span> Exponentiële effening</a></li>
-<li><a class="nav-link" href="#voorspellingenblad"><span class="header-section-number">7.5.3</span> Voorspellingenblad</a></li>
+<a class="nav-link" href="#ts-forecast"><span class="header-section-number">7.4</span> Voorspellen in Excel</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#nauwkeurigheid-voorspellingen"><span class="header-section-number">7.4.1</span> Nauwkeurigheid voorspellingen</a></li>
+<li><a class="nav-link" href="#ts-expsmooth"><span class="header-section-number">7.4.2</span> Exponentiële effening</a></li>
+<li><a class="nav-link" href="#ts-forecastsheet"><span class="header-section-number">7.4.3</span> Voorspellingenblad</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#opg-timeseries"><span class="header-section-number">7.6</span> Opgaven</a></li>
+<li><a class="nav-link" href="#opg-timeseries"><span class="header-section-number">7.5</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">
@@ -774,7 +679,7 @@ Hoogste betrouwbaarheidsgrens
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 17 maart 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 18 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

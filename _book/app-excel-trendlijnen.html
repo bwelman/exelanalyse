@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>D Bijlage Excel Trendlijnen | Excel Data Analyse</title>
+<title>C Excel Trendlijnen | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -51,14 +51,13 @@
 <li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
 <li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
 <li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="" href="tijdreeksen.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
+<li><a class="" href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
 <li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
 <li class="book-part">Bijlagen</li>
-<li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Bijlage Gegevensanalyse</a></li>
-<li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Bijlage Query opties</a></li>
-<li><a class="" href="app-prognosewerkblad-opties.html"><span class="header-section-number">C</span> Bijlage Prognosewerkblad</a></li>
-<li><a class="active" href="app-excel-trendlijnen.html"><span class="header-section-number">D</span> Bijlage Excel Trendlijnen</a></li>
-<li><a class="" href="app-aselect.html"><span class="header-section-number">E</span> Bijlage Aselecte getallen</a></li>
+<li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Gegevensanalyse</a></li>
+<li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></li>
+<li><a class="active" href="app-excel-trendlijnen.html"><span class="header-section-number">C</span> Excel Trendlijnen</a></li>
+<li><a class="" href="app-aselect.html"><span class="header-section-number">D</span> Aselecte getallen</a></li>
 <li><a class="" href="referenties.html">Referenties</a></li>
 </ul>
 
@@ -67,16 +66,16 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="app-excel-trendlijnen" class="section level1" number="12">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="app-excel-trendlijnen" class="section level1" number="11">
 <h1>
-<span class="header-section-number">D</span> Bijlage Excel Trendlijnen<a class="anchor" aria-label="anchor" href="#app-excel-trendlijnen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C</span> Excel Trendlijnen<a class="anchor" aria-label="anchor" href="#app-excel-trendlijnen"><i class="fas fa-link"></i></a>
 </h1>
 <p>Excel kent een zestal trendlijnen. Het is niet altijd direct duidelijk welk soort trendlijn het beste bij een verzameling gegevens past. Soms zie je dat meteen en anders moet je een aantal verschillende soorten trendlijnen proberen.</p>
 <p>De kwaliteit van een trendlijn kun je beoordelen door de waarde van R-kwadraat (R2) uit te laten rekenen. Dit is een getal van 0 tot 1 dat aangeeft hoe dicht de berekende waarden via de formule van de grenslijn liggen bij de werkelijke waarden. Hoe dichter bij 1 hoe beter de trendlijn. Bij het toevoegen van een trendlijn kan geselecteerd worden dat R-kwadraat en de vergelijking van de trendlijn in de grafiek moeten worden weergegeven.</p>
 <p>Bij het maken van voorspellingen heb je de coëfficienten van de vergelijking van de trendlijn nodig. Excel voorziet in werkbladfuncties voor deze coëfficienten.</p>
-<div id="lineaire-trendlijn" class="section level2" number="12.1">
+<div id="lineaire-trendlijn" class="section level2" number="11.1">
 <h2>
-<span class="header-section-number">D.1</span> Lineaire trendlijn<a class="anchor" aria-label="anchor" href="#lineaire-trendlijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C.1</span> Lineaire trendlijn<a class="anchor" aria-label="anchor" href="#lineaire-trendlijn"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een lineaire trendlijn is een zo goed mogelijk passende rechte lijn die gebruikt wordt voor eenvoudige lineaire gegevensverzamelingen. Deze trendlijn wordt meestal gebruikt om een regelmatige stijging of daling weer te geven.</p>
 <p>De vergelijking van de trendlijn is: <span class="math inline">\(y = a \cdot x + b\)</span> met</p>
@@ -101,7 +100,7 @@
 <div class="figure" style="text-align: center">
 <span id="fig:vb-trend-lineair"></span>
 <img src="images/timeseries/vb-trend-lineair.png" alt="Voorbeeld lineaire trendlijn" width="70%"><p class="caption">
-Figuur D.1: Voorbeeld lineaire trendlijn
+Figuur C.1: Voorbeeld lineaire trendlijn
 </p>
 </div>
 </div>
@@ -123,9 +122,9 @@ Figuur D.1: Voorbeeld lineaire trendlijn
 </ul>
 <p>R-kwadraat vind je door de gevonden waarde te kwadrateren.</p>
 </div>
-<div id="logaritmische-trendlijn" class="section level2" number="12.2">
+<div id="logaritmische-trendlijn" class="section level2" number="11.2">
 <h2>
-<span class="header-section-number">D.2</span> Logaritmische trendlijn<a class="anchor" aria-label="anchor" href="#logaritmische-trendlijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C.2</span> Logaritmische trendlijn<a class="anchor" aria-label="anchor" href="#logaritmische-trendlijn"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een logaritmische trendlijn is een zo goed mogelijk passende gebogen lijn die goed past bij gegevens die in het begin snel stijgen (of dalen) en zich daarna stabiliseren. Er mogen geen nulwaarden in de gegevensverzameling zitten!</p>
 <p>De vergelijking van de trendlijn is: <span class="math inline">\(y = a \cdot LN(x) + b\)</span> met a en b als constanten.</p>
@@ -144,7 +143,7 @@ Figuur D.1: Voorbeeld lineaire trendlijn
 <div class="figure" style="text-align: center">
 <span id="fig:vb-trend-logaritme"></span>
 <img src="images/timeseries/vb-trend-logaritme.png" alt="Voorbeeld logaritmische trendlijn" width="70%"><p class="caption">
-Figuur D.2: Voorbeeld logaritmische trendlijn
+Figuur C.2: Voorbeeld logaritmische trendlijn
 </p>
 </div>
 </div>
@@ -159,9 +158,9 @@ Figuur D.2: Voorbeeld logaritmische trendlijn
 </li>
 </ul>
 </div>
-<div id="polynoom-trendlijn" class="section level2" number="12.3">
+<div id="polynoom-trendlijn" class="section level2" number="11.3">
 <h2>
-<span class="header-section-number">D.3</span> Polynoom trendlijn<a class="anchor" aria-label="anchor" href="#polynoom-trendlijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C.3</span> Polynoom trendlijn<a class="anchor" aria-label="anchor" href="#polynoom-trendlijn"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een polynoom trendlijn is een gebogen lijn die vaak goed past bij schommelende gegevens.</p>
 <p>De vergelijking van de trendlijn heeft de vorm:
@@ -189,7 +188,7 @@ Figuur D.2: Voorbeeld logaritmische trendlijn
 <div class="figure" style="text-align: center">
 <span id="fig:vb-trend-polynoom"></span>
 <img src="images/timeseries/vb-trend-polynoom.png" alt="Voorbeeld polynoom trendlijn" width="70%"><p class="caption">
-Figuur D.3: Voorbeeld polynoom trendlijn
+Figuur C.3: Voorbeeld polynoom trendlijn
 </p>
 </div>
 </div>
@@ -207,9 +206,9 @@ Figuur D.3: Voorbeeld polynoom trendlijn
 </li>
 </ul>
 </div>
-<div id="machtstrendlijn" class="section level2" number="12.4">
+<div id="machtstrendlijn" class="section level2" number="11.4">
 <h2>
-<span class="header-section-number">D.4</span> Machtstrendlijn<a class="anchor" aria-label="anchor" href="#machtstrendlijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C.4</span> Machtstrendlijn<a class="anchor" aria-label="anchor" href="#machtstrendlijn"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een machtstrendlijn is een gebogen lijn die zeer geschikt is voor verzamelingen van gegevens die in een bepaald tempo toenemen, bijvoorbeeld de acceleratie van een Formule 1 auto. Er mogen geen nulwaarden of negatieve waarden in de gegevensverzameling zitten!</p>
 <p>De vergelijking van de trendlijn is: <span class="math inline">\(y = a \cdot x^b\)</span> waarbij <span class="math inline">\(a\)</span> en <span class="math inline">\(b\)</span> constanten zijn.</p>
@@ -228,7 +227,7 @@ Figuur D.3: Voorbeeld polynoom trendlijn
 <div class="figure" style="text-align: center">
 <span id="fig:vb-trend-macht"></span>
 <img src="images/timeseries/vb-trend-macht.png" alt="Voorbeeld macht trendlijn" width="70%"><p class="caption">
-Figuur D.4: Voorbeeld macht trendlijn
+Figuur C.4: Voorbeeld macht trendlijn
 </p>
 </div>
 </div>
@@ -243,9 +242,9 @@ Figuur D.4: Voorbeeld macht trendlijn
 </li>
 </ul>
 </div>
-<div id="exponentiële-trendlijn" class="section level2" number="12.5">
+<div id="exponentiële-trendlijn" class="section level2" number="11.5">
 <h2>
-<span class="header-section-number">D.5</span> Exponentiële trendlijn<a class="anchor" aria-label="anchor" href="#exponenti%C3%ABle-trendlijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C.5</span> Exponentiële trendlijn<a class="anchor" aria-label="anchor" href="#exponenti%C3%ABle-trendlijn"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een exponentiële trendlijn is een gebogen trendlijn die vooral geschikt is voor gegevensverzamelingen waarvan de waarden steeds sneller stijgen of dalen. Er mogen geen nulwaarden of negatieve waarden in de gegevensverzameling zitten!</p>
 <p>De vergelijking van de trendlijn is: <span class="math inline">\(y = a \cdot e^{bx}\)</span> waarbij <span class="math inline">\(a\)</span> en <span class="math inline">\(b\)</span> constanten zijn.</p>
@@ -264,7 +263,7 @@ Figuur D.4: Voorbeeld macht trendlijn
 <div class="figure" style="text-align: center">
 <span id="fig:vb-trend-exponentieel"></span>
 <img src="images/timeseries/vb-trend-exponentieel.png" alt="Voorbeeld exponentiële trendlijn" width="70%"><p class="caption">
-Figuur D.5: Voorbeeld exponentiële trendlijn
+Figuur C.5: Voorbeeld exponentiële trendlijn
 </p>
 </div>
 <p>De trendlijn is hier perfect omdat er exacte waarden zijn gebruikt.</p>
@@ -280,9 +279,9 @@ Figuur D.5: Voorbeeld exponentiële trendlijn
 </li>
 </ul>
 </div>
-<div id="zwevend-gemiddelde-lijn" class="section level2" number="12.6">
+<div id="zwevend-gemiddelde-lijn" class="section level2" number="11.6">
 <h2>
-<span class="header-section-number">D.6</span> Zwevend gemiddelde lijn<a class="anchor" aria-label="anchor" href="#zwevend-gemiddelde-lijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">C.6</span> Zwevend gemiddelde lijn<a class="anchor" aria-label="anchor" href="#zwevend-gemiddelde-lijn"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een zwevend gemiddelde (voortschrijdend gemiddelde) (trend)lijn strijkt schommelingen in de gegevens glad, waardoor het patroon duidelijker zichtbaar wordt.</p>
 <p>Het zwevend gemiddelde is het gemiddelde van een vast aantal opeenvolgende waarden in een tijdreeks. De tijdsduur voor het vaste aantal elementen heet de periode. De lijn door deze gemiddeldes is de trendlijn. Sterke schommelingen worden hierdoor afgezwakt. Het kost soms wat experimenteren om een geschikte periode te vinden.</p>
@@ -303,7 +302,7 @@ Het zwevend gemiddelde wordt berekend voor een periode van 3 dagen. Zo kan de ee
 <div class="figure" style="text-align: center">
 <span id="fig:vb-zwevend-gemiddelde"></span>
 <img src="images/timeseries/vb-zwevend-gemiddelde.png" alt="Voorbeeld zwevend gemiddelde lijn" width="70%"><p class="caption">
-Figuur D.6: Voorbeeld zwevend gemiddelde lijn
+Figuur C.6: Voorbeeld zwevend gemiddelde lijn
 </p>
 </div>
 <p>Duidelijk is te zien dat de trendlijn de scherpe kantjes van de koersbeweging afhaalt.</p>
@@ -312,18 +311,18 @@ Figuur D.6: Voorbeeld zwevend gemiddelde lijn
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="app-prognosewerkblad-opties.html"><span class="header-section-number">C</span> Bijlage Prognosewerkblad</a></div>
-<div class="next"><a href="app-aselect.html"><span class="header-section-number">E</span> Bijlage Aselecte getallen</a></div>
+<div class="prev"><a href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></div>
+<div class="next"><a href="app-aselect.html"><span class="header-section-number">D</span> Aselecte getallen</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#app-excel-trendlijnen"><span class="header-section-number">D</span> Bijlage Excel Trendlijnen</a></li>
-<li><a class="nav-link" href="#lineaire-trendlijn"><span class="header-section-number">D.1</span> Lineaire trendlijn</a></li>
-<li><a class="nav-link" href="#logaritmische-trendlijn"><span class="header-section-number">D.2</span> Logaritmische trendlijn</a></li>
-<li><a class="nav-link" href="#polynoom-trendlijn"><span class="header-section-number">D.3</span> Polynoom trendlijn</a></li>
-<li><a class="nav-link" href="#machtstrendlijn"><span class="header-section-number">D.4</span> Machtstrendlijn</a></li>
-<li><a class="nav-link" href="#exponenti%C3%ABle-trendlijn"><span class="header-section-number">D.5</span> Exponentiële trendlijn</a></li>
-<li><a class="nav-link" href="#zwevend-gemiddelde-lijn"><span class="header-section-number">D.6</span> Zwevend gemiddelde lijn</a></li>
+<li><a class="nav-link" href="#app-excel-trendlijnen"><span class="header-section-number">C</span> Excel Trendlijnen</a></li>
+<li><a class="nav-link" href="#lineaire-trendlijn"><span class="header-section-number">C.1</span> Lineaire trendlijn</a></li>
+<li><a class="nav-link" href="#logaritmische-trendlijn"><span class="header-section-number">C.2</span> Logaritmische trendlijn</a></li>
+<li><a class="nav-link" href="#polynoom-trendlijn"><span class="header-section-number">C.3</span> Polynoom trendlijn</a></li>
+<li><a class="nav-link" href="#machtstrendlijn"><span class="header-section-number">C.4</span> Machtstrendlijn</a></li>
+<li><a class="nav-link" href="#exponenti%C3%ABle-trendlijn"><span class="header-section-number">C.5</span> Exponentiële trendlijn</a></li>
+<li><a class="nav-link" href="#zwevend-gemiddelde-lijn"><span class="header-section-number">C.6</span> Zwevend gemiddelde lijn</a></li>
 </ul>
 
       <div class="book-extra">
@@ -340,7 +339,7 @@ Figuur D.6: Voorbeeld zwevend gemiddelde lijn
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 17 maart 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 18 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

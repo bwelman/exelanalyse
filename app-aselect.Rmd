@@ -1,4 +1,4 @@
-# Bijlage Aselecte getallen {#app-aselect}
+# Aselecte getallen {#app-aselect}
 
 Voor experimenten is het soms nodig om zelf data te genereren omdat je bijvoorbeeld een specifiek patroon in de data wilt bestuderen en daar geen goede data voor hebt.
 

@@ -1,4 +1,4 @@
-# Bijlage Query opties {#app-query-options}
+# Power Query opties {#app-query-options}
 
 Je kunt op twee manieren naar de queryopties navigeren.
 

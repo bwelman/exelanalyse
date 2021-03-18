@@ -1,4 +1,4 @@
-# Bijlage Excel Trendlijnen {#app-excel-trendlijnen}
+# Excel Trendlijnen {#app-excel-trendlijnen}
 
 Excel kent een zestal trendlijnen. Het is niet altijd direct duidelijk welk soort trendlijn het beste bij een verzameling gegevens past. Soms zie je dat meteen en anders moet je een aantal verschillende soorten trendlijnen proberen.
 
