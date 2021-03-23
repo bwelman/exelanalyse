@@ -337,17 +337,25 @@ Figuur 8.5: Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen
 <h2>
 <span class="header-section-number">8.5</span> Exponentiële effening<a class="anchor" aria-label="anchor" href="#prognoses-expsmooth"><i class="fas fa-link"></i></a>
 </h2>
-<p>Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen.</p>
-<p>In onderstaande formule is <span class="math inline">\(F_{t+1}\)</span><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;De letter F komt van het Engelse Forecast.&lt;/p&gt;"><sup>8</sup></a> de prognosewaarde voor de eerstvolgende periode <span class="math inline">\(t+1\)</span>. De <span class="math inline">\(Y\)</span>-waarden zijn de waarden voor de huidige periode <span class="math inline">\(t\)</span> en de voorgaande perioden <span class="math inline">\(t-1, t-2, ...\)</span>. Deze <span class="math inline">\(Y\)</span>-waarden worden met coëfficiënten vermenigvuldigd waarin een factor <span class="math inline">\(\alpha\)</span> voorkomt. Deze <span class="math inline">\(\alpha\)</span> heet de <em>dempingscoëfficiënt</em> of <em>dempingsconstante</em> en heeft een waarde tussen 0 en 1.</p>
-<p><span class="math inline">\(F_{t+1} = \alpha Y_t + \alpha(1-\alpha)Y_{t-1} + \alpha(1-\alpha)^2Y_{t-2} + \alpha(1-\alpha)^3Y_{t-3} + ...\)</span></p>
-<p>Voor bijvoorbeeld <span class="math inline">\(\alpha = 0,6\)</span> ziet de formule er als volgt uit:</p>
-<p><span class="math inline">\(F_{t+1} = 0,6Y_t + 0,24Y_{t-1} + 0,096Y_{t-2} + 0,038Y_{t-3} + ...\)</span></p>
-<p>In figuur <a href="prognoses.html#fig:alphaweights">8.6</a> staan de gewichten uitgezet tegen de tijd in aflopende volgorde. Duidelijk is te zien dat de gewichten exponentieel in de tijd afnemen.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:alphaweights"></span>
-<img src="images/prognoses/alpha_weights.png" alt="Gewichten exponentiële vereffening voor aflopende tijdstippen." width="50%"><p class="caption">
-Figuur 8.6: Gewichten exponentiële vereffening voor aflopende tijdstippen.
-</p>
+<p>Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen. Het exponentiële smoothing model heeft de volgende vorm</p>
+<p><span class="math inline">\(F_{t+1} = \alpha Y_t + (1-\alpha)F_t\)</span> , met</p>
+<ul>
+<li>
+<span class="math inline">\(F_{t+1}\)</span>: de prognose (Engels: Forecast) op tijdstip <span class="math inline">\(t+1\)</span>
+</li>
+<li>
+<span class="math inline">\(Y_t\)</span>: de werkelijke waarde op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(F_t\)</span>: de prognose op tijdstip <span class="math inline">\(t\)</span>
+</li>
+<li>
+<span class="math inline">\(\alpha\)</span>: dempingscoëfficient (dempingsconstante) met <span class="math inline">\(0 \le \alpha \le 1\)</span>
+</li>
+</ul>
+<p>De prognose op tijdstip <span class="math inline">\(t+1\)</span> is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip <span class="math inline">\(t\)</span> en de prognose voor tijdstip <span class="math inline">\(t\)</span>, met als wegingsfactoren respectievelijk <span class="math inline">\(\alpha\)</span> en <span class="math inline">\(1 - \alpha\)</span>.</p>
+<div class="important">
+<p>Voor het tijdstip <span class="math inline">\(t = 1\)</span> (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip <span class="math inline">\(t = 2\)</span> (het tweede tijdstip) is de prognosewaarde gelijk aan de werkelijke waarde op tijdstip <span class="math inline">\(t = 1\)</span>. Voor alle volgende tijdstippen wordt de prognose berekend met voorgaande formule.</p>
 </div>
 <p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. In de nieuwere versies van Excel is de ETS (Exponential Smoothing) methode beschikbaar. Het grootste voordeel van de ETS methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.</p>
 <p>ETS werkbladfuncties:</p>
@@ -375,7 +383,7 @@ Figuur 8.6: Gewichten exponentiële vereffening voor aflopende tijdstippen.
 <div class="figure" style="text-align: center">
 <span id="fig:prognosewerkblad"></span>
 <img src="images/prognoses/sales_fcast_sheet.png" alt="Prognosewerkblad maken" width="100%"><p class="caption">
-Figuur 8.7: Prognosewerkblad maken
+Figuur 8.6: Prognosewerkblad maken
 </p>
 </div>
 <p>In dit venster kun je een aantal keuzes maken. Zie bijlage <a href="app-voorspellingenblad.html#app-voorspellingenblad">D</a> voor een toelichting.</p>
@@ -386,7 +394,7 @@ Figuur 8.7: Prognosewerkblad maken
 <div class="figure" style="text-align: center">
 <span id="fig:sales-fcast-options"></span>
 <img src="images/prognoses/sales_fcast_options.png" alt="Opties prognosewerkblad." width="100%"><p class="caption">
-Figuur 8.8: Opties prognosewerkblad.
+Figuur 8.7: Opties prognosewerkblad.
 </p>
 </div>
 <ol start="6" style="list-style-type: decimal">

@@ -111,21 +111,20 @@ Gelet op de kentallen voor de nauwkeurigheid zie je dat het voortschrijdend gemi
 
 ## Exponentiële effening {#prognoses-expsmooth}
 
-Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen.
+Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen. Het exponentiële smoothing model heeft de volgende vorm
 
-In onderstaande formule is $F_{t+1}$[^prognoses-03] de prognosewaarde voor de eerstvolgende periode $t+1$. De $Y$-waarden zijn de waarden voor de huidige periode $t$ en de voorgaande perioden $t-1, t-2, ...$. Deze $Y$-waarden worden met coëfficiënten vermenigvuldigd waarin een factor $\alpha$ voorkomt. Deze $\alpha$ heet de *dempingscoëfficiënt* of *dempingsconstante* en heeft een waarde tussen 0 en 1.
+$F_{t+1} = \alpha Y_t + (1-\alpha)F_t$ , met
 
-$F_{t+1} = \alpha Y_t + \alpha(1-\alpha)Y_{t-1} + \alpha(1-\alpha)^2Y_{t-2} + \alpha(1-\alpha)^3Y_{t-3} + ...$
++ $F_{t+1}$: de prognose (Engels: Forecast) op tijdstip $t+1$
++ $Y_t$: de werkelijke waarde op tijdstip $t$
++ $F_t$: de prognose op tijdstip $t$
++ $\alpha$: dempingscoëfficient (dempingsconstante) met $0 \le \alpha \le 1$
 
-Voor bijvoorbeeld $\alpha = 0,6$ ziet de formule er als volgt uit:
+De prognose op tijdstip $t+1$ is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip $t$  en de prognose voor tijdstip $t$, met als wegingsfactoren respectievelijk $\alpha$ en $1 - \alpha$.
 
-$F_{t+1} = 0,6Y_t + 0,24Y_{t-1} + 0,096Y_{t-2} + 0,038Y_{t-3} + ...$
-
-In figuur \@ref(fig:alphaweights) staan de gewichten uitgezet tegen de tijd in aflopende volgorde. Duidelijk is te zien dat de gewichten exponentieel in de tijd afnemen.
-
-```{r alphaweights, fig.cap="Gewichten exponentiële vereffening voor aflopende tijdstippen.", out.width="50%"}
-knitr::include_graphics("images/prognoses/alpha_weights.png")
-```
+:::{.important}
+Voor het tijdstip $t = 1$ (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip $t = 2$ (het tweede tijdstip) is de prognosewaarde gelijk aan de werkelijke waarde op tijdstip $t = 1$. Voor alle volgende tijdstippen wordt de prognose berekend met voorgaande formule.
+:::
 
 De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. In de nieuwere versies van Excel is de ETS (Exponential Smoothing) methode beschikbaar. Het grootste voordeel van de ETS methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.
 
@@ -139,8 +138,6 @@ ETS werkbladfuncties:
 :::{.caution}
 Deze `ETS` functies zijn alleen beschikbaar in de nieuwere versies van Excel: Excel 365, Excel 2016, Excel 2019, ...
 :::
-
-[^prognoses-03]: De letter F komt van het Engelse Forecast.
 
 ## Voorspellingenblad {#prognoses-voorspellingenblad}
 

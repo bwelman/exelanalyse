@@ -84,7 +84,6 @@ fig:benzineverkoop-naief
 fig:parapluverkoop-grafiek
 fig:parapluverkoop-prognose
 fig:benzineverkoop-ma
-fig:alphaweights
 fig:prognosewerkblad
 fig:sales-fcast-options
 tab:voorspelling
