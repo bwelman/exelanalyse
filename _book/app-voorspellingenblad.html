@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Welkom | Excel Data Analyse</title>
+<title>D Voorspellingenblad | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +58,7 @@
 
       <nav aria-label="Table of contents"><h2>Inhoud</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">Welkom</a></li>
+<li><a class="" href="index.html">Welkom</a></li>
 <li><a class="" href="voorwoord.html">Voorwoord</a></li>
 <li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
@@ -73,7 +73,7 @@
 <li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Addin Gegevensanalyse</a></li>
 <li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></li>
 <li><a class="" href="app-excel-trendlijnen.html"><span class="header-section-number">C</span> Excel Trendlijnen</a></li>
-<li><a class="" href="app-voorspellingenblad.html"><span class="header-section-number">D</span> Voorspellingenblad</a></li>
+<li><a class="active" href="app-voorspellingenblad.html"><span class="header-section-number">D</span> Voorspellingenblad</a></li>
 <li><a class="" href="app-aselect.html"><span class="header-section-number">E</span> Aselecte getallen</a></li>
 <li><a class="" href="referenties.html">Referenties</a></li>
 </ul>
@@ -83,42 +83,49 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="welkom" class="section level1 unnumbered welcome">
-<h1>Welkom<a class="anchor" aria-label="anchor" href="#welkom"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="app-voorspellingenblad" class="section level1" number="13">
+<h1>
+<span class="header-section-number">D</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#app-voorspellingenblad"><i class="fas fa-link"></i></a>
 </h1>
-<p>Dit is de online versie van het studieboek “Excel Data Analyse”. Je leert hoe je met Excel datasets kunt verkennen, onderzoeken en samenvatten.</p>
-<p>Dit is geen cursus Excel. Er wordt vanuit gegaan dat je goed met Excel kunt werken. Het importeren van gegevens in Excel en het maken van draaitabellen en grafieken zijn vaardigheden die je moet beheersen.</p>
-<p>Dit is ook geen cursus statistiek. Weliswaar worden statistische begrippen bij de onderdelen toegelicht, maar voor een verdere verdieping zul je bestaande studieboeken moeten raadplegen.</p>
-<p>Bij het onderdeel Referenties tref je verwijzingen aan voor verdere studie.</p>
-<div class="important">
-<p>Er wordt nog aan de verdere ontwikkeling van dit studieboek gewerkt.</p>
+<p>In het standaard Voorspellingblad (ook wel Prognosewerkblad) zijn een tweetal keuzes te maken:</p>
+<ul>
+<li>
+<em>Grafiektype</em> - lijndiagram of kolomdiagram via de twee pictogrammen rechtsboven.</li>
+<li>
+<em>Einde van prognose</em>- de einddatum voor de prognose, dus het aantal prognoses (linksonder)</li>
+</ul>
+<p>Via de selectieknop <strong>Opties</strong> (linksonder) heb je nog een aantal mogelijkheden:</p>
+<p>De verschillende mogelijkheden worden hierna toegelicht.</p>
+<p><strong>Start van prognose</strong></p>
+<p>De begindatum voor de prognose wordt automatisch door Excel geselecteerd. Je kunt deze wijzigen. Wanneer je een datum kiest vóór het einde van de historische gegevens, worden alleen gegevens vóór de begindatum gebruikt in de voorspelling (dit wordt soms ook wel <em>backcasting</em> genoemd).</p>
+<div class="tip">
+<ul>
+<li><p>Als je de prognose start vóór het laatste historische punt, krijg je een goed beeld van de nauwkeurigheid van de voorspelling, omdat je de voorspelde reeks kunt vergelijken met de werkelijke gegevens. Als je de prognose echter te vroeg start, is de gegenereerde prognose mogelijk niet hetzelfde als de prognose die je krijgt wanneer je alle historische gegevens gebruikt. De voorspelling wordt nauwkeuriger als je alle historische gegevens gebruikt.</p></li>
+<li><p>Als de gegevens seizoensgebonden zijn, kun je het beste een prognose starten vóór het laatste historische punt.</p></li>
+</ul>
 </div>
-<div id="licentie" class="section level2 unnumbered">
-<h2>Licentie<a class="anchor" aria-label="anchor" href="#licentie"><i class="fas fa-link"></i></a>
-</h2>
-<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl"><img alt="Creative Commons-Licentie" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>Dit werk valt onder een <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl">Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen 4.0 Internationaal-licentie</a>.</p>
-</div>
-<div id="over-de-auteur" class="section level2 unnumbered">
-<h2>Over de auteur<a class="anchor" aria-label="anchor" href="#over-de-auteur"><i class="fas fa-link"></i></a>
-</h2>
-<p><img src="images/authors/benw2.png" class="cover" width="150" height="150">Ik heb Chemische Technologie gestudeerd aan de THT, de huidige <a href="https://www.utwente.nl/">Universiteit Twente</a>.
-Na eerst een aantal jaren scheikunde en wiskunde te hebben gegeven op middelbare scholen ben ik als docent informatica en statistiek gaan werken bij de opleiding Commercieel Technische Bedrijfskunde van de Hogeschool Enschede, nu <a href="https://www.saxion.nl/">Saxion Hogescholen</a>. Van daaruit intern overgestapt naar MeetingPoint dat zich voornamelijk bezighield met het ontwikkelen en ondersteunen van e-learning. In 1993 heb ik <a href="https://softwijs.nl/">Softwijs</a> opgericht waarmee ik eind 2018 gestopt.</p>
-<p>Na mijn pensionering heb ik tijd voor mijn hobby’s: biljarten, bridgen, bierbrouwen, broodbakken en reizen (vooral met de camper en de fiets mee). Daarnaast hou ik naast het maken van studieboeken nog wat tijd over om me te verdiepen in data analyse en dan vooral met <a href="https://en.wikipedia.org/wiki/R_(programming_language)">R</a> en wat minder met <a href="https://www.python.org/">Python</a>.</p>
-<p>Ben Welman</p>
-<p>Andere studieboeken: <a href="https://leerexcel.netlify.app/">Leer Excel</a>, <a href="https://leeraccess.netlify.app/">Leer Access</a></p>
-</div>
-</div>
+<p><strong>Betrouwbaarheidsinterval</strong></p>
+<p>Hier kun je het weergeven van een betrouwbaarheidsinterval in of uit schakelen. Hiermee kun je de nauwkeurigheid van de voorspelling vaststellen. Een kleiner interval betekent een betrouwbaardere voorspelling voor het specifieke punt. Standaard is het een 95% betrouwbaarheidsinterval dat gewijzigd kan worden.</p>
+<p><strong>Seizoensgebonden</strong></p>
+<p>Wanneer het patroon van de gegevens een seizoensgebondenheid bevat dan kun je hier het aantal waarnemingen voor het patroon instellen. Standaard is automatisch detecteren ingesteld, waardoor Excel via een algoritme automatisch het aantal tijdsperioden van het seizoenspatroon vaststelt. Je kunt het beste via de optie Handmatig zelf de lengte van het seizoenspatroon ingeven en de mogelijkheid voor automatische detectie alleen gebruiken om jouw vermoeden over de lengte te laten bevestigen.</p>
+<p><strong>Bereik van de tijdlijn</strong></p>
+<p>Hiermee kun je het bereik voor de kolom met tijdgegevens instellen. Dit bereik moet hetzelfde zijn als het Bereik van waarden.</p>
+<p><strong>Bereik van waarden</strong></p>
+<p>Hiermee kun je het bereik voor de kolom met waarden instellen. Dit bereik moet hetzelfde zijn als het Bereik van de tijdlijn.</p>
+<p><strong>Ontbrekende punten invullen met</strong></p>
+<p>Wanneer in de gegevensverzameling ontbrekende waarden voorkomen, dan vult Excel deze zelf in op basis van interpolatie. Dit houdt in dat een ontbrekend punt wordt ingevuld als het gewogen gemiddelde van de aangrenzende punten mits er minder dan 30% van de punten ontbreekt. Als je in plaats hiervan de ontbrekende waarden als nullen wilt behandelen, dan selecteer je “Nullen” in de lijst.</p>
+<p><strong>Duplicaten samenvoegen met</strong></p>
+<p>Wanneer de gegevens meerdere waarden met de dezelfde tijdstempel bevatten, dan neemt Excel hiervoor het gemiddelde van deze waarden. Als je een andere berekeningsmethode wilt gebruiken, dan kun je in de lijst kiezen uit: Gemiddelde, Aantal, AantalArg, Max, Mediaan, Min en Som.</p>
+<p><strong>Prognose van statistieken opnemen</strong></p>
+<p>Via dit selectievakje kun je aanvullende statistische informatie over de prognose in het voorspellingblad laten opnemen. Met behulp van de functie <code>VOORSPELLEN.ETS.STAT</code> wordt een tabel met statistieken gegenereerd.</p>
 
+</div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="voorwoord.html">Voorwoord</a></div>
+<div class="prev"><a href="app-excel-trendlijnen.html"><span class="header-section-number">C</span> Excel Trendlijnen</a></div>
+<div class="next"><a href="app-aselect.html"><span class="header-section-number">E</span> Aselecte getallen</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Op deze pagina</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#welkom">Welkom</a></li>
-<li><a class="nav-link" href="#licentie">Licentie</a></li>
-<li><a class="nav-link" href="#over-de-auteur">Over de auteur</a></li>
-</ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#app-voorspellingenblad"><span class="header-section-number">D</span> Voorspellingenblad</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

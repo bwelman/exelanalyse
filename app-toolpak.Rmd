@@ -1,6 +1,6 @@
 # (APPENDIX) Bijlagen {-}
 
-# Gegevensanalyse {#app-toolpak}
+# Addin Gegevensanalyse {#app-toolpak}
 
 Gegevensanalyse (Engels: Analysis Toolpak) is een hulpprogramma voor het uitvoeren van analyses. Het wordt standaard met Excel meegeleverd, maar is niet altijd geactiveerd. Om dit te controleren kies je tabblad Gegevens en kijk je in de groep Analyse of daar het onderdeel Gegevensanalyse staat. Zoniet, dan kun je het onderdeel als volgt activeren.
 

@@ -35,7 +35,9 @@ Dit studieboek heeft een logische opbouw, beginnend met het verkrijgen van de da
 
 + Hoofdstuk \@ref(linregressie) behandelt de samenhang tussen variabelen en enkelvoudige lineaire regressie.
 
-+ Hoofdstuk \@ref(timeseries) gaat in op tijdreeksen en het maken van voorspellingen met het Voorspellingenblad van Excel.
++ Hoofdstuk \@ref(timeseries) legt uit wat tijdreeksen zijn, waaruit deze bestaan en hoe je een voortschrijdend gemiddelde maakt.
+
++ Hoofdstuk \@ref(prognoses) wordt ingegaan op een aantal mogelijkheden om prognoses (voorspellingen) van toekomstige waarden te maken.
 
 + Hoofdstuk \@ref(cases) bevat een aantal cases.
 

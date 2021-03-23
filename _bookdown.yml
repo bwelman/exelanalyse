@@ -30,10 +30,12 @@ rmd_files:
     - "eda.Rmd"
     - "linregressie.Rmd"
     - "tijdreeksen.Rmd"
+    - "prognoses.Rmd"
     - "cases.Rmd"
     - "app-toolpak.Rmd"
     - "app-powerquery.Rmd"
     - "app-exceltrendlijnen.Rmd"
+    - "app-voorspellingenblad.Rmd"
     - "app-aselect.Rmd"
     - "referenties.Rmd"
 
