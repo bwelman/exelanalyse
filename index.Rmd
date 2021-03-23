@@ -8,6 +8,23 @@ description: "Data analyse met Excel."
 monofont: "Source Code Pro"
 ---
 
+```{r}
+library(metathis) # metadata functions
+meta() %>%
+	meta_description("Cursus data analyse met Excel") %>%
+	meta_name("keywords" = "tutorial, cursus, studieboek, excel, data analyse, gegevensanalyse") %>%
+	meta_general(robots = "index,follow") %>%
+	meta_social(
+		title = "Cursus data analyse met Excel",
+		url = "https://excelanalyse.netlify.app/",
+		og_type = "book",
+		og_author = "Ben Welman",
+		og_locale = "nl_NL",
+		twitter_card_type = "summary",
+		twitter_creator = "@benwem"
+	)
+```
+
 :::{.welcome}
 
 # Welkom {.unnumbered}
