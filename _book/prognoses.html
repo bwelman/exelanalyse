@@ -10,7 +10,7 @@
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><meta name="description" content="Cursus data analyse met Excel">
-<meta name="keywords" content="tutorial, cursus, studieboek, excel, data analyse, gegevensanalyse">
+<meta name="keywords" content="tutorial, cursus, studieboek, excel, data analyse, gegevensanalyse, statistiek, tijdreeksen, voorspellingen, prognoses, ETS">
 <meta name="robots" content="index,follow">
 <meta name="twitter:title" content="Cursus data analyse met Excel">
 <meta name="twitter:description" content="Cursus data analyse met Excel">
@@ -335,9 +335,9 @@ Figuur 8.5: Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen
 </div>
 <div id="prognoses-expsmooth" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">8.5</span> Exponentiële effening<a class="anchor" aria-label="anchor" href="#prognoses-expsmooth"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Exponentiële demping<a class="anchor" aria-label="anchor" href="#prognoses-expsmooth"><i class="fas fa-link"></i></a>
 </h2>
-<p>Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen. Het exponentiële smoothing model heeft de volgende vorm</p>
+<p>Exponentiële demping (effening, smoothing) is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Het exponentiële smoothing model heeft de volgende vorm</p>
 <p><span class="math inline">\(F_{t+1} = \alpha Y_t + (1-\alpha)F_t\)</span> , met</p>
 <ul>
 <li>
@@ -353,27 +353,58 @@ Figuur 8.5: Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen
 <span class="math inline">\(\alpha\)</span>: dempingscoëfficient (dempingsconstante) met <span class="math inline">\(0 \le \alpha \le 1\)</span>
 </li>
 </ul>
-<p>De prognose op tijdstip <span class="math inline">\(t+1\)</span> is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip <span class="math inline">\(t\)</span> en de prognose voor tijdstip <span class="math inline">\(t\)</span>, met als wegingsfactoren respectievelijk <span class="math inline">\(\alpha\)</span> en <span class="math inline">\(1 - \alpha\)</span>.</p>
-<div class="important">
-<p>Voor het tijdstip <span class="math inline">\(t = 1\)</span> (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip <span class="math inline">\(t = 2\)</span> (het tweede tijdstip) is de prognosewaarde gelijk aan de werkelijke waarde op tijdstip <span class="math inline">\(t = 1\)</span>. Voor alle volgende tijdstippen wordt de prognose berekend met voorgaande formule.</p>
+<p>De prognose op tijdstip <span class="math inline">\(t+1\)</span> is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip <span class="math inline">\(t\)</span> en de prognose voor tijdstip <span class="math inline">\(t\)</span>, met als wegingsfactoren respectievelijk <span class="math inline">\(\alpha\)</span> en <span class="math inline">\(1 - \alpha\)</span>. Bij een grote waarde van <span class="math inline">\(\alpha\)</span> tellen de meest recente waarnemingen zwaarder mee dan de oudere waarnemingen. De prognoses kunnen daardoor sneller reageren op veranderende omstandigheden.</p>
+<p>Voor het tijdstip <span class="math inline">\(t = 1\)</span> (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip <span class="math inline">\(t = 2\)</span> (het tweede tijdstip) wordt de prognose gelijk aan de werkelijke waarde op tijdstip <span class="math inline">\(t = 1\)</span>. Voor alle volgende tijdstippen wordt de prognose berekend met de formule.</p>
+<p>Als voorbeeld weer de wekelijkse benzineverkoop zodat de prognoses via exponentiële demping vergeleken kunnen worden met de naïeve prognose en die via het voortschrijdend gemiddelde.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:benzineverkoop-ets"></span>
+<img src="images/prognoses/benzinetabel-ets.png" alt="Prognose van de wekelijkse benzineverkopen via exponentiële demping met a=0,2." width="50%"><p class="caption">
+Figuur 8.6: Prognose van de wekelijkse benzineverkopen via exponentiële demping met a=0,2.
+</p>
 </div>
-<p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. In de nieuwere versies van Excel is de ETS (Exponential Smoothing) methode beschikbaar. Het grootste voordeel van de ETS methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.</p>
-<p>ETS werkbladfuncties:</p>
+<p>Gelet op de nauwkeurigheidswaarden zijn dit tot nu toe de beste voorspellingen. de prognose voor week 13 wordt <span class="math inline">\(71,0\)</span>.</p>
+<div class="tip">
+<p><strong>Keuze <span class="math inline">\(\alpha\)</span></strong></p>
+<p>Als de tijdreeks een substantiële willekeurige variabiliteit heeft kun je het beste een kleine waarde voor <span class="math inline">\(\alpha\)</span> nemen. En bij een tijdreeks met weinig variabiliteit heeft een grotere waarde de voorkeur. De meest wenselijke waarde voor <span class="math inline">\(\alpha\)</span> is die waarde die de minste fouten oplevert, dus die zorgt voor de laagste gemiddelde kwardratische fout (MSE). In de praktijk ga je meestal proberen of een andere waarde voor <span class="math inline">\(\alpha\)</span> een nauwkeuriger voorspelling oplevert.</p>
+</div>
+<p><strong>Via gegevensanalyse</strong></p>
+<p>In plaats van zelf de formules te bedenken en in te voeren kun je ook gebruik maken van <em>Gegevens &gt; Gegevensanalyse &gt; Exponentiële demping</em>. In het dialoogscherm (zie figuur <a href="prognoses.html#fig:dialoog-exp-demping">8.7</a>) vul je voor het invoerbereik het gebied met de werkelijke waarden in.</p>
+<div class="important">
+<p><strong>Dempingsfactor</strong></p>
+<p>Voor de dempingsfactor moet je de waarde voor <span class="math inline">\(1 - \alpha\)</span> invullen. Om dezelfde resultaten te krijgen dus 0,8.</p>
+</div>
+<div class="figure" style="text-align: center">
+<span id="fig:dialoog-exp-demping"></span>
+<img src="images/prognoses/dialoog-exp-demping.png" alt="Dialoogscherm voor exponentiële demping" width="50%"><p class="caption">
+Figuur 8.7: Dialoogscherm voor exponentiële demping
+</p>
+</div>
+<p>Je krijgt dan dezelfde resultaten. Desgewenst kun je ook een grafiek produceren.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:enzinegrafiek-ets"></span>
+<img src="images/prognoses/benzinegrafiek-ets.png" alt="Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met a=0,2." width="50%"><p class="caption">
+Figuur 8.8: Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met a=0,2.
+</p>
+</div>
+<p>De eenvoud van deze methode heeft ook wel zijn prijs. Wil je experimenteren met een andere waarde voor <span class="math inline">\(\alpha\)</span> dan moet je de procedure weer opnieuw uitvoeren.</p>
+</div>
+<div id="prognoses-voorspellingenblad" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#prognoses-voorspellingenblad"><i class="fas fa-link"></i></a>
+</h2>
+<p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. Het grootste voordeel van de ETS (Exponential Tripple Smoothing) methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.</p>
+<div class="tip">
+<p>Je kunt het beste deze methode gebruiken wanneer de tijdreeks zowel een trend als een seizoenspatroon laat zien.</p>
+</div>
+<p>In de nieuwere versies van Excel ( Excel 365, Excel 2016, Excel 2019, …) zijn de volgende werkbladfuncties voor het uitvoeren van de ETS methode beschikbaar:</p>
 <ul>
 <li><code>VOORSPELLEN.ETS</code></li>
 <li><code>VOORSPELLEN.ETS.SEASONALITY</code></li>
 <li><code>VOORSPELLEN.ETS.CONFINT</code></li>
 <li><code>VOORSPELLEN.ETS.STAT</code></li>
 </ul>
-<div class="caution">
-<p>Deze <code>ETS</code> functies zijn alleen beschikbaar in de nieuwere versies van Excel: Excel 365, Excel 2016, Excel 2019, …</p>
-</div>
-</div>
-<div id="prognoses-voorspellingenblad" class="section level2" number="8.6">
-<h2>
-<span class="header-section-number">8.6</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#prognoses-voorspellingenblad"><i class="fas fa-link"></i></a>
-</h2>
-<p>Wanneer je in Excel een prognose maakt, dan wordt hiervoor een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van de AAA versie (Additieve Trend, Seizoen, Random) van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Dit nieuwe werkblad wordt ook wel <em>Voorspellingblad</em> of <em>prognosewerkblad</em> genoemd. Aan de hand van een oefening worden de mogelijkheden van dit Voorspellingenblad verkend.</p>
+<p>Eenvoudiger is het gebruik van het <em>Voorspellingblad</em> of <em>prognosewerkblad</em> dat in die nieuwere Excel versies aanwezig is. Onder de motorkop worden de <code>VOORSPELLEN.ETS</code> functies gebruikt.</p>
+<p>Via het Voorspellingenblad wordt een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Hiermee wordt het maken van geavanceerde prognoses een stuk eenvoudiger.</p>
 <div class="workedexample">
 <ol style="list-style-type: decimal">
 <li><p>Importeer het hulpbestand <a href="data//verkopen.csv">verkopen.csv</a> via <em>Gegevens ophalen en transformeren</em>. Voor hulp hierbij zie hoofdstuk Importeren gegevens.</p></li>
@@ -383,7 +414,7 @@ Figuur 8.5: Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen
 <div class="figure" style="text-align: center">
 <span id="fig:prognosewerkblad"></span>
 <img src="images/prognoses/sales_fcast_sheet.png" alt="Prognosewerkblad maken" width="100%"><p class="caption">
-Figuur 8.6: Prognosewerkblad maken
+Figuur 8.9: Prognosewerkblad maken
 </p>
 </div>
 <p>In dit venster kun je een aantal keuzes maken. Zie bijlage <a href="app-voorspellingenblad.html#app-voorspellingenblad">D</a> voor een toelichting.</p>
@@ -394,7 +425,7 @@ Figuur 8.6: Prognosewerkblad maken
 <div class="figure" style="text-align: center">
 <span id="fig:sales-fcast-options"></span>
 <img src="images/prognoses/sales_fcast_options.png" alt="Opties prognosewerkblad." width="100%"><p class="caption">
-Figuur 8.7: Opties prognosewerkblad.
+Figuur 8.10: Opties prognosewerkblad.
 </p>
 </div>
 <ol start="6" style="list-style-type: decimal">
@@ -478,7 +509,7 @@ Hoogste betrouwbaarheidsgrens
 </li>
 <li>
 <p><strong>Omzetvoorspelling</strong></p>
-<p>In het hulpbestand <a href="data/bedrijfsomzet.xlsx">bedrijfsomzet.xlsx</a> staan de omzetten van een bedrijf over de jaren 2007-2015.</p>
+<p>In het bestand <a href="data/bedrijfsomzet.xlsx">bedrijfsomzet.xlsx</a> staan de omzetten van een bedrijf over de jaren 2007-2015.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Maak een grafiek van de omzet tegen het jaar.</li>
 <li>Voeg achtereenvolgens de volgende trendlijnen toe; lineair, logaritmisch en exponentieel.Verzamel voor elk van deze trendlijnen de waarde van R-kwadraat. Maak op basis hiervan een keuze voor het meest geschikte model.</li>
@@ -487,6 +518,15 @@ Hoogste betrouwbaarheidsgrens
 <li>Bereken een voorspelling van de omzet voor 2016 met een werkbladformule. Welke formule je hiervoor kunt gebruiken hangt af van het gekozen model. Zie hiervoor onderdeel.</li>
 <li>Maak m.b.v. het Voorspellingenblad een prognose voor de omzet van 2016, alsmede een 95% betrouwbaarheidsinterval hiervoor.</li>
 <li>Vergelijk de drie voorspelde waarden met elkaar.</li>
+</ol>
+</li>
+<li>
+<p><strong>Televisieverkoop</strong></p>
+<p>In het bestand <a href="data/televisies.xlsx">televisies.xlsx</a> staan de verkochte aantallen televisies per kwartaal gedurende vier jaar.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Maak een grafiek van de tijdreeks.</li>
+<li>Is er een trend of een seizoenspatroon in de tijdreeks te ontdekken.</li>
+<li>Maak een voorspelling van de verkoop voor de kwartalen van het volgende daar. Denk eerst na over welke prognosemethode je wilt gebruiken.</li>
 </ol>
 </li>
 </ol>
@@ -506,7 +546,7 @@ Hoogste betrouwbaarheidsgrens
 <li><a class="nav-link" href="#prognoses-naief"><span class="header-section-number">8.2</span> Naïeve prognose</a></li>
 <li><a class="nav-link" href="#prognoses-naiefseizoen"><span class="header-section-number">8.3</span> Naïeve Seizoen prognose</a></li>
 <li><a class="nav-link" href="#prognoses-ma"><span class="header-section-number">8.4</span> Voortschrijdend gemiddelde</a></li>
-<li><a class="nav-link" href="#prognoses-expsmooth"><span class="header-section-number">8.5</span> Exponentiële effening</a></li>
+<li><a class="nav-link" href="#prognoses-expsmooth"><span class="header-section-number">8.5</span> Exponentiële demping</a></li>
 <li><a class="nav-link" href="#prognoses-voorspellingenblad"><span class="header-section-number">8.6</span> Voorspellingenblad</a></li>
 <li><a class="nav-link" href="#opg-prognoses"><span class="header-section-number">8.7</span> Opgaven</a></li>
 </ul>
@@ -525,7 +565,7 @@ Hoogste betrouwbaarheidsgrens
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 23 maart 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" is geschreven door  Ben Welman. Laatste productiedatum 24 maart 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

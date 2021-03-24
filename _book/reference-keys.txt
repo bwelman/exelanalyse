@@ -84,6 +84,9 @@ fig:benzineverkoop-naief
 fig:parapluverkoop-grafiek
 fig:parapluverkoop-prognose
 fig:benzineverkoop-ma
+fig:benzineverkoop-ets
+fig:dialoog-exp-demping
+fig:enzinegrafiek-ets
 fig:prognosewerkblad
 fig:sales-fcast-options
 tab:voorspelling

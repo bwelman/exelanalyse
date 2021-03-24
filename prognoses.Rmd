@@ -109,9 +109,9 @@ Bij een 3-weeks voortschrijdend gemiddelde kun je de eerste waarde pas berekenen
 Gelet op de kentallen voor de nauwkeurigheid zie je dat het voortschrijdend gemiddelde iets beter presteert dan de naïeve prognose, maar ook niet echt heel veel beter. En de prognose voor week 13 wordt $67,67$.
 
 
-## Exponentiële effening {#prognoses-expsmooth}
+## Exponentiële demping {#prognoses-expsmooth}
 
-Exponentiële effening is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Hierbij wordt er vanuitgegaan dat de meest recente waarnemingen belangrijker zijn voor het maken van voorspellingen dan de oudere waarnemingen. Aan de meest recente waarnemingen worden daarom zwaardere gewichten toegekend dan aan oudere waarnemingen. Het exponentiële smoothing model heeft de volgende vorm
+Exponentiële demping (effening, smoothing) is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Het exponentiële smoothing model heeft de volgende vorm
 
 $F_{t+1} = \alpha Y_t + (1-\alpha)F_t$ , met
 
@@ -120,28 +120,64 @@ $F_{t+1} = \alpha Y_t + (1-\alpha)F_t$ , met
 + $F_t$: de prognose op tijdstip $t$
 + $\alpha$: dempingscoëfficient (dempingsconstante) met $0 \le \alpha \le 1$
 
-De prognose op tijdstip $t+1$ is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip $t$  en de prognose voor tijdstip $t$, met als wegingsfactoren respectievelijk $\alpha$ en $1 - \alpha$.
+De prognose op tijdstip $t+1$ is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip $t$  en de prognose voor tijdstip $t$, met als wegingsfactoren respectievelijk $\alpha$ en $1 - \alpha$. Bij een grote waarde van $\alpha$ tellen de meest recente waarnemingen zwaarder mee dan de oudere waarnemingen. De prognoses kunnen daardoor sneller reageren op veranderende omstandigheden.
 
-:::{.important}
-Voor het tijdstip $t = 1$ (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip $t = 2$ (het tweede tijdstip) is de prognosewaarde gelijk aan de werkelijke waarde op tijdstip $t = 1$. Voor alle volgende tijdstippen wordt de prognose berekend met voorgaande formule.
+Voor het tijdstip $t = 1$ (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip $t = 2$ (het tweede tijdstip) wordt de prognose gelijk aan de werkelijke waarde op tijdstip $t = 1$. Voor alle volgende tijdstippen wordt de prognose berekend met de formule.
+
+Als voorbeeld weer de wekelijkse benzineverkoop zodat de prognoses via exponentiële demping vergeleken kunnen worden met de naïeve prognose en die via het voortschrijdend gemiddelde.
+
+```{r benzineverkoop-ets, fig.cap="Prognose van de wekelijkse benzineverkopen via exponentiële demping met α=0,2.", out.width="50%"}
+knitr::include_graphics("images/prognoses/benzinetabel-ets.png")
+```
+
+Gelet op de nauwkeurigheidswaarden zijn dit tot nu toe de beste voorspellingen. de prognose voor week 13 wordt $71,0$.
+
+:::{.tip}
+**Keuze $\alpha$**
+
+Als de tijdreeks een substantiële willekeurige variabiliteit heeft kun je het beste een kleine waarde voor $\alpha$ nemen. En bij een tijdreeks met weinig variabiliteit heeft een grotere waarde de voorkeur. De meest wenselijke waarde voor $\alpha$ is die waarde die de minste fouten oplevert, dus die zorgt voor de laagste gemiddelde kwardratische fout (MSE). In de praktijk ga je meestal proberen of een andere waarde voor $\alpha$ een nauwkeuriger voorspelling oplevert.
 :::
 
-De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. In de nieuwere versies van Excel is de ETS (Exponential Smoothing) methode beschikbaar. Het grootste voordeel van de ETS methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.
+**Via gegevensanalyse**
 
-ETS werkbladfuncties:
+In plaats van zelf de formules te bedenken en in te voeren kun je ook gebruik maken van *Gegevens > Gegevensanalyse > Exponentiële demping*. In het dialoogscherm (zie figuur \@ref(fig:dialoog-exp-demping)) vul je voor het invoerbereik het gebied met de werkelijke waarden in.
+
+:::{.important}
+**Dempingsfactor**
+
+Voor de dempingsfactor moet je de waarde voor $1 - \alpha$ invullen. Om dezelfde resultaten te krijgen dus 0,8.
+:::
+
+```{r dialoog-exp-demping, fig.cap="Dialoogscherm voor exponentiële demping", out.width="50%"}
+knitr::include_graphics("images/prognoses/dialoog-exp-demping.png")
+```
+
+Je krijgt dan dezelfde resultaten. Desgewenst kun je ook een grafiek produceren.
+
+```{r enzinegrafiek-ets, fig.cap="Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met α=0,2.", out.width="50%"}
+knitr::include_graphics("images/prognoses/benzinegrafiek-ets.png")
+```
+
+De eenvoud van deze methode heeft ook wel zijn prijs. Wil je experimenteren met een andere waarde voor $\alpha$ dan moet je de procedure weer opnieuw uitvoeren.
+
+## Voorspellingenblad {#prognoses-voorspellingenblad}
+
+De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. Het grootste voordeel van de ETS (Exponential Tripple Smoothing) methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.
+
+:::{.tip}
+Je kunt het beste deze methode gebruiken wanneer de tijdreeks zowel een trend als een seizoenspatroon laat zien.
+:::
+
+In de nieuwere versies van Excel ( Excel 365, Excel 2016, Excel 2019, ...) zijn de volgende werkbladfuncties voor het uitvoeren van de ETS methode beschikbaar:
 
   - `VOORSPELLEN.ETS`
   - `VOORSPELLEN.ETS.SEASONALITY`
   - `VOORSPELLEN.ETS.CONFINT`
   - `VOORSPELLEN.ETS.STAT`
 
-:::{.caution}
-Deze `ETS` functies zijn alleen beschikbaar in de nieuwere versies van Excel: Excel 365, Excel 2016, Excel 2019, ...
-:::
+Eenvoudiger is het gebruik van het *Voorspellingblad* of *prognosewerkblad* dat in die nieuwere Excel versies aanwezig is. Onder de motorkop worden de `VOORSPELLEN.ETS` functies gebruikt.
 
-## Voorspellingenblad {#prognoses-voorspellingenblad}
-
-Wanneer je in Excel een prognose maakt, dan wordt hiervoor een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van de AAA versie (Additieve Trend, Seizoen, Random) van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Dit nieuwe werkblad wordt ook wel *Voorspellingblad* of *prognosewerkblad* genoemd. Aan de hand van een oefening worden de mogelijkheden van dit Voorspellingenblad verkend.
+Via het Voorspellingenblad wordt een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Hiermee wordt het maken van geavanceerde prognoses een stuk eenvoudiger.
 
 :::{.workedexample}
 1. Importeer het hulpbestand [verkopen.csv](data//verkopen.csv) via *Gegevens ophalen en transformeren*. Voor hulp hierbij zie hoofdstuk Importeren gegevens.
@@ -192,7 +228,7 @@ result %>%
 
 2. **Omzetvoorspelling**
 
-    In het hulpbestand [bedrijfsomzet.xlsx](data/bedrijfsomzet.xlsx) staan de omzetten van een bedrijf over de jaren 2007-2015.
+    In het bestand [bedrijfsomzet.xlsx](data/bedrijfsomzet.xlsx) staan de omzetten van een bedrijf over de jaren 2007-2015.
     
     a. Maak een grafiek van de omzet tegen het jaar.
     a. Voeg achtereenvolgens de volgende trendlijnen toe; lineair, logaritmisch en exponentieel.Verzamel voor elk van deze trendlijnen de waarde van R-kwadraat. Maak op basis hiervan een keuze voor het meest geschikte model.
@@ -202,4 +238,11 @@ result %>%
     a. Maak m.b.v. het Voorspellingenblad een prognose voor de omzet van 2016, alsmede een 95% betrouwbaarheidsinterval hiervoor.
     a. Vergelijk de drie voorspelde waarden met elkaar.
 
+3. **Televisieverkoop**
+
+   In het bestand [televisies.xlsx](data/televisies.xlsx) staan de verkochte aantallen televisies per kwartaal gedurende vier jaar.
+   
+   a.  Maak een grafiek van de tijdreeks.
+   b.  Is er een trend of een seizoenspatroon in de tijdreeks te ontdekken.
+   c.  Maak een voorspelling van de verkoop voor de kwartalen van het volgende daar. Denk eerst na over welke prognosemethode je wilt gebruiken.
 :::

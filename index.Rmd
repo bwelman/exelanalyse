@@ -12,7 +12,7 @@ monofont: "Source Code Pro"
 library(metathis) # metadata functions
 meta() %>%
 	meta_description("Cursus data analyse met Excel") %>%
-	meta_name("keywords" = "tutorial, cursus, studieboek, excel, data analyse, gegevensanalyse") %>%
+	meta_name("keywords" = "tutorial, cursus, studieboek, excel, data analyse, gegevensanalyse, statistiek, tijdreeksen, voorspellingen, prognoses, ETS") %>%
 	meta_general(robots = "index,follow") %>%
 	meta_social(
 		title = "Cursus data analyse met Excel",
