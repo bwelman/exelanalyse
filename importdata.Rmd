@@ -1,7 +1,7 @@
 # Importeren van data {#importdata}
 
 :::{.chapterintro}
-Bij de analyse van data probeer je antwoorden te vingen op vragen door statistische methodes tot te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd. In de praktijk komen veel gegevens uit externe bronnen: txt/csv, web, excel bestanden, databases, ... Om deze gegevens in Excel te analyseren, moeten ze eerst geïmporteerd worden en soms worden getransformeerd en opgeschoond. Dat gebeurt met Power Query.
+Bij de analyse van data probeer je antwoorden te vinden op vragen door statistische methodes toe te passen op waarnemingen. Deze waarnemingen - verzameld uit rapportages, enquêtes en experimenten - vormen de ruggegraat van een statistisch onderzoek en worden **data** genoemd. In de praktijk komen veel gegevens uit externe bronnen: txt/csv, web, excel bestanden, databases, ... Om deze gegevens in Excel te analyseren, moeten ze eerst geïmporteerd worden en soms worden getransformeerd en opgeschoond. Dat gebeurt met Power Query.
 :::
 
 In Excel is Power Query beschikbaar onder de groep *Gegevens ophalen en transformeren* in het lint *Gegevens*. Hiermee kun je verbindingen maken met meerdere gegevensbronnen en daarna die gegevens structureren (bijvoorbeeld een kolom verwijderen, een gegevenstype wijzigen) of de gegevens omzetten (transformeren) naar wat anders. Uiteindelijk komen de gegevens dan in een Excel werkblad beschikbaar. Alle stappen die je met de Power Query Editor uitvoert worden in een script vastgelegd.
@@ -58,7 +58,7 @@ De Query Editor wordt gestart in een nieuw venster. Aan de rechterkant onder *Qu
 Als alternatief kun je de rechtermuisknop gebruiken en dan de gewenste actie uit het snelmenu kiezen.
 :::
 
-In elke kolomkop zit aan de linkerkant een icon dat het toegepaste gegevenstype weergeeft. Wanneer je een kolom selecteert zie je het gegevenstype ook op het lint. En dit is tevens de plek waar je het gegevenstype kunt wijzigen.
+In elke kolomkop zit aan de linkerkant een knopje welke het toegepaste gegevenstype weergeeft. Wanneer je een kolom selecteert zie je het gegevenstype ook op het lint. En dit is tevens de plek waar je het gegevenstype kunt wijzigen.
 
 ```{r datatype, fig.cap="Gegevenstype.", out.width="40%", fig.align='left'}
 knitr::include_graphics("images/importdata/ribbon_datatype_wholenumber.png")
@@ -66,7 +66,7 @@ knitr::include_graphics("images/importdata/ribbon_datatype_wholenumber.png")
 
 `Price` heeft gegevenstype *Geheel getal*, alle andere kolommen hebben gegevenstype *Tekst*.
 
-6. Selecteer de eerste kolom `Transaction_date` en kies dan *Gegevenstype (groep Transformeren) > Datum/Tijd*. Wanneer er een dialoogscherm komt of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.
+6. Selecteer de eerste kolom `Transaction_date` en kies dan *Gegevenstype (groep Transformeren) > Datum/Tijd*. Wanneer er een dialoogscherm komt met de vraag of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.
 In kolom `Name` beginnen de meeste namen met een hoofdletter, maar niet allemaal.
 
 7. Selecteer kolom `Name`, rechtermuisklik en kies *Transformeren > Elk Woord Met Een Hoofdletter*.
@@ -80,9 +80,9 @@ Het is altijd mogelijk om de query achteraf te wijzigen. Selecteer hiervoor een 
 
 ## Importeren van een webtabel
 
-Webpagina's hebben vaak tabellen. De Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je een aantal gegevens van de UEFA Europees voetbal kampioenschap importeren die in een wikipedia pagina beschikbaar zijn.
+Webpagina's hebben vaak tabellen. De Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je een aantal gegevens van de UEFA Europees voetbalkampioenschap importeren die in een wikipedia pagina beschikbaar zijn.
 
-1. Open a nieuwe lege werkmap.
+1. Open een nieuwe lege werkmap.
 
 2. Kies *tab Gegevens > Van het web (groep Gegevens ophalen en transformeren)*. Er wordt een dialoogvenster weergegeven waarin de URL van de webpagina moet worden ingevoerd.
 
