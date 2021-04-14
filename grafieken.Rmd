@@ -87,7 +87,7 @@ Voor het maken van dit grafiektype zie [Een Box- en Whisker-grafiek maken](https
 ## Opgaven {#opg-grafieken}
 
 ::: {.sectionexercise}
-1. Maak in een Excel werkblad de boxplot uit figuur \@ref(fig:boxplot-tablets).
+1. Maak in een Excel werkblad de boxplot uit figuur \@ref(fig:boxplot-tablets). De data is in bestand [tablets.xlsx](data/tablets.xlsx).
 
 1. Een steekproef van 20 leden van een golfclub naar hun lengte (in cm) heeft het volgende resultaat opgeleverd: 152,173,175,163,173,170,173,175,196,175,175,183,175,165,165,173,163,180,188,188
 

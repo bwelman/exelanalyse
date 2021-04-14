@@ -15,7 +15,7 @@ De waarden van een variabele kunnen samenhangen met de waarden van een andere va
 Of er een mogelijk verband tussen numerieke variabelen is kun je onderzoeken
 
 + door ze in een spreidingsdiagram tegen elkaar uit te zetten en dan te kijken of er een patroon zichtbaar is.
-+ door de covariatie of correlatiecoëfficiënt te berekenen.
++ door de covariantie of correlatiecoëfficiënt te berekenen.
 
 wanneer er een verband tussen twee variabelen is, dan zal ook de variantie van de variabelen samenhang vertonen. Er is dan sprake van *covariantie* (gedeelde variantie). vandaar dat variabelen die aan elkaar gerelateerd zijn en dus een deel van hun variantie delen, ook wel *covariaten* genoemd worden. Een maatstaf om de samenhang tussen twee variabelen in uit te drukken is de *covariantie*, welke aangeeft of en hoeveel de waarden van de ene variabele toe- dan wel afnemen bij toenemende waarden van de andere variabele.
 
@@ -217,13 +217,13 @@ Vervolgens wordt een regressie-analyse via Gegevensanalyse uitgevoerd.
 knitr::include_graphics("images/linregressie/sim2-samenvatting.png")
 ```
 
-Zowel de correlatiecoëfficiënt liggen dicht bij 1 en zijn dus goed.
+Zowel de correlatiecoëfficiënt als R-kwadraat liggen dicht bij 1 en dat is goed.
 
 ```{r sim2-coefficienten, fig.cap="Coéfficiënten regressielijn."}
 knitr::include_graphics("images/linregressie/sim2-coefficienten.png")
 ```
 
-Voor beide coëfficiënten is de p-waarde kleiner dan 0,05 en zijn dus de coëfficiënten significant.
+Voor beide coëfficiënten is de p-waarde kleiner dan 0,05 en dus zijn de coëfficiënten significant.
 
 ```{r sim2-residu, out.width="40%", fig.cap="Residu Analyse."}
 knitr::include_graphics("images/linregressie/sim2-residuen.png")

@@ -353,9 +353,9 @@ levensonderhoud.data %>% head(8) %>%
    a. Maak hiervan een gestructureerde dataset.
    b. In welk land is rijst gemiddeld het goedkoopst en in welk land het duurst?
 
-5. Op een bepaalde basischool krijgt elke leerling krijgt in elk kwartaal (Herfst, Winter en Lente) van elk jaar een toets voor rekenen en taal. De volgende tabel bevat een beperkte gegevensverzameling hiervan.
+5. Op een bepaalde basischool krijgt elke leerling krijgt in elk kwartaal (Herfst, Winter en Lente) van elk jaar een toets voor rekenen en taal. Het bestand [rekenentaal.xlsx](data/rekenentaal.xlsx) bevat een beperkte gegevensverzameling hiervan en is te zien in tabel \@ref(tab:rekenentaal-data).
     
-```{r tidy003-data, echo=FALSE}
+```{r rekenentaal-data, echo=FALSE}
 rekenentaal.data <- read_excel("data/rekenentaal.xlsx")
 rekenentaal.data %>% 
 	kbl(caption = "Schoolresultaten voor rekenen en taal.") %>% 

@@ -22,7 +22,7 @@ fig:meetniveaus
 tab:demotabel
 tab:koffieprijzen-data
 tab:levensonderhoud-data
-tab:tidy003-data
+tab:rekenentaal-data
 fig:huisdier
 fig:vakantieland
 fig:freq-interval
