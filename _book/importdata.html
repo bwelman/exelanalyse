@@ -139,24 +139,25 @@ Figuur 1.2: Voorbeeld van SalesJan2009 gegevens.
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Klik op <em>Gegevens transformeren</em>.
-De Query Editor wordt gestart in een nieuw venster. Aan de rechterkant onder <em>Queryinstellingen</em> en onder <em>Toegepaste Stappen</em> zie je de stappen die reeds zijn toegepast.</p></li>
-<li><p>Selecteer de kolommen <code>Account_Created</code>, <code>Last_Login</code>, <code>Latitude</code>, <code>Longitude</code>, door op de kolomkop te klikken met ingedrukte CTRL toets. Kies dan <em>Kolommen verwijderen (groep Kolommen beheren) &gt; Kolommen verwijderen</em>. De kolommen worden verwijderd en de stap is toegevoegd aan <em>Toegepaste Stappen</em>.</p></li>
+De Query Editor wordt gestart in een nieuw venster. In de rechterzijbalk <em>Queryinstellingen</em> zie je onder <em>Toegepaste Stappen</em> de stappen die reeds zijn uitgevoerd.</p></li>
+<li><p>Selecteer de kolommen <code>Account_Aangemaakt</code> en <code>Laatste_Login</code> door op de kolomkop te klikken met ingedrukte CTRL toets. Kies dan <em>Kolommen verwijderen (groep Kolommen beheren) &gt; Kolommen verwijderen</em>. De kolommen worden verwijderd en de stap is toegevoegd aan <em>Toegepaste Stappen</em>.</p></li>
 </ol>
 <div class="tip">
 <p>Als alternatief kun je de rechtermuisknop gebruiken en dan de gewenste actie uit het snelmenu kiezen.</p>
 </div>
 <p>In elke kolomkop zit aan de linkerkant een knopje welke het toegepaste gegevenstype weergeeft. Wanneer je een kolom selecteert zie je het gegevenstype ook op het lint. En dit is tevens de plek waar je het gegevenstype kunt wijzigen.</p>
+<p>Als bij het importeren het automatisch ontdekken van het gegevenstype goed gegaan is heeft kolom <code>Prijs</code> het gegevenstype <code>Geheel getal</code> (zie figuur <a href="importdata.html#fig:datatype-prijs">1.3</a>), kolom <code>Transactie_Datum</code> het gegevenstype <code>Datum/Tijd</code> en de andere kolommen het gegevenstype <code>Tekst</code>.</p>
 <div class="figure" style="text-align: left">
-<span id="fig:datatype"></span>
+<span id="fig:datatype-prijs"></span>
 <img src="images/importdata/ribbon_datatype_wholenumber.png" alt="Gegevenstype." width="40%"><p class="caption">
 Figuur 1.3: Gegevenstype.
 </p>
 </div>
-<p><code>Price</code> heeft gegevenstype <em>Geheel getal</em>, alle andere kolommen hebben gegevenstype <em>Tekst</em>.</p>
+<div class="important">
+<p>Controleer dat kolom <code>Transactie_Datum</code> het juiste gegevenstype heeft. Zo niet, wijzig deze dan via <em>Gegevenstype (groep Transformeren) &gt; Datum/Tijd</em>. Wanneer er een dialoogscherm komt met de vraag of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.</p>
+</div>
 <ol start="6" style="list-style-type: decimal">
-<li><p>Selecteer de eerste kolom <code>Transaction_date</code> en kies dan <em>Gegevenstype (groep Transformeren) &gt; Datum/Tijd</em>. Wanneer er een dialoogscherm komt met de vraag of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.
-In kolom <code>Name</code> beginnen de meeste namen met een hoofdletter, maar niet allemaal.</p></li>
-<li><p>Selecteer kolom <code>Name</code>, rechtermuisklik en kies <em>Transformeren &gt; Elk Woord Met Een Hoofdletter</em>.</p></li>
+<li><p>In kolom <code>Naam</code> beginnen de meeste namen met een hoofdletter, maar niet allemaal. Dat dient gecorrigeerd te worden. Selecteer kolom <code>Naam</code>, rechtermuisklik en kies <em>Transformeren &gt; Elk Woord Met Een Hoofdletter</em>.</p></li>
 <li><p>Kies <em>Sluiten en laden(groep Sluiten) &gt; Sluiten en laden</em>.
 De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt nu met de gegevens werken en de Excel map voor later gebruik opslaan.</p></li>
 </ol>

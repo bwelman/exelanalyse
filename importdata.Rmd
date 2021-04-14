@@ -50,9 +50,9 @@ knitr::include_graphics("images/importdata/salesjan2009_preview.png")
 ```
 
 4. Klik op *Gegevens transformeren*.
-De Query Editor wordt gestart in een nieuw venster. Aan de rechterkant onder *Queryinstellingen* en onder *Toegepaste Stappen* zie je de stappen die reeds zijn toegepast.
+De Query Editor wordt gestart in een nieuw venster. In de rechterzijbalk *Queryinstellingen* zie je onder *Toegepaste Stappen* de stappen die reeds zijn uitgevoerd.
 
-5. Selecteer de kolommen `Account_Created`, `Last_Login`, `Latitude`, `Longitude`, door op de kolomkop te klikken met ingedrukte CTRL toets. Kies dan *Kolommen verwijderen (groep Kolommen beheren) > Kolommen verwijderen*. De kolommen worden verwijderd en de stap is toegevoegd aan *Toegepaste Stappen*.
+5. Selecteer de kolommen `Account_Aangemaakt` en `Laatste_Login` door op de kolomkop te klikken met ingedrukte CTRL toets. Kies dan *Kolommen verwijderen (groep Kolommen beheren) > Kolommen verwijderen*. De kolommen worden verwijderd en de stap is toegevoegd aan *Toegepaste Stappen*.
 
 ::: {.tip}
 Als alternatief kun je de rechtermuisknop gebruiken en dan de gewenste actie uit het snelmenu kiezen.
@@ -60,18 +60,19 @@ Als alternatief kun je de rechtermuisknop gebruiken en dan de gewenste actie uit
 
 In elke kolomkop zit aan de linkerkant een knopje welke het toegepaste gegevenstype weergeeft. Wanneer je een kolom selecteert zie je het gegevenstype ook op het lint. En dit is tevens de plek waar je het gegevenstype kunt wijzigen.
 
-```{r datatype, fig.cap="Gegevenstype.", out.width="40%", fig.align='left'}
+Als bij het importeren het automatisch ontdekken van het gegevenstype goed gegaan is heeft kolom `Prijs` het gegevenstype `Geheel getal` (zie figuur \@ref(fig:datatype-prijs)), kolom `Transactie_Datum` het gegevenstype `Datum/Tijd` en de andere kolommen het gegevenstype `Tekst`.
+
+```{r datatype-prijs, fig.cap="Gegevenstype.", out.width="40%", fig.align='left'}
 knitr::include_graphics("images/importdata/ribbon_datatype_wholenumber.png")
 ```
 
-`Price` heeft gegevenstype *Geheel getal*, alle andere kolommen hebben gegevenstype *Tekst*.
+::: {.important}
+Controleer dat kolom `Transactie_Datum` het juiste gegevenstype heeft. Zo niet, wijzig deze dan via *Gegevenstype (groep Transformeren) > Datum/Tijd*. Wanneer er een dialoogscherm komt met de vraag of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.
+:::
 
-6. Selecteer de eerste kolom `Transaction_date` en kies dan *Gegevenstype (groep Transformeren) > Datum/Tijd*. Wanneer er een dialoogscherm komt met de vraag of de bestaande conversie vervangen moet worden, kies dan voor vervangen van de huidige conversie.
-In kolom `Name` beginnen de meeste namen met een hoofdletter, maar niet allemaal.
+6. In kolom `Naam` beginnen de meeste namen met een hoofdletter, maar niet allemaal. Dat dient gecorrigeerd te worden. Selecteer kolom `Naam`, rechtermuisklik en kies *Transformeren > Elk Woord Met Een Hoofdletter*.
 
-7. Selecteer kolom `Name`, rechtermuisklik en kies *Transformeren > Elk Woord Met Een Hoofdletter*.
-
-8. Kies *Sluiten en laden(groep Sluiten) > Sluiten en laden*.
+7. Kies *Sluiten en laden(groep Sluiten) > Sluiten en laden*.
 De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt nu met de gegevens werken en de Excel map voor later gebruik opslaan.
 
 ::: {.tip}

@@ -1,6 +1,6 @@
 fig:ribbon-queries
 fig:salesjan2009-preview
-fig:datatype
+fig:datatype-prijs
 fig:weburl-textbox
 fig:uefa-navigatorpane
 fig:replace-values-dialogbox
