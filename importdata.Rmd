@@ -81,7 +81,7 @@ Het is altijd mogelijk om de query achteraf te wijzigen. Selecteer hiervoor een 
 
 ## Importeren van een webtabel
 
-Webpagina's hebben vaak tabellen. De Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je een aantal gegevens van de UEFA Europees voetbalkampioenschap importeren die in een wikipedia pagina beschikbaar zijn.
+In webpagina's tref je vaak tabellen. Bekijk maar eens de pagina [Europees kampioenschap voetbal mannen](https://nl.wikipedia.org/wiki/Europees_kampioenschap_voetbal_mannen). Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je uit de tabel *Erelijst* de kolommen *Jaar* en *Winnaar* importeren voor de jaren waarvoor ook een winnaar bekend is.
 
 1. Open een nieuwe lege werkmap.
 
@@ -91,46 +91,48 @@ Webpagina's hebben vaak tabellen. De Power Query in Excel kan deze tabellen herk
 knitr::include_graphics("images/importdata/web_url_textbox.png")
 ```
 
-3. Voer voor de URL in `http://en.wikipedia.org/wiki/UEFA_European_Championship` en klik *OK*.
+3. Voer voor de URL in `https://nl.wikipedia.org/wiki/Europees_kampioenschap_voetbal_mannen` en klik *OK*.
 
 Er wordt een verbinding met de webpagina gemaakt.
 Wanneer de verbinding gerealiseerd is wordt een *Navigator* venster getoond waarin een lijst met alle tabellen in de webpagina te zien is. Door op een tabel te klikken verschijnt aan de rechterkant van het venster een voorbeeld van de gegevens.
 
-```{r uefa-navigatorpane, fig.cap="Venster Navigator voor UEFA pagina op Wikipedia.", out.width="70%"}
-knitr::include_graphics("images/importdata/uefa_navigatorpane.png")
+```{r ek-voetbal-navigator, fig.cap="Venster Navigator voor UEFA pagina op Wikipedia.", out.width="70%"}
+knitr::include_graphics("images/importdata/ek-voetbal-navigator.png")
 ```
 
-4. Selecteer tabel `Results[edit]` en klik dan op de knop *Gegevens transformeren*.
+4. Selecteer tabel `Erelijst[bewerken]` en klik dan op de knop *Gegevens transformeren*.
 De Query Editor wordt gestart in een nieuw venster. Aan de rechterkant onder *Queryinstellingen* en onder *Toegepaste Stappen* zie je de stappen die reeds zijn toegepast.
 
-Vervolgens kun je de gegevens naar behoefte structureren, wijzigen en opschonen. Achtereenvolgens ga je
+Vervolgens kun je de gegevens naar behoefte structureren, wijzigen en opschonen.
 
-+ alle kolommen verwijderen behalve `Year` en `Final Winner`s.
-+ het woord "Details" verwijderen in kolom `Year`.
-+ alleen echte jaartallen in kolom `Year` overhouden.
+5. Selecteer de kolommen `Jaar` en `Winnaar` door op deze kolomkoppen te klikken met ingedrukte CTRL toets. Kies dan *Kolommen verwijderen (groep Kolommen beheren) > Andere kolommen verwijderen*.
 
-5. Selecteer de kolommen `Year` en `Final Winners` door op de kolomkoppen te klikken met ingedrukte CTRL toets. Kies dan *Kolommen verwijderen (groep Kolommen beheren) > Andere kolommen verwijderen*.
-
-6. Selecteer kolom `Year` en kies *Waarden vervangen (groep Transformeren)*. Het dialoogvenster *Waarden vervangen* wordt weergegeven.
-
+6. Selecteer kolom `Jaar` en kies *Waarden vervangen (groep Transformeren)*. Het dialoogvenster *Waarden vervangen* wordt weergegeven.
 
 ```{r replace-values-dialogbox, fig.cap="Dialoogvenster Waarden vervangen.", out.width="70%"}
 knitr::include_graphics("images/importdata/replace_values_dialogbox.png")
 ```
 
-7. Type `Details` in het tekstvak *Te zoeken waarde* en laat het tekstvak *Vervangen door* leeg en klik *OK*.
+Type `Details` in het tekstvak *Te zoeken waarde*, laat het tekstvak *Vervangen door* leeg. Klik daarna op *OK*.
 
-8. Selecteer kolom `Year` en klik op de filter keuzepijl in de kolomkop. Deselecteer `Year` en klik *OK*.
+7. Selecteer kolom `Winnaar` en klik op de filter keuzepijl in de kolomkop. Deselecteer de optie `leeg` en klik *OK*.
 
-9. Kies *Sluiten en laden(groep Sluiten) > Sluiten en laden*.
+8. Kies *Sluiten en laden(groep Sluiten) > Sluiten en laden*.
 De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt nu met de gegevens werken en de Excel map voor later gebruik opslaan.
+
+```{r ek-voetbal-resultaat, fig.cap="Tabel met winnaars van het EK voetbal voor mannen.", out.width="30%"}
+knitr::include_graphics("images/importdata/ek-voetbal-resultaat.png")
+```
 
 ## Opgaven {#opg-importdata}
 
 ::: {.sectionexercise}
 1. **Eenvoudig csv bestand importeren**
 
-    Download het hulpbestand [verkopen.csv](data/verkopen.csv) en open het eerst met een kale tekstverwerker (Kladblok, Notepad) om te onderzoeken hoe het bestand er uit ziet. Het is belangrijk om te weten is of er veldnamen in staan en welk scheidingssymbool (komma, puntkomma, ...) gebruikt is. Meestal herkent Excel dit zelf, maar het is toch wel nuttig om dit zelf eerst na te gaan.
+    Download het hulpbestand [verkopen.csv](data/verkopen.csv) en open het eerst met een kale tekstverwerker (Kladblok, Notepad) om te onderzoeken hoe het bestand er uit ziet. Het is belangrijk om te weten is of er veldnamen in staan en welk scheidingssymbool gebruikt is. Meestal herkent Power Query dit zelf, maar het is toch wel nuttig om dit zelf eerst na te gaan.
 
-    Importeer de gegevens via *Gegevens ophalen en transformeren*. Gebruik hierbij ook de query editor om te controleren of de velden naar het juiste gegevenstype zijn omgezet. Zo niet, wijzig dan het gevenstype.
+    Importeer de gegevens via *Gegevens ophalen en transformeren*. Let hierbij op de volgende punten:
+    
+    + De veldnamen staan in de eerste rij. Om deze te veranderen in de kolomkoppen kies je *Start > De eerste rij als veldnamen gebruiken (groep Transformeren)> De eerste rij als veldnamen gebruiken*.
+    + Door de transformatie naar veldnamen wordt ook het gegevenstype aangepast. Controleer of de kolommen naar het juiste gegevenstype zijn omgezet. Zo niet, wijzig dan het gevenstype.
 :::

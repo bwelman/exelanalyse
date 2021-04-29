@@ -2,8 +2,9 @@ fig:ribbon-queries
 fig:salesjan2009-preview
 fig:datatype-prijs
 fig:weburl-textbox
-fig:uefa-navigatorpane
+fig:ek-voetbal-navigator
 fig:replace-values-dialogbox
+fig:ek-voetbal-resultaat
 fig:tidy-data
 tab:exp1
 tab:exp2
