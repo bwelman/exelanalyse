@@ -332,7 +332,7 @@ demotabel %>%
 
 2. Bij een onderzoek wordt aan personen gevraagd om bij te houden hoeveel tekstberichten ze per dag versturen en hoeveel tijd ze hieraan besteden. Welke variabelen heb je hier en zijn deze discreet of continu?
 
-3. Download het hulpbestand [koffieprijzen.xlsx](data/koffieprijzen.xlsx). Deze bevat een aantal koffieprijzen van Starbucks, zie tabel \@ref(tab:koffieprijzen-data). Maak hiervan een gestructureerde dataset.
+3. Download het hulpbestand [koffieprijzen.xlsx](data/koffieprijzen.xlsx). Deze bevat een aantal koffieprijzen van Starbucks, zie tabel \@ref(tab:koffieprijzen-data). 
     
 ```{r koffieprijzen-data, echo=FALSE}
 tidy001.data <- read_excel("data/koffieprijzen.xlsx")
@@ -340,6 +340,9 @@ tidy001.data %>%
 	kbl(format.args = list(decimal.mark = ","), caption = "Starbucks koffieprijzen voor drie verschillende groottes.") %>% 
 	kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 14)
 ```
+
+   a. Ga na dat de tabel in feite drie variabelen bevat en dat de waarden van een van de variabelen in de kolomkoppen staat.
+   b. Maak hiervan een gestructureerde dataset.
 
 4. Om de kosten van levensonderhoud in Europa te vergelijken zijn via de website van [Numbeo](https://www.numbeo.com/cost-of-living/) voor een aantal plaatsen de gemiddelde marktprijzen verzameld voor brood (wit, 500 gram), kaas(lokaal, 1 kg), melk (gewoon, 1 liter) en rijst (wit, 1 kg). De data staan in het hulpbestand [levensonderhoud.xlsx](data/levensonderhoud.xlsx). Voor de eerste 8 plaatsen zijn de gegevens te zien in tabel \@ref(tab:levensonderhoud-data).
 
