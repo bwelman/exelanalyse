@@ -180,7 +180,7 @@ Eenvoudiger is het gebruik van het *Voorspellingblad* of *prognosewerkblad* dat 
 Via het Voorspellingenblad wordt een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Hiermee wordt het maken van geavanceerde prognoses een stuk eenvoudiger.
 
 :::{.workedexample}
-1. Importeer het hulpbestand [verkopen.csv](data//verkopen.csv) via *Gegevens ophalen en transformeren*. Voor hulp hierbij zie hoofdstuk Importeren gegevens.
+1. Open het bestand `verkopen.xlsx` dat je eerder in in \@ref(opg-importdata) hebt aangemaakt.
 
 2. Selecteer een willekeurige cel in het gegevensgebied.
 

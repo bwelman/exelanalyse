@@ -127,12 +127,14 @@ knitr::include_graphics("images/importdata/ek-voetbal-resultaat.png")
 ## Opgaven {#opg-importdata}
 
 ::: {.sectionexercise}
-1. **Eenvoudig csv bestand importeren**
+1. **Een csv bestand importeren**
 
-    Download het hulpbestand [verkopen.csv](data/verkopen.csv) en open het eerst met een kale tekstverwerker (Kladblok, Notepad) om te onderzoeken hoe het bestand er uit ziet. Het is belangrijk om te weten is of er veldnamen in staan en welk scheidingssymbool gebruikt is. Meestal herkent Power Query dit zelf, maar het is toch wel nuttig om dit zelf eerst na te gaan.
+    a. Download het hulpbestand [verkopen.csv](data/verkopen.csv) en open het eerst met een kale tekstverwerker (Kladblok, Notepad) om te onderzoeken hoe het bestand er uit ziet. Het is belangrijk om te weten is of er veldnamen in staan en welk scheidingssymbool gebruikt is. Meestal herkent Power Query dit zelf, maar het is toch wel nuttig om dit zelf eerst na te gaan.
 
-    Importeer de gegevens via *Gegevens ophalen en transformeren*. Let hierbij op de volgende punten:
+    b. Importeer de gegevens via *Gegevens ophalen en transformeren*. Let hierbij op de volgende punten:
     
-    + De veldnamen staan in de eerste rij. Om deze te veranderen in de kolomkoppen kies je *Start > De eerste rij als veldnamen gebruiken (groep Transformeren)> De eerste rij als veldnamen gebruiken*.
-    + Door de transformatie naar veldnamen wordt ook het gegevenstype aangepast. Controleer of de kolommen naar het juiste gegevenstype zijn omgezet. Zo niet, wijzig dan het gevenstype.
+       + De veldnamen staan in de eerste rij. Om deze te veranderen in de kolomkoppen kies je *Start > De eerste rij als veldnamen gebruiken (groep Transformeren)> De eerste rij als veldnamen gebruiken*.
+       + Door de transformatie naar veldnamen wordt ook het gegevenstype aangepast. Controleer of de kolommen naar het juiste gegevenstype zijn omgezet. Zo niet, wijzig dan het gevenstype.
+
+    c. Bewaar het bestand voor later gebruik onder de naam `verkopen.xlsx`.
 :::
