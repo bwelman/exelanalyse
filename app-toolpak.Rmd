@@ -2,16 +2,19 @@
 
 # Addin Gegevensanalyse {#app-toolpak}
 
-Gegevensanalyse (Engels: Analysis Toolpak) is een hulpprogramma voor het uitvoeren van analyses. Het wordt standaard met Excel meegeleverd, maar is niet altijd geactiveerd. Om dit te controleren kies je tabblad Gegevens en kijk je in de groep Analyse of daar het onderdeel Gegevensanalyse staat. Zoniet, dan kun je het onderdeel als volgt activeren.
+Gegevensanalyse (Engels: Data Analysis Toolpak) is een hulpprogramma voor het uitvoeren van analyses. Het wordt standaard met Excel meegeleverd, maar is niet altijd geactiveerd. Om dit te controleren kies je tabblad Gegevens en kijk je in de groep Analyse of daar het onderdeel Gegevensanalyse staat. Zoniet, dan kun je het onderdeel als volgt activeren.
 
-1.  tabblad Bestand \> Opties \> categorie Invoegtoepassingen.
-2.  Selecteer in het vak Beheren de optie Excel-invoegtoepassingen en klik op Start.
-3.  Selecteer in het vak Invoegtoepassingen het selectievakje Analysis ToolPak en klik vervolgens op OK.
+1. Kies *Tab Bestand \> Opties \> categorie Invoegtoepassingen*.
+2. Selecteer in het vak *Beheren* de optie *Excel-invoegtoepassingen* en klik op *Start*.
+3. Selecteer in het vak *Invoegtoepassinge*n het selectievakje *Analysis ToolPak*. Je hoeft *Analysis ToolPak - VBA* niet te installeren,
+4. Klik op *OK*. Wanneer je nu op de *tab Gegevens* klikt zie je aan de rechterkant de knop *Gegevensanalyse (groep Analyse)*.
 
--   Als Analysis ToolPak niet voorkomt in het vak Beschikbare invoegtoepassingen, klik je op Bladeren om naar de invoegtoepassing te zoeken.
--   Als je het bericht krijgt dat Analysis ToolPak niet is geïnstalleerd op jouw computer, klik je op Ja om de invoegtoepassing te installeren.
+::: {.important}
++ Als Analysis ToolPak niet voorkomt in het vak *Beschikbare invoegtoepassinge*n, klik je op *Bladeren* om naar de invoegtoepassing te zoeken.
++ Als je het bericht krijgt dat Analysis ToolPak niet is geïnstalleerd op jouw computer, klik je op *Ja* om de invoegtoepassing te installeren.
+:::
 
-Om het hulpprogramma te gebruiken kies je tabblad Gegevens \> Gegevensanalyse (groep Analyse). Je kunt daarna kiezen uit de volgende functies (in alfabetische volgorde):
+Om het hulpprogramma te gebruiken kies je *tab Gegevens \> Gegevensanalyse (groep Analyse)*. Je kunt daarna kiezen uit de volgende functies (in alfabetische volgorde):
 
 -   Aselecte getallen
 -   Beschrijvende statistiek
