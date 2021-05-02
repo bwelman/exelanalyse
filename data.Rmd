@@ -105,7 +105,7 @@ De eerste variabele `score` is al een kolom, dat moet dus zo blijven. Voor de va
 
 1. Download eerst het hulpbestand [scores1.xlsx](data/scores1.xlsx) en open het daarna.
 
-1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Vanaf blad (Gegevens ophalen en transformeren)*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
 
 1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
 
@@ -143,7 +143,7 @@ scores2 %>%
 
 1. Download eerst het hulpbestand [scores2.xlsx](data/scores2.xlsx) en open het daarna.
 
-1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Vanaf blad (Gegevens ophalen en transformeren)*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
 
 1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
 
@@ -188,7 +188,7 @@ De eerste kolom met de variabele `naam` is in orde en moet zo blijven. De koppen
 
 1. Download eerst het hulpbestand [scores3.xlsx](data/scores3.xlsx) en open het daarna.
 
-1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+1. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Vanaf blad (Gegevens ophalen en transformeren)*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
 
 1. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
 
@@ -198,7 +198,7 @@ De eerste kolom met de variabele `naam` is in orde en moet zo blijven. De koppen
 
 1. Wijzig de naam van kolom `Kenmerk` in `klas`.
 
-1. Selecteer kolom `toets` en kies *tab Transformeren > Draaikolom*. Het dialoogvenster Draaikolom verschijnt
+1. Selecteer kolom `toets` en kies *tab Transformeren > Draaikolom (groep Alle kolommen)*. Het dialoogvenster Draaikolom verschijnt
 
 1. Kies als Waardenkolom `Waarde`. En geef onder geavanceerde opties aan dat er niet samengevoegd moet worden.
 ```{r scores3-pivotcolumn, fig.cap="Instellingen voor de draaikolom.", out.width="70%", }
@@ -238,7 +238,7 @@ Echter de gegevens staan niet in een goed gestructureerde Exceltabel. In feite h
 
 1. Download eerst het hulpbestand [benelux-populatie.xlsx](data/benelux-populatie.xlsx) en open het daarna.
 
-2. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Van tabel / bereik (Gegevens ophalen en transformeren*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
+2. Selecteer een willekeurige cel met gegevens en kies *tab Gegevens > Vanaf blad (Gegevens ophalen en transformeren)*. Het dialoogvenster *Tabel maken* verschijnt, waarin de tabelgegevens gespecificeerd kunnen worden. Het gegevensgebied is standaard al goed ingevuld.
 
 3. Zorg er voor dat de optie voor kopteksten geselecteerd is en klik *OK*. Op het werkblad worden de gegevens allereerst in een Excel tabel omgezet. Daarna wordt in een nieuw venster de Power Query-editor opgestart die de gegevens uit de tabel inleest.
 
@@ -250,7 +250,7 @@ Echter de gegevens staan niet in een goed gestructureerde Exceltabel. In feite h
 Je had er ook voor kunnen kiezen om de laatste vier kolommen met de jaartallen te selecteren en dan te kiezen voor het opheffen van de draaitabel voor deze kolommen. Dit heeft als nadeel dat de query niet meer goed werkt wanneer er later in de brongegevens een nieuwe kolom met de populatie voor het jaar 2020 wordt toegevoegd.
 :::
 
-6. Wijzig de namen van de kolommen Kenmerk en `Waarde`` in respectievelijk Jaar en `Populatie`.
+6. Wijzig de namen van de kolommen `Kenmerk` en `Waarde` in respectievelijk `Jaar` en `Populatie`.
 
 7. Kies *tab Startpagina >Sluiten en laden (groep Sluiten)*.
 
