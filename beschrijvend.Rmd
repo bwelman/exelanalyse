@@ -85,13 +85,13 @@ Om een frequentieverdeling van de gegevens te maken moet je als voorbereiding ee
 ::: {.workedexample}
 Download het bestand [frequenties.xlsx](data/frequenties.xlsx) en open werkblad *data*. De gegevens in de kolom `getal` zijn  25 willekeurige gehele getallen uit het interval [1,10].
 
-Typ in cel B1 de tekst *bin* en in de cellen B2 t/m B6 de getallen 2,4,6,8,10. Dit zijn de bovengrenzen van de intervals.
+Typ in cel C1 de tekst *bin* en in de cellen C2 t/m C6 de getallen 2,4,6,8,10. Dit zijn de bovengrenzen van de intervals.
 
-Typ in cel C1 de tekst *frequentie*. Selecteer cel C2 en voer de volgende formule in: `=INTERVAL(A2:A26;B2:B6)`.
+Typ in cel D1 de tekst *frequentie*. Selecteer cel D2 en voer de volgende formule in: `=INTERVAL(A2:A26;C2:C6)`.
 
 > Deze formule is een zogenaamde **matrixformule**. Je kunt deze matrixformule gewoon in de begincel *D2* invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze *dynamische matrix* in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.
 
-Het resultaat van de intervalformule is te zien in figuur \@ref(fig:freq-interval). Om duidelijk te maken wat nu de gebruikte intervallen zijn is in de kolommen E en F een toelichting toegevoegd.
+Het resultaat van de intervalformule is te zien in figuur \@ref(fig:freq-interval). Om duidelijk te maken wat nu de gebruikte intervallen zijn is in de kolommen F en G een toelichting toegevoegd.
 
 Sluit de werkmap nog niet want je hebt deze nog nodig voor de volgende oefening.
 
@@ -263,7 +263,7 @@ Excel formule: `KURTOSIS(data)`
 
 1. In een bedrijf met 12 werknemers zijn de verzuimdagen per werknemer in een bepaald jaar: 0, 0, 0, 2, 2, 4, 5, 6, 7, 8, 20, 30. Ga na dat gemiddelde = 7, mediaan = 4,5 en modus =0.
 
-1. Het bestand [schoenmaten.xlsx](data/schoenmaten.xlsx) bevat de schoenmaatverdeling van 3000 Nederlandse mannen. Maak een relatieve frequentieverdeling (dus fracties) van de schoenmaten en visualiseer het resultaat met een kolomdiagram. <!-- data is gegenereerd met r-code uit datasimulatie sectie 5.2 -->
+1. Het bestand [schoenmaten.xlsx](data/schoenmaten.xlsx) bevat de schoenmaatverdeling van 3000 Nederlandse mannen. Maak een relatieve frequentieverdeling (percentages) van de schoenmaten en visualiseer het resultaat met een kolomdiagram. <!-- data is gegenereerd met r-code uit datasimulatie sectie 5.2 -->
 
 1. Het bestand [occasions.xlsx](data/occasions.xlsx) bevat een aantal gegevens van 150 tweedehandse auto's.
 

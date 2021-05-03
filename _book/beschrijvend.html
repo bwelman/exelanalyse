@@ -164,12 +164,12 @@ Figuur 3.3: Kolomdiagram van Vakantieland per Leeftijdsklasse
 <p>Om een frequentieverdeling van de gegevens te maken moet je als voorbereiding eerst de intervallen (bins) vaststellen waarin de waarden moeten vallen. Hiervoor maak je een kolom met de bovengrenzen van de intervallen.</p>
 <div class="workedexample">
 <p>Download het bestand <a href="data/frequenties.xlsx">frequenties.xlsx</a> en open werkblad <em>data</em>. De gegevens in de kolom <code>getal</code> zijn 25 willekeurige gehele getallen uit het interval [1,10].</p>
-<p>Typ in cel B1 de tekst <em>bin</em> en in de cellen B2 t/m B6 de getallen 2,4,6,8,10. Dit zijn de bovengrenzen van de intervals.</p>
-<p>Typ in cel C1 de tekst <em>frequentie</em>. Selecteer cel C2 en voer de volgende formule in: <code>=INTERVAL(A2:A26;B2:B6)</code>.</p>
+<p>Typ in cel C1 de tekst <em>bin</em> en in de cellen C2 t/m C6 de getallen 2,4,6,8,10. Dit zijn de bovengrenzen van de intervals.</p>
+<p>Typ in cel D1 de tekst <em>frequentie</em>. Selecteer cel D2 en voer de volgende formule in: <code>=INTERVAL(A2:A26;C2:C6)</code>.</p>
 <blockquote>
 <p>Deze formule is een zogenaamde <strong>matrixformule</strong>. Je kunt deze matrixformule gewoon in de begincel <em>D2</em> invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze <em>dynamische matrix</em> in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.</p>
 </blockquote>
-<p>Het resultaat van de intervalformule is te zien in figuur <a href="beschrijvend.html#fig:freq-interval">3.4</a>. Om duidelijk te maken wat nu de gebruikte intervallen zijn is in de kolommen E en F een toelichting toegevoegd.</p>
+<p>Het resultaat van de intervalformule is te zien in figuur <a href="beschrijvend.html#fig:freq-interval">3.4</a>. Om duidelijk te maken wat nu de gebruikte intervallen zijn is in de kolommen F en G een toelichting toegevoegd.</p>
 <p>Sluit de werkmap nog niet want je hebt deze nog nodig voor de volgende oefening.</p>
 <div class="figure" style="text-align: left">
 <span id="fig:freq-interval"></span>
@@ -349,7 +349,7 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 <ol style="list-style-type: decimal">
 <li><p>In een straat wonen 9 personen met een inkomen tussen 15.000 en 30.000 euro en nog 1 persoon met een inkomen van ongeveer een miljoen. Welke maatstaf zou je gebruiken om het centrum van deze inkomens weer te geven?</p></li>
 <li><p>In een bedrijf met 12 werknemers zijn de verzuimdagen per werknemer in een bepaald jaar: 0, 0, 0, 2, 2, 4, 5, 6, 7, 8, 20, 30. Ga na dat gemiddelde = 7, mediaan = 4,5 en modus =0.</p></li>
-<li><p>Het bestand <a href="data/schoenmaten.xlsx">schoenmaten.xlsx</a> bevat de schoenmaatverdeling van 3000 Nederlandse mannen. Maak een relatieve frequentieverdeling (dus fracties) van de schoenmaten en visualiseer het resultaat met een kolomdiagram. <!-- data is gegenereerd met r-code uit datasimulatie sectie 5.2 --></p></li>
+<li><p>Het bestand <a href="data/schoenmaten.xlsx">schoenmaten.xlsx</a> bevat de schoenmaatverdeling van 3000 Nederlandse mannen. Maak een relatieve frequentieverdeling (percentages) van de schoenmaten en visualiseer het resultaat met een kolomdiagram. <!-- data is gegenereerd met r-code uit datasimulatie sectie 5.2 --></p></li>
 <li>
 <p>Het bestand <a href="data/occasions.xlsx">occasions.xlsx</a> bevat een aantal gegevens van 150 tweedehandse auto’s.</p>
 <ol style="list-style-type: lower-alpha">
