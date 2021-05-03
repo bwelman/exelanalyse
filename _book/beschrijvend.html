@@ -139,28 +139,38 @@ Figuur 3.3: Kolomdiagram van Vakantieland per Leeftijdsklasse
 </h3>
 <p>Bij een <em>frequentieverdeling</em> van een numerieke variabele wordt het bereik van de waarden opgedeeld in een aantal geordende <em>klassen</em> en geteld hoeveel waarden in elke klasse voorkomen. De grenzen van een klasse, de ondergrens en bovengrens, worden met een combinatie van ronde haken () en blokhaken [] aangeduid. Een ronde haak betekent dat de grenswaarde niet tot de klasse behoort. Een blokhaak betekent dat de grenswaarde wel tot de klasse behoort. Zo hoort bij een klasse aangeduid met [25,40) de waarde 25 wel tot de klasse, maar de waarde 40 niet.</p>
 <p>De <em>klassebreedte</em> is het verschil tussen de bovengrens en de ondergrens van een klasse. Zo heeft de klasse [25,40) een klassebreedte 15. Om een bruikbare frequentieverdeling te maken moet je een beslissing nemen over het aantal klassen en dus over de klassebreedte. Bij teveel of te weinig klassen kun je weinig informatie uit de frequentieverdeling halen. In de praktijk zie je vaak 5 tot 15 klassen.</p>
-<p>Voor het maken van klassen (<em>bins</em> geheten in Excel) gelden de volgende regels:</p>
+<p>Voor het maken van klassen (<strong>bins</strong> geheten in Excel) gelden de volgende regels:</p>
 <ul>
-<li>De klassen mogen geen overlappingen vertonen. Een waarneming moet slechts in één klasse ondergebracht kunnen worden. Een indeling met hierin de klassen [25,50] en [50,75] kan dus niet. Want dit zou inhouden dat de waarde <code>50</code> tot 2 klassen kan behoren.</li>
-<li>Voor elke waarneming moet er een klasse beschikbaar zijn. Dus alle waarnemingen moeten in een klasse ondergebracht kunnen worden. Vaak worden daarom de eerste en laatste klasse extra groot gemaakt.</li>
-<li>Als het kan maak dan de klassen even breed. Excel kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.</li>
-<li>De klassen moeten wel voldoende differentieren (verschillen vertonen) anders levert de frequentieverdeling te weinig informatie op. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (&gt; 90%) vallen.</li>
+<li><p>De klassen mogen geen overlappingen vertonen. Een waarneming moet slechts in één klasse ondergebracht kunnen worden. Een indeling met hierin de klassen [25,50] en [50,75] kan dus niet. Want dit zou inhouden dat de waarde <code>50</code> tot 2 klassen kan behoren.</p></li>
+<li><p>Voor elke waarneming moet er een klasse beschikbaar zijn. Dus alle waarnemingen moeten in een klasse ondergebracht kunnen worden. Vaak worden daarom de eerste en laatste klasse extra groot gemaakt.</p></li>
 </ul>
-<p>In Excel kun je op meerdere manieren een freqentieverdeling maken:</p>
-<ul>
-<li>Met de formule <code>INTERVAL(gegevensmatrix;interval_verw)</code>
-</li>
-<li>Met een draaitabel</li>
-<li>Met de histogram optie in gegevensanalyse (Analysis Toolpak)</li>
-<li>Via Invoegen &gt; grafieken &gt; Histogram (alleen histogram, geen afzonderlijke frequenties)</li>
-</ul>
-<p>De eerste twee methodes worden hierna met een voorbeeld toegelicht. De andere twee mogelijkheden komen bij het maken van een histogram aan de orde. Welke manier je in de praktijk gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.</p>
-<p>Allereerst de formule INTERVAL.</p>
+<div class="tip">
+<ol style="list-style-type: decimal">
+<li><p>Als het kan maak dan de klassen even breed. Excel kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.</p></li>
+<li><p>De klassen moeten wel voldoende differentieren (verschillen vertonen) anders levert de frequentieverdeling te weinig informatie op. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (&gt; 90%) vallen.</p></li>
+</ol>
+</div>
+<p><strong>Relatieve frequentieverdeling</strong></p>
+<p>De relatieve frequenties worden uitgedrukt als fracties of als een percentages. Deze verdeling kun je het beste via draaitabellen maken.</p>
+<p><strong>Cumulatieve frequentieverdeling</strong></p>
+<p>De cumulatieve frequentie is de som van alle frequenties tot en met de frequentie van de desbetreffende waarde. Met name wanneer je gebruik maakt van percentages heb je een manier om te laten zien welk percentage waarden kleiner is dan een bepaalde waarde.</p>
+</div>
+<div id="functie-interval" class="section level3" number="3.2.2">
+<h3>
+<span class="header-section-number">3.2.2</span> Functie INTERVAL()<a class="anchor" aria-label="anchor" href="#functie-interval"><i class="fas fa-link"></i></a>
+</h3>
+<p>Syntax: <code>INTERVAL(gegevensmatrix;interval_verw)</code></p>
+<p>Het eerste argument is de matrix met de waarden waarvanje frequentie wilt bepalen. Het tweede argument is de matrix met de bovengrenzen van de klassen (de intervallen).</p>
+<p>Om een frequentieverdeling van de gegevens te maken moet je als voorbereiding eerst de intervallen (bins) vaststellen waarin de waarden moeten vallen. Hiervoor maak je een kolom met de bovengrenzen van de intervallen.</p>
 <div class="workedexample">
-<p>Download het bestand <a href="data/frequenties.xlsx">frequenties.xlsx</a> en open werkblad <em>interval</em>. In de kolom <em>getal</em> staan 25 willekeurige gehele getallen, gegenereerd uit het interval [1,10].</p>
-<p>Om een frequentieverdeling te maken moet je eerst de intervallen (bins) vaststellen waarin de waarden moeten vallen. Hiervoor maak je een kolom met de bovengrenzen van de intervallen. Deze staan in de kolom “bin” en typ je gewoon in.</p>
-<p>De frequenties staan in de kolom <em>freq</em> en zijn berekend met de formule <code>=INTERVAL(A2:A26;C2:C6)</code>. Het eerste argument is de matrix met de waarden waarvanje frequentie wilt bepalen. Het tweede argument is de matrix met de bovengrenzen van de klassen (de intervallen).</p>
-<p>Deze formule is een zogenaamde <strong>matrixformule</strong>. In Excel 365 kun je deze matrixformule gewoon in de begincel <em>D2</em> invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze <em>dynamische matrix</em> in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.</p>
+<p>Download het bestand <a href="data/frequenties.xlsx">frequenties.xlsx</a> en open werkblad <em>data</em>. De gegevens in de kolom <code>getal</code> zijn 25 willekeurige gehele getallen uit het interval [1,10].</p>
+<p>Typ in cel B1 de tekst <em>bin</em> en in de cellen B2 t/m B6 de getallen 2,4,6,8,10. Dit zijn de bovengrenzen van de intervals.</p>
+<p>Typ in cel C1 de tekst <em>frequentie</em>. Selecteer cel C2 en voer de volgende formule in: <code>=INTERVAL(A2:A26;B2:B6)</code>.</p>
+<blockquote>
+<p>Deze formule is een zogenaamde <strong>matrixformule</strong>. Je kunt deze matrixformule gewoon in de begincel <em>D2</em> invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze <em>dynamische matrix</em> in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.</p>
+</blockquote>
+<p>Het resultaat van de intervalformule is te zien in figuur <a href="beschrijvend.html#fig:freq-interval">3.4</a>. Om duidelijk te maken wat nu de gebruikte intervallen zijn is in de kolommen E en F een toelichting toegevoegd.</p>
+<p>Sluit de werkmap nog niet want je hebt deze nog nodig voor de volgende oefening.</p>
 <div class="figure" style="text-align: left">
 <span id="fig:freq-interval"></span>
 <img src="images/beschrijvend/freq-interval.png" alt="Frequenties bepaald met functie INTERVAL." width="60%"><p class="caption">
@@ -168,16 +178,20 @@ Figuur 3.4: Frequenties bepaald met functie INTERVAL.
 </p>
 </div>
 </div>
-<p>Ook met een draaitabel kun je een frequentieverdeling maken.</p>
+</div>
+<div id="draaitabel-methode" class="section level3" number="3.2.3">
+<h3>
+<span class="header-section-number">3.2.3</span> Draaitabel methode<a class="anchor" aria-label="anchor" href="#draaitabel-methode"><i class="fas fa-link"></i></a>
+</h3>
 <div class="workedexample">
-<p>Selecteer het gegevensgebied <em>A1:A26</em> en kies dan <em>tab Invoegen &gt; Draaitabel</em>. Plaats het veld <code>getal</code> in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.</p>
+<p>Selecteer in het bestand <code>frequenties.xlsx</code> het gegevensgebied <em>A1:A26</em> en kies dan <em>tab Invoegen &gt; Draaitabel</em> en laat deze in een nieuw werkblad plaatsen. Plaats het veld <code>getal</code> in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.</p>
 <div class="figure" style="text-align: left">
 <span id="fig:freq-draaitabel-velden"></span>
 <img src="images/beschrijvend/freq-draaitabel-velden.png" alt="Velden voor de draaitabel." width="60%"><p class="caption">
 Figuur 3.5: Velden voor de draaitabel.
 </p>
 </div>
-<p>Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, <em>rechter muisklik</em> en kies dan <em>Groeperen</em>. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.</p>
+<p>Nu moet er nog gegroepeerd worden voor de intervals. Selecteer een willekeurig veld in de draaitabel, <em>rechter muisklik</em> en kies dan <em>Groeperen</em>. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.</p>
 <div class="figure" style="text-align: left">
 <span id="fig:freq-draaitabel-resultaat"></span>
 <img src="images/beschrijvend/freq-draaitabel-resultaat.png" alt="Frequentieverdeling via een draaitabel." width="60%"><p class="caption">
@@ -185,11 +199,10 @@ Figuur 3.6: Frequentieverdeling via een draaitabel.
 </p>
 </div>
 </div>
-<p>De resultaten van beide methodes zijn hetzelfde. De werkwijze en presentatie van het resultaat verschillen.</p>
-<p><strong>Relatieve frequentieverdeling</strong></p>
-<p>De relatieve frequenties worden uitgedrukt als fracties of als een percentages. Deze verdeling kun je het beste via draaitabellen maken.</p>
-<p><strong>Cumulatieve frequentieverdeling</strong></p>
-<p>De cumulatieve frequentie is de som van alle frequenties tot en met de frequentie van de desbetreffende waarde. Met name wanneer je gebruik maakt van percentages heb je een manier om te laten zien welk percentage waarden kleiner is dan een bepaalde waarde.</p>
+<div class="tip">
+<p>Een frequentieverdeling kun je in Excel ook maken met de histogram optie in de addin <em>Gegevensanalyse</em>. Deze methode komt in <a href="grafieken.html#graf-histogram">4.1</a> aan bod.</p>
+<p>Welke manier je in de praktijk gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.</p>
+</div>
 </div>
 </div>
 <div id="numerieke-statistieken" class="section level2" number="3.3">
@@ -336,6 +349,14 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 <ol style="list-style-type: decimal">
 <li><p>In een straat wonen 9 personen met een inkomen tussen 15.000 en 30.000 euro en nog 1 persoon met een inkomen van ongeveer een miljoen. Welke maatstaf zou je gebruiken om het centrum van deze inkomens weer te geven?</p></li>
 <li><p>In een bedrijf met 12 werknemers zijn de verzuimdagen per werknemer in een bepaald jaar: 0, 0, 0, 2, 2, 4, 5, 6, 7, 8, 20, 30. Ga na dat gemiddelde = 7, mediaan = 4,5 en modus =0.</p></li>
+<li><p>Het bestand <a href="data/schoenmaten.xlsx">schoenmaten.xlsx</a> bevat de schoenmaatverdeling van 3000 Nederlandse mannen. Maak een relatieve frequentieverdeling (dus fracties) van de schoenmaten en visualiseer het resultaat met een kolomdiagram. <!-- data is gegenereerd met r-code uit datasimulatie sectie 5.2 --></p></li>
+<li>
+<p>Het bestand <a href="data/occasions.xlsx">occasions.xlsx</a> bevat een aantal gegevens van 150 tweedehandse auto’s.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Maak een kruistabel van de variabelen <code>model</code> en <code>kleur</code>.</li>
+<li>bepaal de kenmerkende statistieke grootheden voor de variabelen <code>prijs</code> en <code>kmstand</code> .</li>
+</ol>
+</li>
 </ol>
 </div>
 
@@ -350,7 +371,11 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 <li><a class="nav-link" href="#beschrijvend"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
 <li><a class="nav-link" href="#ordening-categoriale-variabelen"><span class="header-section-number">3.1</span> Ordening Categoriale variabelen</a></li>
 <li>
-<a class="nav-link" href="#ordening-numerieke-variabelen"><span class="header-section-number">3.2</span> Ordening Numerieke variabelen</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#frequentieverdelingen"><span class="header-section-number">3.2.1</span> Frequentieverdelingen</a></li></ul>
+<a class="nav-link" href="#ordening-numerieke-variabelen"><span class="header-section-number">3.2</span> Ordening Numerieke variabelen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#frequentieverdelingen"><span class="header-section-number">3.2.1</span> Frequentieverdelingen</a></li>
+<li><a class="nav-link" href="#functie-interval"><span class="header-section-number">3.2.2</span> Functie INTERVAL()</a></li>
+<li><a class="nav-link" href="#draaitabel-methode"><span class="header-section-number">3.2.3</span> Draaitabel methode</a></li>
+</ul>
 </li>
 <li>
 <a class="nav-link" href="#numerieke-statistieken"><span class="header-section-number">3.3</span> Numerieke statistieken</a><ul class="nav navbar-nav">

@@ -143,6 +143,8 @@ beschrijvend
 ordening-categoriale-variabelen
 ordening-numerieke-variabelen
 frequentieverdelingen
+functie-interval
+draaitabel-methode
 numerieke-statistieken
 centrum-dataset
 spreiding-dataset

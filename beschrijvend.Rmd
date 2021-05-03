@@ -54,55 +54,17 @@ Bij een *frequentieverdeling* van een numerieke variabele wordt het bereik van d
 
 De *klassebreedte* is het verschil tussen de bovengrens en de ondergrens van een klasse. Zo heeft de klasse [25,40) een klassebreedte 15. Om een bruikbare frequentieverdeling te maken moet je een beslissing nemen over het aantal klassen en dus over de klassebreedte. Bij teveel of te weinig klassen kun je weinig informatie uit de frequentieverdeling halen. In de praktijk zie je vaak 5 tot 15 klassen.
 
-Voor het maken van klassen (*bins* geheten in Excel) gelden de volgende regels:
+Voor het maken van klassen (**bins** geheten in Excel) gelden de volgende regels:
 
 + De klassen mogen geen overlappingen vertonen. Een waarneming moet slechts in één klasse ondergebracht kunnen worden. Een indeling met hierin de klassen [25,50] en [50,75] kan dus niet. Want dit zou inhouden dat de waarde `50` tot 2 klassen kan behoren.
+
 + Voor elke waarneming moet er een klasse beschikbaar zijn. Dus alle waarnemingen moeten in een klasse ondergebracht kunnen worden. Vaak worden daarom de eerste en laatste klasse extra groot gemaakt.
-+ Als het kan maak dan de klassen even breed. Excel kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.
-+ De klassen moeten wel voldoende differentieren (verschillen vertonen) anders levert de frequentieverdeling te weinig informatie op. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (> 90%) vallen.
 
-In Excel kun je op meerdere manieren een freqentieverdeling maken:
+::: {.tip}
+1. Als het kan maak dan de klassen even breed. Excel kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.
 
-+ Met de formule `INTERVAL(gegevensmatrix;interval_verw)`
-+ Met een draaitabel
-+ Met de histogram optie in gegevensanalyse (Analysis Toolpak)
-+ Via Invoegen > grafieken > Histogram (alleen histogram, geen afzonderlijke frequenties)
-
-De eerste twee methodes worden hierna met een voorbeeld toegelicht. De andere twee mogelijkheden komen bij het maken van een histogram aan de orde. Welke manier je in de praktijk gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.
-
-Allereerst de formule INTERVAL.
-
-::: {.workedexample}
-Download het bestand [frequenties.xlsx](data/frequenties.xlsx) en open werkblad *interval*. In de kolom *getal* staan 25 willekeurige gehele getallen, gegenereerd uit het interval [1,10].
-
-Om een frequentieverdeling te maken moet je eerst de intervallen (bins) vaststellen waarin de waarden moeten vallen. Hiervoor maak je een kolom met de bovengrenzen van de intervallen. Deze staan in de kolom "bin" en typ je gewoon in.
-
-De frequenties staan in de kolom *freq* en zijn berekend met de formule `=INTERVAL(A2:A26;C2:C6)`. Het eerste argument is de matrix met de waarden waarvanje frequentie wilt bepalen. Het tweede argument is de matrix met de bovengrenzen van de klassen (de intervallen).
-
-Deze formule is een zogenaamde **matrixformule**. In Excel 365 kun je deze matrixformule gewoon in de begincel *D2* invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze *dynamische matrix* in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.
-
-```{r freq-interval, fig.cap="Frequenties bepaald met functie INTERVAL.", out.width="60%", fig.align='left'}
-knitr::include_graphics("images/beschrijvend/freq-interval.png")
-```
+1. De klassen moeten wel voldoende differentieren (verschillen vertonen) anders levert de frequentieverdeling te weinig informatie op. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (> 90%) vallen.
 :::
-
-Ook met een draaitabel kun je een frequentieverdeling maken.
-
-::: {.workedexample}
-Selecteer het gegevensgebied *A1:A26* en kies dan *tab Invoegen > Draaitabel*. Plaats het veld `getal` in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.
-
-```{r freq-draaitabel-velden, fig.cap="Velden voor de draaitabel.", out.width="60%", fig.align='left'}
-knitr::include_graphics("images/beschrijvend/freq-draaitabel-velden.png")
-```
-
-Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, *rechter muisklik* en kies dan *Groeperen*. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.
-
-```{r freq-draaitabel-resultaat, fig.cap="Frequentieverdeling via een draaitabel.", out.width="60%", fig.align='left'}
-knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png")
-```
-:::
-
-De resultaten van beide methodes zijn hetzelfde. De werkwijze en presentatie van het resultaat verschillen.
 
 **Relatieve frequentieverdeling**
 
@@ -111,6 +73,54 @@ De relatieve frequenties worden uitgedrukt als fracties of als een percentages. 
 **Cumulatieve frequentieverdeling**
 
 De cumulatieve frequentie is de som van alle frequenties tot en met de frequentie van de desbetreffende waarde. Met name wanneer je gebruik maakt van percentages heb je een manier om te laten zien welk percentage waarden kleiner is dan een bepaalde waarde.
+
+### Functie INTERVAL()
+
+Syntax: `INTERVAL(gegevensmatrix;interval_verw)`
+
+Het eerste argument is de matrix met de waarden waarvanje frequentie wilt bepalen. Het tweede argument is de matrix met de bovengrenzen van de klassen (de intervallen).
+
+Om een frequentieverdeling van de gegevens te maken moet je als voorbereiding eerst de intervallen (bins) vaststellen waarin de waarden moeten vallen. Hiervoor maak je een kolom met de bovengrenzen van de intervallen.
+
+::: {.workedexample}
+Download het bestand [frequenties.xlsx](data/frequenties.xlsx) en open werkblad *data*. De gegevens in de kolom `getal` zijn  25 willekeurige gehele getallen uit het interval [1,10].
+
+Typ in cel B1 de tekst *bin* en in de cellen B2 t/m B6 de getallen 2,4,6,8,10. Dit zijn de bovengrenzen van de intervals.
+
+Typ in cel C1 de tekst *frequentie*. Selecteer cel C2 en voer de volgende formule in: `=INTERVAL(A2:A26;B2:B6)`.
+
+> Deze formule is een zogenaamde **matrixformule**. Je kunt deze matrixformule gewoon in de begincel *D2* invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze *dynamische matrix* in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.
+
+Het resultaat van de intervalformule is te zien in figuur \@ref(fig:freq-interval). Om duidelijk te maken wat nu de gebruikte intervallen zijn is in de kolommen E en F een toelichting toegevoegd.
+
+Sluit de werkmap nog niet want je hebt deze nog nodig voor de volgende oefening.
+
+```{r freq-interval, fig.cap="Frequenties bepaald met functie INTERVAL.", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/freq-interval.png")
+```
+:::
+
+### Draaitabel methode
+
+::: {.workedexample}
+Selecteer in het bestand `frequenties.xlsx` het gegevensgebied *A1:A26* en kies dan *tab Invoegen > Draaitabel* en laat deze in een nieuw werkblad plaatsen. Plaats het veld `getal` in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.
+
+```{r freq-draaitabel-velden, fig.cap="Velden voor de draaitabel.", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/freq-draaitabel-velden.png")
+```
+
+Nu moet er nog gegroepeerd worden voor de intervals. Selecteer een willekeurig veld in de draaitabel, *rechter muisklik* en kies dan *Groeperen*. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.
+
+```{r freq-draaitabel-resultaat, fig.cap="Frequentieverdeling via een draaitabel.", out.width="60%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png")
+```
+:::
+
+::: {.tip}
+Een frequentieverdeling kun je in Excel ook maken met de histogram optie in de addin *Gegevensanalyse*. Deze methode komt in \@ref(graf-histogram) aan bod.
+
+Welke manier je in de praktijk gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.
+:::
 
 ## Numerieke statistieken
 
@@ -252,5 +262,12 @@ Excel formule: `KURTOSIS(data)`
 1. In een straat wonen 9 personen met een inkomen tussen 15.000 en 30.000 euro en nog 1 persoon met een inkomen van ongeveer een miljoen. Welke maatstaf zou je gebruiken om het centrum van deze inkomens weer te geven?
 
 1. In een bedrijf met 12 werknemers zijn de verzuimdagen per werknemer in een bepaald jaar: 0, 0, 0, 2, 2, 4, 5, 6, 7, 8, 20, 30. Ga na dat gemiddelde = 7, mediaan = 4,5 en modus =0.
+
+1. Het bestand [schoenmaten.xlsx](data/schoenmaten.xlsx) bevat de schoenmaatverdeling van 3000 Nederlandse mannen. Maak een relatieve frequentieverdeling (dus fracties) van de schoenmaten en visualiseer het resultaat met een kolomdiagram. <!-- data is gegenereerd met r-code uit datasimulatie sectie 5.2 -->
+
+1. Het bestand [occasions.xlsx](data/occasions.xlsx) bevat een aantal gegevens van 150 tweedehandse auto's.
+
+    a. Maak een kruistabel van de variabelen `model` en `kleur`.
+    b. bepaal de kenmerkende statistieke grootheden voor de variabelen `prijs` en `kmstand` .
 
 :::
