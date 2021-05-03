@@ -94,28 +94,38 @@
 <h2>
 <span class="header-section-number">3.1</span> Ordening Categoriale variabelen<a class="anchor" aria-label="anchor" href="#ordening-categoriale-variabelen"><i class="fas fa-link"></i></a>
 </h2>
-<p>Het beoordelen van grote rijen gegevens is ondoenlijk. Om meer inzicht te krijgen worden van deze gegevens samenvattingen in tabellen gemaakt.</p>
-<p><strong>Samenvattende tabel</strong></p>
-<p>Voor een enkele categoriale variabele tel je hoe vaak elke individuele waarde voorkomt en presenteer je de resultaten in een samenvattende tabel. Dit gaat het handigste met <em>draaitabellen</em>. Behalve als absolute aantallen voor elke categorie (frequenties) kun je ook percentages voor elke categorie weergeven. Verschillen tussen categorieën zijn hierdoor snel zichtbaar.</p>
+<p>Voor categoriale variabelen kun je geen zinvolle statistieken als gemiddelde, minimum of maximum bepalen. Wel kun je samenvattingen maken door de frequenties van de waarden te tellen. In Excel gaat dit het handigste met <em>draaitabellen</em>. Behalve als absolute aantallen voor elke categorie (frequenties) kun je ook percentages voor elke categorie weergeven (relatieve frequenties. Verschillen tussen categorieën zijn hierdoor snel zichtbaar.</p>
+<p><strong>Frequentietabel</strong></p>
 <div class="workedexample">
-<p>Aan 150 personen is gevraagd wat hun favoriete huisdier is. De samengevatte gegevens, zowel de aantallen als percentages, zijn in figuur <a href="beschrijvend.html#fig:huisdier">3.1</a> te zien.</p>
+<p>Aan 200 personen van drie verschillende leeftijdsklasses (jong, middelbaar, oud) is gevraagd wat hun favoriete vakantieland (Griekenland, Spanje, Turkije, Italië) is. De gegevens staan in het bestand <a href="data/vakanties.xlsx">vakanties.xlsx</a>. Download het bestand en open het.</p>
+<p>Plaats de cursor ergens in de dataset en zet deze om naar een Excel tabel via <em>tab Invoegen &gt; Tabel</em>. Kies daarna <em>tab Invoegen &gt; Draaitabel</em> en laat deze in een nieuw werkblad plaatsen. Om de frequenties van de vakantielanden te bepalen sleep je het veld <code>Vakantieland</code> naar de <code>Rijen</code> en het veld <code>id</code> naar de <code>Waarden</code>. Standaard maakt Excel daat <em>Som van id</em> van. Dit is niet goed. Klik op het keuzepijltje in het vak <em>Som van id</em> en kies <em>Waardeveldinstellingen</em>. Onder <em>Waardeveld samenvatten op</em> selecteer je <em>Aantal</em>. Wijzig verder de <em>Aangepaste naam</em> in <code>Aantal</code> en daarna <em>OK</em>.</p>
+<p>Om ook de relatieve frequenties weer te geven sleep je het veld <code>id</code> nogmaals naar de <code>Waarden</code>, onder Aantal. Excel maakt er weer <em>Som van id</em> van. Wijzig dit analoog aan het voorgaande weer in samenvatten op Aantal. Daarna selecteer je in hetzelfde dialoogvenster de tab <em>Waarden weergeven als</em> en wijzig je de standaardkeuze <em>Geen berekening</em> in <em>% van eindtotaal</em>. Pas tot slot de naam van de kolom aan in <em>Percentage</em> en klik dan <em>OK</em>.</p>
 <div class="figure" style="text-align: left">
-<span id="fig:huisdier"></span>
-<img src="images/beschrijvend/huisdier.png" alt="Favoriete huisdier" width="60%"><p class="caption">
-Figuur 3.1: Favoriete huisdier
+<span id="fig:vakantieland-frequenties"></span>
+<img src="images/beschrijvend/vakantieland-frequenties.png" alt="Frequenties favoriete vakantielanden" width="40%"><p class="caption">
+Figuur 3.1: Frequenties favoriete vakantielanden
 </p>
 </div>
+<p>Sluit de werkmap nog niet want je hebt deze nog nodig voor de volgende oefening.</p>
 </div>
 <p><strong>Kruistabel</strong></p>
-<p>Voor het vergelijken van twee (of meer) categoriale variabelen onderling maak je een <strong>kruistabel</strong>. Hierin staan de categorieën van de ene variabele (de rijvariabele) in de rijen en de categorieën van de andere variabele (de kolomvariabele) in de kolommen. In de cel waar een rijwaarde en een kolomwaarde elkaar kruisen staat het aantal dat tot beide categorieën behoort. behalve als aantal (frequentie) kunnen de tellingen ook worden weergegeven als een percentage van het totale totaal, een percentage van het rijtotaal of een percentage van het kolomtotaal. Door deze weergave kun je patronen bestuderen die tussen de variabelen kunnen bestaan. Kruistabellen kun je ook het beste maken met <em>draaitabellen</em>.</p>
+<p>Voor het vergelijken van twee (of meer) categoriale variabelen onderling maak je een <strong>kruistabel</strong>. Hierin staan de categorieën van de ene variabele (de rijvariabele) in de rijen en de categorieën van de andere variabele (de kolomvariabele) in de kolommen. In de cel waar een rijwaarde en een kolomwaarde elkaar kruisen staat het aantal dat tot beide categorieën behoort. Behalve als aantal (frequentie) kunnen de tellingen ook worden weergegeven als een percentage van het totale totaal, van het rijtotaal of van het kolomtotaal. Door deze weergave kun je patronen bestuderen die tussen de variabelen kunnen bestaan. Kruistabellen maak je ook het beste maken met <em>draaitabellen</em>.</p>
 <div class="workedexample">
-<p>Aan 200 personen van drie verschillende leeftijdsklasse (jong, middelbaar, oud) is gevraagd wat hun favoriete vakantieland (Griekenland, Spanje, Turkije, Italië) is. De samengevatte gegevens zijn in figuur <a href="beschrijvend.html#fig:vakantieland">3.2</a> weergegeven.</p>
+<p>Om een kruistabel te maken van de variabelen <code>Leeftijdsklasse</code> en <code>Vakantieland</code> maak je een nieuwe draaitabel. Sleep het veld <code>Leeftijdsklasse</code> naar de <code>Rijen</code>, het veld <code>Vakantieland</code> naar de <code>Kolommen</code> en het veld <code>id</code> naar de <code>Waarden</code>. Wijzig de <em>Waardeveldinstellingen</em> weer in <em>Aantal</em> in plaats van Som.</p>
 <div class="figure" style="text-align: left">
-<span id="fig:vakantieland"></span>
-<img src="images/beschrijvend/vakantieland.png" alt="Favoriete vakantieland" width="60%"><p class="caption">
-Figuur 3.2: Favoriete vakantieland
+<span id="fig:vakantieland-kruistabel"></span>
+<img src="images/beschrijvend/vakantieland-kruistabel.png" alt="Kruistabel van Leeftijdsklasse met Vakantieland" width="100%"><p class="caption">
+Figuur 3.2: Kruistabel van Leeftijdsklasse met Vakantieland
 </p>
 </div>
+<p>Om hierbij een visualisatie met een kolomdiagram te maken selecteer je een veld in de draaitabel en kies dan <em>Invoegen &gt; Gegroepeerde kolom (groep Grafieken)</em>.</p>
+<div class="figure" style="text-align: left">
+<span id="fig:vakantieland-kolomdiagram"></span>
+<img src="images/beschrijvend/vakantieland-kolomdiagram.png" alt="Kolomdiagram van Vakantieland per Leeftijdsklasse" width="100%"><p class="caption">
+Figuur 3.3: Kolomdiagram van Vakantieland per Leeftijdsklasse
+</p>
+</div>
+<p>Uiteraard kun je dit standaarddiagram nog op de bekende manieren verder verfraaien.</p>
 </div>
 </div>
 <div id="ordening-numerieke-variabelen" class="section level2" number="3.2">
@@ -154,7 +164,7 @@ Figuur 3.2: Favoriete vakantieland
 <div class="figure" style="text-align: left">
 <span id="fig:freq-interval"></span>
 <img src="images/beschrijvend/freq-interval.png" alt="Frequenties bepaald met functie INTERVAL." width="60%"><p class="caption">
-Figuur 3.3: Frequenties bepaald met functie INTERVAL.
+Figuur 3.4: Frequenties bepaald met functie INTERVAL.
 </p>
 </div>
 </div>
@@ -164,14 +174,14 @@ Figuur 3.3: Frequenties bepaald met functie INTERVAL.
 <div class="figure" style="text-align: left">
 <span id="fig:freq-draaitabel-velden"></span>
 <img src="images/beschrijvend/freq-draaitabel-velden.png" alt="Velden voor de draaitabel." width="60%"><p class="caption">
-Figuur 3.4: Velden voor de draaitabel.
+Figuur 3.5: Velden voor de draaitabel.
 </p>
 </div>
 <p>Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, <em>rechter muisklik</em> en kies dan <em>Groeperen</em>. Stel in het dialoogscherm in dat wordt begonnen bij 1, geeindigd bij 10 en dat de stapgrootte 2 is. Na het groeperen verschijnt de frequentieverdeling.</p>
 <div class="figure" style="text-align: left">
 <span id="fig:freq-draaitabel-resultaat"></span>
 <img src="images/beschrijvend/freq-draaitabel-resultaat.png" alt="Frequentieverdeling via een draaitabel." width="60%"><p class="caption">
-Figuur 3.5: Frequentieverdeling via een draaitabel.
+Figuur 3.6: Frequentieverdeling via een draaitabel.
 </p>
 </div>
 </div>
@@ -297,7 +307,7 @@ Figuur 3.5: Frequentieverdeling via een draaitabel.
 <div class="figure" style="text-align: center">
 <span id="fig:scheefheid"></span>
 <img src="images/beschrijvend/scheefheid.png" alt="Linker en rechter scheefheid met kenmerken." width="70%"><p class="caption">
-Figuur 3.6: Linker en rechter scheefheid met kenmerken.
+Figuur 3.7: Linker en rechter scheefheid met kenmerken.
 </p>
 </div>
 <p>Bij links-scheef ligt de staart links en bij rechts-scheef ligt de staart aan de rechterkant. Voor de berekening van de scheefheid bestaat een formule waarmee je de mate en soort scheefheid weer kunt geven. Een links-scheve verdeling heeft een negatieve waarde, een rechts-scheve verdeling heeft een positieve waarde. Ligt het gemiddelde precies in het midden dan is de waarde van de scheefheid 0. In de praktijk zal de scheefheid van een normaal verdeelde variabele rond de nul liggen, zo tussen -0,5 en +0,5.</p>
@@ -310,7 +320,7 @@ Figuur 3.6: Linker en rechter scheefheid met kenmerken.
 <div class="figure" style="text-align: center">
 <span id="fig:kurtosis"></span>
 <img src="images/beschrijvend/kurtosis.png" alt="Kurtosis, gepiekt en plat." width="70%"><p class="caption">
-Figuur 3.7: Kurtosis, gepiekt en plat.
+Figuur 3.8: Kurtosis, gepiekt en plat.
 </p>
 </div>
 <p>Het onderzoeken van de kurtosis van variabelen kan van belang zijn bij het onderzoeken van mogelijke relaties tussen variabelen. Bij een variabele met een hoge kurtosis liggen de waarden dicht bij elkaar (vandaar de piek) en is de kans op een relatie met andere varibelen klein.</p>
@@ -367,7 +377,7 @@ Figuur 3.7: Kurtosis, gepiekt en plat.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 02 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 03 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

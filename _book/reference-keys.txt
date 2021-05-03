@@ -24,8 +24,9 @@ tab:demotabel
 tab:koffieprijzen-data
 tab:levensonderhoud-data
 tab:rekenentaal-data
-fig:huisdier
-fig:vakantieland
+fig:vakantieland-frequenties
+fig:vakantieland-kruistabel
+fig:vakantieland-kolomdiagram
 fig:freq-interval
 fig:freq-draaitabel-velden
 fig:freq-draaitabel-resultaat

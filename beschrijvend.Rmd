@@ -6,30 +6,42 @@ Bij wat de beschrijvende statistiek genoemd wordt, gaat het om het beschrijven v
 
 ## Ordening Categoriale variabelen
 
-Het beoordelen van grote rijen gegevens is ondoenlijk. Om meer inzicht te krijgen worden van deze gegevens samenvattingen in tabellen gemaakt.
+Voor categoriale variabelen kun je geen zinvolle statistieken als gemiddelde, minimum of maximum bepalen. Wel kun je samenvattingen maken door de frequenties van de waarden te tellen. In Excel gaat dit het handigste met *draaitabellen*. Behalve als absolute aantallen voor elke categorie (frequenties) kun je ook percentages voor elke categorie weergeven (relatieve frequenties. Verschillen tussen categorieën zijn hierdoor snel zichtbaar.
 
-**Samenvattende tabel**
-
-Voor een enkele categoriale variabele tel je hoe vaak elke individuele waarde voorkomt en presenteer je de resultaten in een samenvattende tabel. Dit gaat het handigste met *draaitabellen*. Behalve als absolute aantallen voor elke categorie (frequenties) kun je ook percentages voor elke categorie weergeven. Verschillen tussen categorieën zijn hierdoor snel zichtbaar.
+**Frequentietabel**
 
 ::: {.workedexample}
-Aan 150 personen is gevraagd wat hun favoriete huisdier is. De samengevatte gegevens, zowel de aantallen als percentages, zijn in figuur \@ref(fig:huisdier) te zien.
+Aan 200 personen van drie verschillende leeftijdsklasses (jong, middelbaar, oud) is gevraagd wat hun favoriete vakantieland (Griekenland, Spanje, Turkije, Italië) is. De gegevens staan in het bestand [vakanties.xlsx](data/vakanties.xlsx). Download het bestand en open het.
 
-```{r huisdier, fig.cap="Favoriete huisdier", out.width="60%", fig.align='left'}
-knitr::include_graphics("images/beschrijvend/huisdier.png")
+Plaats de cursor ergens in de dataset en zet deze om naar een Excel tabel via *tab Invoegen > Tabel*. Kies daarna *tab Invoegen > Draaitabel* en laat deze in een nieuw werkblad plaatsen. Om de frequenties van de vakantielanden te bepalen sleep je het veld `Vakantieland` naar de `Rijen` en het veld `id` naar de `Waarden`. Standaard maakt Excel daat *Som van id* van. Dit is niet goed. Klik op het keuzepijltje in het vak *Som van id* en kies *Waardeveldinstellingen*. Onder *Waardeveld samenvatten op* selecteer je *Aantal*. Wijzig verder de *Aangepaste naam* in `Aantal` en daarna *OK*.
+
+Om ook de relatieve frequenties weer te geven sleep je het veld `id` nogmaals naar de `Waarden`, onder Aantal. Excel maakt er weer *Som van id* van. Wijzig dit analoog aan het voorgaande weer in samenvatten op Aantal. Daarna selecteer je in hetzelfde dialoogvenster de tab *Waarden weergeven als* en wijzig je de standaardkeuze *Geen berekening* in *% van eindtotaal*. Pas tot slot de naam van de kolom aan in *Percentage* en klik dan *OK*.
+
+```{r vakantieland-frequenties, fig.cap="Frequenties favoriete vakantielanden", out.width="40%", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/vakantieland-frequenties.png")
 ```
+
+Sluit de werkmap nog niet want je hebt deze nog nodig voor de volgende oefening.
 :::
 
 **Kruistabel**
 
-Voor het vergelijken van twee (of meer) categoriale variabelen onderling maak je een **kruistabel**. Hierin staan de categorieën van de ene variabele (de rijvariabele) in de rijen en de categorieën van de andere variabele (de kolomvariabele) in de kolommen. In de cel waar een rijwaarde en een kolomwaarde elkaar kruisen staat het aantal dat tot beide categorieën behoort. behalve als aantal (frequentie) kunnen de tellingen ook worden weergegeven als een percentage van het totale totaal, een percentage van het rijtotaal of een percentage van het kolomtotaal. Door deze weergave kun je patronen bestuderen die tussen de variabelen kunnen bestaan. Kruistabellen kun je ook het beste maken met *draaitabellen*.
+Voor het vergelijken van twee (of meer) categoriale variabelen onderling maak je een **kruistabel**. Hierin staan de categorieën van de ene variabele (de rijvariabele) in de rijen en de categorieën van de andere variabele (de kolomvariabele) in de kolommen. In de cel waar een rijwaarde en een kolomwaarde elkaar kruisen staat het aantal dat tot beide categorieën behoort. Behalve als aantal (frequentie) kunnen de tellingen ook worden weergegeven als een percentage van het totale totaal, van het rijtotaal of van het kolomtotaal. Door deze weergave kun je patronen bestuderen die tussen de variabelen kunnen bestaan. Kruistabellen maak je ook het beste maken met *draaitabellen*.
 
 ::: {.workedexample}
-Aan 200 personen van drie verschillende leeftijdsklasse (jong, middelbaar, oud) is gevraagd wat hun favoriete vakantieland (Griekenland, Spanje, Turkije, Italië) is. De samengevatte gegevens zijn in figuur \@ref(fig:vakantieland) weergegeven.
+Om een kruistabel te maken van de variabelen `Leeftijdsklasse` en `Vakantieland` maak je een nieuwe draaitabel. Sleep het veld `Leeftijdsklasse` naar de `Rijen`, het veld `Vakantieland` naar de `Kolommen` en het veld `id` naar de `Waarden`. Wijzig de *Waardeveldinstellingen* weer in *Aantal* in plaats van Som.
 
-```{r vakantieland, fig.cap="Favoriete vakantieland", out.width="60%", fig.align='left'}
-knitr::include_graphics("images/beschrijvend/vakantieland.png")
+```{r vakantieland-kruistabel, fig.cap="Kruistabel van Leeftijdsklasse met Vakantieland", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/vakantieland-kruistabel.png")
 ```
+
+Om hierbij een visualisatie met een kolomdiagram te maken selecteer je een veld in de draaitabel en kies dan *Invoegen > Gegroepeerde kolom (groep Grafieken)*.
+
+```{r vakantieland-kolomdiagram, fig.cap="Kolomdiagram van Vakantieland per Leeftijdsklasse", fig.align='left'}
+knitr::include_graphics("images/beschrijvend/vakantieland-kolomdiagram.png")
+```
+
+Uiteraard kun je dit standaarddiagram nog op de bekende manieren verder verfraaien.
 :::
 
 ## Ordening Numerieke variabelen
