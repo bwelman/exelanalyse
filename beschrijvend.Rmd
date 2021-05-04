@@ -147,18 +147,27 @@ Excel formule: `MEDIAAN(data)`
 
 #### Modus {.unnumbered}
 
-De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus. Uitschieters hebben geen invloed op de modus.
+De modus is de waarde die het meest voorkomt in de reeks. Uitschieters hebben geen invloed op de modus. Wanneer er meerdere waarden zijn met de hoogste frequentie dan is er eigenlijk geen modus. Excel heeft wel een formule om in dat geval de waarden met de hoogste frequentie te bepalen.
 
-Excel formule: `MODUS(data)`
+Excel formules:
+
++ `MODUS.ENKELV(data)` - Geeft de meest voorkomende waarde
++ `MODUS.MEERV(data)` - Geeft een verticale matrix van de meest voorkomende waarden
++ `MODUS(data)` - Verouderd, geeft dezelfde resultaten als `MODUS.ENKELV()`
 
 #### Kwartielen {.unnumbered} 
 	
 Je kunt een gesorteerde reeks ook in vier gelijke stukken verdelen, elk van 25% van de waarnemingen. Deze heten dan *kwartielen*. Het eerste kwartiel $Q_1$ splitst de verzameling in de laagste 25% en de hoogste 75%, Het tweede kwartiel $Q_2$ is gelijk aan de mediaan. En het derde kwartiel $Q_3$ splitst de verzameling in de laagste 75% en de hoogste 25%. Verder is $Q_0$ gelijk aan de minimumwaarde en is $Q_4$ gelijk aan de maximumwaarde.
 
-Excel formules: `KWARTIEL.EXC(data;kwartiel)` en `KWARTIEL.INC(data;kwartie)` waarbij de uiterste waarden respectievelijk niet en wel worden meegenomen.
+> Er zijn verschillende manieren waarop de kwartielen precies berekend worden, waardoor er kleine verschillen kunnen ontstaan tussen de verschillende applicaties. Veel applicaties splitsen de gegevens in twee helften en bepalen dan de mediaan van elke helft. Excel doet dat niet en berekent kwartielen via percentielen.
+
+Excel formules: 
+
++ `KWARTIEL.INC(data;kwartiel)` - Bepaling kwartiel (0,1,2,3,4) waarbij alle waarden meetellen, kun je het beste gebruiken.
++ `KWARTIEL.EXC(data;kwartiel)` - Bepaling kwartiel (1,2,3) waarbij de uiterste waarden niet meegeteld worden
++ `KWARTIEL(data;kwartiel)` - Verouderd, geeft dezelfde waarden als `KWARTIEL.INC()`
 
 :::{ .important}
-
 **5-getallensamenvatting**
 
 Hiermee wordt bedoeld een opsomming van de waarden $Q_0$, $Q_1$, $Q_2$, $Q_3$ en $Q_4$. Hiermee heb je een beknopte samenvatting die je inzicht geeft in het centrum, de spreiding van de gegevens en het bereik.

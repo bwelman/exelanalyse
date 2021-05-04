@@ -234,14 +234,35 @@ Figuur 3.6: Frequentieverdeling via een draaitabel.
 <div id="modus" class="section level4 unnumbered">
 <h4>Modus<a class="anchor" aria-label="anchor" href="#modus"><i class="fas fa-link"></i></a>
 </h4>
-<p>De modus is de waarde die het meest voorkomt in de reeks. Wanneer er meerdere waarden zijn met de hoogste frequentie, dan is er geen modus. Uitschieters hebben geen invloed op de modus.</p>
-<p>Excel formule: <code>MODUS(data)</code></p>
+<p>De modus is de waarde die het meest voorkomt in de reeks. Uitschieters hebben geen invloed op de modus. Wanneer er meerdere waarden zijn met de hoogste frequentie dan is er eigenlijk geen modus. Excel heeft wel een formule om in dat geval de waarden met de hoogste frequentie te bepalen.</p>
+<p>Excel formules:</p>
+<ul>
+<li>
+<code>MODUS.ENKELV(data)</code> - Geeft de meest voorkomende waarde</li>
+<li>
+<code>MODUS.MEERV(data)</code> - Geeft een verticale matrix van de meest voorkomende waarden</li>
+<li>
+<code>MODUS(data)</code> - Verouderd, geeft dezelfde resultaten als <code>MODUS.ENKELV()</code>
+</li>
+</ul>
 </div>
 <div id="kwartielen" class="section level4 unnumbered">
 <h4>Kwartielen<a class="anchor" aria-label="anchor" href="#kwartielen"><i class="fas fa-link"></i></a>
 </h4>
 <p>Je kunt een gesorteerde reeks ook in vier gelijke stukken verdelen, elk van 25% van de waarnemingen. Deze heten dan <em>kwartielen</em>. Het eerste kwartiel <span class="math inline">\(Q_1\)</span> splitst de verzameling in de laagste 25% en de hoogste 75%, Het tweede kwartiel <span class="math inline">\(Q_2\)</span> is gelijk aan de mediaan. En het derde kwartiel <span class="math inline">\(Q_3\)</span> splitst de verzameling in de laagste 75% en de hoogste 25%. Verder is <span class="math inline">\(Q_0\)</span> gelijk aan de minimumwaarde en is <span class="math inline">\(Q_4\)</span> gelijk aan de maximumwaarde.</p>
-<p>Excel formules: <code>KWARTIEL.EXC(data;kwartiel)</code> en <code>KWARTIEL.INC(data;kwartie)</code> waarbij de uiterste waarden respectievelijk niet en wel worden meegenomen.</p>
+<blockquote>
+<p>Er zijn verschillende manieren waarop de kwartielen precies berekend worden, waardoor er kleine verschillen kunnen ontstaan tussen de verschillende applicaties. Veel applicaties splitsen de gegevens in twee helften en bepalen dan de mediaan van elke helft. Excel doet dat niet en berekent kwartielen via percentielen.</p>
+</blockquote>
+<p>Excel formules:</p>
+<ul>
+<li>
+<code>KWARTIEL.INC(data;kwartiel)</code> - Bepaling kwartiel (0,1,2,3,4) waarbij alle waarden meetellen, kun je het beste gebruiken.</li>
+<li>
+<code>KWARTIEL.EXC(data;kwartiel)</code> - Bepaling kwartiel (1,2,3) waarbij de uiterste waarden niet meegeteld worden</li>
+<li>
+<code>KWARTIEL(data;kwartiel)</code> - Verouderd, geeft dezelfde waarden als <code>KWARTIEL.INC()</code>
+</li>
+</ul>
 <div class="important">
 <p><strong>5-getallensamenvatting</strong></p>
 <p>Hiermee wordt bedoeld een opsomming van de waarden <span class="math inline">\(Q_0\)</span>, <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span>, <span class="math inline">\(Q_3\)</span> en <span class="math inline">\(Q_4\)</span>. Hiermee heb je een beknopte samenvatting die je inzicht geeft in het centrum, de spreiding van de gegevens en het bereik.</p>
@@ -402,7 +423,7 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 03 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 04 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
