@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 7 Tijdreeksen | Excel Data Analyse</title>
+<title>Hoofdstuk 6 Tijdreeksen | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -63,12 +63,11 @@
 <li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
 <li><a class="" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
-<li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="active" href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
-<li><a class="" href="prognoses.html"><span class="header-section-number">8</span> Prognoses</a></li>
-<li><a class="" href="cases.html"><span class="header-section-number">9</span> Cases</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="" href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
+<li><a class="active" href="timeseries.html"><span class="header-section-number">6</span> Tijdreeksen</a></li>
+<li><a class="" href="prognoses.html"><span class="header-section-number">7</span> Prognoses</a></li>
+<li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
 <li class="book-part">Bijlagen</li>
 <li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Addin Gegevensanalyse</a></li>
 <li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></li>
@@ -83,16 +82,16 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="timeseries" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="timeseries" class="section level1" number="6">
 <h1>
-<span class="header-section-number">Hoofdstuk 7</span> Tijdreeksen<a class="anchor" aria-label="anchor" href="#timeseries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 6</span> Tijdreeksen<a class="anchor" aria-label="anchor" href="#timeseries"><i class="fas fa-link"></i></a>
 </h1>
 <div class="chapterintro">
 <p>Veel bedrijfskritische beslissingen zijn afhankelijk van goede prognoses voor de toekomst. Het maken van een prognose is gebaseerd op historische gegevens en dat zijn meestal <em>tijdreeksen</em>, een reeks waarnemingen van een variabele gemeten op opeenvolgende tijdstippen of over opeenvolgende periodes.</p>
 </div>
-<div id="ts-intro" class="section level2" number="7.1">
+<div id="ts-intro" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">7.1</span> Introductie<a class="anchor" aria-label="anchor" href="#ts-intro"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Introductie<a class="anchor" aria-label="anchor" href="#ts-intro"><i class="fas fa-link"></i></a>
 </h2>
 <p>De historische gegevens omvatten vaak trends, seizoenpatronen en externe factoren. Een tweetal veel voorkomende scenario’s zijn:</p>
 <ul>
@@ -121,9 +120,9 @@
 </ul>
 <p>Veel tijdreeksen vertonen een trend (toename of afname) en/of zijn seizoensgebonden, dat wil zeggen variaties die specifiek voor een bepaald tijdsbestek zijn. Zo zal bijvoorbeeld de verkoop van ijs in de zomer hoger zijn dan in de winter.</p>
 </div>
-<div id="ts-componenten" class="section level2" number="7.2">
+<div id="ts-componenten" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">7.2</span> Componenten tijdreeks<a class="anchor" aria-label="anchor" href="#ts-componenten"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Componenten tijdreeks<a class="anchor" aria-label="anchor" href="#ts-componenten"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een tijdreeksanalyse is de analyse van gegevens die in de loop van een bepaalde periode verzameld zijn. Het is dus een onderzoek naar de samenhang tussen twee variabelen, waarvan de onafhankelijke variabele de tijd is.</p>
 <p>Een tijdreeksanalyse begint altijd met het weergeven van de tijdreeks in een grafiek. Op de horizontale as staat altijd de tijd en op de verticale as de te onderzoeken variabele. De grafiek geeft vaak al een eerste beeld van de kenmerken van de tijdreeks.</p>
@@ -131,7 +130,7 @@
 <div class="figure" style="text-align: center">
 <span id="fig:airpassengers"></span>
 <img src="excelanalyse_files/figure-html/airpassengers-1.svg" alt="Tijdreeks van het aantal internationale vliegtuigpassagiers per maand (1949-1960)" width="100%"><p class="caption">
-Figuur 7.1: Tijdreeks van het aantal internationale vliegtuigpassagiers per maand (1949-1960)
+Figuur 6.1: Tijdreeks van het aantal internationale vliegtuigpassagiers per maand (1949-1960)
 </p>
 </div>
 <p>Je ziet hierin onmiddellijk een paar zaken:</p>
@@ -155,57 +154,57 @@ Figuur 7.1: Tijdreeks van het aantal internationale vliegtuigpassagiers per maan
 <span id="fig:ts-componenten"></span>
 <div id="htmlwidget-6a6eb478b7e198ca6fef" style="width:100%;height:355.968px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-6a6eb478b7e198ca6fef">{"x":{"diagram":"\n  digraph stat1 {\n    graph[rankdir = TB, bgcolor=transparent]\n    node[shape = box, fontname = Arial]\n    TS [label = \"Tijdreeks\"]\n\n    node[shape = box, width = 0.8, fontsize = 10]\n    T [label = \"Trend (T)\ncomponent\"]\n    S [label = \"Seizoen (S)\ncomponent\"]\n    C [label = \"Cyclische (C)\ncomponent\"]\n    R [label = \"Random (R)\ncomponent\"]\n\n    TS -> {T, S, C, R}\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
-Figuur 7.2: Componenten van een tijdreeks.
+Figuur 6.2: Componenten van een tijdreeks.
 </p>
 </div>
-<div id="ts-comp-trend" class="section level3" number="7.2.1">
+<div id="ts-comp-trend" class="section level3" number="6.2.1">
 <h3>
-<span class="header-section-number">7.2.1</span> Component Trend<a class="anchor" aria-label="anchor" href="#ts-comp-trend"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.1</span> Component Trend<a class="anchor" aria-label="anchor" href="#ts-comp-trend"><i class="fas fa-link"></i></a>
 </h3>
 <p>De neiging om over langere tijd te stijgen (positieve trend) of te dalen (negatieve trend). Deze hoeft niet lineair te zijn. Soms wordt alleen naar een trend verwezen als de richting (stijgend of dalen) waarin de veranderingen plaatsvinden.</p>
 <div class="workedexample">
 <div class="figure" style="text-align: center">
 <span id="fig:ap-trend"></span>
 <img src="excelanalyse_files/figure-html/ap-trend-1.svg" alt="Trendcomponent aantal internationale vliegtuigpassagiers." width="70%"><p class="caption">
-Figuur 7.3: Trendcomponent aantal internationale vliegtuigpassagiers.
+Figuur 6.3: Trendcomponent aantal internationale vliegtuigpassagiers.
 </p>
 </div>
 <p>De trend is nagenoeg lineair.</p>
 </div>
 </div>
-<div id="ts-comp-season" class="section level3" number="7.2.2">
+<div id="ts-comp-season" class="section level3" number="6.2.2">
 <h3>
-<span class="header-section-number">7.2.2</span> Component Seizoen<a class="anchor" aria-label="anchor" href="#ts-comp-season"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.2</span> Component Seizoen<a class="anchor" aria-label="anchor" href="#ts-comp-season"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dit zijn regelmatige schommelingen (fluctuaties) per dag/maand/kwartaal (meestal binnen een jaar). Zo zullen ijsverkopen in de zomer hoger zijn dan in de winter. Seizoensgebondenheid betreft altijd een vaste, bekende periode.</p>
 <div class="workedexample">
 <div class="figure" style="text-align: center">
 <span id="fig:ap-season"></span>
 <img src="excelanalyse_files/figure-html/ap-season-1.svg" alt="Seizoencomponent aantal internationale vliegtuigpassagiers." width="70%"><p class="caption">
-Figuur 7.4: Seizoencomponent aantal internationale vliegtuigpassagiers.
+Figuur 6.4: Seizoencomponent aantal internationale vliegtuigpassagiers.
 </p>
 </div>
 <p>De seizoenscomponent lijkt elk jaar laag te beginnen, halverwege te stijgen (zomer?) en dan weer te dalen.</p>
 </div>
 </div>
-<div id="ts-comp-random" class="section level3" number="7.2.3">
+<div id="ts-comp-random" class="section level3" number="6.2.3">
 <h3>
-<span class="header-section-number">7.2.3</span> Component Random<a class="anchor" aria-label="anchor" href="#ts-comp-random"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.3</span> Component Random<a class="anchor" aria-label="anchor" href="#ts-comp-random"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dit zijn onregelmatige schommelingen die niet uit een van de eerder genoemde onderdelen verklaard kunnen worden. Ze worden ook wel toevallige invloeden genoemd.</p>
 <div class="workedexample">
 <div class="figure" style="text-align: center">
 <span id="fig:ap-random"></span>
 <img src="excelanalyse_files/figure-html/ap-random-1.svg" alt="Randomcomponent aantal internationale vliegtuigpassagiers." width="70%"><p class="caption">
-Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
+Figuur 6.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </p>
 </div>
 <p>Het lijkt er op dat deze component niet volledig willekeurig is, omdat er in het midden een stukje zit dat minder variatie heeft dan de rest. Wanneer dat zo is en er dus nog een patroon in deze component zit, dan is de decompositie niet volledig geslaagd.</p>
 </div>
 </div>
-<div id="ts-comp-cyclic" class="section level3" number="7.2.4">
+<div id="ts-comp-cyclic" class="section level3" number="6.2.4">
 <h3>
-<span class="header-section-number">7.2.4</span> Component Cyclisch<a class="anchor" aria-label="anchor" href="#ts-comp-cyclic"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.4</span> Component Cyclisch<a class="anchor" aria-label="anchor" href="#ts-comp-cyclic"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dit zijn schommelingen (golfbewegingen) over een langere periode, vaak vele jaren, door schommelingen in de conjunctuur. Kenmerkend is ook dat deze periodes geen vaste lengte hebben. In veel gevallen wordt de cyclische component weggelaten of gecombineerd met de trend tot één trendcyclus.</p>
 <div class="tip">
@@ -216,9 +215,9 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </ul>
 </div>
 </div>
-<div id="ts-models" class="section level3" number="7.2.5">
+<div id="ts-models" class="section level3" number="6.2.5">
 <h3>
-<span class="header-section-number">7.2.5</span> Modellen<a class="anchor" aria-label="anchor" href="#ts-models"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.5</span> Modellen<a class="anchor" aria-label="anchor" href="#ts-models"><i class="fas fa-link"></i></a>
 </h3>
 <p>Er worden twee wiskundige modellen voor tijdreeksen gehanteerd: Additief en Multiplicatief. En het ontleden van de tijdreeks in de afzonderlijke componenten heet <em>decompositie</em> van de tijdreeks.</p>
 <p><strong>Additief model</strong></p>
@@ -257,16 +256,16 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </li>
 </ul>
 <p>De trend wordt gemeten in eenheden van de variabele in de tijdreeks. De seizoenscomponenten en onregelmatige componenten worden echter relatief gemeten, waarbij waarden boven de 1,00 duiden op effecten boven de trend en waarden onder 1,00 op effecten onder de trend. Om de tijdreekswaarde te krijgen worden deze drie componenten met elkaar vermenigvuldigd. Veel zakelijke en economische tijdreeksen volgen dit patroon.</p>
-<p>In figuur <a href="timeseries.html#fig:airpassengers">7.1</a> zie je de seizoenseffecten steeds groter worden, hier past dus een multiplicatief model bij.</p>
+<p>In figuur <a href="timeseries.html#fig:airpassengers">6.1</a> zie je de seizoenseffecten steeds groter worden, hier past dus een multiplicatief model bij.</p>
 <div class="tip">
 <p>Een multiplicatieve tijdreeks kan via de logaritme functie omgezet worden in een additieve tijdreeks:</p>
 <p><span class="math inline">\(log(T*S*C*R) = log(T) + log(S) + log(C) + log(R)\)</span></p>
 </div>
 <p>Er zijn verschillende methodes voor het bepalen van de afzonderlijke componenten. Het gewogen gemiddelde wordt meestal gebruikt om te corrigeren voor de seizoensinvloed. Hierna wordt de trend bepaald voor de seizoengecorrigeerde reeks. Wat er dan nog overblijft is de randomcomponent. Het uitvoeren van een decompositie valt buiten het bestek van dit studieboek.</p>
 </div>
-<div id="oefening-australische-bierproductie" class="section level3" number="7.2.6">
+<div id="oefening-australische-bierproductie" class="section level3" number="6.2.6">
 <h3>
-<span class="header-section-number">7.2.6</span> Oefening: Australische bierproductie<a class="anchor" aria-label="anchor" href="#oefening-australische-bierproductie"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.6</span> Oefening: Australische bierproductie<a class="anchor" aria-label="anchor" href="#oefening-australische-bierproductie"><i class="fas fa-link"></i></a>
 </h3>
 <p>Als voorbeeld van een tijdreeks wordt de bierproductie (in megaliters) in Australie voor de jaren 1956-1973 bekeken en geanalyseerd.</p>
 <ol style="list-style-type: decimal">
@@ -288,11 +287,11 @@ Figuur 7.5: Randomcomponent aantal internationale vliegtuigpassagiers.
 </ul>
 </li>
 </ol>
-<p>Het resultaat zie je in figuur <a href="timeseries.html#fig:ts-beer1">7.6</a></p>
+<p>Het resultaat zie je in figuur <a href="timeseries.html#fig:ts-beer1">6.6</a></p>
 <div class="figure" style="text-align: center">
 <span id="fig:ts-beer1"></span>
 <img src="images/timeseries/ts_beer1.png" alt="Australische bierproductie (megaliters) per kwartaal." width="100%"><p class="caption">
-Figuur 7.6: Australische bierproductie (megaliters) per kwartaal.
+Figuur 6.6: Australische bierproductie (megaliters) per kwartaal.
 </p>
 </div>
 <p>In de grafiek zie je de volgende kenmerken:</p>
@@ -315,11 +314,11 @@ Figuur 7.6: Australische bierproductie (megaliters) per kwartaal.
 </ul>
 </li>
 </ol>
-<p>In de nu ontstane grafiek <a href="timeseries.html#fig:ts-beer2">7.7</a> is de seizoensgebondenheid duidelijk waar te nemen.</p>
+<p>In de nu ontstane grafiek <a href="timeseries.html#fig:ts-beer2">6.7</a> is de seizoensgebondenheid duidelijk waar te nemen.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:ts-beer2"></span>
 <img src="images/timeseries/ts_beer2.png" alt="Jaarlijkse Australische bierproductie (megaliters) per kwartaal." width="100%"><p class="caption">
-Figuur 7.7: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
+Figuur 6.7: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 </p>
 </div>
 <p>Om het gedrag per kwartaal te bestuderen worden de gegevens voor elk kwartaal uitgezet tegen de jaren.</p>
@@ -329,15 +328,15 @@ Figuur 7.7: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 <div class="figure" style="text-align: center">
 <span id="fig:ts-beer3"></span>
 <img src="images/timeseries/ts_beer3.png" alt="Jaarlijkse Australische bierproductie (megaliters) per kwartaal." width="100%"><p class="caption">
-Figuur 7.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
+Figuur 6.8: Jaarlijkse Australische bierproductie (megaliters) per kwartaal.
 </p>
 </div>
 <p>Nu kun je goed zien dat de eerder waargenomen stijgende trend voor elk kwartaal geldt.</p>
 </div>
 </div>
-<div id="ts-ma" class="section level2" number="7.3">
+<div id="ts-ma" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">7.3</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#ts-ma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#ts-ma"><i class="fas fa-link"></i></a>
 </h2>
 <p>Het voortschrijdend gemiddelde (Moving Average, MA) is een gemiddelde van een vast aantal opeenvolgende waarnemingen. De verzameling waarnemingen waarover het gemiddelde berekend wordt, schuift mee in de tijd.
 Het aantal van deze waarnemingen wordt ook wel de <em>breedte</em> genoemd van een venster dat als het ware over de waarnemingen wordt gelegd. Door het venster steeds één periode op te schuiven ontstaat een reeks van gemiddelden. Deze reeks van gemiddelden geeft een gladder (smooth) verloop van de tijdreeks weer, doordat seizoensinvloeden en ruis (random component) vereffent worden, waardoor het verloop op de langere termijn (de trend) getoond wordt.
@@ -362,15 +361,15 @@ Zou je een halfjaars voortschrijdend gemiddelde gebruiken, dan kan dat pas voor 
 <p>Een eenvoudig voorbeeld van beide soorten zie je in de volgende figuur.</p>
 <div class="inline-figure"><img src="images/timeseries/ma-verkoop.png"></div>
 <!-- In repository tijdreeksen staan nog meer voorbeelden o.a. voor AirPassengers. -->
-<div id="ts-ma-calc" class="section level3" number="7.3.1">
+<div id="ts-ma-calc" class="section level3" number="6.3.1">
 <h3>
-<span class="header-section-number">7.3.1</span> Berekening<a class="anchor" aria-label="anchor" href="#ts-ma-calc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> Berekening<a class="anchor" aria-label="anchor" href="#ts-ma-calc"><i class="fas fa-link"></i></a>
 </h3>
 <p>In Excel kun je op drie manieren het voortschrijdend gemiddelde berekenen.</p>
 <ol style="list-style-type: decimal">
 <li><p>Met de werkblad functie <code>=GEMIDDELDE()</code>. Je kunt dan zelf kiezen welke van de hiervoor genoemde twee methodes je wilt gebruiken.</p></li>
 <li><p>Via een trendlijn aan een bestaande grafiek toevoegen. Deze gebruikt de achterlopende methode (middeling over voorgaande periode). Je kunt de breedte van het venster instellen. Er wordt een lijn in de grafiek geplaatst die de voortschrijdende gemiddeldes volgt. De waarden van de gemiddeldes zelf worden niet getoond. Voor de werkwijze en een voorbeeld zie bijlage <a href="app-excel-trendlijnen.html#app-excel-trendlijnen">C</a>.</p></li>
-<li><p>Via <em>Gegevens &gt; Gegevensanalyse &gt; Zwevend Gemiddelde</em>. Ook hier wordt de achterlopende methode (middeling over voorgaande periode) gebruikt. De gemiddeldes worden in het werkblad geplaatst en je kunt in het dialoogscherm, zie figuur <a href="timeseries.html#fig:dialog-ma">7.9</a>, aangeven dat je een grafiek en eventueel ook de standaardfouten wilt zien. De breedte van het venster specificeer je in het vak voor interval.</p></li>
+<li><p>Via <em>Gegevens &gt; Gegevensanalyse &gt; Zwevend Gemiddelde</em>. Ook hier wordt de achterlopende methode (middeling over voorgaande periode) gebruikt. De gemiddeldes worden in het werkblad geplaatst en je kunt in het dialoogscherm, zie figuur <a href="timeseries.html#fig:dialog-ma">6.9</a>, aangeven dat je een grafiek en eventueel ook de standaardfouten wilt zien. De breedte van het venster specificeer je in het vak voor interval.</p></li>
 </ol>
 <div class="workedexample">
 <p><strong>Autoverkopen</strong></p>
@@ -379,7 +378,7 @@ Zou je een halfjaars voortschrijdend gemiddelde gebruiken, dan kan dat pas voor 
 <div class="figure" style="text-align: center">
 <span id="fig:dialog-ma"></span>
 <img src="images/timeseries/zwevend-gemiddelde.png" alt="Dialoogscherm Zwevend Gemiddelde" width="50%"><p class="caption">
-Figuur 7.9: Dialoogscherm Zwevend Gemiddelde
+Figuur 6.9: Dialoogscherm Zwevend Gemiddelde
 </p>
 </div>
 <p>Specificeer het volgende.</p>
@@ -397,31 +396,31 @@ Figuur 7.9: Dialoogscherm Zwevend Gemiddelde
 <div class="figure" style="text-align: center">
 <span id="fig:autoverkoop-ma-data"></span>
 <img src="images/timeseries/autoverkoop-ma-data.png" alt="Berekende voortschrijdend gemiddeldes." width="40%"><p class="caption">
-Figuur 7.10: Berekende voortschrijdend gemiddeldes.
+Figuur 6.10: Berekende voortschrijdend gemiddeldes.
 </p>
 </div>
 <p>En een lijngrafiek met de data en een voortschrijdend gemiddelde:</p>
 <div class="figure" style="text-align: center">
 <span id="fig:autoverkoop-ma-origineel"></span>
 <img src="images/timeseries/autoverkoop-ma-origineel.png" alt="Standaardgrafiek voortschrijdend gemiddeldes." width="70%"><p class="caption">
-Figuur 7.11: Standaardgrafiek voortschrijdend gemiddeldes.
+Figuur 6.11: Standaardgrafiek voortschrijdend gemiddeldes.
 </p>
 </div>
 <p>De seizoensafhankelijkheid is duidelijk zichtbaar. Het voortschrijdend gemiddelde verwijdert deze afhankelijkheid en de ruis. De overblijvende trend is nagenoeg lineair en licht stijgend.</p>
 <p>Voor een eerste indruk is de kwaliteit van deze grafiek voldoende. Voor publicatiedoeleinden moet je wel wat verbeteringen aanbrengen. Corrigeer de teksten in de grafiektitel en de titel langs de Y-as. Breng lichte horizontale rasterlijnen aan. Wijzig de labels langs de X-as en de legendatekst als volgt.</p>
-<p>Selecteer de gegevensreeks in de grafiek. dan <em>Rechter muisklik &gt; Gegevens selecteren</em>. Kies <em>Horizontale aslabels &gt; Bewerken</em> en geef als <em>Aslabelbereik</em> op <code>A2:B17</code> en <em>OK</em>. Kies <em>Legendagegevens Voorspelling &gt; Bewerken</em> en wijzig de reeksnaam in ‘Voortschrijdend gemiddelde’. Het resultaat is in figuur <a href="timeseries.html#fig:autoverkoop-ma-aangepast">7.12</a> te zien.</p>
+<p>Selecteer de gegevensreeks in de grafiek. dan <em>Rechter muisklik &gt; Gegevens selecteren</em>. Kies <em>Horizontale aslabels &gt; Bewerken</em> en geef als <em>Aslabelbereik</em> op <code>A2:B17</code> en <em>OK</em>. Kies <em>Legendagegevens Voorspelling &gt; Bewerken</em> en wijzig de reeksnaam in ‘Voortschrijdend gemiddelde’. Het resultaat is in figuur <a href="timeseries.html#fig:autoverkoop-ma-aangepast">6.12</a> te zien.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:autoverkoop-ma-aangepast"></span>
 <img src="images/timeseries/autoverkoop-ma-aangepast.png" alt="Aangepaste grafiek voortschrijdend gemiddeldes." width="70%"><p class="caption">
-Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
+Figuur 6.12: Aangepaste grafiek voortschrijdend gemiddeldes.
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="opg-timeseries" class="section level2" number="7.4">
+<div id="opg-timeseries" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">7.4</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-timeseries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-timeseries"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
@@ -439,27 +438,27 @@ Figuur 7.12: Aangepaste grafiek voortschrijdend gemiddeldes.
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></div>
-<div class="next"><a href="prognoses.html"><span class="header-section-number">8</span> Prognoses</a></div>
+<div class="prev"><a href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></div>
+<div class="next"><a href="prognoses.html"><span class="header-section-number">7</span> Prognoses</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#timeseries"><span class="header-section-number">7</span> Tijdreeksen</a></li>
-<li><a class="nav-link" href="#ts-intro"><span class="header-section-number">7.1</span> Introductie</a></li>
+<li><a class="nav-link" href="#timeseries"><span class="header-section-number">6</span> Tijdreeksen</a></li>
+<li><a class="nav-link" href="#ts-intro"><span class="header-section-number">6.1</span> Introductie</a></li>
 <li>
-<a class="nav-link" href="#ts-componenten"><span class="header-section-number">7.2</span> Componenten tijdreeks</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ts-comp-trend"><span class="header-section-number">7.2.1</span> Component Trend</a></li>
-<li><a class="nav-link" href="#ts-comp-season"><span class="header-section-number">7.2.2</span> Component Seizoen</a></li>
-<li><a class="nav-link" href="#ts-comp-random"><span class="header-section-number">7.2.3</span> Component Random</a></li>
-<li><a class="nav-link" href="#ts-comp-cyclic"><span class="header-section-number">7.2.4</span> Component Cyclisch</a></li>
-<li><a class="nav-link" href="#ts-models"><span class="header-section-number">7.2.5</span> Modellen</a></li>
-<li><a class="nav-link" href="#oefening-australische-bierproductie"><span class="header-section-number">7.2.6</span> Oefening: Australische bierproductie</a></li>
+<a class="nav-link" href="#ts-componenten"><span class="header-section-number">6.2</span> Componenten tijdreeks</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ts-comp-trend"><span class="header-section-number">6.2.1</span> Component Trend</a></li>
+<li><a class="nav-link" href="#ts-comp-season"><span class="header-section-number">6.2.2</span> Component Seizoen</a></li>
+<li><a class="nav-link" href="#ts-comp-random"><span class="header-section-number">6.2.3</span> Component Random</a></li>
+<li><a class="nav-link" href="#ts-comp-cyclic"><span class="header-section-number">6.2.4</span> Component Cyclisch</a></li>
+<li><a class="nav-link" href="#ts-models"><span class="header-section-number">6.2.5</span> Modellen</a></li>
+<li><a class="nav-link" href="#oefening-australische-bierproductie"><span class="header-section-number">6.2.6</span> Oefening: Australische bierproductie</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#ts-ma"><span class="header-section-number">7.3</span> Voortschrijdend gemiddelde</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#ts-ma-calc"><span class="header-section-number">7.3.1</span> Berekening</a></li></ul>
+<a class="nav-link" href="#ts-ma"><span class="header-section-number">6.3</span> Voortschrijdend gemiddelde</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#ts-ma-calc"><span class="header-section-number">6.3.1</span> Berekening</a></li></ul>
 </li>
-<li><a class="nav-link" href="#opg-timeseries"><span class="header-section-number">7.4</span> Opgaven</a></li>
+<li><a class="nav-link" href="#opg-timeseries"><span class="header-section-number">6.4</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">

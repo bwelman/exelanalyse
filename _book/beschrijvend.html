@@ -63,12 +63,11 @@
 <li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
 <li><a class="active" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
-<li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="" href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
-<li><a class="" href="prognoses.html"><span class="header-section-number">8</span> Prognoses</a></li>
-<li><a class="" href="cases.html"><span class="header-section-number">9</span> Cases</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="" href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
+<li><a class="" href="timeseries.html"><span class="header-section-number">6</span> Tijdreeksen</a></li>
+<li><a class="" href="prognoses.html"><span class="header-section-number">7</span> Prognoses</a></li>
+<li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
 <li class="book-part">Bijlagen</li>
 <li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Addin Gegevensanalyse</a></li>
 <li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></li>
@@ -198,9 +197,10 @@ Figuur 3.5: Velden voor de draaitabel.
 Figuur 3.6: Frequentieverdeling via een draaitabel.
 </p>
 </div>
+<p>Bewaar het bestand, je hebt het nog nodig voor een volgende oefening.</p>
 </div>
 <div class="tip">
-<p>Een frequentieverdeling kun je in Excel ook maken met de histogram optie in de addin <em>Gegevensanalyse</em>. Deze methode komt in <a href="grafieken.html#graf-histogram">4.1</a> aan bod.</p>
+<p>Een frequentieverdeling kun je in Excel ook maken met de histogram optie in de addin <em>Gegevensanalyse</em>. Deze methode komt in <a href="beschrijvend.html#graf-histogram">3.4.1</a> aan bod.</p>
 <p>Welke manier je in de praktijk gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.</p>
 </div>
 </div>
@@ -250,6 +250,7 @@ Figuur 3.6: Frequentieverdeling via een draaitabel.
 <h4>Kwartielen<a class="anchor" aria-label="anchor" href="#kwartielen"><i class="fas fa-link"></i></a>
 </h4>
 <p>Je kunt een gesorteerde reeks ook in vier gelijke stukken verdelen, elk van 25% van de waarnemingen. Deze heten dan <em>kwartielen</em>. Het eerste kwartiel <span class="math inline">\(Q_1\)</span> splitst de verzameling in de laagste 25% en de hoogste 75%, Het tweede kwartiel <span class="math inline">\(Q_2\)</span> is gelijk aan de mediaan. En het derde kwartiel <span class="math inline">\(Q_3\)</span> splitst de verzameling in de laagste 75% en de hoogste 25%. Verder is <span class="math inline">\(Q_0\)</span> gelijk aan de minimumwaarde en is <span class="math inline">\(Q_4\)</span> gelijk aan de maximumwaarde.</p>
+<p>De afstand tussen het eerste kwartiel <span class="math inline">\(Q_1\)</span> en het derde kwartiel <span class="math inline">\(Q_3\)</span> heet de <strong>interkwartielafstand</strong>.</p>
 <blockquote>
 <p>Er zijn verschillende manieren waarop de kwartielen precies berekend worden, waardoor er kleine verschillen kunnen ontstaan tussen de verschillende applicaties. Veel applicaties splitsen de gegevens in twee helften en bepalen dan de mediaan van elke helft. Excel doet dat niet en berekent kwartielen via percentielen.</p>
 </blockquote>
@@ -362,9 +363,128 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 </div>
 </div>
 </div>
-<div id="opg-beschrijvend" class="section level2" number="3.4">
+<div id="grafieken" class="section level2" number="3.4">
 <h2>
-<span class="header-section-number">3.4</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-beschrijvend"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.4</span> Grafieken<a class="anchor" aria-label="anchor" href="#grafieken"><i class="fas fa-link"></i></a>
+</h2>
+<p>Grafieken zijn een onmisbaar hulpmiddel bij de analyse van gegevens. Veel gebruikte grafieksoorten zijn kolom/staaf diagram, lijndiagram, spreidingsdiagram, histogram, boxplot. De laatste twee soorten worden hier verder besproken, de andere grafieksoorten worden als bekend verondersteld.</p>
+<div id="graf-histogram" class="section level3" number="3.4.1">
+<h3>
+<span class="header-section-number">3.4.1</span> Histogram<a class="anchor" aria-label="anchor" href="#graf-histogram"><i class="fas fa-link"></i></a>
+</h3>
+<p>Een histogram is een grafische weergave van een frequentieverdeling in de vorm van een kolomdiagram. Een histogram kan antwoord geven op de volgende vragen:</p>
+<ul>
+<li>Van wat voor soort verdeling zijn de gegevens afkomstig?</li>
+<li>Waar bevinden de gegevens zich?</li>
+<li>Hoe verspreid zijn de gegevens?</li>
+<li>Zijn de gegevens symmetrisch of scheef?</li>
+<li>Zijn er uitschieters in de gegevens?</li>
+</ul>
+<p>Excel heeft twee mogelijkheden voor het genereren van een histogram: via Gegevensanalyse en via grafiektype histogram.</p>
+<div id="via-gegevensanalyse" class="section level4 unnumbered">
+<h4>Via Gegevensanalyse<a class="anchor" aria-label="anchor" href="#via-gegevensanalyse"><i class="fas fa-link"></i></a>
+</h4>
+<p>Ook voor deze methode moet er net als bij de functie <code>INTERVAL()</code> eerst handmatig een bereik voor de grenzen van de intervallen gemaakt zijn.</p>
+<div class="workedexample">
+<p>Open in het eerder gebruikte bestand <code>frequenties.xlsx</code>, zie <a href="beschrijvend.html#draaitabel-methode">3.2.3</a>, werkblad <code>data</code>.Kies dan <em>tab Gegevens &gt; Gegevensanalyse &gt; Histogram</em>.</p>
+<p>Specificeer het invoerbereik, het verzamelbereik, uitvoer op een nieuw werkblad en selecteer <em>Grafiek maken</em>.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:freq-gegevensanalyse-instelling"></span>
+<img src="images/beschrijvend/freq-gegevensanalyse-instelling.png" alt="Specificaties voor frequentietabel en histogram." width="70%"><p class="caption">
+Figuur 3.9: Specificaties voor frequentietabel en histogram.
+</p>
+</div>
+<p>Klik <em>OK</em> en daarna verschijnt het resultaat in een nieuw werkblad.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:freq-gegevensanalyse-resultaat"></span>
+<img src="images/beschrijvend/freq-gegevensanalyse-resultaat.png" alt="De frequentietabel met histogram." width="100%"><p class="caption">
+Figuur 3.10: De frequentietabel met histogram.
+</p>
+</div>
+<p>Bewaar het bestand, je hebt het nog nodig voor een volgende oefening.</p>
+</div>
+<p>De grafiek is een gegroepeerde kolomdiagram die je desgewenst nog kunt aanpassen. Voor een echt histogram moeten de kolommen aansluitend zijn zonder lege ruimte ertussen. En de labels op de X-as geven hier alleen de bovengrens van het interval en niet het interval zelf.</p>
+<div class="important">
+<p>De frequentieverdeling en histogram zijn statisch. Wanneer de brondata wijzigt vindt er geen herberekening plaats.</p>
+</div>
+</div>
+<div id="via-grafiektype-histogram" class="section level4 unnumbered">
+<h4>Via grafiektype histogram<a class="anchor" aria-label="anchor" href="#via-grafiektype-histogram"><i class="fas fa-link"></i></a>
+</h4>
+<p>De nieuwere Excelversies hebben de mogelijkheid tot het invoegen van een <em>grafiektype Histogram</em>. Hiervoor heb je in principe alleen maar de brondata nodig. De verdeling in intervallen (bins) bepaalt Excel zelf automatisch. Maar je kunt ook via het eigenschappenvenster de binbreedte of het aantal bins zelf specificeren. De bijbehorende intervalgrenzen worden dan door Excel berekend. Wanneer je ook nog de grenswaarden zelf wilt bepalen, dan moet je daarvoor een aparte kolom in het werkblad opnemen.</p>
+<div class="workedexample">
+<p>Open in het eerder gebruikte bestand <code>frequenties.xlsx</code> (zie <a href="beschrijvend.html#draaitabel-methode">3.2.3</a>).</p>
+<p>Selecteer een cel in het gegevensgebied op werkblad <code>data</code>. Kies dan <em>tab Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Histogram</em>.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:freq-grafiektype-histogram"></span>
+<img src="images/beschrijvend/freq-grafiektype-histogram.png" alt="Standaard histogram via het invoegen van een grafiek." width="60%"><p class="caption">
+Figuur 3.11: Standaard histogram via het invoegen van een grafiek.
+</p>
+</div>
+</div>
+<p>In Excel wordt een histogram gewoonlijk als een kolomdiagram weergegeven met labels onder het midden van de kolom. En de kolommen worden standaard aaneensluitend getekend.</p>
+<div class="tip">
+<p>Er wordt geen tabel met frequenties gegenereerd. Je kunt desgewenst de frequenties zichtbaar maken door via de grafiekopties gegevenslabels toe te voegen.</p>
+</div>
+<p>De standaard grafiek in figuur <a href="beschrijvend.html#fig:freq-grafiektype-histogram">3.11</a> met drie intervallen laat te weinig details zien. In de volgende oefening wordt het aantal bins vergroot door de bin-breedte kleiner te maken.</p>
+<div class="workedexample">
+<p>Wijzig de bin-breedte als volgt: <em>Selecteer horizontale as &gt; Rechter muisklik &gt; As opmaken</em>. Maak het eigenschappenvenster breed genoeg, anders zijn niet alle invulvelden zichtbaar!</p>
+<p>Zet de bin-breedte op 2.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:freq-grafiektype-binspec"></span>
+<img src="images/beschrijvend/freq-grafiektype-binspec.png" alt="Specificatie bins in eigenschappenvenster." width="60%"><p class="caption">
+Figuur 3.12: Specificatie bins in eigenschappenvenster.
+</p>
+</div>
+<p>Pas tevens de grafiektitel aan en voeg gegevenslabels toe. Het aangepaste histogram geeft nu wat meer informatie over de verdeling van de gegevens.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:freq-grafiektype-histogram2"></span>
+<img src="images/beschrijvend/freq-grafiektype-histogram2.png" alt="Aangepast histogram." width="60%"><p class="caption">
+Figuur 3.13: Aangepast histogram.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="graf-boxplot" class="section level3" number="3.4.2">
+<h3>
+<span class="header-section-number">3.4.2</span> Boxplot<a class="anchor" aria-label="anchor" href="#graf-boxplot"><i class="fas fa-link"></i></a>
+</h3>
+<p>Een boxplot grafiek laat zien hoe de gegevens over de kwartielen verdeeld zijn. De boxplot laat eenzelfde soort informatie zien als een histogram, maar dan met minder details. Bij een boxplot worden de gegevens verdeeld in 4 kwartielen, elk met 25% van de waarnemingen. Het centrum van de boxplot is de mediaan. In de box zitten de waarden tussen het eerste en het derde kwartiel. De lengte van de box is dus de interkwartielafstand. In figuur <a href="beschrijvend.html#fig:boxplot">3.14</a> zijn de onderdelen van de boxplot getekend. De lijntjes aan de uiteinden worden ook wel snorharen (Eng. whiskers) genoemd. In Excel heet dit grafiektype <strong>Box-and-Whisker</strong>.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:boxplot"></span>
+<img src="images/beschrijvend/boxplot.png" alt="Schematische weergave van een boxplot" width="100%"><p class="caption">
+Figuur 3.14: Schematische weergave van een boxplot
+</p>
+</div>
+<div class="alert alert-info">
+<p>In een boxplot bevat de lengte van de kwartielen ook informatie. Zo is in de tekening is het 2e kwartiel smaller dan het 3e kwartiel, de gegevens in het 2e kwartiel hebben dus een kleiner gegevensbereik dan die in het 3e kwartiel.</p>
+</div>
+<p>Vaak kom je ook iets anders getekende boxplots tegen waarbij de lijntjes aan de uiteinden niet het echte minimum en maximum zijn. Ze worden dan getekend op 1,5 keer de interkwartielafstand (Q3 - Q1) links van Q1 en rechts van Q3. De waarnemingen die daar buiten liggen worden dan als <strong>uitschuiters (uitbijters)</strong> beschouwd en als afzonderlijke punten in de boxplox weergegeven. Een aantal statistische softwarepakketten (SPSS) doet dit zo, evenals Excel. Soms wordt ook het gemiddelde in de boxplot getekend. En verder kom je boxplots zowel horizontaal als vertikaal getekend tegen.</p>
+<p>Je kunt dit grafiektype voor 1 variabele gebruiken, maar de kracht ervan komt pas echt naar voren wanneer je meerdere groepen met elkaar wilt vergelijken.</p>
+<div class="workedexample">
+<p>Bij een produktonderzoek zijn 3 groepen van elk 10 personen gevraagd om een merk tablet (A, B, C) te evalueren, elke groep één merk. De toegekende scores van elke persoon zijn te zien in figuur <a href="beschrijvend.html#fig:tablets-data">3.15</a> en te vinden in het bestand <a href="data/tablets.xlsx">tablets.xlsx</a>.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:tablets-data"></span>
+<img src="images/beschrijvend/tablets-data.png" alt="Dataset produktonderzoek tablets." width="30%"><p class="caption">
+Figuur 3.15: Dataset produktonderzoek tablets.
+</p>
+</div>
+<p>Download het bestand en open het. Selecteer het gegevensgebied A1:C11. Kies <em>tab Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Box-and-whisker</em>. Wijzig de titel in “Beoordeling tablets” en voeg een legenda aan de bovenkant toe.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:tablets-boxplot"></span>
+<img src="images/beschrijvend/tablets-boxplot.png" alt="Dataset met Boxplots voor de drie groepen." width="50%"><p class="caption">
+Figuur 3.16: Dataset met Boxplots voor de drie groepen.
+</p>
+</div>
+</div>
+<p><em>Interpretatie</em></p>
+<p>Via de boxplots kun je zien dat de scores voor merk C wat hoger lijken uit te vallen dan voor de andere twee. En die voor merk B lijken iets lager uit te vallen. De verdeling bij merk A is het meest symmetrisch, tenminste in het gebied tussen Q1 en Q3. De verdelingen bij de merken B en C zijn minder symmetrisch. Een andere beoordelingsmaatstaf voor symmetrie is hoe dicht het gemiddelde (met <em>X</em> aangegeven) en de de mediaan (de horizontale streep in de box) bij elkaar liggen. Merk B heeft een uitschieter naar boven (de rode punt in de figuur).</p>
+</div>
+</div>
+<div id="opg-beschrijvend" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-beschrijvend"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
@@ -378,6 +498,23 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 <li>bepaal de kenmerkende statistieke grootheden voor de variabelen <code>prijs</code> en <code>kmstand</code> .</li>
 </ol>
 </li>
+<li>
+<p>Een steekproef van 20 leden van een golfclub naar hun lengte (in cm) heeft het volgende resultaat opgeleverd: 152,173,175,163,173,170,173,175,196,175,175,183,175,165,165,173,163,180,188,188</p>
+<ol style="list-style-type: lower-alpha">
+<li>Maak een samenvattingsinfo van de belangrijkste statistische kenmerken via Gegevensanalyse.</li>
+<li>Maak een boxplot en een histogram en beoordeel aan de hand hiervan of de data een normale verdeling volgen.</li>
+<li>Maak een QQ plot en beoordeel opnieuw de normaliteitstest.</li>
+</ol>
+</li>
+<li>
+<p>In het bestand <a href="data/studietijd.xlsx">studietijd.xlsx</a> staan het aantal studie-uren die een steekproef van vrouwelijke en mannelijke studenten besteed hebben aan een bepaald vak.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Bepaal de mediaan voor beide groepen.</li>
+<li>Maak een boxplot waarin de studie-uren van beide groepen met elkaar vergeleken worden.</li>
+<li>Becommentarieer de verschillen tussen de twee groepen.</li>
+</ol>
+</li>
+<li><p>Van twee groepen van elk 50 personen is de lengte (in cm) gemeten. De resultaten zijn in het bestand <a href="data/groepslengtes.xlsx">groepslengtes.xlsx</a> te vinden. Maak een boxplot voor de twee groepen en bestudeer deze. Geef aan wat je opvalt, welke verschillen er te zien zijn. Zijn er conclusies te trekken?</p></li>
 </ol>
 </div>
 
@@ -385,7 +522,7 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="data.html"><span class="header-section-number">2</span> Data</a></div>
-<div class="next"><a href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></div>
+<div class="next"><a href="eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -406,7 +543,13 @@ Figuur 3.8: Kurtosis, gepiekt en plat.
 <li><a class="nav-link" href="#scheefheid-en-kurtosis"><span class="header-section-number">3.3.4</span> Scheefheid en Kurtosis</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#opg-beschrijvend"><span class="header-section-number">3.4</span> Opgaven</a></li>
+<li>
+<a class="nav-link" href="#grafieken"><span class="header-section-number">3.4</span> Grafieken</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#graf-histogram"><span class="header-section-number">3.4.1</span> Histogram</a></li>
+<li><a class="nav-link" href="#graf-boxplot"><span class="header-section-number">3.4.2</span> Boxplot</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#opg-beschrijvend"><span class="header-section-number">3.5</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">

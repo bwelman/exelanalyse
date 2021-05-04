@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 5 Exploratieve Data Analyse (EDA) | Excel Data Analyse</title>
+<title>Hoofdstuk 4 Exploratieve Data Analyse (EDA) | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -63,12 +63,11 @@
 <li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
 <li><a class="" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
-<li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
-<li><a class="active" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="" href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
-<li><a class="" href="prognoses.html"><span class="header-section-number">8</span> Prognoses</a></li>
-<li><a class="" href="cases.html"><span class="header-section-number">9</span> Cases</a></li>
+<li><a class="active" href="eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="" href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
+<li><a class="" href="timeseries.html"><span class="header-section-number">6</span> Tijdreeksen</a></li>
+<li><a class="" href="prognoses.html"><span class="header-section-number">7</span> Prognoses</a></li>
+<li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
 <li class="book-part">Bijlagen</li>
 <li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Addin Gegevensanalyse</a></li>
 <li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></li>
@@ -83,16 +82,16 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="eda" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="eda" class="section level1" number="4">
 <h1>
-<span class="header-section-number">Hoofdstuk 5</span> Exploratieve Data Analyse (EDA)<a class="anchor" aria-label="anchor" href="#eda"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 4</span> Exploratieve Data Analyse (EDA)<a class="anchor" aria-label="anchor" href="#eda"><i class="fas fa-link"></i></a>
 </h1>
 <div class="chapterintro">
 <p>Exploratieve Data Analyse (EDA) is vaak de eerste stap naar het visualiseren en transformeren van de gegevens. Je leert de gegevens kennen, vaak resulterend in een eerste aanzet tot modelvorming.</p>
 </div>
-<div id="introductie" class="section level2" number="5.1">
+<div id="introductie" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">5.1</span> Introductie<a class="anchor" aria-label="anchor" href="#introductie"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Introductie<a class="anchor" aria-label="anchor" href="#introductie"><i class="fas fa-link"></i></a>
 </h2>
 <p>Van EDA wordt wel eens gezegd dat het een zich herhalende cyclus is van</p>
 <ol style="list-style-type: decimal">
@@ -114,15 +113,15 @@
 <p>Een eerste stap is meestal de beschrijvende statistiek, waarbij je de belangrijkste statistische kenmerken van de variabelen vastlegt. Daarna stap je al snel over op visualisaties en grafieken. Deze zijn meestal gemakkelijker te interpreteren en vereisen geen geavanceerde statistische kennis. Door de gegevens te visualiseren worden verwachte of juist onverwachte eigenschappen intuïtief zichtbaar.</p>
 <p>Tijdens de verkenningen ga je snel diverse grafieken maken om jouw ideeën te onderzoeken. In deze beginfase zijn deze grafieken (nog) niet voor publicatie bedoeld, waardoor je aan de opmaak nauwelijks aandacht hoeft te besteden. Het gaat er in eerste instantie om dat je de data leert begrijpen. Wanneer een grafiek in een latere rapportage wordt opgenomen is de opmaak natuurlijk wel van belang, dan moeten anderen jouw grafiek kunnen interpreteren.</p>
 </div>
-<div id="anscombe-dataset" class="section level2" number="5.2">
+<div id="anscombe-dataset" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">5.2</span> Anscombe dataset<a class="anchor" aria-label="anchor" href="#anscombe-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Anscombe dataset<a class="anchor" aria-label="anchor" href="#anscombe-dataset"><i class="fas fa-link"></i></a>
 </h2>
-<p>Dat je voor het inzicht krijgen in een gegevensverzameling niet alleen maar af kunt gaan op een aantal statistische parameters, maar ook altijd een grafiek moet bekijken, wordt fraai gedemonstreerd met de dataset van Anscombe. Deze klassieke dataset bestaat uit vier eenvoudige gekunstelde verzamelingen van 11 paren x- en y-waarden. Hierbij zijn de gemiddelden en de variantie van respectievelijk de vier x en y variabelen gelijk en zijn ook de onderlinge correlaties voor de vier paren x en y variabelen gelijk zijn. In figuur <a href="eda.html#fig:anscombe">5.1</a> is te zien dat de spreidingsdiagrammen voor de vier verschillende paren x en y variabelen compleet verschillend zijn.</p>
+<p>Dat je voor het inzicht krijgen in een gegevensverzameling niet alleen maar af kunt gaan op een aantal statistische parameters, maar ook altijd een grafiek moet bekijken, wordt fraai gedemonstreerd met de dataset van Anscombe. Deze klassieke dataset bestaat uit vier eenvoudige gekunstelde verzamelingen van 11 paren x- en y-waarden. Hierbij zijn de gemiddelden en de variantie van respectievelijk de vier x en y variabelen gelijk en zijn ook de onderlinge correlaties voor de vier paren x en y variabelen gelijk zijn. In figuur <a href="eda.html#fig:anscombe">4.1</a> is te zien dat de spreidingsdiagrammen voor de vier verschillende paren x en y variabelen compleet verschillend zijn.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:anscombe"></span>
 <img src="images/eda/anscombe.png" alt="Spreidingsdiagrammen voor de vier datasets van Anscombe." width="100%"><p class="caption">
-Figuur 5.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
+Figuur 4.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 </p>
 </div>
 <p>Conclusies uit de spreidingsdiagrammen:</p>
@@ -134,9 +133,9 @@ Figuur 5.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 </ul>
 <p>Wanneer je zelf hiermee wilt experimenteren dan kun je de dataset met de bijbehorende grafieken <a href="data/anscombe.xlsx">hier</a> downloaden.</p>
 </div>
-<div id="werkwijze" class="section level2" number="5.3">
+<div id="werkwijze" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">5.3</span> Werkwijze<a class="anchor" aria-label="anchor" href="#werkwijze"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Werkwijze<a class="anchor" aria-label="anchor" href="#werkwijze"><i class="fas fa-link"></i></a>
 </h2>
 <p>De beste manier om de dataset te leren begrijpen is door vragen op te stellen. Door het formuleren van een vraag wordt jouw aandacht gevestigd op een specifiek gedeelte van de dataset. Dit helpt je om te beslissen welke grafieken of samenvattingen je moet maken en of daarvoor bewerkingen van de dataset nodig zijn.</p>
 <p>In het begin van het onderzoek is het lastig om kwalitatief goede vragen op te stellen, je kent immers de dataset nog niet. Stel daarom veel vragen op. Je hebt dan de meeste kans dat je wat interessants vindt, wat tot nieuwere of scherper geformuleerde vragen leidt.</p>
@@ -148,22 +147,22 @@ Figuur 5.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 <li>Is er een verband te ontdekken tussen variabelen?</li>
 </ol>
 </div>
-<div id="keuze-hulpmiddelen" class="section level2" number="5.4">
+<div id="keuze-hulpmiddelen" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">5.4</span> Keuze hulpmiddelen<a class="anchor" aria-label="anchor" href="#keuze-hulpmiddelen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> Keuze hulpmiddelen<a class="anchor" aria-label="anchor" href="#keuze-hulpmiddelen"><i class="fas fa-link"></i></a>
 </h2>
 <p>Op welke manier je data kunt samenvatten en welke grafiek het meest geschikt is voor visualisatie hangt vooral van de soort variabele(n) en de vraag af. Het volgende schema kan je hierbij een handje helpen.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:diagramselectie"></span>
 <div id="htmlwidget-f50f63c007c2286b17b9" style="width:100%;height:355.968px;" class="grViz html-widget"></div>
 <script type="application/json" data-for="htmlwidget-f50f63c007c2286b17b9">{"x":{"diagram":"\n    digraph desc {\n      # graph opdracht\n      graph [rankdir = LR, bgcolor=transparent]\n\n      # node opdrachten\n      node[fontname = Sans, shape = cds, style = filled, fillcolor = Khaki, width = 1.5]\n      T [label = \"Type variabele\"]\n      node[fontname = Sans, shape = ellipse, style = filled, fillcolor = Beige, width = 2.0]\n      C1 [label = \"1 categorie\n variabele\"]\n      C2 [label = \"2 categorie\nvariabelen\"]\n      N1 [label = \"1 numerieke\nvariabele\"]\n      N2 [label = \"2 numerieke\nvariabelen\"]\n      CN [label = \"1 cat & 1 num\nvariabele\"]\n      node[fontname = Sans, shape = box, style = filled, fillcolor = Azure, width = 2.7]\n      C1R [label = \"Frequentietabel\nCirkeldiagram\nStaafdiagram\"]\n      C2R [label = \"Kruistabel\nStaafdiagram (gegroepeerd)\"]\n      N1R [label = \"Statistieken\nHistogram\nBoxplot\"]\n      N2R [label = \"Spreidingsdiagram\nLijndiagram\"]\n      CNR [label = \"Boxplot (gegroepeerd)\"]\n      # edge opdrachten\n      T -> {C1, N1,C2,CN,N2}\n      C1 -> C1R\n      C2 -> C2R\n      N1 -> N1R\n      N2 -> N2R\n      CN -> CNR\n    }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
-Figuur 5.2: Schema voor selectie samenvatting en visualisatie
+Figuur 4.2: Schema voor selectie samenvatting en visualisatie
 </p>
 </div>
 <p>Deze worden hierna kort uitgewerkt.</p>
-<div id="eén-categorie-variabele-samenvatten-visualiseren" class="section level3" number="5.4.1">
+<div id="eén-categorie-variabele-samenvatten-visualiseren" class="section level3" number="4.4.1">
 <h3>
-<span class="header-section-number">5.4.1</span> Eén categorie variabele samenvatten / visualiseren<a class="anchor" aria-label="anchor" href="#e%C3%A9n-categorie-variabele-samenvatten-visualiseren"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.1</span> Eén categorie variabele samenvatten / visualiseren<a class="anchor" aria-label="anchor" href="#e%C3%A9n-categorie-variabele-samenvatten-visualiseren"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Oplossingen</strong></p>
 <ul>
@@ -179,13 +178,13 @@ Figuur 5.2: Schema voor selectie samenvatting en visualisatie
 <div class="figure" style="text-align: center">
 <span id="fig:eda-c1"></span>
 <img src="images/eda/eda-c1-freq.png" alt="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie." width="33.3%"><img src="images/eda/eda-c1-cirkel.png" alt="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie." width="33.3%"><img src="images/eda/eda-c1-staaf.png" alt="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie." width="33.3%"><p class="caption">
-Figuur 5.3: Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie.
+Figuur 4.3: Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie.
 </p>
 </div>
 </div>
-<div id="eén-numerieke-variabele-samenvatten-visualiseren" class="section level3" number="5.4.2">
+<div id="eén-numerieke-variabele-samenvatten-visualiseren" class="section level3" number="4.4.2">
 <h3>
-<span class="header-section-number">5.4.2</span> Eén numerieke variabele samenvatten / visualiseren<a class="anchor" aria-label="anchor" href="#e%C3%A9n-numerieke-variabele-samenvatten-visualiseren"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.2</span> Eén numerieke variabele samenvatten / visualiseren<a class="anchor" aria-label="anchor" href="#e%C3%A9n-numerieke-variabele-samenvatten-visualiseren"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Oplossingen</strong></p>
 <ul>
@@ -201,16 +200,16 @@ Figuur 5.3: Frequentietabel, cirkeldiagram en staafdiagram voor percentage roker
 <div class="figure" style="text-align: center">
 <span id="fig:eda-n1"></span>
 <img src="images/eda/eda-n1-statistieken.png" alt="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen." width="33.3%"><img src="images/eda/eda-n1-histogram.png" alt="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen." width="33.3%"><img src="images/eda/eda-n1-boxplot.png" alt="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen." width="33.3%"><p class="caption">
-Figuur 5.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen.
+Figuur 4.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen.
 </p>
 </div>
 <div class="tip">
 <p>In Excel kun je eenvoudig een histogram en boxplot maken via Invoegen &gt; Grafieken. De getoonde statistieken krijg je snel met Gegevens &gt; Gegevensanalyse &gt; Beschrijvende statistiek &gt; Samenvattingsinfo.</p>
 </div>
 </div>
-<div id="combinatie-van-twee-categoriale-variabelen" class="section level3" number="5.4.3">
+<div id="combinatie-van-twee-categoriale-variabelen" class="section level3" number="4.4.3">
 <h3>
-<span class="header-section-number">5.4.3</span> Combinatie van twee categoriale variabelen<a class="anchor" aria-label="anchor" href="#combinatie-van-twee-categoriale-variabelen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.3</span> Combinatie van twee categoriale variabelen<a class="anchor" aria-label="anchor" href="#combinatie-van-twee-categoriale-variabelen"><i class="fas fa-link"></i></a>
 </h3>
 <p>Je wilt dan de verdeling van een categorische variabele (haarkleur) weten over de niveaus van een andere categorische variabele (geslacht).</p>
 <p><strong>Oplossingen</strong></p>
@@ -225,16 +224,16 @@ Figuur 5.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij e
 <div class="figure" style="text-align: center">
 <span id="fig:eda-c2"></span>
 <img src="images/eda/eda-c2-kruistabel.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="50%"><img src="images/eda/eda-c2-staaf.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="50%"><p class="caption">
-Figuur 5.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
+Figuur 4.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
 </p>
 </div>
 <div class="tip">
 <p>In Excel kun je een kruistabel en een bijbehorend gegroepeerd staafdiagram het eenvoudigst maken via een draaigrafiek.</p>
 </div>
 </div>
-<div id="combinatie-van-numerieke-en-categoriale-variabele" class="section level3" number="5.4.4">
+<div id="combinatie-van-numerieke-en-categoriale-variabele" class="section level3" number="4.4.4">
 <h3>
-<span class="header-section-number">5.4.4</span> Combinatie van numerieke en categoriale variabele<a class="anchor" aria-label="anchor" href="#combinatie-van-numerieke-en-categoriale-variabele"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.4</span> Combinatie van numerieke en categoriale variabele<a class="anchor" aria-label="anchor" href="#combinatie-van-numerieke-en-categoriale-variabele"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Oplossingen</strong></p>
 <ul>
@@ -246,13 +245,13 @@ Figuur 5.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
 <div class="figure" style="text-align: center">
 <span id="fig:eda-cn"></span>
 <img src="images/eda/eda-cn-boxplot.png" alt="Boxplot voor vergelijking levensduur lamptype van 2 merken." width="100%"><p class="caption">
-Figuur 5.6: Boxplot voor vergelijking levensduur lamptype van 2 merken.
+Figuur 4.6: Boxplot voor vergelijking levensduur lamptype van 2 merken.
 </p>
 </div>
 </div>
-<div id="combinatie-van-twee-numerieke-variabelen" class="section level3" number="5.4.5">
+<div id="combinatie-van-twee-numerieke-variabelen" class="section level3" number="4.4.5">
 <h3>
-<span class="header-section-number">5.4.5</span> Combinatie van twee numerieke variabelen<a class="anchor" aria-label="anchor" href="#combinatie-van-twee-numerieke-variabelen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.5</span> Combinatie van twee numerieke variabelen<a class="anchor" aria-label="anchor" href="#combinatie-van-twee-numerieke-variabelen"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Oplossingen</strong></p>
 <ul>
@@ -267,14 +266,14 @@ Figuur 5.6: Boxplot voor vergelijking levensduur lamptype van 2 merken.
 <div class="figure" style="text-align: center">
 <span id="fig:eda-cn2"></span>
 <img src="images/eda/eda-n2-lijn.png" alt="Lijndiagram (links) en spreidingsdiagram (rechts)." width="50%"><img src="images/eda/eda-n2-spreiding.png" alt="Lijndiagram (links) en spreidingsdiagram (rechts)." width="50%"><p class="caption">
-Figuur 5.7: Lijndiagram (links) en spreidingsdiagram (rechts).
+Figuur 4.7: Lijndiagram (links) en spreidingsdiagram (rechts).
 </p>
 </div>
 </div>
 </div>
-<div id="voorbeeld-old-faithful-geiser" class="section level2" number="5.5">
+<div id="voorbeeld-old-faithful-geiser" class="section level2" number="4.5">
 <h2>
-<span class="header-section-number">5.5</span> Voorbeeld: Old Faithful geiser<a class="anchor" aria-label="anchor" href="#voorbeeld-old-faithful-geiser"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> Voorbeeld: Old Faithful geiser<a class="anchor" aria-label="anchor" href="#voorbeeld-old-faithful-geiser"><i class="fas fa-link"></i></a>
 </h2>
 <!-- Inspiratiebron: https://www.tudelft.nl/ewi/studeren/online-onderwijs/wiskunde-uitgelegd/statistiek#c144704 -->
 <p>De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset <a href="data/faithful.csv">faithful.csv</a> bevat 272 waarnemingen van twee variabelen: <code>eruptietijd</code> (tijdsduur van de uitbarsting in sec.) en <code>wachttijd</code> (wachttijd tussen twee erupties in min.).</p>
@@ -304,7 +303,7 @@ Figuur 5.7: Lijndiagram (links) en spreidingsdiagram (rechts).
 <div class="figure" style="text-align: center">
 <span id="fig:faithful-ecdf"></span>
 <img src="images/eda/faithful-ECDF.png" alt="Histogram met cumulatief percentages." width="100%"><p class="caption">
-Figuur 5.8: Histogram met cumulatief percentages.
+Figuur 4.8: Histogram met cumulatief percentages.
 </p>
 </div>
 <p>Hier zie je steile hellingen aan weerszijden van 120 en van 270, de twee piekwaarden.</p>
@@ -313,25 +312,25 @@ Figuur 5.8: Histogram met cumulatief percentages.
 </div>
 
   <div class="chapter-nav">
-<div class="prev"><a href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></div>
-<div class="next"><a href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></div>
+<div class="prev"><a href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></div>
+<div class="next"><a href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#eda"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="nav-link" href="#introductie"><span class="header-section-number">5.1</span> Introductie</a></li>
-<li><a class="nav-link" href="#anscombe-dataset"><span class="header-section-number">5.2</span> Anscombe dataset</a></li>
-<li><a class="nav-link" href="#werkwijze"><span class="header-section-number">5.3</span> Werkwijze</a></li>
+<li><a class="nav-link" href="#eda"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="nav-link" href="#introductie"><span class="header-section-number">4.1</span> Introductie</a></li>
+<li><a class="nav-link" href="#anscombe-dataset"><span class="header-section-number">4.2</span> Anscombe dataset</a></li>
+<li><a class="nav-link" href="#werkwijze"><span class="header-section-number">4.3</span> Werkwijze</a></li>
 <li>
-<a class="nav-link" href="#keuze-hulpmiddelen"><span class="header-section-number">5.4</span> Keuze hulpmiddelen</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#e%C3%A9n-categorie-variabele-samenvatten-visualiseren"><span class="header-section-number">5.4.1</span> Eén categorie variabele samenvatten / visualiseren</a></li>
-<li><a class="nav-link" href="#e%C3%A9n-numerieke-variabele-samenvatten-visualiseren"><span class="header-section-number">5.4.2</span> Eén numerieke variabele samenvatten / visualiseren</a></li>
-<li><a class="nav-link" href="#combinatie-van-twee-categoriale-variabelen"><span class="header-section-number">5.4.3</span> Combinatie van twee categoriale variabelen</a></li>
-<li><a class="nav-link" href="#combinatie-van-numerieke-en-categoriale-variabele"><span class="header-section-number">5.4.4</span> Combinatie van numerieke en categoriale variabele</a></li>
-<li><a class="nav-link" href="#combinatie-van-twee-numerieke-variabelen"><span class="header-section-number">5.4.5</span> Combinatie van twee numerieke variabelen</a></li>
+<a class="nav-link" href="#keuze-hulpmiddelen"><span class="header-section-number">4.4</span> Keuze hulpmiddelen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#e%C3%A9n-categorie-variabele-samenvatten-visualiseren"><span class="header-section-number">4.4.1</span> Eén categorie variabele samenvatten / visualiseren</a></li>
+<li><a class="nav-link" href="#e%C3%A9n-numerieke-variabele-samenvatten-visualiseren"><span class="header-section-number">4.4.2</span> Eén numerieke variabele samenvatten / visualiseren</a></li>
+<li><a class="nav-link" href="#combinatie-van-twee-categoriale-variabelen"><span class="header-section-number">4.4.3</span> Combinatie van twee categoriale variabelen</a></li>
+<li><a class="nav-link" href="#combinatie-van-numerieke-en-categoriale-variabele"><span class="header-section-number">4.4.4</span> Combinatie van numerieke en categoriale variabele</a></li>
+<li><a class="nav-link" href="#combinatie-van-twee-numerieke-variabelen"><span class="header-section-number">4.4.5</span> Combinatie van twee numerieke variabelen</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#voorbeeld-old-faithful-geiser"><span class="header-section-number">5.5</span> Voorbeeld: Old Faithful geiser</a></li>
+<li><a class="nav-link" href="#voorbeeld-old-faithful-geiser"><span class="header-section-number">4.5</span> Voorbeeld: Old Faithful geiser</a></li>
 </ul>
 
       <div class="book-extra">

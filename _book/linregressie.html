@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Hoofdstuk 6 Samenhang en lineaire regressie | Excel Data Analyse</title>
+<title>Hoofdstuk 5 Samenhang en lineaire regressie | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -63,12 +63,11 @@
 <li><a class="" href="importdata.html"><span class="header-section-number">1</span> Importeren van data</a></li>
 <li><a class="" href="data.html"><span class="header-section-number">2</span> Data</a></li>
 <li><a class="" href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></li>
-<li><a class="" href="grafieken.html"><span class="header-section-number">4</span> Grafieken</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></li>
-<li><a class="active" href="linregressie.html"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="" href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></li>
-<li><a class="" href="prognoses.html"><span class="header-section-number">8</span> Prognoses</a></li>
-<li><a class="" href="cases.html"><span class="header-section-number">9</span> Cases</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></li>
+<li><a class="active" href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
+<li><a class="" href="timeseries.html"><span class="header-section-number">6</span> Tijdreeksen</a></li>
+<li><a class="" href="prognoses.html"><span class="header-section-number">7</span> Prognoses</a></li>
+<li><a class="" href="cases.html"><span class="header-section-number">8</span> Cases</a></li>
 <li class="book-part">Bijlagen</li>
 <li><a class="" href="app-toolpak.html"><span class="header-section-number">A</span> Addin Gegevensanalyse</a></li>
 <li><a class="" href="app-query-options.html"><span class="header-section-number">B</span> Power Query opties</a></li>
@@ -83,18 +82,18 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="linregressie" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="linregressie" class="section level1" number="5">
 <h1>
-<span class="header-section-number">Hoofdstuk 6</span> Samenhang en lineaire regressie<a class="anchor" aria-label="anchor" href="#linregressie"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Hoofdstuk 5</span> Samenhang en lineaire regressie<a class="anchor" aria-label="anchor" href="#linregressie"><i class="fas fa-link"></i></a>
 </h1>
 <div class="chapterintro">
 <p>Voor het nemen van beslissingen is het van belang om te weten of er samenhang tussen variabelen bestaat. Ook kan het zijn dat je de waarde van een variabele wilt schatten op basis van de waarde van andere variabelen. Onderzoek naar een mogelijk verband tussen variabelen is dan nodig. Is er een verband dan kan een model voor het verband worden opgesteld.</p>
 </div>
 <p>De variabele waarvan je de waarde wilt schatten en die afhangt van de waarde van een andere variabele wordt heeft benamingen als <em>afhankelijke variabele</em>, <em>verklaarde variabele</em> of <em>respons variabele</em>. En de variabelen waarvan deze afhangt worden de <em>onafhankelijke variabelen</em>, of <em>verklarende variabelen</em> genoemd. De techniek naar mogelijke verbanden wordt ook wel <em>regressie-analyse</em> genoemd.</p>
 <p><span class="math inline">\(Onafhankelijke (verklarende) variabele \rightarrow Afhankelijke (verklaarde) variabele\)</span></p>
-<div id="samenhang" class="section level2" number="6.1">
+<div id="samenhang" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">6.1</span> Samenhang<a class="anchor" aria-label="anchor" href="#samenhang"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Samenhang<a class="anchor" aria-label="anchor" href="#samenhang"><i class="fas fa-link"></i></a>
 </h2>
 <p>De waarden van een variabele kunnen samenhangen met de waarden van een andere variabele. Zo zal meestal de benzineprijs stijgen wanneer de prijs van een vat ruwe olie stijgt. De variabelen benzineprijs en olieprijs vertonen dan een positieve samenhang. Het omgekeerde kan ook, wanneer bijvoorbeeld de werkloosheid stijgt dan dalen de consumentenuitgaven. De variabelen werkloosheidspercentage en consumentenuitgaven vertonen een negatieve samenhang.</p>
 <p>Of er een mogelijk verband tussen numerieke variabelen is kun je onderzoeken</p>
@@ -129,9 +128,9 @@
 </li>
 </ul>
 </div>
-<div id="lineair-verband" class="section level2" number="6.2">
+<div id="lineair-verband" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">6.2</span> Lineair verband<a class="anchor" aria-label="anchor" href="#lineair-verband"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Lineair verband<a class="anchor" aria-label="anchor" href="#lineair-verband"><i class="fas fa-link"></i></a>
 </h2>
 <p>Wiskundig gezien is een verband tussen twee numerieke variabelen lineair wanneer je dat verband grafisch weer kunt geven met een rechte lijn. Bij een niet-lineair verband heb je een gebogen lijn.</p>
 <p>Heb je te maken met maar één verklarende variabele dan wordt dat <em>enkelvoudige lineaire regressie</em> genoemd. Zijn er meerdere verklarende variabelen dan heet dat <em>meervoudige lineaire regressie</em>.</p>
@@ -146,9 +145,9 @@
 <p>Regressie en correlatie verklaren de wijzigingen in de afhankelijke variabele, maar niet de oorzaak van deze wijzigingen. Er hoeft dus geen oorzakelijk verband te zijn.</p>
 </div>
 </div>
-<div id="linreg-enkelvoudig" class="section level2" number="6.3">
+<div id="linreg-enkelvoudig" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">6.3</span> Enkelvoudige lineaire regressie<a class="anchor" aria-label="anchor" href="#linreg-enkelvoudig"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Enkelvoudige lineaire regressie<a class="anchor" aria-label="anchor" href="#linreg-enkelvoudig"><i class="fas fa-link"></i></a>
 </h2>
 <p>Het lineaire regressiemodel bevat één verklarende variabele en kun je weergeven met de vergelijking</p>
 <p><span class="math inline">\(y = \beta_0 + \beta_1 * x + \epsilon\)</span>, met</p>
@@ -169,7 +168,7 @@
 <p>Als voorbeeld wordt een gesimuleerde dataset met 15 waarnemingen voor <span class="math inline">\(x\)</span> en <span class="math inline">\(y\)</span> gebruikt om een aantal achtergronden uit te leggen.</p>
 <div class="inline-table"><table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:sim1-data">Tabel 6.1: </span>Dataset met 15 waarnemingen x en y.
+<span id="tab:sim1-data">Tabel 5.1: </span>Dataset met 15 waarnemingen x en y.
 </caption>
 <tbody>
 <tr>
@@ -274,27 +273,27 @@ y
 </tr>
 </tbody>
 </table></div>
-<p>In figuur <a href="linregressie.html#fig:sim1-basis">6.1</a> kun je zien hoe ze aan elkaar gerelateerd zijn.</p>
+<p>In figuur <a href="linregressie.html#fig:sim1-basis">5.1</a> kun je zien hoe ze aan elkaar gerelateerd zijn.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-basis"></span>
 <img src="excelanalyse_files/figure-html/sim1-basis-1.svg" alt="Spreidingsdiagram voor de 15 waarnemingen." width="100%"><p class="caption">
-Figuur 6.1: Spreidingsdiagram voor de 15 waarnemingen.
+Figuur 5.1: Spreidingsdiagram voor de 15 waarnemingen.
 </p>
 </div>
 <p>De gegevens laten een sterk lineair patroon zien en lenen zich ervoor om het patroon in een lineair model vast te leggen. Wanneer je de waarden voor <span class="math inline">\(\beta_0\)</span> en <span class="math inline">\(\beta_1\)</span> hebt, kun je via de vergelijking van de regressielijn voor elke waarde van <span class="math inline">\(x\)</span> een bijbehorende waarde van <span class="math inline">\(y\)</span> berekenen. Deze voorspelde y-waarden worden ook wel de geschatte waarden genoemd.</p>
 <p>De kunst is nu om zodanige waarden voor <span class="math inline">\(\beta_0\)</span> en <span class="math inline">\(\beta_1\)</span> te vinden, zodat de regressielijn zo dicht mogelijk bij de gegevens ligt, dan ligt de voorspelde waarde zo dicht mogelijk bij de echte waarde.</p>
-<p>In figuur <a href="linregressie.html#fig:sim1-regressie">6.2</a> is een regressielijn (rood) getekend met daarnaast vertikale afstanden (blauwe lijnstukjes) tussen de echte y-waarde (de zwarte punt) en de voorspelde y-waarde (het punt op de rode lijn.</p>
+<p>In figuur <a href="linregressie.html#fig:sim1-regressie">5.2</a> is een regressielijn (rood) getekend met daarnaast vertikale afstanden (blauwe lijnstukjes) tussen de echte y-waarde (de zwarte punt) en de voorspelde y-waarde (het punt op de rode lijn.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-regressie"></span>
 <img src="excelanalyse_files/figure-html/sim1-regressie-1.svg" alt="Spreidingsdiagram nu met regressielijn en afstandslijntjes." width="100%"><p class="caption">
-Figuur 6.2: Spreidingsdiagram nu met regressielijn en afstandslijntjes.
+Figuur 5.2: Spreidingsdiagram nu met regressielijn en afstandslijntjes.
 </p>
 </div>
 <p>Voor elk punt is afstand = <span class="math inline">\(y - y_{voorspeld}\)</span>. Dit verschil wordt ook wel <strong>residu</strong> genoemd. En de beste lijn is de lijn waarvoor de som van de kwadratische afstanden zo klein mogelijk is. Deze methode heet ook wel de <strong>kleinste kwadraten methode</strong>. Hoe je dit precies berekend is in dit kader niet van belang. Excel gebruikt deze methode ook.</p>
 <p>Je kunt in Excel op een aantal manieren een lineaire regressie uitvoeren.</p>
-<div id="methode---formules" class="section level3" number="6.3.1">
+<div id="methode---formules" class="section level3" number="5.3.1">
 <h3>
-<span class="header-section-number">6.3.1</span> Methode - Formules<a class="anchor" aria-label="anchor" href="#methode---formules"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.1</span> Methode - Formules<a class="anchor" aria-label="anchor" href="#methode---formules"><i class="fas fa-link"></i></a>
 </h3>
 <p>De regresiecoëfficienten kun je met de volgende formules bepalen:</p>
 <ul>
@@ -308,27 +307,27 @@ Figuur 6.2: Spreidingsdiagram nu met regressielijn en afstandslijntjes.
 <p>Toegepast op het voorbeeld levert dit op: <code>SNIJPUNT=4,7096</code> en <code>RICHTING= 2,0549</code>. De regressielijn wordt dan <span class="math inline">\(y = 4,7096 + 2,0549 * x\)</span>.</p>
 <p>Verdere analyses, zoals het berekenen van de residuen, zul je zelf moeten samenstellen met behulp van deze waarden.</p>
 </div>
-<div id="methode---spreidingsdiagram-met-trendlijn" class="section level3" number="6.3.2">
+<div id="methode---spreidingsdiagram-met-trendlijn" class="section level3" number="5.3.2">
 <h3>
-<span class="header-section-number">6.3.2</span> Methode - Spreidingsdiagram met trendlijn<a class="anchor" aria-label="anchor" href="#methode---spreidingsdiagram-met-trendlijn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.2</span> Methode - Spreidingsdiagram met trendlijn<a class="anchor" aria-label="anchor" href="#methode---spreidingsdiagram-met-trendlijn"><i class="fas fa-link"></i></a>
 </h3>
 <p>Bij het maken van een spreidingsdiagram kun je bij de opmaak aangeven dat de vergelijking van de lijn in de grafiek moet worden weergegeven. Je krijgt dan de gevonden waarden voor <span class="math inline">\(\beta_0\)</span> en <span class="math inline">\(\beta_1\)</span> te zien. Voor visualisatie is dit wel nuttig, maar verder kun je hier niets mee doen.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-spreiding"></span>
 <img src="images/linregressie/sim1-spreiding.png" alt="Spreidingsdiagram in Excel en vergelijking lijn." width="100%"><p class="caption">
-Figuur 6.3: Spreidingsdiagram in Excel en vergelijking lijn.
+Figuur 5.3: Spreidingsdiagram in Excel en vergelijking lijn.
 </p>
 </div>
 </div>
-<div id="methode---gegevensanalyse" class="section level3" number="6.3.3">
+<div id="methode---gegevensanalyse" class="section level3" number="5.3.3">
 <h3>
-<span class="header-section-number">6.3.3</span> Methode - Gegevensanalyse<a class="anchor" aria-label="anchor" href="#methode---gegevensanalyse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.3</span> Methode - Gegevensanalyse<a class="anchor" aria-label="anchor" href="#methode---gegevensanalyse"><i class="fas fa-link"></i></a>
 </h3>
 <p>Met deze methode kun je een uitvoerige analyse maken. Kies <em>Gegevens &gt; Gegevensanalyse &gt; Regressie</em>. Je krijgt dan het volgende dialoogscherm:</p>
 <div class="figure" style="text-align: center">
 <span id="fig:toolpak-regressie"></span>
 <img src="images/linregressie/toolpak-regressie.png" alt="Dialoogscherm regressie." width="70%"><p class="caption">
-Figuur 6.4: Dialoogscherm regressie.
+Figuur 5.4: Dialoogscherm regressie.
 </p>
 </div>
 <ul>
@@ -357,7 +356,7 @@ Figuur 6.4: Dialoogscherm regressie.
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-samenvatting"></span>
 <img src="images/linregressie/sim1-samenvatting.png" alt="Samenvatting regressie." width="70%"><p class="caption">
-Figuur 6.5: Samenvatting regressie.
+Figuur 5.5: Samenvatting regressie.
 </p>
 </div>
 <ul>
@@ -370,7 +369,7 @@ Figuur 6.5: Samenvatting regressie.
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-anova"></span>
 <img src="images/linregressie/sim1-anova.png" alt="Variantie-analyse regressie." width="100%"><p class="caption">
-Figuur 6.6: Variantie-analyse regressie.
+Figuur 5.6: Variantie-analyse regressie.
 </p>
 </div>
 <p>Bij eenvoudige lineaire regressie is dit niet zo van belang. De waarde van <em>Significantie F</em> moet wel groter dan 0,05 zijn, zoniet onderzoek dan of een andere onafhankelijke variabele geschikter is.</p>
@@ -378,7 +377,7 @@ Figuur 6.6: Variantie-analyse regressie.
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-coefficienten"></span>
 <img src="images/linregressie/sim1-coefficienten.png" alt="Coéfficiënten regressielijn." width="100%"><p class="caption">
-Figuur 6.7: Coéfficiënten regressielijn.
+Figuur 5.7: Coéfficiënten regressielijn.
 </p>
 </div>
 <p>Dit is wel het belangrijkste deel in de uitvoer. Je ziet de reeds eerder genoemde waarden van de coëfficiënten van de regressievergelijking: <span class="math inline">\(y = 4,7096 + 2,0549 * x\)</span>.</p>
@@ -388,23 +387,23 @@ Figuur 6.7: Coéfficiënten regressielijn.
 <div class="figure" style="text-align: center">
 <span id="fig:sim1-residu"></span>
 <img src="images/linregressie/sim1-residuen.png" alt="Residu Analyse." width="40%"><img src="images/linregressie/sim1-residuplot.png" alt="Residu Analyse." width="40%"><p class="caption">
-Figuur 6.8: Residu Analyse.
+Figuur 5.8: Residu Analyse.
 </p>
 </div>
-<p>In de grafiek in figuur <a href="linregressie.html#fig:sim1-residu">6.8</a> zijn de residuen (storingen) uitgezet tegen de bijbehorende x-waarde. In het ideale geval zouden alle residuen gelijk aan 0 moeten zijn en de de punten in het residuendiagram op de x-as moeten liggen. De residuen vormen dus de variatie in de data die niet door het regressiemodel verklaard worden. Bij een positief residu wordt de waarde <em>onderschat</em> door het model en bij een negatief residu wordt de waarde <em>overschat</em>.</p>
+<p>In de grafiek in figuur <a href="linregressie.html#fig:sim1-residu">5.8</a> zijn de residuen (storingen) uitgezet tegen de bijbehorende x-waarde. In het ideale geval zouden alle residuen gelijk aan 0 moeten zijn en de de punten in het residuendiagram op de x-as moeten liggen. De residuen vormen dus de variatie in de data die niet door het regressiemodel verklaard worden. Bij een positief residu wordt de waarde <em>onderschat</em> door het model en bij een negatief residu wordt de waarde <em>overschat</em>.</p>
 <div class="important">
 <p><strong>Residuen</strong> zijn belangrijk bij het evalueren hoe goed een (lineair) model bij de dataset past. Het diagram met residuen moet altijd goed bestudeerd worden.
 Bij een goed model moeten de residuen willekeurig langs de x-as verdeeld zijn en moet het gemiddelde en de som van de residuen bij benadering zo dicht mogelijk bij nul liggen. Is dat niet het geval en is er nog een patroon zichtbaar, dan moet het model aangepast worden. In het hierna volgende voorbeeld wordt dat duidelijk gemaakt.</p>
 </div>
 </div>
-<div id="sim2" class="section level3" number="6.3.4">
+<div id="sim2" class="section level3" number="5.3.4">
 <h3>
-<span class="header-section-number">6.3.4</span> Voorbeeld Druk-Temperatuur<a class="anchor" aria-label="anchor" href="#sim2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.4</span> Voorbeeld Druk-Temperatuur<a class="anchor" aria-label="anchor" href="#sim2"><i class="fas fa-link"></i></a>
 </h3>
 <p>Bij een bepaald natuurkundig experiment wil men onderzoeken of de druk lineair afhankelijk is van de temperatuur. Daartoe zijn 10 waarnemingen verzameld die te vinden zijn in het bestand <a href="data/sim2.csv">sim2.csv</a>.</p>
 <div class="inline-table"><table class="table table-condensed" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:sim2-data">Tabel 6.2: </span>Temp-Druk
+<span id="tab:sim2-data">Tabel 5.2: </span>Temp-Druk
 </caption>
 <thead><tr>
 <th style="text-align:right;">
@@ -497,11 +496,11 @@ druk
 </tr>
 </tbody>
 </table></div>
-<p>In figuur <a href="linregressie.html#fig:sim2-spreiding">6.9</a> is de druk tegen de temperatuur uitgezet.</p>
+<p>In figuur <a href="linregressie.html#fig:sim2-spreiding">5.9</a> is de druk tegen de temperatuur uitgezet.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:sim2-spreiding"></span>
 <img src="images/linregressie/sim2-spreiding.png" alt="Spreidingsdiagram in Excel met vergelijking lijn." width="70%"><p class="caption">
-Figuur 6.9: Spreidingsdiagram in Excel met vergelijking lijn.
+Figuur 5.9: Spreidingsdiagram in Excel met vergelijking lijn.
 </p>
 </div>
 <p>Er is een duidelijk positief verband te zien dat redelijk bij een rechte lijn in de buurt komt. Echter in het midden is wel een vorm van een kromming waar te nemen.</p>
@@ -509,21 +508,21 @@ Figuur 6.9: Spreidingsdiagram in Excel met vergelijking lijn.
 <div class="figure" style="text-align: center">
 <span id="fig:sim2-samenvatting"></span>
 <img src="images/linregressie/sim2-samenvatting.png" alt="Samenvatting regressie." width="70%"><p class="caption">
-Figuur 6.10: Samenvatting regressie.
+Figuur 5.10: Samenvatting regressie.
 </p>
 </div>
 <p>Zowel de correlatiecoëfficiënt als R-kwadraat liggen dicht bij 1 en dat is goed.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:sim2-coefficienten"></span>
 <img src="images/linregressie/sim2-coefficienten.png" alt="Coéfficiënten regressielijn." width="100%"><p class="caption">
-Figuur 6.11: Coéfficiënten regressielijn.
+Figuur 5.11: Coéfficiënten regressielijn.
 </p>
 </div>
 <p>Voor beide coëfficiënten is de p-waarde kleiner dan 0,05 en dus zijn de coëfficiënten significant.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:sim2-residu"></span>
 <img src="images/linregressie/sim2-residuen.png" alt="Residu Analyse." width="40%"><img src="images/linregressie/sim2-residuplot.png" alt="Residu Analyse." width="40%"><p class="caption">
-Figuur 6.12: Residu Analyse.
+Figuur 5.12: Residu Analyse.
 </p>
 </div>
 <p>Het gemiddelde en de som van de residuen zijn naderhand met een formule berekend en zijn nagenoeg nul, wat ook goed is.</p>
@@ -533,15 +532,15 @@ Figuur 6.12: Residu Analyse.
 <div class="figure" style="text-align: center">
 <span id="fig:sim2-polynoom2"></span>
 <img src="images/linregressie/sim2-polynoom2.png" alt="Spreidingsdiagram met een polynoom van de graad 2 als trendlijn." width="70%"><p class="caption">
-Figuur 6.13: Spreidingsdiagram met een polynoom van de graad 2 als trendlijn.
+Figuur 5.13: Spreidingsdiagram met een polynoom van de graad 2 als trendlijn.
 </p>
 </div>
 <p>De R-kwadraat is nu bijna 1.</p>
 </div>
 </div>
-<div id="linreg-meervoudig" class="section level2" number="6.4">
+<div id="linreg-meervoudig" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">6.4</span> Meervoudige lineaire regressie<a class="anchor" aria-label="anchor" href="#linreg-meervoudig"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Meervoudige lineaire regressie<a class="anchor" aria-label="anchor" href="#linreg-meervoudig"><i class="fas fa-link"></i></a>
 </h2>
 <p>Bij een meervoudig lineair regressiemodel zijn er meerdere verklarende variabelen. De algemene vergelijking is</p>
 <p><span class="math inline">\(y = \beta_0 + \beta_1 * x_1 + \beta_2 * x_2 + \beta_3 * x_3 + \cdots + \epsilon\)</span>, met</p>
@@ -555,7 +554,7 @@ Figuur 6.13: Spreidingsdiagram met een polynoom van de graad 2 als trendlijn.
 <div class="figure" style="text-align: center">
 <span id="fig:ecdata"></span>
 <img src="images/linregressie/ecdata.png" alt="Dataset economische gegevens." width="70%"><p class="caption">
-Figuur 6.14: Dataset economische gegevens.
+Figuur 5.14: Dataset economische gegevens.
 </p>
 </div>
 <p>Onderzocht gaat worden of <code>Aandelenindex</code> lineair afhankelijk is van zowel <code>Rentepercentage</code> als <code>Werkloosheidspercentage</code>. De variabelen zijn dus:</p>
@@ -569,7 +568,7 @@ Figuur 6.14: Dataset economische gegevens.
 <div class="figure" style="text-align: center">
 <span id="fig:ecdata-relaties"></span>
 <img src="images/linregressie/ecdata-rel1.png" alt="Relaties tussen Aandelenindex en respectievelijk Rentepercentage en Werkloosheidspercentage." width="50%"><img src="images/linregressie/ecdata-rel2.png" alt="Relaties tussen Aandelenindex en respectievelijk Rentepercentage en Werkloosheidspercentage." width="50%"><p class="caption">
-Figuur 6.15: Relaties tussen Aandelenindex en respectievelijk Rentepercentage en Werkloosheidspercentage.
+Figuur 5.15: Relaties tussen Aandelenindex en respectievelijk Rentepercentage en Werkloosheidspercentage.
 </p>
 </div>
 <ol style="list-style-type: decimal">
@@ -578,25 +577,25 @@ Figuur 6.15: Relaties tussen Aandelenindex en respectievelijk Rentepercentage en
 </ol>
 <p>Er wordt nu een meervoudig lineair model opgesteld met de formule</p>
 <p><span class="math inline">\(Aandelenindex = \beta_0 + \beta_1 * Renteperc + \beta_2 * Werkloosheidsperc + \epsilon\)</span></p>
-<p>Bij het dialoogscherm Regressie in Gegevensanalyse moet je er wel op letten dat je in het invoerbereik voor X beide onafhankelijke variabelen opneemt, zie figuur <a href="linregressie.html#fig:ecdata-regressie">6.16</a>.</p>
+<p>Bij het dialoogscherm Regressie in Gegevensanalyse moet je er wel op letten dat je in het invoerbereik voor X beide onafhankelijke variabelen opneemt, zie figuur <a href="linregressie.html#fig:ecdata-regressie">5.16</a>.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:ecdata-regressie"></span>
 <img src="images/linregressie/ecdata-regressie.png" alt="Dialoogscherm regressie voor economiedata." width="70%"><p class="caption">
-Figuur 6.16: Dialoogscherm regressie voor economiedata.
+Figuur 5.16: Dialoogscherm regressie voor economiedata.
 </p>
 </div>
 <p>Vervolgens wordt een regressie-analyse via Gegevensanalyse uitgevoerd.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:ecdata-samenvatting"></span>
 <img src="images/linregressie/ecdata-samenvatting.png" alt="Samenvatting regressie meervoudige lineaire regressie." width="70%"><p class="caption">
-Figuur 6.17: Samenvatting regressie meervoudige lineaire regressie.
+Figuur 5.17: Samenvatting regressie meervoudige lineaire regressie.
 </p>
 </div>
 <p>Zowel de correlatiecoëfficient als R-kwadraat zijn in dit meervoudige model hoger dan voor de afzonderlijke relaties. Dicht bij 1, dus goed.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:ecdata-coefficienten"></span>
 <img src="images/linregressie/ecdata-coefficienten.png" alt="Coéfficiënten regressievergelijking." width="100%"><p class="caption">
-Figuur 6.18: Coéfficiënten regressievergelijking.
+Figuur 5.18: Coéfficiënten regressievergelijking.
 </p>
 </div>
 <p>De regressievergelijking wordt <span class="math inline">\(Aandelenindex = 1798,40 + 345,54 * Rentepercentage - 250,15 * Werkloosheidspercentage + \epsilon\)</span></p>
@@ -605,7 +604,7 @@ Figuur 6.18: Coéfficiënten regressievergelijking.
 <div class="figure" style="text-align: center">
 <span id="fig:ecdata-residu"></span>
 <img src="images/linregressie/ecdata-residu1.png" alt="Diagrammen van de residuen." width="50%"><img src="images/linregressie/ecdata-residu2.png" alt="Diagrammen van de residuen." width="50%"><p class="caption">
-Figuur 6.19: Diagrammen van de residuen.
+Figuur 5.19: Diagrammen van de residuen.
 </p>
 </div>
 <p>Bij beide diagrammen zijn de residuen willekeurig verdeeld en is er geen patroon waar te nemen.</p>
@@ -613,24 +612,24 @@ Figuur 6.19: Diagrammen van de residuen.
 <p><span class="math inline">\(y = \beta_0 + \beta_1 * x_1 + \beta_2 * x_2 + \beta_3 * x_1 * x_2 + \epsilon\)</span></p>
 <p>Naast dat dit in Excel veel handwerk met zich meebrengt, is dit ook geen lineair model meer en valt een uitwerking hiervan buiten het bestek van dit boek.</p>
 </div>
-<div id="voorspellen" class="section level2" number="6.5">
+<div id="voorspellen" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">6.5</span> Voorspellen<a class="anchor" aria-label="anchor" href="#voorspellen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Voorspellen<a class="anchor" aria-label="anchor" href="#voorspellen"><i class="fas fa-link"></i></a>
 </h2>
 <p>Wanneer je eenmaal een betrouwbaar regressiemodel gemaakt hebt, dan kun je hiermee de waarde van de afhankelijke variabele schatten, door de waarden voor de onafhankelijke variabelen in de regressievergelijking in te vullen.</p>
 <p>Hierbij is wel een kanttekening te maken. Modellen hebben echte beperkingen. Het lineaire regressiemodel is opgesteld voor een bepaald bereik van de onafhankelijke variabelen. Je weet niet hoe de gegevens zich buiten dat bereik gaan gedragen. Het toepassen van een model voor een schatting op waarden buiten het het bereik van de oorspronkelijke gegevens wordt <strong>extrapolatie</strong> genoemd. Over het algemeen is een lineair model slechts een benadering van de werkelijke relatie tussen twee variabelen. En als je dan gaat extrapoleren, dan maak je een onbetrouwbare gok dat deze relatie ook geldig is op plaatsen waar deze niet is geanalyseerd.</p>
-<p>Ter toelichting een voorbeeld. De gevonden vergelijking bij de meervoudige lineaire regresie, zie <a href="linregressie.html#linreg-meervoudig">6.4</a>, luidt</p>
+<p>Ter toelichting een voorbeeld. De gevonden vergelijking bij de meervoudige lineaire regresie, zie <a href="linregressie.html#linreg-meervoudig">5.4</a>, luidt</p>
 <p><span class="math inline">\(Aandelenindex = 1798,40 + 345,54 * Rentepercentage - 250,15 * Werkloosheidspercentage\)</span></p>
 <p>Bij een werkloosheidspercentage van 6,0 en een negatieve rente (niet ondenkbaar) van -0,5 is de aandelenindex 125. En bij een negatieve rente van -1,0 zou de aandelenindex zelfs -48 zijn!! Dat kan natuurlijk niet.</p>
 </div>
-<div id="opg-linreg" class="section level2" number="6.6">
+<div id="opg-linreg" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">6.6</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-linreg"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-linreg"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
-<li><p>In <a href="linregressie.html#linreg-enkelvoudig">6.3</a> is een regressie-analyse besproken met de data in tabel <a href="linregressie.html#tab:sim1-data">6.1</a>. Voer deze analyse in Excel uit. Experimenteer met de uitvoeropties die Gegevensanalyse biedt. De dataset kun je ook downloaden als <a href="data/sim1.csv">sim1.csv</a>.</p></li>
-<li><p>Voer in Excel de analyse uit het voorbeeld <a href="linregressie.html#sim2">6.3.4</a> uit. De dataset kun je ook downloaden als <a href="data/sim2.csv">sim2.csv</a>.</p></li>
+<li><p>In <a href="linregressie.html#linreg-enkelvoudig">5.3</a> is een regressie-analyse besproken met de data in tabel <a href="linregressie.html#tab:sim1-data">5.1</a>. Voer deze analyse in Excel uit. Experimenteer met de uitvoeropties die Gegevensanalyse biedt. De dataset kun je ook downloaden als <a href="data/sim1.csv">sim1.csv</a>.</p></li>
+<li><p>Voer in Excel de analyse uit het voorbeeld <a href="linregressie.html#sim2">5.3.4</a> uit. De dataset kun je ook downloaden als <a href="data/sim2.csv">sim2.csv</a>.</p></li>
 <li><p>In het bestand <a href="data/salaris_data.csv">salaris_data.csv</a> is van 30 personen het salaris en het aantal jaren ervaring verzameld. Stel hiervoor een lineair regressiemodel op.</p></li>
 <li>
 <p>Een fabrikant van energierepen wil de dalende omzet van het topprodukt “GreenBull” weer een impuls geven. Om een plan hiervoor te ontwikkelen zijn via een steekproef in 34 winkels een aantal gegevens verzameld, welke te vinden zijn in het bestand <a href="data/energiereep.xlsx">energiereep.xlsx</a>. Stel hiervoor een meervoudig lineair regressiemodel op. De verzamelde gegevens zijn:</p>
@@ -650,25 +649,25 @@ Figuur 6.19: Diagrammen van de residuen.
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="eda.html"><span class="header-section-number">5</span> Exploratieve Data Analyse (EDA)</a></div>
-<div class="next"><a href="timeseries.html"><span class="header-section-number">7</span> Tijdreeksen</a></div>
+<div class="prev"><a href="eda.html"><span class="header-section-number">4</span> Exploratieve Data Analyse (EDA)</a></div>
+<div class="next"><a href="timeseries.html"><span class="header-section-number">6</span> Tijdreeksen</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#linregressie"><span class="header-section-number">6</span> Samenhang en lineaire regressie</a></li>
-<li><a class="nav-link" href="#samenhang"><span class="header-section-number">6.1</span> Samenhang</a></li>
-<li><a class="nav-link" href="#lineair-verband"><span class="header-section-number">6.2</span> Lineair verband</a></li>
+<li><a class="nav-link" href="#linregressie"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></li>
+<li><a class="nav-link" href="#samenhang"><span class="header-section-number">5.1</span> Samenhang</a></li>
+<li><a class="nav-link" href="#lineair-verband"><span class="header-section-number">5.2</span> Lineair verband</a></li>
 <li>
-<a class="nav-link" href="#linreg-enkelvoudig"><span class="header-section-number">6.3</span> Enkelvoudige lineaire regressie</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#methode---formules"><span class="header-section-number">6.3.1</span> Methode - Formules</a></li>
-<li><a class="nav-link" href="#methode---spreidingsdiagram-met-trendlijn"><span class="header-section-number">6.3.2</span> Methode - Spreidingsdiagram met trendlijn</a></li>
-<li><a class="nav-link" href="#methode---gegevensanalyse"><span class="header-section-number">6.3.3</span> Methode - Gegevensanalyse</a></li>
-<li><a class="nav-link" href="#sim2"><span class="header-section-number">6.3.4</span> Voorbeeld Druk-Temperatuur</a></li>
+<a class="nav-link" href="#linreg-enkelvoudig"><span class="header-section-number">5.3</span> Enkelvoudige lineaire regressie</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#methode---formules"><span class="header-section-number">5.3.1</span> Methode - Formules</a></li>
+<li><a class="nav-link" href="#methode---spreidingsdiagram-met-trendlijn"><span class="header-section-number">5.3.2</span> Methode - Spreidingsdiagram met trendlijn</a></li>
+<li><a class="nav-link" href="#methode---gegevensanalyse"><span class="header-section-number">5.3.3</span> Methode - Gegevensanalyse</a></li>
+<li><a class="nav-link" href="#sim2"><span class="header-section-number">5.3.4</span> Voorbeeld Druk-Temperatuur</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#linreg-meervoudig"><span class="header-section-number">6.4</span> Meervoudige lineaire regressie</a></li>
-<li><a class="nav-link" href="#voorspellen"><span class="header-section-number">6.5</span> Voorspellen</a></li>
-<li><a class="nav-link" href="#opg-linreg"><span class="header-section-number">6.6</span> Opgaven</a></li>
+<li><a class="nav-link" href="#linreg-meervoudig"><span class="header-section-number">5.4</span> Meervoudige lineaire regressie</a></li>
+<li><a class="nav-link" href="#voorspellen"><span class="header-section-number">5.5</span> Voorspellen</a></li>
+<li><a class="nav-link" href="#opg-linreg"><span class="header-section-number">5.6</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">

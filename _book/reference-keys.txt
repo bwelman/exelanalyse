@@ -35,9 +35,11 @@ fig:kurtosis
 fig:freq-gegevensanalyse-instelling
 fig:freq-gegevensanalyse-resultaat
 fig:freq-grafiektype-histogram
+fig:freq-grafiektype-binspec
+fig:freq-grafiektype-histogram2
 fig:boxplot
-fig:boxplot-tablets
-fig:groepslengtes
+fig:tablets-data
+fig:tablets-boxplot
 fig:anscombe
 fig:diagramselectie
 fig:eda-c1
@@ -105,7 +107,7 @@ fig:fctwente-07
 fig:fctwente-08
 fig:betaaltermijn
 fig:vrachtwagen
-tab:unnamed-chunk-20
+tab:unnamed-chunk-19
 fig:ziekteverzuim
 fig:q-options-global-data
 fig:q-options-global-editor
@@ -150,12 +152,10 @@ centrum-dataset
 spreiding-dataset
 z-scores
 scheefheid-en-kurtosis
-opg-beschrijvend
 grafieken
 graf-histogram
 graf-boxplot
-voorbeeld-marktonderzoek
-opg-grafieken
+opg-beschrijvend
 eda
 introductie
 anscombe-dataset

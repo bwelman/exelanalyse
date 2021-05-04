@@ -100,7 +100,7 @@ knitr::include_graphics("images/beschrijvend/freq-interval.png")
 ```
 :::
 
-### Draaitabel methode
+### Draaitabel methode {#draaitabel-methode}
 
 ::: {.workedexample}
 Selecteer in het bestand `frequenties.xlsx` het gegevensgebied *A1:A26* en kies dan *tab Invoegen > Draaitabel* en laat deze in een nieuw werkblad plaatsen. Plaats het veld `getal` in zowel het rijengebied als het waardengebied. Wijzig daarna de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.
@@ -114,6 +114,8 @@ Nu moet er nog gegroepeerd worden voor de intervals. Selecteer een willekeurig v
 ```{r freq-draaitabel-resultaat, fig.cap="Frequentieverdeling via een draaitabel.", out.width="60%", fig.align='left'}
 knitr::include_graphics("images/beschrijvend/freq-draaitabel-resultaat.png")
 ```
+
+Bewaar het bestand, je hebt het nog nodig voor een volgende oefening.
 :::
 
 ::: {.tip}
@@ -158,6 +160,8 @@ Excel formules:
 #### Kwartielen {.unnumbered} 
 	
 Je kunt een gesorteerde reeks ook in vier gelijke stukken verdelen, elk van 25% van de waarnemingen. Deze heten dan *kwartielen*. Het eerste kwartiel $Q_1$ splitst de verzameling in de laagste 25% en de hoogste 75%, Het tweede kwartiel $Q_2$ is gelijk aan de mediaan. En het derde kwartiel $Q_3$ splitst de verzameling in de laagste 75% en de hoogste 25%. Verder is $Q_0$ gelijk aan de minimumwaarde en is $Q_4$ gelijk aan de maximumwaarde.
+
+De afstand tussen het eerste kwartiel $Q_1$ en het derde kwartiel $Q_3$ heet de **interkwartielafstand**.
 
 > Er zijn verschillende manieren waarop de kwartielen precies berekend worden, waardoor er kleine verschillen kunnen ontstaan tussen de verschillende applicaties. Veel applicaties splitsen de gegevens in twee helften en bepalen dan de mediaan van elke helft. Excel doet dat niet en berekent kwartielen via percentielen.
 
@@ -265,6 +269,125 @@ Het onderzoeken van de kurtosis van variabelen kan van belang zijn bij het onder
 
 Excel formule: `KURTOSIS(data)`
 
+## Grafieken {#grafieken}
+
+Grafieken zijn een onmisbaar hulpmiddel bij de analyse van gegevens. Veel gebruikte grafieksoorten zijn kolom/staaf diagram, lijndiagram, spreidingsdiagram, histogram, boxplot. De laatste twee soorten worden hier verder besproken, de andere grafieksoorten worden als bekend verondersteld.
+
+### Histogram {#graf-histogram}
+
+Een histogram is een grafische weergave van een frequentieverdeling in de vorm van een kolomdiagram. Een histogram kan antwoord geven op de volgende vragen:
+
++ Van wat voor soort verdeling zijn de gegevens afkomstig?
++ Waar bevinden de gegevens zich?
++ Hoe verspreid zijn de gegevens?
++ Zijn de gegevens symmetrisch of scheef?
++ Zijn er uitschieters in de gegevens?
+
+Excel heeft twee mogelijkheden voor het genereren van een histogram: via Gegevensanalyse en via grafiektype histogram.
+
+#### Via Gegevensanalyse {.unnumbered}
+
+Ook voor deze methode moet er net als bij de functie `INTERVAL()` eerst handmatig een bereik voor de grenzen van de intervallen gemaakt zijn.
+
+::: {.workedexample}
+Open in het eerder gebruikte bestand `frequenties.xlsx`, zie \@ref(draaitabel-methode), werkblad `data`.Kies dan *tab Gegevens > Gegevensanalyse > Histogram*.
+
+Specificeer het invoerbereik, het verzamelbereik, uitvoer op een nieuw werkblad en selecteer *Grafiek maken*.
+
+```{r freq-gegevensanalyse-instelling, fig.cap="Specificaties voor frequentietabel en histogram.", out.width="70%"}
+knitr::include_graphics("images/beschrijvend/freq-gegevensanalyse-instelling.png")
+```
+
+Klik *OK* en daarna verschijnt het resultaat in een nieuw werkblad.
+
+```{r freq-gegevensanalyse-resultaat, fig.cap="De frequentietabel met histogram."}
+knitr::include_graphics("images/beschrijvend/freq-gegevensanalyse-resultaat.png")
+```
+
+Bewaar het bestand, je hebt het nog nodig voor een volgende oefening.
+:::
+
+De grafiek is een gegroepeerde kolomdiagram die je desgewenst nog kunt aanpassen. Voor een echt histogram moeten de kolommen aansluitend zijn zonder lege ruimte ertussen. En de labels op de X-as geven hier alleen de bovengrens van het interval en niet het interval zelf.
+
+::: {.important}
+De frequentieverdeling en histogram zijn statisch. Wanneer de brondata wijzigt vindt er geen herberekening plaats.
+:::
+
+#### Via grafiektype histogram {.unnumbered}
+
+De nieuwere Excelversies hebben de mogelijkheid tot het invoegen van een *grafiektype Histogram*. Hiervoor heb je in principe alleen maar de brondata nodig. De verdeling in intervallen (bins) bepaalt Excel zelf automatisch. Maar je kunt ook via het eigenschappenvenster de binbreedte of het aantal bins zelf specificeren. De bijbehorende intervalgrenzen worden dan door Excel berekend. Wanneer je ook nog de grenswaarden zelf wilt bepalen, dan moet je daarvoor een aparte kolom in het werkblad opnemen.
+
+::: {.workedexample}
+Open in het eerder gebruikte bestand `frequenties.xlsx` (zie \@ref(draaitabel-methode)).
+
+Selecteer een cel in het gegevensgebied op werkblad `data`. Kies dan *tab Invoegen > Aanbevolen grafieken > Alle grafieken > Histogram*.
+
+```{r freq-grafiektype-histogram, fig.cap="Standaard histogram via het invoegen van een grafiek.", out.width="60%"}
+knitr::include_graphics("images/beschrijvend/freq-grafiektype-histogram.png")
+```
+
+:::
+
+In Excel wordt een histogram gewoonlijk als een kolomdiagram weergegeven met labels onder het midden van de kolom. En de kolommen worden standaard aaneensluitend getekend.
+
+::: {.tip}
+Er wordt geen tabel met frequenties gegenereerd. Je kunt desgewenst de frequenties zichtbaar maken door via de grafiekopties gegevenslabels toe te voegen.
+:::
+
+De standaard grafiek in figuur \@ref(fig:freq-grafiektype-histogram) met drie intervallen laat te weinig details zien. In de volgende oefening wordt het aantal bins vergroot door de bin-breedte kleiner te maken.
+
+::: {.workedexample}
+Wijzig de bin-breedte als volgt: *Selecteer horizontale as > Rechter muisklik > As opmaken*. Maak het eigenschappenvenster breed genoeg, anders zijn niet alle invulvelden zichtbaar!
+
+Zet de bin-breedte op 2.
+
+```{r freq-grafiektype-binspec, fig.cap="Specificatie bins in eigenschappenvenster.", out.width="60%"}
+knitr::include_graphics("images/beschrijvend/freq-grafiektype-binspec.png")
+```
+
+Pas tevens de grafiektitel aan en voeg gegevenslabels toe. Het aangepaste histogram geeft nu wat meer informatie over de verdeling van de gegevens.
+
+```{r freq-grafiektype-histogram2, fig.cap="Aangepast histogram.", out.width="60%"}
+knitr::include_graphics("images/beschrijvend/freq-grafiektype-histogram2.png")
+```
+
+:::
+
+### Boxplot {#graf-boxplot}
+
+Een boxplot grafiek laat zien hoe de gegevens over de kwartielen verdeeld zijn. De boxplot laat eenzelfde soort informatie zien als een histogram, maar dan met minder details. Bij een boxplot worden de gegevens verdeeld in 4 kwartielen, elk met 25% van de waarnemingen. Het centrum van de boxplot is de mediaan. In de box zitten de waarden tussen het eerste en het derde kwartiel. De lengte van de box is dus de interkwartielafstand. In figuur \@ref(fig:boxplot) zijn de onderdelen van de boxplot getekend. De lijntjes aan de uiteinden worden ook wel snorharen (Eng. whiskers) genoemd. In Excel heet dit grafiektype **Box-and-Whisker**.
+
+```{r boxplot, fig.cap="Schematische weergave van een boxplot"}
+knitr::include_graphics("images/beschrijvend/boxplot.png")
+```
+
+::: {.alert .alert-info}
+In een boxplot bevat de lengte van de kwartielen ook informatie. Zo is in de tekening is het 2e kwartiel smaller dan het 3e kwartiel, de gegevens in het 2e kwartiel hebben dus een kleiner gegevensbereik dan die in het 3e kwartiel.
+:::
+
+Vaak kom je ook iets anders getekende boxplots tegen waarbij de lijntjes aan de uiteinden niet het echte minimum en maximum zijn. Ze worden dan getekend op 1,5 keer de interkwartielafstand (Q3 - Q1) links van Q1 en rechts van Q3. De waarnemingen die daar buiten liggen worden dan als **uitschuiters (uitbijters)** beschouwd en als afzonderlijke punten in de boxplox weergegeven. Een aantal statistische softwarepakketten (SPSS) doet dit zo, evenals Excel. Soms wordt ook het gemiddelde in de boxplot getekend. En verder kom je boxplots zowel horizontaal als vertikaal getekend tegen.
+
+Je kunt dit grafiektype voor 1 variabele gebruiken, maar de kracht ervan komt pas echt naar voren wanneer je meerdere groepen met elkaar wilt vergelijken.
+
+::: {.workedexample}
+Bij een produktonderzoek zijn 3 groepen van elk 10 personen gevraagd om een merk tablet (A, B, C) te evalueren, elke groep één merk. De toegekende scores van elke persoon zijn te zien in figuur \@ref(fig:tablets-data) en te vinden in het bestand [tablets.xlsx](data/tablets.xlsx).
+
+```{r tablets-data, fig.cap="Dataset produktonderzoek tablets.", out.width="30%"}
+knitr::include_graphics("images/beschrijvend/tablets-data.png")
+```
+
+Download het bestand en open het. Selecteer het gegevensgebied A1:C11. Kies *tab Invoegen > Aanbevolen grafieken > Alle grafieken > Box-and-whisker*. Wijzig de titel in "Beoordeling tablets" en voeg een legenda aan de bovenkant toe.
+
+```{r tablets-boxplot, fig.cap="Dataset met Boxplots voor de drie groepen.", out.width="50%"}
+knitr::include_graphics("images/beschrijvend/tablets-boxplot.png")
+```
+
+:::
+
+*Interpretatie*
+
+Via de boxplots kun je zien dat de scores voor merk C wat hoger lijken uit te vallen dan voor de andere twee. En die voor merk B lijken iets lager uit te vallen. De verdeling bij merk A is het meest symmetrisch, tenminste in het gebied tussen Q1 en Q3. De verdelingen bij de merken B en C zijn minder symmetrisch. Een andere beoordelingsmaatstaf voor symmetrie is hoe dicht het gemiddelde (met *X* aangegeven) en de de mediaan (de horizontale streep in de box) bij elkaar liggen. Merk B heeft een uitschieter naar boven (de rode punt in de figuur).
+
 ## Opgaven {#opg-beschrijvend}
 
 ::: {.sectionexercise}
@@ -278,5 +401,19 @@ Excel formule: `KURTOSIS(data)`
 
     a. Maak een kruistabel van de variabelen `model` en `kleur`.
     b. bepaal de kenmerkende statistieke grootheden voor de variabelen `prijs` en `kmstand` .
+
+1. Een steekproef van 20 leden van een golfclub naar hun lengte (in cm) heeft het volgende resultaat opgeleverd: 152,173,175,163,173,170,173,175,196,175,175,183,175,165,165,173,163,180,188,188
+
+    a. Maak een samenvattingsinfo van de belangrijkste statistische kenmerken via Gegevensanalyse.
+    b. Maak een boxplot en een histogram en beoordeel aan de hand hiervan of de data een normale verdeling volgen.
+    c. Maak een QQ plot en beoordeel opnieuw de normaliteitstest.
+
+1. In het bestand [studietijd.xlsx](data/studietijd.xlsx) staan het aantal studie-uren die een steekproef van vrouwelijke en mannelijke studenten besteed hebben aan een bepaald vak.
+
+    a. Bepaal de mediaan voor beide groepen.
+    b. Maak een boxplot waarin de studie-uren van beide groepen met elkaar vergeleken worden.
+    c. Becommentarieer de verschillen tussen de twee groepen.
+
+1. Van twee groepen van elk 50 personen is de lengte (in cm) gemeten. De resultaten zijn in het bestand [groepslengtes.xlsx](data/groepslengtes.xlsx) te vinden. Maak een boxplot voor de twee groepen en bestudeer deze. Geef aan wat je opvalt, welke verschillen er te zien zijn. Zijn er conclusies te trekken?
 
 :::

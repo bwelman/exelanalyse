@@ -26,7 +26,6 @@ rmd_files:
     - "importdata.Rmd"
     - "data.Rmd"
     - "beschrijvend.Rmd"
-    - "grafieken.Rmd"
     - "eda.Rmd"
     - "linregressie.Rmd"
     - "tijdreeksen.Rmd"
