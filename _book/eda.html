@@ -131,7 +131,7 @@ Figuur 4.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 <li>Anscombe-3 heeft een duidelijke uitschieter.</li>
 <li>Anscombe-4 heeft één enkel punt ver verwijderd van de rest van de data die dicht bij elkaar ligt.</li>
 </ul>
-<p>Wanneer je zelf hiermee wilt experimenteren dan kun je de dataset met de bijbehorende grafieken <a href="data/anscombe.xlsx">hier</a> downloaden.</p>
+<p>Wanneer je zelf hiermee wilt experimenteren dan kun je de dataset <a href="data/anscombe.xlsx">anscombe.xlsx</a> met de bijbehorende grafieken downloaden.</p>
 </div>
 <div id="werkwijze" class="section level2" number="4.3">
 <h2>
@@ -155,14 +155,14 @@ Figuur 4.1: Spreidingsdiagrammen voor de vier datasets van Anscombe.
 <div class="figure" style="text-align: center">
 <span id="fig:diagramselectie"></span>
 <div id="htmlwidget-f50f63c007c2286b17b9" style="width:100%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f50f63c007c2286b17b9">{"x":{"diagram":"\n    digraph desc {\n      # graph opdracht\n      graph [rankdir = LR, bgcolor=transparent]\n\n      # node opdrachten\n      node[fontname = Sans, shape = cds, style = filled, fillcolor = Khaki, width = 1.5]\n      T [label = \"Type variabele\"]\n      node[fontname = Sans, shape = ellipse, style = filled, fillcolor = Beige, width = 2.0]\n      C1 [label = \"1 categorie\n variabele\"]\n      C2 [label = \"2 categorie\nvariabelen\"]\n      N1 [label = \"1 numerieke\nvariabele\"]\n      N2 [label = \"2 numerieke\nvariabelen\"]\n      CN [label = \"1 cat & 1 num\nvariabele\"]\n      node[fontname = Sans, shape = box, style = filled, fillcolor = Azure, width = 2.7]\n      C1R [label = \"Frequentietabel\nCirkeldiagram\nStaafdiagram\"]\n      C2R [label = \"Kruistabel\nStaafdiagram (gegroepeerd)\"]\n      N1R [label = \"Statistieken\nHistogram\nBoxplot\"]\n      N2R [label = \"Spreidingsdiagram\nLijndiagram\"]\n      CNR [label = \"Boxplot (gegroepeerd)\"]\n      # edge opdrachten\n      T -> {C1, N1,C2,CN,N2}\n      C1 -> C1R\n      C2 -> C2R\n      N1 -> N1R\n      N2 -> N2R\n      CN -> CNR\n    }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
-Figuur 4.2: Schema voor selectie samenvatting en visualisatie
+<script type="application/json" data-for="htmlwidget-f50f63c007c2286b17b9">{"x":{"diagram":"\n    digraph desc {\n      # graph opdracht\n      graph [rankdir = LR, bgcolor=transparent]\n\n      # node opdrachten\n      node[fontname = Sans, shape = cds, style = filled, fillcolor = Khaki, width = 1.5]\n      T [label = \"Type variabele\"]\n      node[fontname = Sans, shape = ellipse, style = filled, fillcolor = Beige, width = 2.0]\n      C1 [label = \"1 categorie\n variabele\"]\n      C2 [label = \"2 categorie\nvariabelen\"]\n      N1 [label = \"1 numerieke\nvariabele\"]\n      N2 [label = \"2 numerieke\nvariabelen\"]\n      CN [label = \"1 cat & 1 num\nvariabele\"]\n      node[fontname = Sans, shape = box, style = filled, fillcolor = Azure, width = 2.7]\n      C1R [label = \"Frequentietabel\nCirkeldiagram\nKolomdiagram\"]\n      C2R [label = \"Kruistabel\nKolomdiagram (gegroepeerd)\"]\n      N1R [label = \"Statistieken\nHistogram\nBoxplot\"]\n      N2R [label = \"Spreidingsdiagram\nLijndiagram\"]\n      CNR [label = \"Boxplot (gegroepeerd)\"]\n      # edge opdrachten\n      T -> {C1, N1,C2,CN,N2}\n      C1 -> C1R\n      C2 -> C2R\n      N1 -> N1R\n      N2 -> N2R\n      CN -> CNR\n    }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><p class="caption">
+Figuur 4.2: Schema voor selectie samenvatting en visualisatie. In plaats van een kolomdiagram (verticaal) kun je ook een staafdiagram (horizontaal) nemen.
 </p>
 </div>
-<p>Deze worden hierna kort uitgewerkt.</p>
-<div id="eén-categorie-variabele-samenvatten-visualiseren" class="section level3" number="4.4.1">
+<p>Deze worden hierna met voorbeelden uitgewerkt.</p>
+<div id="eén-categorie-variabele" class="section level3" number="4.4.1">
 <h3>
-<span class="header-section-number">4.4.1</span> Eén categorie variabele samenvatten / visualiseren<a class="anchor" aria-label="anchor" href="#e%C3%A9n-categorie-variabele-samenvatten-visualiseren"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.1</span> Eén categorie variabele<a class="anchor" aria-label="anchor" href="#e%C3%A9n-categorie-variabele"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Oplossingen</strong></p>
 <ul>
@@ -171,47 +171,43 @@ Figuur 4.2: Schema voor selectie samenvatting en visualisatie
 <li>
 <em>Cirkeldiagrammen</em> - Deze vertegenwoordigen relatieve frequenties doordat ze aangeven welk deel van de gehele cirkel bij een categorie hoort. Een cirkeldiagram wordt moeilijk leesbaar wanneer je veel categorieën hebt.</li>
 <li>
-<em>Staafdiagrammen</em> - Hiermee kun je zowel absolute als relatieve frequenties weergeven, ook voor veel categorieén.</li>
+<em>Kolomdiagrammen</em> - Hiermee kun je zowel absolute als relatieve frequenties weergeven. Bij een groot aantal categorieën kun je beter het horizontale staafdigram gebruiken.</li>
 </ul>
-<p><strong>Voorbeeld</strong></p>
-<p>Vraag: Wat is de verdeling van het percentage rokers in een aantal leeftijdscategorieën?</p>
+<div class="workedexample">
+<p>Bij een onderzoek naar rookgedrag is ook de leeftijd van de rokers verzameld. Deze leeftijden staan in het bestand <a href="data/rokers.xlsx">rokers.xlsx</a>. Een onderzoeksvraag is of het percentage rokers sterk verschilt per leeftijdscategorie. De leeftijdscategorieën waarin de onderzoeker in eerste instantie geïnteresseerd is zijn: t/m 15 jaar, 16-25 jaar, 25-45 jaar, 46-65 jaar, ouder dan 65 jaar.</p>
+<p>Er moet dus een nieuwe variabele <code>leeftijdsgroep</code> komen met 5 categoriën en je moet dan de aantallen van <code>leeftijd</code> in elke categorie tellen. Omdat de klassebreedte niet overal hetzelfde is kun je geen frequentieverdeling met een draaitabel maken. Bij het werken met de functie <code>INTERVAL()</code> kun je zelf de grenzen van de intervallen bepalen, waardoor voor deze methode gekozen wordt.</p>
+<p>Download het bestand, zet de kolom met leeftijden om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld <code>Leeftijden</code>, waardoor je deze naam in de formules kunt gebruiken. Maak een kolom <code>bins</code> met de intervalgrenzen (15, 25, 45, 65). Maak tevens een kolom <code>leeftijdsgroep</code> met de namen van de categorieën. Er moet tevens een kolom komen voor de aantallen en de percentages. De inrichting van het werkblad zou er dan als volgt uit kunnen zien.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:eda-c1"></span>
-<img src="images/eda/eda-c1-freq.png" alt="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie." width="33.3%"><img src="images/eda/eda-c1-cirkel.png" alt="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie." width="33.3%"><img src="images/eda/eda-c1-staaf.png" alt="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie." width="33.3%"><p class="caption">
-Figuur 4.3: Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie.
+<span id="fig:rokers-werkblad"></span>
+<img src="images/eda/rokers-werkblad.png" alt="Inrichting werkblad" width="50%"><p class="caption">
+Figuur 4.3: Inrichting werkblad
+</p>
+</div>
+<p>Selecteer cel E2 en voer hier in de formule <code>=INTERVAL(leeftijden;C2:C5)</code>. Dit is een dynamische matixformule en de resultaten verschijnen in het <em>overloopgebied</em> E2:E6.</p>
+<p>Voor de berekening van de percentages moet er een verwijzing naar het overloopgebied gemaakt, dat doe je door het hash symbool <em>#</em> achter het adres van de eerste cel te plaatsen. Typ nu in cel F2 de formule <code>=E2#/SOM(E2#)</code>.</p>
+<blockquote>
+<p><em>In plaats van het intypen van het adres van het overloopgebied kun je bij het invoeren van de formule ook het overloopgebied selecteren. Excel plaatst dan automatisch het juiste adres.</em></p>
+</blockquote>
+<div class="figure" style="text-align: center">
+<span id="fig:rokers-frequenties"></span>
+<img src="images/eda/rokers-frequenties.png" alt="Absolute en relatieve frequenties, berekend met de formule INTERVAL." width="50%"><p class="caption">
+Figuur 4.4: Absolute en relatieve frequenties, berekend met de formule INTERVAL.
+</p>
+</div>
+<p>Maak nu een cirkeldiagram en een kolomdiagram voor een visualisatie van de frequentieverdeling. In figuur <a href="eda.html#fig:rokers-diagrammen">4.5</a> zie je een voorbeeld.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:rokers-diagrammen"></span>
+<img src="images/eda/rokers-cirkeldiagram.png" alt="Cirkeldiagram en kolomdiagram" width="50%"><img src="images/eda/rokers-kolomdiagram.png" alt="Cirkeldiagram en kolomdiagram" width="50%"><p class="caption">
+Figuur 4.5: Cirkeldiagram en kolomdiagram
 </p>
 </div>
 </div>
-<div id="eén-numerieke-variabele-samenvatten-visualiseren" class="section level3" number="4.4.2">
+</div>
+<div id="twee-categoriale-variabelen" class="section level3" number="4.4.2">
 <h3>
-<span class="header-section-number">4.4.2</span> Eén numerieke variabele samenvatten / visualiseren<a class="anchor" aria-label="anchor" href="#e%C3%A9n-numerieke-variabele-samenvatten-visualiseren"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.2</span> Twee categoriale variabelen<a class="anchor" aria-label="anchor" href="#twee-categoriale-variabelen"><i class="fas fa-link"></i></a>
 </h3>
-<p><strong>Oplossingen</strong></p>
-<ul>
-<li>
-<em>Statistieken</em> - Zoals gemiddelde, mediaan, standaarddeviatie, interkwartielafstand, 5-getallensamenvatting, … Zie hiervoor verder het hoofdstuk beschrijvende statistiek.</li>
-<li>
-<em>Histogram</em> - Voor een visualisatie van de verdeling van de variabele en de vorm van de verdeling.</li>
-<li>
-<em>Boxplot</em> - Voor een visualisatie van een aantal statistieken.</li>
-</ul>
-<p><strong>Voorbeeld</strong></p>
-<p>Vraag: Hoe ziet de verdeling van de netto maandkomens eruit bij een steekproef van 30 personen?</p>
-<div class="figure" style="text-align: center">
-<span id="fig:eda-n1"></span>
-<img src="images/eda/eda-n1-statistieken.png" alt="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen." width="33.3%"><img src="images/eda/eda-n1-histogram.png" alt="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen." width="33.3%"><img src="images/eda/eda-n1-boxplot.png" alt="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen." width="33.3%"><p class="caption">
-Figuur 4.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen.
-</p>
-</div>
-<div class="tip">
-<p>In Excel kun je eenvoudig een histogram en boxplot maken via Invoegen &gt; Grafieken. De getoonde statistieken krijg je snel met Gegevens &gt; Gegevensanalyse &gt; Beschrijvende statistiek &gt; Samenvattingsinfo.</p>
-</div>
-</div>
-<div id="combinatie-van-twee-categoriale-variabelen" class="section level3" number="4.4.3">
-<h3>
-<span class="header-section-number">4.4.3</span> Combinatie van twee categoriale variabelen<a class="anchor" aria-label="anchor" href="#combinatie-van-twee-categoriale-variabelen"><i class="fas fa-link"></i></a>
-</h3>
-<p>Je wilt dan de verdeling van een categorische variabele (haarkleur) weten over de niveaus van een andere categorische variabele (geslacht).</p>
+<p>Bij twee categoriale variabelen gaat het om de verdeling van de ene variabele over de niveaus van de andere variabele.</p>
 <p><strong>Oplossingen</strong></p>
 <ul>
 <li>
@@ -219,40 +215,85 @@ Figuur 4.4: Statistieken, histogram en boxplot voor het netto maandinkomen bij e
 <li>
 <em>Gegroepeerde staafdiagrammen</em> - Een van de twee categorische variabelen wordt als groep behandeld. Binnen elke groep worden staven voor de andere categorische variabele gemaakt.</li>
 </ul>
-<p><strong>Voorbeeld</strong></p>
-<p>Vraag: Is de verdeling van de haarkleuren bij mannen anders dan bij vrouwen?</p>
+<div class="workedexample">
+<p>van een groep van 90 mannen en vrouwen is de haarkleur genoteerd. De verzamelde gegevens staan in het bestand <a href="data/haarkleur.xlsx">haarkleur.xlsx</a>. Een onderzoeksvraag is of de verdeling van de kleuren sterk verschilt tussen mannen en vrouwen.</p>
+<p>Je moet dan voor elke kleur tellen hoe vaak deze bij mannen en bij vrouwen voorkomt. Hiervoor moet je een kruistabel maken en voor een visualisatie van de verdeling leent zich een gegroepeerd kolomdiagram het beste. In Excel kun je daarvoor een draaigrafiek met draaitabel gebruiken.</p>
+<p>Download het bestand, zet de kolom met gegevens om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld <code>Haarkleuren</code>. Selecteer een cel in de tabel en kies <em>Invoegen &gt; Draaigrafiek &gt; Draaigrafiek en draaitabel</em>. Neem een nieuw werkblad als locatie voor de uitvoer. Sleep het veld <code>geslacht</code> naar de <code>Rijen</code>, het veld <code>haarkleur</code> naar de <code>Kolommen</code> en het veld <code>id</code> naar de <code>Waarden</code>. Wijzig de <em>Waardeveldinstellingen</em> in <em>Aantal</em> in plaats van Som. Omdat je de verdeling van de kleuren per geslacht wilt bestuderen wijzig je via <em>Waardeveldinstellingen</em> de weergave in <em>% van rijtotaal</em>.</p>
+<p>Verder kun je het kolomdiagram nog wat aanpassen door weergave van titel en datalabels, aanpassing van de kleuren en het verbergen van alle veldknoppen. Ook is de weergave van de kolomtotalen in de draaitabel niet zinvol en kun beter niet weergeven. Het resultaat is in de figuur <a href="eda.html#fig:haarkleur-resultaat">4.6</a> te zien.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:eda-c2"></span>
-<img src="images/eda/eda-c2-kruistabel.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="50%"><img src="images/eda/eda-c2-staaf.png" alt="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht." width="50%"><p class="caption">
-Figuur 4.5: Kruistabel en staafdiagram voor verdeling haarkleur per geslacht.
+<span id="fig:haarkleur-resultaat"></span>
+<img src="images/eda/haarkleur-kruistabel.png" alt="Kruistabel en kolomdiagram voor verdeling haarkleur per geslacht." width="50%"><img src="images/eda/haarkleur-kolomdiagram.png" alt="Kruistabel en kolomdiagram voor verdeling haarkleur per geslacht." width="50%"><p class="caption">
+Figuur 4.6: Kruistabel en kolomdiagram voor verdeling haarkleur per geslacht.
 </p>
 </div>
-<div class="tip">
-<p>In Excel kun je een kruistabel en een bijbehorend gegroepeerd staafdiagram het eenvoudigst maken via een draaigrafiek.</p>
 </div>
 </div>
-<div id="combinatie-van-numerieke-en-categoriale-variabele" class="section level3" number="4.4.4">
+<div id="eén-numerieke-variabele" class="section level3" number="4.4.3">
 <h3>
-<span class="header-section-number">4.4.4</span> Combinatie van numerieke en categoriale variabele<a class="anchor" aria-label="anchor" href="#combinatie-van-numerieke-en-categoriale-variabele"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.3</span> Eén numerieke variabele<a class="anchor" aria-label="anchor" href="#e%C3%A9n-numerieke-variabele"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Oplossingen</strong></p>
+<ul>
+<li>
+<em>Statistieken</em> - Zoals gemiddelde, mediaan, standaarddeviatie, interkwartielafstand, 5-getallensamenvatting, … (zie hoofdstuk <a href="beschrijvend.html#beschrijvend">3</a>).</li>
+<li>
+<em>Histogram</em> - Voor een visualisatie van de verdeling van de variabele en de vorm van de verdeling.</li>
+<li>
+<em>Boxplot</em> - Voor een visualisatie van de 5-getallensamenvatting.</li>
+</ul>
+<div class="workedexample">
+<p>Bij een steekproef van 715 personen is o.a. het netto maandinkomen verzameld. Deze inkomens staan in het bestand <a href="data/maandinkomen.xlsx">maandinkomen.xlsx</a>. Je wilt een eerste indruk krijgen van de verdeling van de inkomens.</p>
+<p>Download het bestand, zet de kolom met gegevens om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld <code>Maandinkomens</code>. Selecteer een cel in de tabel en kies <em>Gegevens &gt; Gegevensanalyse &gt; Beschrijvende statistiek</em>. Specificeer het invoerbereik en selecteer bij Uitvoeropties dat er een Samenvattingsinfo op een nieuw werkblad gemaakt moet worden.</p>
+<p>De berekende getallen bevatten veel decimalen die hier en in dit stadium weinig betekenis hebben en zorgen alleen maar voor een chaotisch beeld. Maak Kurtosis en Scheefheid met 2 decimalen op en alle andere waarden als gehele getallen. Zie figuur <a href="eda.html#fig:maandinkomen-statistieken">4.7</a>.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:maandinkomen-statistieken"></span>
+<img src="images/eda/maandinkomen-statistieken.png" alt="Statistieken van de maandinkomens" width="30%"><p class="caption">
+Figuur 4.7: Statistieken van de maandinkomens
+</p>
+</div>
+<p>De kwartielen kun je zichtbaar maken met een boxplot. Selecteer een cel in de tabel en kies <em>Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Box-and-whisker</em>. Pas deze wat aan. Geef in ieder geval de gegevenslabels weer. In figuur <a href="eda.html#fig:maandinkomen-statistieken">4.7</a> is een voorbeeld te zien.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:maandinkomen-boxplot"></span>
+<img src="images/eda/maandinkomen-boxplot.png" alt="Boxplot van de maandinkomens." width="60%"><p class="caption">
+Figuur 4.8: Boxplot van de maandinkomens.
+</p>
+</div>
+<p>Voor een histogram selecteer je een cel in de tabel en kies <em>Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Histogram</em>. Het histogram is op zich in orde en geeft ook wel een goede indruk van de verdeling. Echter de automatisch gegenereerde bins hebben weinig zinvolle grenzen. Experimenteer daarom eens met een Bin-breedte van 250 en 500. Dat kan als volgt: <em>Selecteer horizontale as &gt; As opmaken &gt; Opties voor as &gt; Bin-breedte</em>. Voor de resultaten zie figuur <a href="eda.html#fig:maandinkomen-histogram">4.9</a>.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:maandinkomen-histogram"></span>
+<img src="images/eda/maandinkomen-histogram250.png" alt="Histogrammen, links met een breedte van 250 en rechts 500." width="50%"><img src="images/eda/maandinkomen-histogram500.png" alt="Histogrammen, links met een breedte van 250 en rechts 500." width="50%"><p class="caption">
+Figuur 4.9: Histogrammen, links met een breedte van 250 en rechts 500.
+</p>
+</div>
+<p>Uit de statistieken, boxplot en histogrammen krijg je een behoorlijke indruk van de verdeling.</p>
+</div>
+</div>
+<div id="numerieke-en-categoriale-variabele" class="section level3" number="4.4.4">
+<h3>
+<span class="header-section-number">4.4.4</span> Numerieke en categoriale variabele<a class="anchor" aria-label="anchor" href="#numerieke-en-categoriale-variabele"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Oplossingen</strong></p>
 <ul>
 <li>
 <em>Boxplot (gegroepeerd)</em> - Voor het vergelijken van een variabele tusssen verschillende groepen.</li>
 </ul>
-<p><strong>Voorbeeld</strong></p>
-<p>Vraag: Is de levensduur van een bepaald type lamp afhankelijk van het merk</p>
+<div class="workedexample">
+<p>Bij een vergelijkend onderzoek van een lamptype van twee verschillende merken is ook de levensduur van de lamp getest. In het bestand <a href="data/lampen.xlsx">lampen.xlsx</a> zijn de waarnemingen verzameld. De onderzoeksvraag is of er een substantieel verschil in levensduur is tussen de twee merken.</p>
+<p>Download het bestand, zet de kolom met gegevens om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld <code>Lampen</code>. Selecteer een cel in de tabel en kies <em>Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Box-and-whisker</em>. Pas deze wat aan. Geef in ieder geval de gegevenslabels weer. In figuur <a href="eda.html#fig:lampen-boxplot">4.10</a> is een voorbeeld te zien.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:eda-cn"></span>
-<img src="images/eda/eda-cn-boxplot.png" alt="Boxplot voor vergelijking levensduur lamptype van 2 merken." width="100%"><p class="caption">
-Figuur 4.6: Boxplot voor vergelijking levensduur lamptype van 2 merken.
+<span id="fig:lampen-boxplot"></span>
+<img src="images/eda/lampen-boxplot.png" alt="Boxplot voor vergelijking levensduur lamptype van 2 merken." width="100%"><p class="caption">
+Figuur 4.10: Boxplot voor vergelijking levensduur lamptype van 2 merken.
 </p>
 </div>
 </div>
-<div id="combinatie-van-twee-numerieke-variabelen" class="section level3" number="4.4.5">
+</div>
+<div id="twee-numerieke-variabelen" class="section level3" number="4.4.5">
 <h3>
-<span class="header-section-number">4.4.5</span> Combinatie van twee numerieke variabelen<a class="anchor" aria-label="anchor" href="#combinatie-van-twee-numerieke-variabelen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.5</span> Twee numerieke variabelen<a class="anchor" aria-label="anchor" href="#twee-numerieke-variabelen"><i class="fas fa-link"></i></a>
 </h3>
+<p>Bij het vergelijken van twee numerieke variabelen is er meestal eerst al naar elke variabele afzonderlijk gekeken. Bij de onderlinge vergelijking gaat het om te onderzoeken of er een mogelijk verband tussen de twee variabelen bestaat.</p>
+<p>Bij het onderzoek naar de relatie tussen twee numerieke variabelen worden de variabelen in een grafiek tegen elkaar uitgezet. Hierna kan eventueel een vervolgonderzoek komen naar de aard van de relatie. In hoofdstuk <a href="linregressie.html#linregressie">5</a> wordt op dit laatste verder ingegaan.</p>
 <p><strong>Oplossingen</strong></p>
 <ul>
 <li>
@@ -260,20 +301,29 @@ Figuur 4.6: Boxplot voor vergelijking levensduur lamptype van 2 merken.
 <li>
 <em>Lijndiagram</em> - Gebruik je voornamelijk wanneer een van de numerieke variabelen een tijd weergeeft.</li>
 </ul>
-<p><strong>Voorbeeld</strong></p>
-<p>Vraag: Hoe ziet het gemiddelde temperatuurverloop over de laatste 2 weken eruit?</p>
-<p>Vraag: Is er een verband tussen de ijsverkoop en de gemiddelde temperatuur?</p>
+<div class="workedexample">
+<p>Een ijsverkoper heeft gedurende 14 opeenvolgende dagen de dagtemperatuur en de dagelijkse verkoop aan ijs bijgehouden. De gegevens zijn te zien in figuur <a href="eda.html#fig:ijsverkoop-data">4.11</a> en te downloaden met het bestand <a href="data/ijsverkoop.xlsx">ijsverkoop.xlsx</a>.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:eda-cn2"></span>
-<img src="images/eda/eda-n2-lijn.png" alt="Lijndiagram (links) en spreidingsdiagram (rechts)." width="50%"><img src="images/eda/eda-n2-spreiding.png" alt="Lijndiagram (links) en spreidingsdiagram (rechts)." width="50%"><p class="caption">
-Figuur 4.7: Lijndiagram (links) en spreidingsdiagram (rechts).
+<span id="fig:ijsverkoop-data"></span>
+<img src="images/eda/ijsverkoop-data.png" alt="Temperatuur (gemeten om 13:00 uur) en ijsverkoop gedurende 14 dagen" width="30%"><p class="caption">
+Figuur 4.11: Temperatuur (gemeten om 13:00 uur) en ijsverkoop gedurende 14 dagen
 </p>
 </div>
+<p>De vragen zijn: Hoe ziet het temperatuurverloop eruit en is er een verband tussen de ijsverkoop en de dagtemperatuur?</p>
+<p>Voor het bekijken van het temperatuurverloop maak je een lijndiagram met de variabele <code>dag</code> op de X-as en de variabele <code>temperatuur</code> op de Y-as. Voor het beoordelen van een mogelijk verband tussen verkoop en temperatuur maak je een spreidingsdiagram met de variabele <code>temperatuur</code> als onafhankelijke variabele op de X-as en de variabele <code>ijsverkoop</code> op de Y-as. Voor de resultaten zie figuur <a href="eda.html#fig:ijsverkoop-diagrammen">4.12</a></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ijsverkoop-diagrammen"></span>
+<img src="images/eda/ijsverkoop-lijndiagram.png" alt="Lijndiagram (links) en spreidingsdiagram (rechts)." width="50%"><img src="images/eda/ijsverkoop-spreidingsdiagram.png" alt="Lijndiagram (links) en spreidingsdiagram (rechts)." width="50%"><p class="caption">
+Figuur 4.12: Lijndiagram (links) en spreidingsdiagram (rechts).
+</p>
+</div>
+<p>In het spreidingsdiagram is een duidelijk positief verband te zien. Voldoende reden voor een vervolgvraag of dit een lineair verband en zoja hoe een regressiemodel eruit zou kunnen zien.</p>
 </div>
 </div>
-<div id="voorbeeld-old-faithful-geiser" class="section level2" number="4.5">
+</div>
+<div id="analyse-old-faithful-geiser" class="section level2" number="4.5">
 <h2>
-<span class="header-section-number">4.5</span> Voorbeeld: Old Faithful geiser<a class="anchor" aria-label="anchor" href="#voorbeeld-old-faithful-geiser"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> Analyse Old Faithful geiser<a class="anchor" aria-label="anchor" href="#analyse-old-faithful-geiser"><i class="fas fa-link"></i></a>
 </h2>
 <!-- Inspiratiebron: https://www.tudelft.nl/ewi/studeren/online-onderwijs/wiskunde-uitgelegd/statistiek#c144704 -->
 <p>De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset <a href="data/faithful.csv">faithful.csv</a> bevat 272 waarnemingen van twee variabelen: <code>eruptietijd</code> (tijdsduur van de uitbarsting in sec.) en <code>wachttijd</code> (wachttijd tussen twee erupties in min.).</p>
@@ -303,7 +353,7 @@ Figuur 4.7: Lijndiagram (links) en spreidingsdiagram (rechts).
 <div class="figure" style="text-align: center">
 <span id="fig:faithful-ecdf"></span>
 <img src="images/eda/faithful-ECDF.png" alt="Histogram met cumulatief percentages." width="100%"><p class="caption">
-Figuur 4.8: Histogram met cumulatief percentages.
+Figuur 4.13: Histogram met cumulatief percentages.
 </p>
 </div>
 <p>Hier zie je steile hellingen aan weerszijden van 120 en van 270, de twee piekwaarden.</p>
@@ -323,14 +373,14 @@ Figuur 4.8: Histogram met cumulatief percentages.
 <li><a class="nav-link" href="#werkwijze"><span class="header-section-number">4.3</span> Werkwijze</a></li>
 <li>
 <a class="nav-link" href="#keuze-hulpmiddelen"><span class="header-section-number">4.4</span> Keuze hulpmiddelen</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#e%C3%A9n-categorie-variabele-samenvatten-visualiseren"><span class="header-section-number">4.4.1</span> Eén categorie variabele samenvatten / visualiseren</a></li>
-<li><a class="nav-link" href="#e%C3%A9n-numerieke-variabele-samenvatten-visualiseren"><span class="header-section-number">4.4.2</span> Eén numerieke variabele samenvatten / visualiseren</a></li>
-<li><a class="nav-link" href="#combinatie-van-twee-categoriale-variabelen"><span class="header-section-number">4.4.3</span> Combinatie van twee categoriale variabelen</a></li>
-<li><a class="nav-link" href="#combinatie-van-numerieke-en-categoriale-variabele"><span class="header-section-number">4.4.4</span> Combinatie van numerieke en categoriale variabele</a></li>
-<li><a class="nav-link" href="#combinatie-van-twee-numerieke-variabelen"><span class="header-section-number">4.4.5</span> Combinatie van twee numerieke variabelen</a></li>
+<li><a class="nav-link" href="#e%C3%A9n-categorie-variabele"><span class="header-section-number">4.4.1</span> Eén categorie variabele</a></li>
+<li><a class="nav-link" href="#twee-categoriale-variabelen"><span class="header-section-number">4.4.2</span> Twee categoriale variabelen</a></li>
+<li><a class="nav-link" href="#e%C3%A9n-numerieke-variabele"><span class="header-section-number">4.4.3</span> Eén numerieke variabele</a></li>
+<li><a class="nav-link" href="#numerieke-en-categoriale-variabele"><span class="header-section-number">4.4.4</span> Numerieke en categoriale variabele</a></li>
+<li><a class="nav-link" href="#twee-numerieke-variabelen"><span class="header-section-number">4.4.5</span> Twee numerieke variabelen</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#voorbeeld-old-faithful-geiser"><span class="header-section-number">4.5</span> Voorbeeld: Old Faithful geiser</a></li>
+<li><a class="nav-link" href="#analyse-old-faithful-geiser"><span class="header-section-number">4.5</span> Analyse Old Faithful geiser</a></li>
 </ul>
 
       <div class="book-extra">
@@ -347,7 +397,7 @@ Figuur 4.8: Histogram met cumulatief percentages.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 04 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 05 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -43,7 +43,7 @@ Conclusies uit de spreidingsdiagrammen:
 -   Anscombe-3 heeft een duidelijke uitschieter.
 -   Anscombe-4 heeft één enkel punt ver verwijderd van de rest van de data die dicht bij elkaar ligt.
 
-Wanneer je zelf hiermee wilt experimenteren dan kun je de dataset met de bijbehorende grafieken [hier](data/anscombe.xlsx) downloaden.
+Wanneer je zelf hiermee wilt experimenteren dan kun je de dataset [anscombe.xlsx](data/anscombe.xlsx) met de bijbehorende grafieken downloaden.
 
 ## Werkwijze
 
@@ -62,7 +62,7 @@ Een aantal handige vragen die je bijna altijd kunt gebruiken zijn:
 
 Op welke manier je data kunt samenvatten en welke grafiek het meest geschikt is voor visualisatie hangt vooral van de soort variabele(n) en de vraag af. Het volgende schema kan je hierbij een handje helpen.
 
-```{r diagramselectie, fig.cap="Schema voor selectie samenvatting en visualisatie"}
+```{r diagramselectie, fig.cap="Schema voor selectie samenvatting en visualisatie. In plaats van een kolomdiagram (verticaal) kun je ook een staafdiagram (horizontaal) nemen."}
 grViz("
     digraph desc {
       # graph opdracht
@@ -78,8 +78,8 @@ grViz("
       N2 [label = '2 numerieke\nvariabelen']
       CN [label = '1 cat & 1 num\nvariabele']
       node[fontname = Sans, shape = box, style = filled, fillcolor = Azure, width = 2.7]
-      C1R [label = 'Frequentietabel\nCirkeldiagram\nStaafdiagram']
-      C2R [label = 'Kruistabel\nStaafdiagram (gegroepeerd)']
+      C1R [label = 'Frequentietabel\nCirkeldiagram\nKolomdiagram']
+      C2R [label = 'Kruistabel\nKolomdiagram (gegroepeerd)']
       N1R [label = 'Statistieken\nHistogram\nBoxplot']
       N2R [label = 'Spreidingsdiagram\nLijndiagram']
       CNR [label = 'Boxplot (gegroepeerd)']
@@ -94,103 +94,156 @@ grViz("
 ")
 ```
 
-Deze worden hierna kort uitgewerkt.
+Deze worden hierna met voorbeelden uitgewerkt.
 
-### Eén categorie variabele samenvatten / visualiseren
+### Eén categorie variabele
 
 **Oplossingen**
 
 - *Frequentietabellen* - Je kunt absolute of relatieve frequenties gebruiken. Deze laatste wordt iets meer gebruikt omdat je hiermee kunt vergelijken hoe vaak waarden voorkomen in verhouding tot het totale aantal.
 - *Cirkeldiagrammen* - Deze vertegenwoordigen relatieve frequenties doordat ze aangeven welk deel van de gehele cirkel bij een categorie hoort. Een cirkeldiagram wordt moeilijk leesbaar wanneer je veel categorieën hebt.
-- *Staafdiagrammen* - Hiermee kun je zowel absolute als relatieve frequenties weergeven, ook voor veel categorieén.
+- *Kolomdiagrammen* - Hiermee kun je zowel absolute als relatieve frequenties weergeven. Bij een groot aantal categorieën kun je beter het horizontale staafdigram gebruiken.
 
-**Voorbeeld**
+::: {.workedexample}
+Bij een onderzoek naar rookgedrag is ook de leeftijd van de rokers verzameld. Deze leeftijden staan in het bestand [rokers.xlsx](data/rokers.xlsx). Een onderzoeksvraag is of het percentage rokers sterk verschilt per leeftijdscategorie. De leeftijdscategorieën waarin de onderzoeker in eerste instantie geïnteresseerd is zijn: t/m 15 jaar, 16-25 jaar, 25-45 jaar, 46-65 jaar, ouder dan 65 jaar.
 
-Vraag: Wat is de verdeling van het percentage rokers in een aantal leeftijdscategorieën?
+Er moet dus een nieuwe variabele `leeftijdsgroep` komen met 5 categoriën en je moet dan de aantallen van `leeftijd` in elke categorie tellen. Omdat de klassebreedte niet overal hetzelfde is kun je geen frequentieverdeling met een draaitabel maken. Bij het werken met de functie `INTERVAL()` kun je zelf de grenzen van de intervallen bepalen, waardoor voor deze methode gekozen wordt.
 
-```{r eda-c1, out.width="33.3%", fig.cap="Frequentietabel, cirkeldiagram en staafdiagram voor percentage rokers per leeftijdscategorie."}
-knitr::include_graphics("images/eda/eda-c1-freq.png")
-knitr::include_graphics("images/eda/eda-c1-cirkel.png")
-knitr::include_graphics("images/eda/eda-c1-staaf.png")
+Download het bestand, zet de kolom met leeftijden om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld `Leeftijden`, waardoor je deze naam in de formules kunt gebruiken. Maak een kolom `bins` met de intervalgrenzen (15, 25, 45, 65). Maak tevens een kolom `leeftijdsgroep` met de namen van de categorieën. Er moet tevens een kolom komen voor de aantallen en de percentages. De inrichting van het werkblad zou er dan als volgt uit kunnen zien.
+
+```{r rokers-werkblad, fig.cap="Inrichting werkblad", out.width="50%"}
+knitr::include_graphics("images/eda/rokers-werkblad.png")
 ```
 
-### Eén numerieke variabele samenvatten / visualiseren
+Selecteer cel E2 en voer hier in de formule `=INTERVAL(leeftijden;C2:C5)`. Dit is een dynamische matixformule en de resultaten verschijnen in het *overloopgebied* E2:E6.
 
-**Oplossingen**
+Voor de berekening van de percentages moet er een verwijzing naar het overloopgebied gemaakt, dat doe je door het hash symbool *#* achter het adres van de eerste cel te plaatsen. Typ nu in cel F2 de formule `=E2#/SOM(E2#)`.
 
-+ *Statistieken* - Zoals gemiddelde, mediaan, standaarddeviatie, interkwartielafstand, 5-getallensamenvatting, ... Zie hiervoor verder het hoofdstuk beschrijvende statistiek.
-+ *Histogram* - Voor een visualisatie van de verdeling van de variabele en de vorm van de verdeling.
-+ *Boxplot* - Voor een visualisatie van een aantal statistieken.
+> *In plaats van het intypen van het adres van het overloopgebied kun je bij het invoeren van de formule ook het overloopgebied selecteren. Excel plaatst dan automatisch het juiste adres.*
 
-**Voorbeeld**
-
-Vraag: Hoe ziet de verdeling van de netto maandkomens eruit bij een steekproef van 30 personen?
-
-```{r eda-n1, out.width="33.3%", fig.cap="Statistieken, histogram en boxplot voor het netto maandinkomen bij een steekproef van 30 personen."}
-knitr::include_graphics("images/eda/eda-n1-statistieken.png")
-knitr::include_graphics("images/eda/eda-n1-histogram.png")
-knitr::include_graphics("images/eda/eda-n1-boxplot.png")
+```{r rokers-frequenties, fig.cap="Absolute en relatieve frequenties, berekend met de formule INTERVAL.", out.width="50%"}
+knitr::include_graphics("images/eda/rokers-frequenties.png")
 ```
 
-:::{.tip}
-In Excel kun je eenvoudig een histogram en boxplot maken via Invoegen > Grafieken. De getoonde statistieken krijg je snel met Gegevens > Gegevensanalyse > Beschrijvende statistiek > Samenvattingsinfo.
+Maak nu een cirkeldiagram en een kolomdiagram voor een visualisatie van de frequentieverdeling. In figuur \@ref(fig:rokers-diagrammen) zie je een voorbeeld.
+
+```{r rokers-diagrammen, fig.cap="Cirkeldiagram en kolomdiagram", out.width="50%"}
+knitr::include_graphics("images/eda/rokers-cirkeldiagram.png")
+knitr::include_graphics("images/eda/rokers-kolomdiagram.png")
+```
+
 :::
 
-### Combinatie van twee categoriale variabelen
+### Twee categoriale variabelen
 
-Je wilt dan de verdeling van een categorische variabele (haarkleur) weten over de niveaus van een andere categorische variabele (geslacht).
+Bij twee categoriale variabelen gaat het om de verdeling van de ene variabele over de niveaus van de andere variabele.
 
 **Oplossingen**
 
 + *Kruistabellen* - Deze bevatten de frequenties voor elke combinatie van waarden over twee categorische variabelen.
 + *Gegroepeerde staafdiagrammen* - Een van de twee categorische variabelen wordt als groep behandeld. Binnen elke groep worden staven voor de andere categorische variabele gemaakt.
 
-**Voorbeeld**
+::: {.workedexample}
+van een groep van 90 mannen en vrouwen is de haarkleur genoteerd. De verzamelde gegevens staan in het bestand [haarkleur.xlsx](data/haarkleur.xlsx). Een onderzoeksvraag is of de verdeling van de kleuren sterk verschilt tussen mannen en vrouwen.
 
-Vraag: Is de verdeling van de haarkleuren bij mannen anders dan bij vrouwen?
+Je moet dan voor elke kleur tellen hoe vaak deze bij mannen en bij vrouwen voorkomt. Hiervoor moet je een kruistabel maken en voor een visualisatie van de verdeling leent zich een gegroepeerd kolomdiagram het beste. In Excel kun je daarvoor een draaigrafiek met draaitabel gebruiken.
 
-```{r eda-c2, out.width="50%", fig.cap="Kruistabel en staafdiagram voor verdeling haarkleur per geslacht."}
-knitr::include_graphics("images/eda/eda-c2-kruistabel.png")
-knitr::include_graphics("images/eda/eda-c2-staaf.png")
+Download het bestand, zet de kolom met gegevens om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld `Haarkleuren`. Selecteer een cel in de tabel en kies *Invoegen > Draaigrafiek > Draaigrafiek en draaitabel*. Neem een nieuw werkblad als locatie voor de uitvoer. Sleep het veld `geslacht` naar de `Rijen`, het veld `haarkleur` naar de `Kolommen` en het veld `id` naar de `Waarden`. Wijzig de *Waardeveldinstellingen* in *Aantal* in plaats van Som. Omdat je de verdeling van de kleuren per geslacht wilt bestuderen wijzig je via *Waardeveldinstellingen* de weergave in *% van rijtotaal*.
+
+Verder kun je het kolomdiagram nog wat aanpassen door weergave van titel en datalabels, aanpassing van de kleuren en het verbergen van alle veldknoppen. Ook is de weergave van de kolomtotalen in de draaitabel niet zinvol en kun beter niet weergeven. Het resultaat is in de figuur \@ref(fig:haarkleur-resultaat) te zien.
+
+```{r haarkleur-resultaat, out.width="50%", fig.cap="Kruistabel en kolomdiagram voor verdeling haarkleur per geslacht."}
+knitr::include_graphics("images/eda/haarkleur-kruistabel.png")
+knitr::include_graphics("images/eda/haarkleur-kolomdiagram.png")
 ```
 
-:::{.tip}
-In Excel kun je een kruistabel en een bijbehorend gegroepeerd staafdiagram het eenvoudigst maken via een draaigrafiek.
 :::
 
-### Combinatie van numerieke en categoriale variabele
+### Eén numerieke variabele
+
+**Oplossingen**
+
++ *Statistieken* - Zoals gemiddelde, mediaan, standaarddeviatie, interkwartielafstand, 5-getallensamenvatting, ... (zie hoofdstuk \@ref(beschrijvend)).
++ *Histogram* - Voor een visualisatie van de verdeling van de variabele en de vorm van de verdeling.
++ *Boxplot* - Voor een visualisatie van de 5-getallensamenvatting.
+
+::: {.workedexample}
+Bij een steekproef van 715 personen is o.a. het netto maandinkomen verzameld. Deze inkomens staan in het bestand [maandinkomen.xlsx](data/maandinkomen.xlsx). Je wilt een eerste indruk krijgen van de verdeling van de inkomens.
+
+Download het bestand, zet de kolom met gegevens om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld `Maandinkomens`. Selecteer een cel in de tabel en kies *Gegevens > Gegevensanalyse > Beschrijvende statistiek*. Specificeer het invoerbereik en selecteer bij Uitvoeropties dat er een Samenvattingsinfo op een nieuw werkblad gemaakt moet worden.
+
+De berekende getallen bevatten veel decimalen die hier en in dit stadium weinig betekenis hebben en zorgen alleen maar voor een chaotisch beeld. Maak Kurtosis en Scheefheid met 2 decimalen op en alle andere waarden als gehele getallen. Zie figuur \@ref(fig:maandinkomen-statistieken).
+
+```{r maandinkomen-statistieken, fig.cap="Statistieken van de maandinkomens", out.width="30%"}
+knitr::include_graphics("images/eda/maandinkomen-statistieken.png")
+```
+
+De kwartielen kun je zichtbaar maken met een boxplot. Selecteer een cel in de tabel en kies *Invoegen > Aanbevolen grafieken > Alle grafieken > Box-and-whisker*. Pas deze wat aan. Geef in ieder geval de gegevenslabels weer. In figuur \@ref(fig:maandinkomen-statistieken) is een voorbeeld te zien.
+
+```{r maandinkomen-boxplot, fig.cap="Boxplot van de maandinkomens.", out.width="60%"}
+knitr::include_graphics("images/eda/maandinkomen-boxplot.png")
+```
+
+Voor een histogram selecteer je een cel in de tabel en kies *Invoegen > Aanbevolen grafieken > Alle grafieken > Histogram*. Het histogram is op zich in orde en geeft ook wel een goede indruk van de verdeling. Echter de automatisch gegenereerde bins hebben weinig zinvolle grenzen. Experimenteer daarom eens met een Bin-breedte van 250 en 500. Dat kan als volgt: *Selecteer horizontale as > As opmaken > Opties voor as > Bin-breedte*. Voor de resultaten zie figuur \@ref(fig:maandinkomen-histogram).
+
+```{r maandinkomen-histogram, out.width="50%", fig.cap="Histogrammen, links met een breedte van 250 en rechts 500."}
+knitr::include_graphics("images/eda/maandinkomen-histogram250.png")
+knitr::include_graphics("images/eda/maandinkomen-histogram500.png")
+```
+
+Uit de statistieken, boxplot en histogrammen krijg je een behoorlijke indruk van de verdeling.
+
+:::
+
+### Numerieke en categoriale variabele
 
 **Oplossingen**
 
 + *Boxplot (gegroepeerd)* - Voor het vergelijken van een variabele tusssen verschillende groepen.
 
-**Voorbeeld**
+::: {.workedexample}
+Bij een vergelijkend onderzoek van een lamptype van twee verschillende merken is ook de levensduur van de lamp getest. In het bestand [lampen.xlsx](data/lampen.xlsx) zijn de waarnemingen verzameld. De onderzoeksvraag is of er een substantieel verschil in levensduur is tussen de twee merken.
 
-Vraag: Is de levensduur van een bepaald type lamp afhankelijk van het merk
+Download het bestand, zet de kolom met gegevens om naar een Excel tabel en geef deze een zinvolle tabelnaam, bijvoorbeeld `Lampen`. Selecteer een cel in de tabel en kies *Invoegen > Aanbevolen grafieken > Alle grafieken > Box-and-whisker*. Pas deze wat aan. Geef in ieder geval de gegevenslabels weer. In figuur \@ref(fig:lampen-boxplot) is een voorbeeld te zien.
 
-```{r eda-cn, fig.cap="Boxplot voor vergelijking levensduur lamptype van 2 merken."}
-knitr::include_graphics("images/eda/eda-cn-boxplot.png")
+```{r lampen-boxplot, fig.cap="Boxplot voor vergelijking levensduur lamptype van 2 merken."}
+knitr::include_graphics("images/eda/lampen-boxplot.png")
 ```
 
-### Combinatie van twee numerieke variabelen
+:::
+
+### Twee numerieke variabelen
+
+Bij het vergelijken van twee numerieke variabelen is er meestal eerst al naar elke variabele afzonderlijk gekeken. Bij de onderlinge vergelijking gaat het om te onderzoeken of er een mogelijk verband tussen de twee variabelen bestaat.
+
+Bij het onderzoek naar de relatie tussen twee numerieke variabelen worden de variabelen in een grafiek tegen elkaar uitgezet. Hierna kan eventueel een vervolgonderzoek komen naar de aard van de relatie. In hoofdstuk \@ref(linregressie) wordt op dit laatste verder ingegaan.
 
 **Oplossingen**
 
 + *Spreidingsdiagram* - Voor het onderzoeken van een verband tussen twee numerieke variabelen.
 + *Lijndiagram* - Gebruik je voornamelijk wanneer een van de numerieke variabelen een tijd weergeeft.
 
-**Voorbeeld**
+::: {.workedexample}
+Een ijsverkoper heeft gedurende 14 opeenvolgende dagen de dagtemperatuur en de dagelijkse verkoop aan ijs bijgehouden. De gegevens zijn te zien in figuur \@ref(fig:ijsverkoop-data) en te downloaden met het bestand [ijsverkoop.xlsx](data/ijsverkoop.xlsx).
 
-Vraag: Hoe ziet het gemiddelde temperatuurverloop over de laatste 2 weken eruit?
-
-Vraag: Is er een verband tussen de ijsverkoop en de gemiddelde temperatuur?
-
-```{r eda-cn2, out.width="50%", fig.cap="Lijndiagram (links) en spreidingsdiagram (rechts)."}
-knitr::include_graphics("images/eda/eda-n2-lijn.png")
-knitr::include_graphics("images/eda/eda-n2-spreiding.png")
+```{r ijsverkoop-data, fig.cap="Temperatuur (gemeten om 13:00 uur) en ijsverkoop gedurende 14 dagen", out.width="30%"}
+knitr::include_graphics("images/eda/ijsverkoop-data.png")
 ```
 
-##  Voorbeeld: Old Faithful geiser
+De vragen zijn: Hoe ziet het temperatuurverloop eruit en is er een verband tussen de ijsverkoop en de dagtemperatuur?
+
+Voor het bekijken van het temperatuurverloop maak je een lijndiagram met de variabele `dag` op de X-as en de variabele `temperatuur` op de Y-as. Voor het beoordelen van een mogelijk verband tussen verkoop en temperatuur maak je een spreidingsdiagram met de variabele `temperatuur` als onafhankelijke variabele op de X-as en de variabele `ijsverkoop` op de Y-as. Voor de resultaten zie figuur \@ref(fig:ijsverkoop-diagrammen)
+
+```{r ijsverkoop-diagrammen, fig.cap="Lijndiagram (links) en spreidingsdiagram (rechts).", out.width="50%"}
+knitr::include_graphics("images/eda/ijsverkoop-lijndiagram.png")
+knitr::include_graphics("images/eda/ijsverkoop-spreidingsdiagram.png")
+```
+
+In het spreidingsdiagram is een duidelijk positief verband te zien. Voldoende reden voor een vervolgvraag of dit een lineair verband en zoja hoe een regressiemodel eruit zou kunnen zien.
+
+:::
+
+##  Analyse Old Faithful geiser
 
 <!-- Inspiratiebron: https://www.tudelft.nl/ewi/studeren/online-onderwijs/wiskunde-uitgelegd/statistiek#c144704 -->
 
