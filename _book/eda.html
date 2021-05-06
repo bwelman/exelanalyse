@@ -325,42 +325,111 @@ Figuur 4.12: Lijndiagram (links) en spreidingsdiagram (rechts).
 <h2>
 <span class="header-section-number">4.5</span> Analyse Old Faithful geiser<a class="anchor" aria-label="anchor" href="#analyse-old-faithful-geiser"><i class="fas fa-link"></i></a>
 </h2>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-geiserfoto"></span>
+<img src="images/eda/ff-geiserfoto.jpg" alt="Old Faithful geiser (bron: Detroit Free Press)" width="50%"><p class="caption">
+Figuur 4.13: Old Faithful geiser (bron: Detroit Free Press)
+</p>
+</div>
+<!-- Foto: https://www.gannett-cdn.com/presto/2019/09/16/USAT/26c3dfd5-ac5c-4cd9-9d22-f63dc3668aed-XXX_ras_017.JPG?crop=3023,1701,x0,y153&width=3200&height=1680&fit=bounds -->
 <!-- Inspiratiebron: https://www.tudelft.nl/ewi/studeren/online-onderwijs/wiskunde-uitgelegd/statistiek#c144704 -->
 <p>De Old Faithful geiser in Yellowstone National Park (Wyoming, VS) heeft meerdere erupties per dag. De dataset <a href="data/faithful.csv">faithful.csv</a> bevat 272 waarnemingen van twee variabelen: <code>eruptietijd</code> (tijdsduur van de uitbarsting in sec.) en <code>wachttijd</code> (wachttijd tussen twee erupties in min.).</p>
 <div class="guidedpractice">
-<ol style="list-style-type: decimal">
-<li>Laad de data via Power Query in Excel.</li>
-<li>Voer een beschrijvend onderzoek uit naar de variabele <code>eruptietijd</code>. Bepaal in ieder geval minimum- en maximumwaarde, mediaan en gemiddelde. Teken ook een boxplot. Welke conclusies kun je hieruit trekken over de verdeling van de waarden?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Je kunt hier goed zien dat de data willekeurig is. De mediaan (240) ligt veel dichter bij de maximumwaarde (306) dan bij de minimumwaarde en ligt ook rechts van het gemiddelde (209). De verdeling is asymmetrisch, scheef, skew rechts.&lt;/p&gt;"><sup>3</sup></a>
-</li>
-</ol>
+<p>Laad de data via Power Query in Excel. Kies hiervoor <em>Gegevens &gt; Van het web &gt; URL intypen &gt; Laden</em>.</p>
 </div>
-<p>Geologische experts geloven dat er twee soorten uitbarstingen voorkomen: met een kortere en met een langere tijdsduur, die beiden een standaardlengte hebben. Rond deze waarden zou je een hogere concentratie van waargenomen lengtes verwachten. Voor het bekijken van de verdeling van de waarden is een histogram erg geschikt. Je moet dan wel een geschikte <em>Bin-breedte</em> kiezen.</p>
+<p>De variabelen <code>eruptietijd</code> en <code>wachttijd</code> worden eerst afzonderlijk bekeken, daarna gecombineerd.</p>
+<div id="eruptietijd" class="section level3" number="4.5.1">
+<h3>
+<span class="header-section-number">4.5.1</span> Eruptietijd<a class="anchor" aria-label="anchor" href="#eruptietijd"><i class="fas fa-link"></i></a>
+</h3>
 <div class="guidedpractice">
-<ol start="3" style="list-style-type: decimal">
-<li>Maak een histogram van de eruptietijden. Doe dit via de methode Invoegen -&gt; Grafieken -&gt; Histogram, want alleen via deze methode heb je de mogelijkheid om interactief met de Bin-breedte te experimenteren. Doe dit met Bin-breedtes van 2 sec., 5 sec., 10 sec. 30 sec. en 50 sec. Wat kun je zeggen over de vorm van de histogrammen en de hoeveelheid af te lezen informatie hieruit bij die wisselende Bin-breedtes?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;De vorm van het histogram verandert, een rommelige figuur bij de zeer kleine Bin-breedte bij de grootste Bin-breedte is alle informatie uit het histogram verdwenen. Wanneer de breedte te groot wordt kun je de twee pieken niet meer waarnemen. Het is een kwestie van proberen en ervaring om een goede breedte te vinden.&lt;/p&gt;"><sup>4</sup></a>
-</li>
-<li>Kies de Bin-breedte die de meeste informatie oplevert. Kun je de twee piekmomenten precies aflezen?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Precies aflezen is niet goed mogelijk. Bij een Bin-breedte van 15 kun je wel zie dat de eerste piek in het interval [116, 126] ligt en de tweede piek in het interval [261, 276].&lt;/p&gt;"><sup>5</sup></a>
-</li>
-</ol>
-</div>
-<p>Met kansdichtheidsdiagrammen die bij de theoretische verdelingen horen kun je veel meer details in de verdeling zien. Helaas behoort de verdeling van de eruptietijden niet tot een van de bekende verdelingsfuncties. Een zeer goed alternatief is een zogenaamd <em>Kernel dichtheidschattingsdiagram</em> maar dit grafiektype wordt niet door Excel aangeboden. Het voert te ver om hierop in te gaan. De meeste statistische add-ins ondersteunen dit grafiektype wel.</p>
-<p>Een goed alternatief is een diagram met een cumulatieve empirische verdeling die bij de histogramopties van gegevensanalyse zit.</p>
-<div class="guidedpractice">
-<ol start="5" style="list-style-type: decimal">
-<li>Maak nu opnieuw een histogram, maar nu via de methode Gegevens -&gt; Gegevensanalyse -&gt; Histogram. Selecteer in het dialoogvenster zowel <em>Cumulatief percentage</em> als <em>Grafiek maken</em>.</li>
-</ol>
-</div>
+<p>Maak eerst via <em>Gegevens &gt; Gegevensanalyse &gt; Beschrijvende statistiek</em> samenvattingen voor de variabele <code>eruptietijd</code>. Laat de uitvoer in een nieuw werkblad plaatsen.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:faithful-ecdf"></span>
-<img src="images/eda/faithful-ECDF.png" alt="Histogram met cumulatief percentages." width="100%"><p class="caption">
-Figuur 4.13: Histogram met cumulatief percentages.
+<span id="fig:ff-et-statistieken"></span>
+<img src="images/eda/ff-et-statistieken.png" alt="Samenvattende statistieken variabele `eruptietijd`." width="30%"><p class="caption">
+Figuur 4.14: Samenvattende statistieken variabele <code>eruptietijd</code>.
 </p>
 </div>
-<p>Hier zie je steile hellingen aan weerszijden van 120 en van 270, de twee piekwaarden.</p>
+<p>Maak nu een boxplot voor deze variabele via <em>Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Box-and-whisker</em>.</p>
+</div>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-et-boxplot"></span>
+<img src="images/eda/ff-et-boxplot.png" alt="Boxplot variabele `eruptietijd`." width="70%"><p class="caption">
+Figuur 4.15: Boxplot variabele <code>eruptietijd</code>.
+</p>
+</div>
+<p>In de boxplot kun je goed zien dat de data asymmetrisch is. De mediaan (240) ligt niet in het midden van de box, maar is groter dan het gemiddelde (209). Ook licht ook veel dichter bij de maximumwaarde (306) dan bij de minimumwaarde (96). De verdeling is links scheef.</p>
+<p>Geologische experts geloven dat er twee soorten uitbarstingen voorkomen: met een kortere en met een langere tijdsduur, die beiden een standaardlengte hebben. Rond deze waarden zou je een hogere concentratie van waargenomen lengtes verwachten. Voor het bekijken van de verdeling van de waarden van variabele <code>eruptietijd</code> maak je een histogram met een geschikte <em>Bin-breedte</em>. Om met de Bin-breedte te kunnen experimenteren moet je in Excel een histogram maken via het invoegen van het grafiektype.</p>
+<div class="guidedpractice">
+<p>Maak een histogram van de eruptietijden via <em>Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Histogram</em>.</p>
+<p>Experimenteer met Bin-breedtes van 2 sec., 5 sec., 10 sec., 15 sec., 30 sec. en 50 sec. Hiervoor selecteer je eerst de X-as en kies daarna <em>As opmaken &gt; Bin-breedte &gt; breedte invullen</em>. Het venster met opties moet je meestal wat breder maken om de bin-breedte in te kunnen vullen!</p>
+</div>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-et-histogram"></span>
+<img src="images/eda/ff-et-histogram37.png" alt="Histogram variabele `eruptietijd`. Links het standaarddiagram met een binbreedte van 37. Het histogram rechts heeft een bin-breedte van 15`." width="50%"><img src="images/eda/ff-et-histogram15.png" alt="Histogram variabele `eruptietijd`. Links het standaarddiagram met een binbreedte van 37. Het histogram rechts heeft een bin-breedte van 15`." width="50%"><p class="caption">
+Figuur 4.16: Histogram variabele <code>eruptietijd</code>. Links het standaarddiagram met een binbreedte van 37. Het histogram rechts heeft een bin-breedte van 15`.
+</p>
+</div>
+<p>Bij wijziging van de Bin-breedte zie je de vorm van het histogram veranderen en ook de hoeveelheid informatie die je hieruit af kunt lezen. De zeer kleine bin-breedtes geven een wat rommeliger figuur en je ziet teveel details. Bij de grootste bin-breedte is alle informatie uit het histogram verdwenen en kun je de twee pieken niet meer waarnemen. Het is een kwestie van proberen en ervaring om een goede breedte te vinden.</p>
+<p>Een bin-breedte van 15 lijkt hier redelijk geschikt. Het is niet goed mogelijk om de twee piekmomenten precies af te lezen. Wel kun je zien dat de eerste piek in het interval [111, 126] ligt en de tweede piek in het interval [261, 276].</p>
+<div class="tip">
+<p>Bij theoretische verdelingen zoals de normale verdeling, kun je <em>kansdichtheidsdiagrammen</em> maken waardoor je veel meer details in de verdeling kunt zien. Helaas lijkt de verdeling van de eruptietijden niet op een van de bekende verdelingsfuncties. Voor dergelijke situaties kun je als een goed alternatief een zogenaamde <em>Kernel dichtheidschattingsdiagram</em> maken, maar helaas wordt dit grafiektype niet door Excel aangeboden. Veel statistische add-ins ondersteunen dit grafiektype wel.</p>
+</div>
+<p>Een redelijk alternatief is een diagram met een cumulatieve empirische verdeling. Excel biedt deze mogelijkheid aan via de histogramopties van Gegevensanalyse. Normaliter moet je hiervoor eerst zelf een kolommetje bins maken met de intervalgrenzen, maar wanneer je dat niet doet en dus de bins niet specificeert, dan worden er bins gemaakt die waarschijnlijk wat minder optimaal zijn. Voor een eerste verkenning is dat geen probleem.</p>
+<div class="guidedpractice">
+<p>Maak nu opnieuw een histogram, maar nu via <em>Gegevens -&gt; Gegevensanalyse -&gt; Histogram</em>. Specificeer voor het invoerbereik de kolom met gegevens. Laat het Verzamelbereik leeg. Wanneer de eerste rij in het invoerbereik zit moet je ook <em>Labels</em> aanvinken. Selecteer bij de uitvoeropties <em>Cumulatief percentage</em> en <em>Grafiek maken</em>.</p>
+</div>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-ecdf"></span>
+<img src="images/eda/ff-ecdf.png" alt="Histogram met cumulatief percentages." width="70%"><p class="caption">
+Figuur 4.17: Histogram met cumulatief percentages.
+</p>
+</div>
+<p>De procedure heeft hier een bin-breedte van 13,5 genomen, deze geeft net wat meer details dan bij de bin-breedte van 15. In de lijn voor de cumulatieve percentages zie je steilere hellingen aan de linkerkant van de piekmomenten die zo rond 120 sec. en 270 sec. liggen</p>
+</div>
+<div id="wachttijd" class="section level3" number="4.5.2">
+<h3>
+<span class="header-section-number">4.5.2</span> Wachttijd<a class="anchor" aria-label="anchor" href="#wachttijd"><i class="fas fa-link"></i></a>
+</h3>
+<p>Voer gelijke opdrachten uit voor de variabele <code>wachttijd</code>. De statistieken en boxplot zijn in figuur <a href="eda.html#fig:ff-wt-statistieken">4.18</a></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-wt-statistieken"></span>
+<img src="images/eda/ff-wt-statistieken.png" alt="Samenvattende statistieken variabele `wachttijd`." width="30%"><p class="caption">
+Figuur 4.18: Samenvattende statistieken variabele <code>wachttijd</code>.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-wt-boxplot"></span>
+<img src="images/eda/ff-wt-boxplot.png" alt="oxplot variabele `wachttijd`." width="70%"><p class="caption">
+Figuur 4.19: oxplot variabele <code>wachttijd</code>.
+</p>
+</div>
+<p>Voor een geschikte bin-breedte van het histogram moet je ook wat experimenteren. het waardenbereik loopt van 43-96 (minimum-maximum), een breedte van 53.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-wt-histogram"></span>
+<img src="images/eda/ff-wt-histogram4.png" alt="Histogram variabele `wachttijd` met een bin-breedte van 4." width="70%"><p class="caption">
+Figuur 4.20: Histogram variabele <code>wachttijd</code> met een bin-breedte van 4.
+</p>
+</div>
+<p>Het overall beeld is gelijk aan dat van de eruptietijden: een links scheve verdeling. Ook hier twee pieken die in de buurt van 55 min. en 80 min. liggen.</p>
+</div>
+<div id="eruptietijd---wachttijd" class="section level3" number="4.5.3">
+<h3>
+<span class="header-section-number">4.5.3</span> Eruptietijd - Wachttijd<a class="anchor" aria-label="anchor" href="#eruptietijd---wachttijd"><i class="fas fa-link"></i></a>
+</h3>
+<p>Voor het bekijken van een verband tussen de twee variabelen maak je een spereidingsdiagram.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-spreidingsdiagram"></span>
+<img src="images/eda/ff-spreidingsdiagram.png" alt="Spreidingsdiagram eruptietijd - wachttijd" width="70%"><p class="caption">
+Figuur 4.21: Spreidingsdiagram eruptietijd - wachttijd
+</p>
+</div>
+<p>Je zie hier twee ellipsvormige clusters van punten die overeenkomen met waarnemingen in de buurt waar de twee laagste waarden van de pieken en de twee hoogste waarden van de pieken (270,80) samenkomen. Op het oog is een scheidingsgrens tussen deze twee clusters een eruptietijd van 180 sec. (3 minuten).</p>
+<p>Om hier betekenis aan toe te kennen en/of vervolgvragen te formuleren is, zoals meestal, meer deskundigheid nodig over de context van het onderzoek.</p>
 
 </div>
 </div>
-
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="beschrijvend.html"><span class="header-section-number">3</span> Beschrijvende statistiek</a></div>
 <div class="next"><a href="linregressie.html"><span class="header-section-number">5</span> Samenhang en lineaire regressie</a></div>
@@ -380,7 +449,13 @@ Figuur 4.13: Histogram met cumulatief percentages.
 <li><a class="nav-link" href="#twee-numerieke-variabelen"><span class="header-section-number">4.4.5</span> Twee numerieke variabelen</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#analyse-old-faithful-geiser"><span class="header-section-number">4.5</span> Analyse Old Faithful geiser</a></li>
+<li>
+<a class="nav-link" href="#analyse-old-faithful-geiser"><span class="header-section-number">4.5</span> Analyse Old Faithful geiser</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#eruptietijd"><span class="header-section-number">4.5.1</span> Eruptietijd</a></li>
+<li><a class="nav-link" href="#wachttijd"><span class="header-section-number">4.5.2</span> Wachttijd</a></li>
+<li><a class="nav-link" href="#eruptietijd---wachttijd"><span class="header-section-number">4.5.3</span> Eruptietijd - Wachttijd</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -397,7 +472,7 @@ Figuur 4.13: Histogram met cumulatief percentages.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 05 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 06 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -52,7 +52,15 @@ fig:maandinkomen-histogram
 fig:lampen-boxplot
 fig:ijsverkoop-data
 fig:ijsverkoop-diagrammen
-fig:faithful-ecdf
+fig:ff-geiserfoto
+fig:ff-et-statistieken
+fig:ff-et-boxplot
+fig:ff-et-histogram
+fig:ff-ecdf
+fig:ff-wt-statistieken
+fig:ff-wt-boxplot
+fig:ff-wt-histogram
+fig:ff-spreidingsdiagram
 tab:sim1-data
 fig:sim1-basis
 fig:sim1-regressie
@@ -172,6 +180,9 @@ eén-numerieke-variabele
 numerieke-en-categoriale-variabele
 twee-numerieke-variabelen
 analyse-old-faithful-geiser
+eruptietijd
+wachttijd
+eruptietijd---wachttijd
 linregressie
 samenhang
 lineair-verband
