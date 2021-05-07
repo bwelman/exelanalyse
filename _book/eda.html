@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Hoofdstuk 4 Exploratieve Data Analyse (EDA) | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.8/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><meta name="description" content="Cursus data analyse met Excel">
@@ -374,6 +374,12 @@ Figuur 4.16: Histogram variabele <code>eruptietijd</code>. Links het standaarddi
 <p>Een bin-breedte van 15 lijkt hier redelijk geschikt. Het is niet goed mogelijk om de twee piekmomenten precies af te lezen. Wel kun je zien dat de eerste piek in het interval [111, 126] ligt en de tweede piek in het interval [261, 276].</p>
 <div class="tip">
 <p>Bij theoretische verdelingen zoals de normale verdeling, kun je <em>kansdichtheidsdiagrammen</em> maken waardoor je veel meer details in de verdeling kunt zien. Helaas lijkt de verdeling van de eruptietijden niet op een van de bekende verdelingsfuncties. Voor dergelijke situaties kun je als een goed alternatief een zogenaamde <em>Kernel dichtheidschattingsdiagram</em> maken, maar helaas wordt dit grafiektype niet door Excel aangeboden. Veel statistische add-ins ondersteunen dit grafiektype wel.</p>
+<div class="figure" style="text-align: center">
+<span id="fig:ff-et-kde"></span>
+<img src="images/eda/ff-et-kde.png" alt="Kernel dichtheidschatting, gemaakt met de addin van Real Statistics. De twee pieken komen hier duidelijker naar voren." width="60%"><p class="caption">
+Figuur 4.17: Kernel dichtheidschatting, gemaakt met de addin van Real Statistics. De twee pieken komen hier duidelijker naar voren.
+</p>
+</div>
 </div>
 <p>Een redelijk alternatief is een diagram met een cumulatieve empirische verdeling. Excel biedt deze mogelijkheid aan via de histogramopties van Gegevensanalyse. Normaliter moet je hiervoor eerst zelf een kolommetje bins maken met de intervalgrenzen, maar wanneer je dat niet doet en dus de bins niet specificeert, dan worden er bins gemaakt die waarschijnlijk wat minder optimaal zijn. Voor een eerste verkenning is dat geen probleem.</p>
 <div class="guidedpractice">
@@ -381,8 +387,8 @@ Figuur 4.16: Histogram variabele <code>eruptietijd</code>. Links het standaarddi
 </div>
 <div class="figure" style="text-align: center">
 <span id="fig:ff-ecdf"></span>
-<img src="images/eda/ff-ecdf.png" alt="Histogram met cumulatief percentages." width="70%"><p class="caption">
-Figuur 4.17: Histogram met cumulatief percentages.
+<img src="images/eda/ff-ecdf.png" alt="Histogram met cumulatief percentages." width="60%"><p class="caption">
+Figuur 4.18: Histogram met cumulatief percentages.
 </p>
 </div>
 <p>De procedure heeft hier een bin-breedte van 13,5 genomen, deze geeft net wat meer details dan bij de bin-breedte van 15. In de lijn voor de cumulatieve percentages zie je steilere hellingen aan de linkerkant van de piekmomenten die zo rond 120 sec. en 270 sec. liggen</p>
@@ -391,24 +397,24 @@ Figuur 4.17: Histogram met cumulatief percentages.
 <h3>
 <span class="header-section-number">4.5.2</span> Wachttijd<a class="anchor" aria-label="anchor" href="#wachttijd"><i class="fas fa-link"></i></a>
 </h3>
-<p>Voer gelijke opdrachten uit voor de variabele <code>wachttijd</code>. De statistieken en boxplot zijn in figuur <a href="eda.html#fig:ff-wt-statistieken">4.18</a></p>
+<p>Voer gelijke opdrachten uit voor de variabele <code>wachttijd</code>. De statistieken en boxplot zijn in figuur <a href="eda.html#fig:ff-wt-statistieken">4.19</a></p>
 <div class="figure" style="text-align: center">
 <span id="fig:ff-wt-statistieken"></span>
 <img src="images/eda/ff-wt-statistieken.png" alt="Samenvattende statistieken variabele `wachttijd`." width="30%"><p class="caption">
-Figuur 4.18: Samenvattende statistieken variabele <code>wachttijd</code>.
+Figuur 4.19: Samenvattende statistieken variabele <code>wachttijd</code>.
 </p>
 </div>
 <div class="figure" style="text-align: center">
 <span id="fig:ff-wt-boxplot"></span>
 <img src="images/eda/ff-wt-boxplot.png" alt="oxplot variabele `wachttijd`." width="70%"><p class="caption">
-Figuur 4.19: oxplot variabele <code>wachttijd</code>.
+Figuur 4.20: oxplot variabele <code>wachttijd</code>.
 </p>
 </div>
 <p>Voor een geschikte bin-breedte van het histogram moet je ook wat experimenteren. het waardenbereik loopt van 43-96 (minimum-maximum), een breedte van 53.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:ff-wt-histogram"></span>
 <img src="images/eda/ff-wt-histogram4.png" alt="Histogram variabele `wachttijd` met een bin-breedte van 4." width="70%"><p class="caption">
-Figuur 4.20: Histogram variabele <code>wachttijd</code> met een bin-breedte van 4.
+Figuur 4.21: Histogram variabele <code>wachttijd</code> met een bin-breedte van 4.
 </p>
 </div>
 <p>Het overall beeld is gelijk aan dat van de eruptietijden: een links scheve verdeling. Ook hier twee pieken die in de buurt van 55 min. en 80 min. liggen.</p>
@@ -421,7 +427,7 @@ Figuur 4.20: Histogram variabele <code>wachttijd</code> met een bin-breedte van 
 <div class="figure" style="text-align: center">
 <span id="fig:ff-spreidingsdiagram"></span>
 <img src="images/eda/ff-spreidingsdiagram.png" alt="Spreidingsdiagram eruptietijd - wachttijd" width="70%"><p class="caption">
-Figuur 4.21: Spreidingsdiagram eruptietijd - wachttijd
+Figuur 4.22: Spreidingsdiagram eruptietijd - wachttijd
 </p>
 </div>
 <p>Je zie hier twee ellipsvormige clusters van punten die overeenkomen met waarnemingen in de buurt waar de twee laagste waarden van de pieken en de twee hoogste waarden van de pieken (270,80) samenkomen. Op het oog is een scheidingsgrens tussen deze twee clusters een eruptietijd van 180 sec. (3 minuten).</p>
@@ -472,7 +478,7 @@ Figuur 4.21: Spreidingsdiagram eruptietijd - wachttijd
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 06 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 11 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

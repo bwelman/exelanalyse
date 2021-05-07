@@ -56,6 +56,7 @@ fig:ff-geiserfoto
 fig:ff-et-statistieken
 fig:ff-et-boxplot
 fig:ff-et-histogram
+fig:ff-et-kde
 fig:ff-ecdf
 fig:ff-wt-statistieken
 fig:ff-wt-boxplot
@@ -69,9 +70,11 @@ fig:toolpak-regressie
 fig:sim1-samenvatting
 fig:sim1-anova
 fig:sim1-coefficienten
-fig:sim1-residu
-tab:sim2-data
-fig:sim2-spreiding
+fig:sim1-residuen
+fig:sim1-residuplot
+fig:sim1-residu-voorspeld
+fig:sim1-lijnen
+fig:sim2-lineair
 fig:sim2-samenvatting
 fig:sim2-coefficienten
 fig:sim2-residu
@@ -82,6 +85,7 @@ fig:ecdata-regressie
 fig:ecdata-samenvatting
 fig:ecdata-coefficienten
 fig:ecdata-residu
+fig:toetsresultaat
 fig:airpassengers
 fig:ts-componenten
 fig:ap-trend
@@ -187,9 +191,9 @@ linregressie
 samenhang
 lineair-verband
 linreg-enkelvoudig
-methode---formules
-methode---spreidingsdiagram-met-trendlijn
-methode---gegevensanalyse
+via-formules
+via-spreidingsdiagram
+via-gegevensanalyse-1
 sim2
 linreg-meervoudig
 voorspellen
