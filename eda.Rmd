@@ -298,6 +298,11 @@ Een bin-breedte van 15 lijkt hier redelijk geschikt. Het is niet goed mogelijk o
 
 ::: {.tip}
 Bij theoretische verdelingen zoals de normale verdeling, kun je *kansdichtheidsdiagrammen* maken waardoor je veel meer details in de verdeling kunt zien. Helaas lijkt de verdeling van de eruptietijden niet op een van de bekende verdelingsfuncties. Voor dergelijke situaties kun je als een goed alternatief een zogenaamde *Kernel dichtheidschattingsdiagram* maken, maar helaas wordt dit grafiektype niet door Excel aangeboden. Veel statistische add-ins ondersteunen dit grafiektype wel.
+
+```{r ff-et-kde, fig.cap="Kernel dichtheidschatting, gemaakt met de addin van Real Statistics. De twee pieken komen hier duidelijker naar voren.", out.width="60%"}
+knitr::include_graphics("images/eda/ff-et-kde.png")
+```
+
 :::
 
 Een redelijk alternatief is een diagram met een cumulatieve empirische verdeling. Excel biedt deze mogelijkheid aan via de histogramopties van Gegevensanalyse. Normaliter moet je hiervoor eerst zelf een kolommetje bins maken met de intervalgrenzen, maar wanneer je dat niet doet en dus de bins niet specificeert, dan worden er bins gemaakt die waarschijnlijk wat minder optimaal zijn. Voor een eerste verkenning is dat geen probleem.
@@ -306,7 +311,7 @@ Een redelijk alternatief is een diagram met een cumulatieve empirische verdeling
 Maak nu opnieuw een histogram, maar nu via *Gegevens -> Gegevensanalyse -> Histogram*. Specificeer voor het invoerbereik de kolom met gegevens. Laat het Verzamelbereik leeg. Wanneer de eerste rij in het invoerbereik zit moet je ook *Labels* aanvinken. Selecteer bij de uitvoeropties *Cumulatief percentage* en *Grafiek maken*.
 :::
 
-```{r ff-ecdf, fig.cap="Histogram met cumulatief percentages.", out.width="70%"}
+```{r ff-ecdf, fig.cap="Histogram met cumulatief percentages.", out.width="60%"}
 knitr::include_graphics("images/eda/ff-ecdf.png")
 ```
 
