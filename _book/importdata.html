@@ -97,9 +97,9 @@
 <li>In het script kun je eenvoudig een stap wijzigen, ongedaan maken of een nieuwe stap toevoegen.</li>
 <li>Wanneer er wijzigingen of aanvullingen in de brondata komen hoef je de query alleen maar opnieuw uit te voeren waarna de gewijzigde gegevens in het werkblad verschijnen.</li>
 </ul>
-<div id="gegevens-ophalen-en-transformeren" class="section level2" number="1.1">
+<div id="import-lint" class="section level2" number="1.1">
 <h2>
-<span class="header-section-number">1.1</span> Gegevens ophalen en transformeren<a class="anchor" aria-label="anchor" href="#gegevens-ophalen-en-transformeren"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.1</span> Gegevens ophalen en transformeren<a class="anchor" aria-label="anchor" href="#import-lint"><i class="fas fa-link"></i></a>
 </h2>
 <p>Om Gegevens ophalen en transformeren in Excel te gebruiken, maak je eigenlijk een query in de werkmap. Met een query kun je een verbinding maken met een breed scala aan beschikbare gegevensbronnen, een voorbeeld van de gegevens bekijken en de gegevens transformeren.</p>
 <p>De eerste stap is het maken van een verbinding met een gegevensbron. Wanneer de verbinding is gemaakt, krijg je een voorbeeld van de gegevens te zien. Daarna kun je stappen toevoegen om de gegevens te structureren en te transformeren. Hiervoor wordt een Query Editor gestart om een aantal instructies te maken die de acties uitvoeren. De laatste stap is het laden van de gegevens als een tabel in een werkblad.</p>
@@ -119,9 +119,9 @@ Figuur 1.1: Lint gegevens.
 <p>Er zijn knoppen voor het ophalen van gegevens uit tekst/csv, web en een Excel tabel/bereik. Deze gegevensbronnen en nog veel meer zijn beschikbaar via de knop <em>Gegevens ophalen</em>.</p>
 <p>De groep <em>Query’s en verbindingen</em> heeft een knop voor het vernieuwen van query’s en een knop om bestaande query’s en verbindingen te bekijken en te beheren.</p>
 </div>
-<div id="importeren-van-een-tekstcsv-bestand" class="section level2" number="1.2">
+<div id="import-csv" class="section level2" number="1.2">
 <h2>
-<span class="header-section-number">1.2</span> Importeren van een tekst/csv bestand<a class="anchor" aria-label="anchor" href="#importeren-van-een-tekstcsv-bestand"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.2</span> Importeren van een tekst/csv bestand<a class="anchor" aria-label="anchor" href="#import-csv"><i class="fas fa-link"></i></a>
 </h2>
 <p>Veel gegevens in externe bronnen zijn beschikbaar als tekst (bestandstype <code>.txt</code>) of via komma (of karakter) gescheiden waarden (bestandstype <code>.csv</code>).</p>
 <ol style="list-style-type: decimal">
@@ -164,9 +164,9 @@ De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt 
 <p>Het is altijd mogelijk om de query achteraf te wijzigen. Selecteer hiervoor een cel in de tabel en kies <em>tab Query &gt; Bewerken (groep Bewerken)</em>. De Query Editor wordt weer opgestart. Van hieruit kun je tevens de gegevens vernieuwen, alle stappen worden dan herhaald.</p>
 </div>
 </div>
-<div id="importeren-van-een-webtabel" class="section level2" number="1.3">
+<div id="import-web" class="section level2" number="1.3">
 <h2>
-<span class="header-section-number">1.3</span> Importeren van een webtabel<a class="anchor" aria-label="anchor" href="#importeren-van-een-webtabel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.3</span> Importeren van een webtabel<a class="anchor" aria-label="anchor" href="#import-web"><i class="fas fa-link"></i></a>
 </h2>
 <p>In webpagina’s tref je vaak tabellen. Bekijk maar eens de pagina <a href="https://nl.wikipedia.org/wiki/Europees_kampioenschap_voetbal_mannen">Europees kampioenschap voetbal mannen</a>. Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je uit de tabel <em>Erelijst</em> de kolommen <em>Jaar</em> en <em>Winnaar</em> importeren voor de jaren waarvoor ook een winnaar bekend is.</p>
 <ol style="list-style-type: decimal">
@@ -250,9 +250,9 @@ Figuur 1.7: Tabel met winnaars van het EK voetbal voor mannen.
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#importdata"><span class="header-section-number">1</span> Importeren van data</a></li>
-<li><a class="nav-link" href="#gegevens-ophalen-en-transformeren"><span class="header-section-number">1.1</span> Gegevens ophalen en transformeren</a></li>
-<li><a class="nav-link" href="#importeren-van-een-tekstcsv-bestand"><span class="header-section-number">1.2</span> Importeren van een tekst/csv bestand</a></li>
-<li><a class="nav-link" href="#importeren-van-een-webtabel"><span class="header-section-number">1.3</span> Importeren van een webtabel</a></li>
+<li><a class="nav-link" href="#import-lint"><span class="header-section-number">1.1</span> Gegevens ophalen en transformeren</a></li>
+<li><a class="nav-link" href="#import-csv"><span class="header-section-number">1.2</span> Importeren van een tekst/csv bestand</a></li>
+<li><a class="nav-link" href="#import-web"><span class="header-section-number">1.3</span> Importeren van een webtabel</a></li>
 <li><a class="nav-link" href="#opg-importdata"><span class="header-section-number">1.4</span> Opgaven</a></li>
 </ul>
 
@@ -270,7 +270,7 @@ Figuur 1.7: Tabel met winnaars van het EK voetbal voor mannen.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 11 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 15 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

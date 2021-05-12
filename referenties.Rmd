@@ -10,3 +10,7 @@
 
 + [Online cursus statistiek Universiteit van Utrecht](https://www.uu.nl/onderwijs/open-en-gepersonaliseerd-statistiekonderwijs/lesmateriaal)
 
+**Tijdreeksen**
+
++ [Dossier Conjunctuur (CBS)](https://www.cbs.nl/nl-nl/dossier/dossier-conjunctuur)
++ [Conjunctuurklok (CBS)](https://www.cbs.nl/nl-nl/visualisaties/conjunctuurklok)

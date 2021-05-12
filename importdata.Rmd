@@ -13,7 +13,7 @@ Deze aanbevolen werkwijze heeft de volgende voordelen:
 + In het script kun je eenvoudig een stap wijzigen, ongedaan maken of een nieuwe stap toevoegen.
 + Wanneer er wijzigingen of aanvullingen in de brondata komen hoef je de query alleen maar opnieuw uit te voeren waarna de gewijzigde gegevens in het werkblad verschijnen.
 
-## Gegevens ophalen en transformeren
+## Gegevens ophalen en transformeren {#import-lint}
 
 Om Gegevens ophalen en transformeren in Excel te gebruiken, maak je eigenlijk een query in de werkmap. Met een query kun je een verbinding maken met een breed scala aan beschikbare gegevensbronnen, een voorbeeld van de gegevens bekijken en de gegevens transformeren.
 
@@ -34,7 +34,7 @@ Er zijn knoppen voor het ophalen van gegevens uit tekst/csv, web en een Excel ta
 
 De groep *Query's en verbindingen* heeft een knop voor het vernieuwen van query's en een knop om bestaande query's en verbindingen te bekijken en te beheren.
 
-## Importeren van een tekst/csv bestand
+## Importeren van een tekst/csv bestand {#import-csv}
 
 Veel gegevens in externe bronnen zijn beschikbaar als tekst (bestandstype `.txt`) of via komma (of karakter) gescheiden waarden (bestandstype `.csv`).
 
@@ -79,7 +79,7 @@ De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt 
 Het is altijd mogelijk om de query achteraf te wijzigen. Selecteer hiervoor een cel in de tabel en kies *tab Query > Bewerken (groep Bewerken)*. De Query Editor wordt weer opgestart. Van hieruit kun je tevens de gegevens vernieuwen, alle stappen worden dan herhaald.
 :::
 
-## Importeren van een webtabel
+## Importeren van een webtabel {#import-web}
 
 In webpagina's tref je vaak tabellen. Bekijk maar eens de pagina [Europees kampioenschap voetbal mannen](https://nl.wikipedia.org/wiki/Europees_kampioenschap_voetbal_mannen). Power Query in Excel kan deze tabellen herkennen en importeren. In deze taak ga je uit de tabel *Erelijst* de kolommen *Jaar* en *Winnaar* importeren voor de jaren waarvoor ook een winnaar bekend is.
 
