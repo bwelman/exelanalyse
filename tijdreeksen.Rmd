@@ -307,7 +307,7 @@ Met de werkblad functie `GEMIDDELDE()`. Je kunt dan zelf kiezen welke van de hie
 Download het bestand [omzet2020.xlsx](data/omzet2020.xlsx) en open het. Dit bestand bevat de maandomzetten voor het jaar 2020. Het resultaat van een 3-maands voortschrijdend gemiddelde is te zien in figuur \@ref(fig:omzet2020-ma3). De werkwijze is als volgt:
 
 + *3 maand - gecentreerd* : Typ in cel `C3` de formule `=GEMIDDELDE(B2:B4)` en kopieer deze naar beneden t/m november.
-+ *3 maand - achterlopend* : Typ in cel `D3` de formule `=GEMIDDELDE(B2:B4)` en kopieer deze naar beneden t/m december.
++ *3 maand - achterlopend* : Typ in cel `D4` de formule `=GEMIDDELDE(B2:B4)` en kopieer deze naar beneden t/m december.
 
 ```{r omzet2020-ma3, fig.cap="Berekening 3-maands voortschrijdend gemiddelde, zowel gecentreerd als achterlopend.", out.width="70%"}
 knitr::include_graphics("images/timeseries/omzet2020-ma3.png")

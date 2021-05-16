@@ -7,8 +7,8 @@
 <title>Hoofdstuk 7 Prognoses | Excel Data Analyse</title>
 <meta name="author" content="Ben Welman">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.8/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5/tabs.js"></script><script src="libs/bs3compat-0.2.5/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><meta name="description" content="Cursus data analyse met Excel">
 <meta name="keywords" content="tutorial, cursus, studieboek, excel, data analyse, gegevensanalyse, statistiek, tijdreeksen, voorspellingen, prognoses, ETS">
 <meta name="robots" content="index,follow">
@@ -100,7 +100,7 @@
 <p>Er zijn verschillende kentallen ontwikkeld om de nauwkeurigheid te beoordelen. Deze worden meestal met hun Engelstalige afkorting gebruikt. Een paar veel voorkomende kentallen staan in tabel <a href="prognoses.html#tab:kentallen">7.1</a> genoemd.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:kentallen">Tabel 7.1: </span>Enkele maatstaven voor de naukeurigheis van prognoses.
+<span id="tab:kentallen">Tabel 7.1: </span>Enkele maatstaven voor de naukeurigheid van prognoses.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -167,180 +167,86 @@ Wortel kwadratische afwijking
 <span class="header-section-number">7.2</span> Naïeve prognose<a class="anchor" aria-label="anchor" href="#prognoses-naief"><i class="fas fa-link"></i></a>
 </h2>
 <p>Een van de meest eenvoudige prognosemethodes is de <em>naïeve prognose</em>. Hierbij is de prognose op een bepaald tijdstip gelijk aan de waarde op het voorgaande tijdstip. Voor het bepalen hiervan heb je geen ingewikkelde formules nodig. Ondanks dat deze methode erg simpel is, zijn de resultaten vaak verrassend goed. Het is aan te raden om altijd hiermee te starten en daarna andere methodes hiermee te vergelijken.</p>
-<p>In tabel <a href="prognoses.html#tab:benzineverkoop-data">7.2</a> zie je de wekelijkse verkoop van liters (x 1000) benzine van een brandstofhandelaar.</p>
-<div class="inline-table"><table class="table table-sm">
-<caption>
-<span id="tab:benzineverkoop-data">Tabel 7.2: </span>Wekelijkse verkoop van benzine in duizend liters.
-</caption>
-<tbody>
-<tr>
-<td style="text-align:left;">
-week
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-11
-</td>
-<td style="text-align:right;">
-12
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-liters
-</td>
-<td style="text-align:right;">
-69
-</td>
-<td style="text-align:right;">
-79
-</td>
-<td style="text-align:right;">
-74
-</td>
-<td style="text-align:right;">
-64
-</td>
-<td style="text-align:right;">
-57
-</td>
-<td style="text-align:right;">
-76
-</td>
-<td style="text-align:right;">
-83
-</td>
-<td style="text-align:right;">
-66
-</td>
-<td style="text-align:right;">
-84
-</td>
-<td style="text-align:right;">
-63
-</td>
-<td style="text-align:right;">
-66
-</td>
-<td style="text-align:right;">
-74
-</td>
-</tr>
-</tbody>
-</table></div>
-<p>In de lijngrafiek in figuur <a href="prognoses.html#fig:benzineverkoop-grafiek">7.1</a> zie je dat dit een horizontaal patroon met willekeurige fluctuaties rond het gemiddelde van <span class="math inline">\(71,25\)</span> is.</p>
+<div class="guidedpractice">
+<ol style="list-style-type: decimal">
+<li><p>Download het bestand <a href="data/benzineverkoop.xlsx">benzineverkoop.xlsx</a>. Hierin is gedurende drie maanden de wekelijkse verkoop van benzine door een brandstofhandelaar in bijgehouden. De variabelen zijn <code>week</code> (het weeknummer) en <code>volume</code> (liters x 1000).</p></li>
+<li><p>Maak een grafiek van het verkoopvolume tegen het weeknummer. Eventueel voeg je een horizontale lijn voor het gemiddelde toe. In figuur <a href="prognoses.html#fig:benzineverkoop-lijn">7.1</a> zie je dat het verkoopvolume een horizontaal patroon met willekeurige fluctuaties rond het gemiddelde van 71,25 is.</p></li>
+</ol>
 <div class="figure" style="text-align: center">
-<span id="fig:benzineverkoop-grafiek"></span>
-<img src="images/prognoses/benzinegrafiek.png" alt="Aantal verkochte liters benzine (x 1000) per week." width="50%"><p class="caption">
-Figuur 7.1: Aantal verkochte liters benzine (x 1000) per week.
+<span id="fig:benzineverkoop-lijn"></span>
+<img src="images/prognoses/benzineverkoop-lijn.png" alt="Aantal verkochte liters benzine (x 1000) per week met een lijn die de gemiddelde weekverkoop weergeeft." width="100%"><p class="caption">
+Figuur 7.1: Aantal verkochte liters benzine (x 1000) per week met een lijn die de gemiddelde weekverkoop weergeeft.
 </p>
 </div>
-<p>Voor deze gegevens wordt een naïeve prognose van de wekelijkse verkoop gemaakt, zie kolom 3 in figuur <a href="prognoses.html#fig:benzineverkoop-naief">7.2</a>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Maak een naïeve prognose van de wekelijkse verkoop en bereken MAE, MAPE, MSE en RMSE. Het resultaat is te zien in figuur <a href="prognoses.html#fig:benzineverkoop-naief">7.2</a>.</li>
+</ol>
 <div class="figure" style="text-align: center">
 <span id="fig:benzineverkoop-naief"></span>
-<img src="images/prognoses/benzinetabel-naief.png" alt="Naïeve prognose van de wekelijkse verkopen en berekening van een aantal kenmerken voor de nauwkeurigheid." width="50%"><p class="caption">
+<img src="images/prognoses/benzineverkoop-naief.png" alt="Naïeve prognose van de wekelijkse verkopen en berekening van een aantal kenmerken voor de nauwkeurigheid." width="100%"><p class="caption">
 Figuur 7.2: Naïeve prognose van de wekelijkse verkopen en berekening van een aantal kenmerken voor de nauwkeurigheid.
 </p>
 </div>
-<p>In de kolommen 4 t/m 6 zijn berekeningen voor de nauwkeurigheid uitgevoerd.</p>
+<p>Toelichting:</p>
 <ul>
 <li>
-<em>abs. fout</em>: <code>=ABS(werkelijke waarde - prognosewaarde)</code>
+<em>naïeve prognose</em>: formule C2 wordt <code>=B1</code> enzovoort</li>
+<li>
+<em>fout</em>: <code>= volume - naïeve prognose</code>
 </li>
 <li>
-<em>abs. proc. fout</em>: <code>=ABS(fout) / werkelijke waarde</code>
+<em>absolute fout</em>: <code>= ABS(fout)</code>
 </li>
 <li>
-<em>kwadr. fout</em> <code>= fout^2</code>
+<em>absolute procentuele fout</em>: <code>= absolute fout / volume</code>
 </li>
 <li>
-<em>MAE</em>, <em>MAPE</em> en <em>MSE</em> zijn berekend met de formule <code>=GEMIDDELDE(...)</code>
+<em>kwadratische fout</em>: <code>= fout^2</code>
 </li>
 <li>
-<em>RMSE</em>: <code>=WORTEL(MSE)</code>
+<em>MAE</em>, <em>MAPE</em> en <em>MSE</em> zijn berekend met de formule <code>= GEMIDDELDE(...)</code>
+</li>
+<li>
+<em>RMSE</em>: <code>= WORTEL(MSE)</code>
 </li>
 </ul>
-<div class="guidedpractice">
-<p>Wat is de verkoopprognose voor de weken 13 t/m 14?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Voor de weken 13 t/m 15 is de prognose 74, de waarde van week 12. Wanneer de werkelijke verkoop voor week 13/14 beschikbaar is kan een nieuwe prognose voor week 14/15 gemaakt worden.&lt;/p&gt;"><sup>3</sup></a></p>
+<div class="alert alert-dark">
+<p>Wat is de verkoopprognose voor week 13?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;De prognose voor week 13 is 74, dit is de waarde van week 12.&lt;/p&gt;"><sup>3</sup></a></p>
 </div>
+<p>Bewaar het bestand voor gebruik in oefeningen hierna.</p>
 </div>
-<div id="prognoses-naiefseizoen" class="section level2" number="7.3">
-<h2>
-<span class="header-section-number">7.3</span> Naïeve Seizoen prognose<a class="anchor" aria-label="anchor" href="#prognoses-naiefseizoen"><i class="fas fa-link"></i></a>
-</h2>
+<div class="important">
 <p>Voor een tijdreeks met een seizoenscomponent verloopt de naïeve prognose iets anders. In dat geval is de prognose op een bepaald tijdstip gelijk aan de waarde in hetzelfde seizoen in de voorgaande periode.</p>
-<p>Als voorbeeld de kwartaalverkoop van paraplu’s over een periode van vijf jaar, zie de lijngrafiek figuur <a href="prognoses.html#fig:parapluverkoop-grafiek">7.3</a>.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:parapluverkoop-grafiek"></span>
-<img src="images/prognoses/paraplugrafiek.png" alt="Kwartaalverkoop paraplu's gedurende vijf jaar." width="70%"><p class="caption">
-Figuur 7.3: Kwartaalverkoop paraplu’s gedurende vijf jaar.
-</p>
-</div>
-<p>Deze grafiek lijkt op het eerste gezicht ook op een horizontaal patroon met willekeurige fluctuaties. Maar wanneer je goed kijkt zie je toch een systematisch patroon binnen elk jaar. Steeds is binnen elk jaar de verkoop in het tweede kwartaal het hoogst en in het vierde kwartaal het laagst. En de kwartalen 1 en 3 scoren redelijk gemiddeld.</p>
-<p>Om te laten zien dat een naïeve seizoenprognose in een dergelijke tijdreeks beter is dan een gewone naïeve prognose worden beide prognoses bepaald. De resultaten, alsmede de kentallen voor de nauwkeurigheid zijn te zien in figuur <a href="prognoses.html#fig:parapluverkoop-prognose">7.4</a>. Voor de eerste vier kwartalen kunnen de naïeve seizoenprognoses niet bepaald worden, omdat er geen waarde in de voorgaande periode beschikbaar is.</p>
-<div class="figure" style="text-align: center">
-<span id="fig:parapluverkoop-prognose"></span>
-<img src="images/prognoses/paraplutabel.png" alt="Naïeve en naïeve seizoenprognoses voor de Kwartaalverkoop van paraplu's." width="70%"><p class="caption">
-Figuur 7.4: Naïeve en naïeve seizoenprognoses voor de Kwartaalverkoop van paraplu’s.
-</p>
-</div>
-<p>De naïeve seizoensprognose toont voor alle kentallen de beste waarde.</p>
-<div class="guidedpractice">
-<p>Wat is de verkoopprognose voor de vier kwartalen van jaar 6?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Voor jaar 6 is de naïef-seizoenprognose voor de kwartalen 1 t/m achtereenvolgens 65, 83, 64 en 48&lt;/p&gt;"><sup>4</sup></a></p>
 </div>
 </div>
-<div id="prognoses-ma" class="section level2" number="7.4">
+<div id="prognoses-ma" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">7.4</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#prognoses-ma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Voortschrijdend gemiddelde<a class="anchor" aria-label="anchor" href="#prognoses-ma"><i class="fas fa-link"></i></a>
 </h2>
-<p>Via de methode van het voortschrijdend gemiddelde kun je ook prognoses maken. Als voorbeeld wordt de wekelijkse benzineverkoop genomen waarvoor eerder (figuur <a href="prognoses.html#fig:benzineverkoop-naief">7.2</a>) een naïeve prognose gemaakt is. Er wordt een 3-weeks voortschrijdend gemiddelde gekozen. De resultaten zijn te zien in figuur <a href="prognoses.html#fig:benzineverkoop-ma">7.5</a></p>
+<p>Via de methode van het voortschrijdend gemiddelde (zie <a href="timeseries.html#ts-ma-a">6.4.2</a>) kun je ook prognoses maken. Bij bijvoorbeeld een 3-weeks voortschrijdend gemiddelde kun je het gemiddelde van week 1 tm week 3 gebruiken als prognose voor week 4.</p>
+<div class="guidedpractice">
+<p>Open het bestand benzineverkoop.xlsx. Bereken met de formule <code>=GEMIDDELDE(...)</code> een 3-weeks voortschrijdend gemiddelde van het verkoopvolume en gebruik deze waarde als prognose voor devolgende week. Bereken tevens de MAE, MAPE, MSE en RMSE, analoog aan de oefening bij de naïeve prognose. Het resultaat is te zien in figuur <a href="prognoses.html#fig:benzineverkoop-ma">7.3</a>.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:benzineverkoop-ma"></span>
-<img src="images/prognoses/benzinetabel-ma.png" alt="Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen." width="50%"><p class="caption">
-Figuur 7.5: Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen.
+<img src="images/prognoses/benzineverkoop-ma.png" alt="Prognose van het wekelijkse volume via een 3-weeks Voortschrijdend gemiddelde." width="100%"><p class="caption">
+Figuur 7.3: Prognose van het wekelijkse volume via een 3-weeks Voortschrijdend gemiddelde.
 </p>
 </div>
-<p>Bij een 3-weeks voortschrijdend gemiddelde kun je de eerste waarde pas berekenen voor week 4. En deze waarde is bepaald met de formule <code>=GEMIDDELDE(...)</code> met als argument de werkelijke waarden voor de 3 weken daarvoor.</p>
-<p>Gelet op de kentallen voor de nauwkeurigheid zie je dat het voortschrijdend gemiddelde iets beter presteert dan de naïeve prognose, maar ook niet echt heel veel beter. En de prognose voor week 13 wordt <span class="math inline">\(67,67\)</span>.</p>
+<p>Gelet op de kentallen voor de nauwkeurigheid zie je dat het voortschrijdend gemiddelde iets beter presteert dan de naïeve prognose, maar niet erg veel beter. Je kunt uiteraard proberen of een andere vensterbreedte betere resultaten oplevert.</p>
+<div class="alert alert-dark">
+<p>Wat is de verkoopprognose voor week 13?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;De prognose voor week 13 is 67,7, dit is het gemiddelde van week 10 t/m 12.&lt;/p&gt;"><sup>4</sup></a></p>
 </div>
-<div id="prognoses-expsmooth" class="section level2" number="7.5">
+</div>
+</div>
+<div id="prognoses-expsmooth" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">7.5</span> Exponentiële demping<a class="anchor" aria-label="anchor" href="#prognoses-expsmooth"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Exponentiële demping<a class="anchor" aria-label="anchor" href="#prognoses-expsmooth"><i class="fas fa-link"></i></a>
 </h2>
 <p>Exponentiële demping (effening, smoothing) is een analysemethode voor tijdreeksen waarbij gewichten aan de waarnemingen worden toegekend. Het exponentiële smoothing model heeft de volgende vorm</p>
 <p><span class="math inline">\(F_{t+1} = \alpha Y_t + (1-\alpha)F_t\)</span> , met</p>
 <ul>
 <li>
-<span class="math inline">\(F_{t+1}\)</span>: de prognose (Engels: Forecast) op tijdstip <span class="math inline">\(t+1\)</span>
+<span class="math inline">\(F_{t+1}\)</span>: de prognose (Forecast) op tijdstip <span class="math inline">\(t+1\)</span>
 </li>
 <li>
 <span class="math inline">\(Y_t\)</span>: de werkelijke waarde op tijdstip <span class="math inline">\(t\)</span>
@@ -354,44 +260,60 @@ Figuur 7.5: Voortschrijdend 3-weeks gemiddelde van de wekelijkse benzineverkopen
 </ul>
 <p>De prognose op tijdstip <span class="math inline">\(t+1\)</span> is dus een gewogen gemiddelde van de werkelijke waarde op tijdstip <span class="math inline">\(t\)</span> en de prognose voor tijdstip <span class="math inline">\(t\)</span>, met als wegingsfactoren respectievelijk <span class="math inline">\(\alpha\)</span> en <span class="math inline">\(1 - \alpha\)</span>. Bij een grote waarde van <span class="math inline">\(\alpha\)</span> tellen de meest recente waarnemingen zwaarder mee dan de oudere waarnemingen. De prognoses kunnen daardoor sneller reageren op veranderende omstandigheden.</p>
 <p>Voor het tijdstip <span class="math inline">\(t = 1\)</span> (het eerste tijdstip) kun je geen prognose berekenen. Voor tijdstip <span class="math inline">\(t = 2\)</span> (het tweede tijdstip) wordt de prognose gelijk aan de werkelijke waarde op tijdstip <span class="math inline">\(t = 1\)</span>. Voor alle volgende tijdstippen wordt de prognose berekend met de formule.</p>
+<div class="guidedpractice">
 <p>Als voorbeeld weer de wekelijkse benzineverkoop zodat de prognoses via exponentiële demping vergeleken kunnen worden met de naïeve prognose en die via het voortschrijdend gemiddelde.</p>
 <div class="figure" style="text-align: center">
 <span id="fig:benzineverkoop-ets"></span>
-<img src="images/prognoses/benzinetabel-ets.png" alt="Prognose van de wekelijkse benzineverkopen via exponentiële demping met a=0,2." width="50%"><p class="caption">
-Figuur 7.6: Prognose van de wekelijkse benzineverkopen via exponentiële demping met a=0,2.
+<img src="images/prognoses/benzineverkoop-ets.png" alt="Prognose van de wekelijkse benzineverkopen via exponentiële demping met a=0,2." width="100%"><p class="caption">
+Figuur 7.4: Prognose van de wekelijkse benzineverkopen via exponentiële demping met a=0,2.
 </p>
 </div>
-<p>Gelet op de nauwkeurigheidswaarden zijn dit tot nu toe de beste voorspellingen. de prognose voor week 13 wordt <span class="math inline">\(71,0\)</span>.</p>
-<div class="tip">
-<p><strong>Keuze <span class="math inline">\(\alpha\)</span></strong></p>
-<p>Als de tijdreeks een substantiële willekeurige variabiliteit heeft kun je het beste een kleine waarde voor <span class="math inline">\(\alpha\)</span> nemen. En bij een tijdreeks met weinig variabiliteit heeft een grotere waarde de voorkeur. De meest wenselijke waarde voor <span class="math inline">\(\alpha\)</span> is die waarde die de minste fouten oplevert, dus die zorgt voor de laagste gemiddelde kwardratische fout (MSE). In de praktijk ga je meestal proberen of een andere waarde voor <span class="math inline">\(\alpha\)</span> een nauwkeuriger voorspelling oplevert.</p>
+<p>Gelet op de nauwkeurigheidswaarden zijn dit tot nu toe de beste voorspellingen.</p>
+<div class="alert alert-dark">
+<p>Wat is de verkoopprognose voor week 13?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;De prognose voor week 13 is 71,0 namelijk 0,2*74 + 0,8*70,3&lt;/p&gt;"><sup>5</sup></a></p>
 </div>
-<p><strong>Via gegevensanalyse</strong></p>
-<p>In plaats van zelf de formules te bedenken en in te voeren kun je ook gebruik maken van <em>Gegevens &gt; Gegevensanalyse &gt; Exponentiële demping</em>. In het dialoogscherm (zie figuur <a href="prognoses.html#fig:dialoog-exp-demping">7.7</a>) vul je voor het invoerbereik het gebied met de werkelijke waarden in.</p>
-<div class="important">
-<p><strong>Dempingsfactor</strong></p>
-<p>Voor de dempingsfactor moet je de waarde voor <span class="math inline">\(1 - \alpha\)</span> invullen. Om dezelfde resultaten te krijgen dus 0,8.</p>
 </div>
+<div id="keuze-alpha" class="section level3" number="7.4.1">
+<h3>
+<span class="header-section-number">7.4.1</span> Keuze <span class="math inline">\(\alpha\)</span><a class="anchor" aria-label="anchor" href="#keuze-alpha"><i class="fas fa-link"></i></a>
+</h3>
+<p>Als de tijdreeks een substantiële willekeurige variabiliteit heeft kun je het beste een kleine waarde voor <span class="math inline">\(\alpha\)</span> nemen. En bij een tijdreeks met weinig variabiliteit heeft een grotere waarde de voorkeur. De meest wenselijke waarde voor <span class="math inline">\(\alpha\)</span> is die waarde die de minste fouten oplevert, dus die zorgt voor de laagste gemiddelde kwadratische fout (MSE). In de praktijk ga je meestal proberen of een andere waarde voor <span class="math inline">\(\alpha\)</span> een nauwkeuriger voorspelling oplevert.</p>
+</div>
+<div id="ets-gegevensanalyse" class="section level3" number="7.4.2">
+<h3>
+<span class="header-section-number">7.4.2</span> Via Gegevensanalyse<a class="anchor" aria-label="anchor" href="#ets-gegevensanalyse"><i class="fas fa-link"></i></a>
+</h3>
+<p>In plaats van zelf de formules te bedenken en in te voeren kun je ook gebruik maken van Gegevensanalyse.</p>
+<div class="guidedpractice">
+<p>Kies <em>Gegevens &gt; Gegevensanalyse &gt; Exponentiële demping</em>. In het dialoogscherm, zie figuur <a href="prognoses.html#fig:dialoog-exp-demping">7.5</a>, specificeer je:</p>
+<ul>
+<li>Invoerbereik: het gebied met de werkelijke waarden.</li>
+<li>Dempingsfactor: de waarde van <span class="math inline">\(1 - \alpha\)</span>
+</li>
+<li>Grafiek maken: geeft een lijngrafiek met de werkelijke waarden en de prognoses.</li>
+</ul>
 <div class="figure" style="text-align: center">
 <span id="fig:dialoog-exp-demping"></span>
-<img src="images/prognoses/dialoog-exp-demping.png" alt="Dialoogscherm voor exponentiële demping" width="50%"><p class="caption">
-Figuur 7.7: Dialoogscherm voor exponentiële demping
+<img src="images/prognoses/dialoog-exp-demping.png" alt="Dialoogscherm voor exponentiële demping. Voor de dempingsfactor moet je de waarde van 1-alpha invullen." width="60%"><p class="caption">
+Figuur 7.5: Dialoogscherm voor exponentiële demping. Voor de dempingsfactor moet je de waarde van 1-alpha invullen.
 </p>
 </div>
-<p>Je krijgt dan dezelfde resultaten. Desgewenst kun je ook een grafiek produceren.</p>
+<p>Voor de prognoses krijg je dezelfde resultaten.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:enzinegrafiek-ets"></span>
-<img src="images/prognoses/benzinegrafiek-ets.png" alt="Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met a=0,2." width="50%"><p class="caption">
-Figuur 7.8: Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met a=0,2.
+<span id="fig:benzineverkoop-etsgrafie"></span>
+<img src="images/prognoses/benzineverkoop-etsgrafiek.png" alt="Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met alpha=0,2." width="100%"><p class="caption">
+Figuur 7.6: Lijndiagram van de benzineverkoop en de voorspelling via exponentiële demping met alpha=0,2.
 </p>
 </div>
-<p>De eenvoud van deze methode heeft ook wel zijn prijs. Wil je experimenteren met een andere waarde voor <span class="math inline">\(\alpha\)</span> dan moet je de procedure weer opnieuw uitvoeren.</p>
+<p>Dit is een eenvoudige en gemakkelijke methode. Daar staat tegenover dat wanneer met andere waarden voor <span class="math inline">\(\alpha\)</span> wilt experimenteren, je de procedure steeds weer opnieuw moet uitvoeren.</p>
 </div>
-<div id="prognoses-voorspellingenblad" class="section level2" number="7.6">
+</div>
+</div>
+<div id="prognoses-voorspellingenblad" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">7.6</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#prognoses-voorspellingenblad"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> Voorspellingenblad<a class="anchor" aria-label="anchor" href="#prognoses-voorspellingenblad"><i class="fas fa-link"></i></a>
 </h2>
-<p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methodes. Het grootste voordeel van de ETS (Exponential Tripple Smoothing) methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en daarnaast ook nog een betrouwbaarheidsinterval voor de voorspellingen kan leveren.</p>
+<p>De exponentiële effenings methoden zijn op dit moment de beste en meest gebruikte methoden. Het grootste voordeel van de ETS (Exponential Triple Smoothing) methode is dat deze de mogelijkheid heeft om automatisch seizoenpatronen te ontdekken in de gegevensreeks en voorspellingen met betrouwbaarheidsintervallen kan leveren.</p>
 <div class="tip">
 <p>Je kunt het beste deze methode gebruiken wanneer de tijdreeks zowel een trend als een seizoenspatroon laat zien.</p>
 </div>
@@ -402,9 +324,9 @@ Figuur 7.8: Lijndiagram van de benzineverkoop en de voorspelling via exponentië
 <li><code>VOORSPELLEN.ETS.CONFINT</code></li>
 <li><code>VOORSPELLEN.ETS.STAT</code></li>
 </ul>
-<p>Eenvoudiger is het gebruik van het <em>Voorspellingblad</em> of <em>prognosewerkblad</em> dat in die nieuwere Excel versies aanwezig is. Onder de motorkop worden de <code>VOORSPELLEN.ETS</code> functies gebruikt.</p>
+<p>Eenvoudiger is het gebruik van het <strong>Voorspellingblad</strong> of <strong>prognosewerkblad</strong> dat in die nieuwere Excel versies aanwezig is. Onder de motorkop worden de <code>VOORSPELLEN.ETS</code> functies gebruikt.</p>
 <p>Via het Voorspellingenblad wordt een nieuw werkblad gemaakt met daarin een tabel met de oorspronkelijke gegevens en de voorspelde waarden. Deze toekomstige waarden worden berekend op basis van het Holt-Winters ETS algoritme. Ook wordt een grafiek gemaakt met de oorspronkelijke en voorspelde waarden en een aantal schattingen van meetwaarden voor de nauwkeurigheid. Hiermee wordt het maken van geavanceerde prognoses een stuk eenvoudiger.</p>
-<div class="workedexample">
+<div class="guidedpractice">
 <ol style="list-style-type: decimal">
 <li><p>Open het bestand <code>verkopen.xlsx</code> dat je eerder in in <a href="importdata.html#opg-importdata">1.4</a> hebt aangemaakt.</p></li>
 <li><p>Selecteer een willekeurige cel in het gegevensgebied.</p></li>
@@ -413,7 +335,7 @@ Figuur 7.8: Lijndiagram van de benzineverkoop en de voorspelling via exponentië
 <div class="figure" style="text-align: center">
 <span id="fig:prognosewerkblad"></span>
 <img src="images/prognoses/sales_fcast_sheet.png" alt="Prognosewerkblad maken" width="100%"><p class="caption">
-Figuur 7.9: Prognosewerkblad maken
+Figuur 7.7: Prognosewerkblad maken
 </p>
 </div>
 <p>In dit venster kun je een aantal keuzes maken. Zie bijlage <a href="app-voorspellingenblad.html#app-voorspellingenblad">D</a> voor een toelichting.</p>
@@ -424,16 +346,16 @@ Figuur 7.9: Prognosewerkblad maken
 <div class="figure" style="text-align: center">
 <span id="fig:sales-fcast-options"></span>
 <img src="images/prognoses/sales_fcast_options.png" alt="Opties prognosewerkblad." width="100%"><p class="caption">
-Figuur 7.10: Opties prognosewerkblad.
+Figuur 7.8: Opties prognosewerkblad.
 </p>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li>Klik op <em>Maken</em>. Er wordt een nieuw werkblad gemaakt met daarin de historische gegevens, de voorspelde waarden, betrouwbaarheidsgrenzen (standaard 95%) en een grafiek.</li>
 </ol>
-<p>De resultaten van de voorspellingen staan in tabel <a href="prognoses.html#tab:voorspelling">7.3</a> weergegeven</p>
+<p>De resultaten van de voorspellingen staan in tabel <a href="prognoses.html#tab:voorspelling">7.2</a> weergegeven</p>
 <div class="inline-table"><table class=" lightable-paper" style='font-size: 14px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
 <caption style="font-size: initial !important;">
-<span id="tab:voorspelling">Tabel 7.3: </span>Voorspelde waarden en betrouwbaarheidsgrenzen
+<span id="tab:voorspelling">Tabel 7.2: </span>Voorspelde waarden en betrouwbaarheidsgrenzen
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -496,25 +418,25 @@ Hoogste betrouwbaarheidsgrens
 </table></div>
 </div>
 </div>
-<div id="opg-prognoses" class="section level2" number="7.7">
+<div id="opg-prognoses" class="section level2" number="7.6">
 <h2>
-<span class="header-section-number">7.7</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-prognoses"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6</span> Opgaven<a class="anchor" aria-label="anchor" href="#opg-prognoses"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sectionexercise">
 <ol style="list-style-type: decimal">
 <li>
 <p><strong>Autoverkopen</strong></p>
-<p>In het bestand <a href="data/autoverkoop.xlsx">autoverkoop.xlsx</a> staan de de autoverkopen per kwartaal van 4 jaren, zie ook <a href="timeseries.html#ts-ma-calc">6.4.3</a>. Maak met behulp van het Voorspellingenblad een prognose van de verkopen voor de vier kwartalen van jaar 5.</p>
+<p>In het bestand <a href="data/autoverkoop.xlsx">autoverkoop.xlsx</a> staan de de autoverkopen per kwartaal van 4 jaren, zie ook <a href="timeseries.html#ts-ma-autoverkopen">6.4.4</a>. Maak met behulp van het Voorspellingenblad een prognose van de verkopen voor de vier kwartalen van jaar 5.</p>
 </li>
 <li>
 <p><strong>Omzetvoorspelling</strong></p>
 <p>In het bestand <a href="data/bedrijfsomzet.xlsx">bedrijfsomzet.xlsx</a> staan de omzetten van een bedrijf over de jaren 2007-2015.</p>
 <ol style="list-style-type: lower-alpha">
-<li>Maak een grafiek van de omzet tegen het jaar.</li>
-<li>Voeg achtereenvolgens de volgende trendlijnen toe; lineair, logaritmisch en exponentieel.Verzamel voor elk van deze trendlijnen de waarde van R-kwadraat. Maak op basis hiervan een keuze voor het meest geschikte model.</li>
+<li>Maak een spreidingsdiagram van de omzet tegen het jaar.</li>
+<li>Voeg achtereenvolgens de volgende trendlijnen toe; lineair, logaritmisch en exponentieel. Verzamel voor elk van deze trendlijnen de waarde van R-kwadraat. Maak op basis hiervan een keuze voor het meest geschikte model.</li>
 <li>Maak via de opties voor de trendlijn een voorspelling van de omzet voor 2016 en lees de waarde in de grafiek af.</li>
 <li>Experimenteer met de opties voor de trendlijn om uit te zoeken wanneer een omzet van €25.000.000 te verwachten is.</li>
-<li>Bereken een voorspelling van de omzet voor 2016 met een werkbladformule. Welke formule je hiervoor kunt gebruiken hangt af van het gekozen model. Zie hiervoor onderdeel.</li>
+<li>Bereken een voorspelling van de omzet voor 2016 met een werkbladformule. Welke formule je hiervoor kunt gebruiken hangt af van het gekozen model.</li>
 <li>Maak m.b.v. het Voorspellingenblad een prognose voor de omzet van 2016, alsmede een 95% betrouwbaarheidsinterval hiervoor.</li>
 <li>Vergelijk de drie voorspelde waarden met elkaar.</li>
 </ol>
@@ -543,11 +465,15 @@ Hoogste betrouwbaarheidsgrens
 <li><a class="nav-link" href="#prognoses"><span class="header-section-number">7</span> Prognoses</a></li>
 <li><a class="nav-link" href="#prognoses-nauwkeurigheid"><span class="header-section-number">7.1</span> Nauwkeurigheid prognoses</a></li>
 <li><a class="nav-link" href="#prognoses-naief"><span class="header-section-number">7.2</span> Naïeve prognose</a></li>
-<li><a class="nav-link" href="#prognoses-naiefseizoen"><span class="header-section-number">7.3</span> Naïeve Seizoen prognose</a></li>
-<li><a class="nav-link" href="#prognoses-ma"><span class="header-section-number">7.4</span> Voortschrijdend gemiddelde</a></li>
-<li><a class="nav-link" href="#prognoses-expsmooth"><span class="header-section-number">7.5</span> Exponentiële demping</a></li>
-<li><a class="nav-link" href="#prognoses-voorspellingenblad"><span class="header-section-number">7.6</span> Voorspellingenblad</a></li>
-<li><a class="nav-link" href="#opg-prognoses"><span class="header-section-number">7.7</span> Opgaven</a></li>
+<li><a class="nav-link" href="#prognoses-ma"><span class="header-section-number">7.3</span> Voortschrijdend gemiddelde</a></li>
+<li>
+<a class="nav-link" href="#prognoses-expsmooth"><span class="header-section-number">7.4</span> Exponentiële demping</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#keuze-alpha"><span class="header-section-number">7.4.1</span> Keuze \(\alpha\)</a></li>
+<li><a class="nav-link" href="#ets-gegevensanalyse"><span class="header-section-number">7.4.2</span> Via Gegevensanalyse</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#prognoses-voorspellingenblad"><span class="header-section-number">7.5</span> Voorspellingenblad</a></li>
+<li><a class="nav-link" href="#opg-prognoses"><span class="header-section-number">7.6</span> Opgaven</a></li>
 </ul>
 
       <div class="book-extra">
@@ -564,7 +490,7 @@ Hoogste betrouwbaarheidsgrens
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 15 mei 2021.</p>
+    <p>"<strong>Excel Data Analyse</strong>" was written by Ben Welman. It was last built on 17 mei 2021.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
