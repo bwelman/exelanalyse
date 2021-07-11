@@ -3,7 +3,7 @@
 Op het [Palmer Station, Antarctica](https://pal.lternet.edu/) is door dr. Kristen Gorman gedurende de jaren 2007-2009 een onderzoek bij pinguïns uitgevoerd. Van de drie pinguinsoorten die zijn waargenomen op drie eilanden in de Palmerarchipel zijn gegevens verzameld gedurende de onderzoeksperiode.
 
 ```{r pinguins, out.width="50%", fig.cap="Links: de drie soorten pinguïns, Rechts: afmetingen snavel."}
-knitr::include_graphics("images/case-pinguins/gorman-penguins.jpg")
+knitr::include_graphics("images/case-pinguins/palmerpenguins.png")
 knitr::include_graphics("images/case-pinguins/pinguinsnavel.png")
 ```
 
