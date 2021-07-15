@@ -5,6 +5,8 @@ fig:weburl-textbox
 fig:ek-voetbal-navigator
 fig:replace-values-dialogbox
 fig:ek-voetbal-resultaat
+fig:olympic-navigator
+fig:olympic-draaitabelmaken
 fig:tidy-data
 tab:exp1
 tab:exp2
@@ -150,6 +152,7 @@ importdata
 import-lint
 import-csv
 import-web
+import-accessdatabase
 opg-importdata
 data
 wat-zijn-gestructureerde-gegevens

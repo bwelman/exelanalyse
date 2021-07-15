@@ -124,6 +124,72 @@ De gegevens worden in een Excel tabel in een nieuw werkblad opgeslagen. Je kunt 
 knitr::include_graphics("images/importdata/ek-voetbal-resultaat.png")
 ```
 
+## Importeren uit een Access database {#import-accessdatabase}
+
+In een database zit de data in tabellen die meestal aan elkaar gekoppeld zijn. Via queries in de database kun je ook nog eens bepaalde gegevens selecteren en eventueel berekeningen op gegevens uitvoeren. In deze oefening wordt gewerkt met de eenvoudige database *olympischesporten.accdb*.
+
+Deze database bevat de Engelstalige en Nederlandstalige namen van de olympische sporten en disciplines voor de twee versies van de spelen (zomer, winter), alsmede de afkorting van de sportbond, het beginjaar en het eventuele eindjaar van de disciplines.
+
+::: {.tip}
+De door het IOC gebruikte definitie van *sport* is een verzameling van *disciplines* die door één sportbond worden vertegenwoordigd. Zo valt onder de sport "Volleybal" de disciplines "Zaalvolleybal" en "Beachvolleybal", vertenwoordigd door de sportbond FIVB (Fédération Internationale de Volleyball).
+:::
+
+**Uit een query**
+
+1. Download eerst het hulpbestand [olympischesporten.accdb](data/olympischesporten.accdb) en open daarna een nieuwe lege werkmap.
+
+2. Kies *tab Gegevens > Gegevens ophalen (groep Gegevens ophalen en transformeren) > Uit database > Uit Microsoft Access-database*.
+
+3. Blader naar het gedownloade databasebestand en klik *Importeren*. Het dialoogvenster Navigator verschijnt waarin je de gewenste items uit de database kunt selecteren.
+
+```{r olympic-navigator, fig.cap="Dialoogvenster Navigator met als selecteerbare items 2 tabellen en 1 query.", out.width="70%"}
+knitr::include_graphics("images/importdata/olympic-navigator.png")
+```
+
+4. Selecteer de query "NL sporten en disciplines" waarna in het rechterdeel van het venster een voorbeeld van de gegevens verschijnt.
+
+5. Kies *Laden > Laden*. De gegevens worden in een tabel in een nieuw werkblad geladen.
+
+**Uit meerdere tabellen**
+
+6. Kies *tab Gegevens > Gegevens ophalen (groep Gegevens ophalen en transformeren) > Uit database > Uit Microsoft Access-database*.
+
+7. Blader naar het gedownloade databasebestand en klik *Importeren*. Het dialoogvenster Navigator (figuur \@ref(fig:olympic-navigator)) verschijnt weer.
+
+8. Vink het selectievakje *Meerdere items selecteren* aan en selecteer daarna de twee tabellen "Discipline" en "Sport".
+
+9. Kies *Laden > Laden*. Je ziet nu de gegevens niet in het werkblad verschijnen, ze zitten wel in het **gegevensmodel**.
+
+::: {.tip}
+Wanneer je twee of meer tabellen tegelijk importeert wordt er automatisch een gegevensmodel gemaakt. Deze integreert de geïmporteerde tabellen waarbij de bestaande relaties tussen de tabellen gebruikt worden. Je kunt dit met Power Pivot bekijken en bewerken. Dit gaat als volgt.
+
+Kies *tab Power Pivot > Beheren*. Er verschijnt nu een nieuw venster "Power Pivot voor Excel** met linksonder de tabbladen voor de geïmporteerde tabellen. Wanneer je de relatie wilt zien kies je in dit venster voor *Diagramweergave (groep Weergave)*. Wanneer je alles bekeken hebt kun je dit venster weer sluiten.
+:::
+
+**Analyse**
+
+Voor het analyseren van de gegevens wordt een draaitabel gebruikt.
+
+::: {.workedexample}
+Kies *Invoegen > Draaitabel*. Zorg er voor dat het gebruik van het gegevensmodel geselecteerd is (zie figuur \@ref(fig:olympic-draaitabelmaken)).
+
+```{r olympic-draaitabelmaken, fig.cap="Dialoogvenster Draaitabel maken. Selecteer het gebruik van het gegevensmodel.", out.width="50%"}
+knitr::include_graphics("images/importdata/olympic-draaitabelmaken.png")
+```
+
+Probeer nu de volgende vragen te beantwoorden:
+
+1. Hoeveel disciplines waren er in het beginjaar van de zomerspelen en hoeveel disciplines zijn er nu?[^import-01]
+1. Hoeveel disciplines zijn er totaal verdwenen?[^import-02]
+1. Welke sport heeft de meeste disciplines?[^import-03]
+1. Welke nieuwe disciplines zijn er voor de zomerspelen 2020 bijgekomen?[^import-04]
+:::
+
+[^import-01]: Respectievelijk 10 en 50.
+[^import-02]: Totaal 14 (zomer 13, winter 1)
+[^import-03]: Skiën met 6 disciplines
+[^import-04]: 6 disciplines: 3x3 Basketbal, Karate, Klimsport, Skateboarden, Surfen en BMX freestyle
+
 ## Opgaven {#opg-importdata}
 
 ::: {.sectionexercise}
@@ -137,4 +203,10 @@ knitr::include_graphics("images/importdata/ek-voetbal-resultaat.png")
        + Door de transformatie naar veldnamen wordt ook het gegevenstype aangepast. Controleer of de kolommen naar het juiste gegevenstype zijn omgezet. Zo niet, wijzig dan het gevenstype.
 
     c. Bewaar het bestand voor later gebruik onder de naam `verkopen.xlsx`.
+
+2. **Een Access database importeren**
+
+    a. Download het hulpbestand [snoeporders2010.accdb](data/snoeporders2010.accdb) en importeer in een nieuw Excel bestand alledrie de tabellen via *Gegevens ophalen en transformeren*.
+    b. Maak via een draaitabel een lijngrafiek van het aantal orders per maand.
+    c. Maak via een draaitabel een kolomdiagram van het aantal orders per provincie, gesorteerd van hoog naar laag.
 :::
